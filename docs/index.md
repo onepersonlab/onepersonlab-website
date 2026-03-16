@@ -86,24 +86,42 @@
 
 ---
 
-## 💻 Quick Start
+## 💬 Build by Conversation
 
-```bash
-# Install universal skills
-clawhub install memory-setup
-clawhub install tavily-search
-clawhub install academic-research-hub
-clawhub install self-improving
-clawhub install find-skills
-clawhub install nano-pdf
+### No Code. No Config. Just Talk.
+
+<div class="feature-grid" style="margin: 2rem 0;">
+  <div class="feature-card" style="background: var(--md-accent-fg-color); color: white;">
+    <span class="emoji">💭</span>
+    <h3 style="color: white;">One Sentence</h3>
+    <p style="color: rgba(255,255,255,0.9);">Describe your research goal</p>
+  </div>
+  
+  <div class="feature-card" style="background: var(--md-primary-fg-color--light);">
+    <span class="emoji">⚡</span>
+    <h3>Instant Team</h3>
+    <p>Agents self-organize automatically</p>
+  </div>
+  
+  <div class="feature-card" style="background: var(--md-primary-fg-color--light);">
+    <span class="emoji">🎯</span>
+    <h3>Zero Friction</h3>
+    <p>No manual agent configuration</p>
+  </div>
+</div>
+
+### Example Conversation
+
+```
+You: I need expertise in chemistry and biology 
+     for drug discovery.
+
+Lab-Director: Activating CHEM-PI, BIO-PI, and 
+              12 specialized agents...
+              Team ready! 🎉
 ```
 
-```
-You are now the Lab-Director of my OnePersonLab.
-I want to build an AI-driven drug discovery platform.
-```
-
-**That's it.** Your team is ready.
+**That's it.** Your virtual lab is open.
 
 ---
 
@@ -117,12 +135,16 @@ I want to build an AI-driven drug discovery platform.
 
 ---
 
-<div style="text-align: center; margin-top: 3rem;">
+<div class="hero-section" style="margin-top: 3rem;">
 
-**Ready to build your virtual lab?**
+## 🚀 Start Your Lab Today
 
-<a href="https://github.com/onepersonlab/onepersonlab-agents" class="md-button md-button--primary" style="font-size: 1.2rem; padding: 1rem 3rem;">
-  Get Started →
+**Prerequisite:** Set up OpenClaw once.
+
+**Then:** Just describe your research goal.
+
+<a href="https://github.com/onepersonlab/onepersonlab-agents" class="md-button md-button--primary" style="font-size: 1.2rem; padding: 1rem 3rem; background: white; color: var(--md-primary-fg-color);">
+  Get Started on GitHub →
 </a>
 
 </div>
