@@ -1,0 +1,65 @@
+site_name: OnePersonLab-Agents
+site_description: A multi-agent system for interdisciplinary research
+site_url: https://onepersonlab.github.io/onepersonlab-agents
+
+repo_name: onepersonlab/onepersonlab-agents
+repo_url: https://github.com/onepersonlab/onepersonlab-agents
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+
+plugins:
+  - search
+  - social
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/onepersonlab/onepersonlab-agents
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/clawd
+  generator: false
+
+copyright: |
+  &copy; 2026 OnePersonLab-Agents Team
