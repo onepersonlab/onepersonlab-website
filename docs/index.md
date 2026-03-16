@@ -1,17 +1,95 @@
-# 👨‍🔬🤖🤖🤖 OnePersonLab-Agents
+<div class="hero-section">
+# 👨‍🔬 One Person<br><span style="font-size: 0.7em">Entire Laboratory</span>
 
-## A Multi-Agent System for Interdisciplinary Research
+**AI-powered multi-agent system for interdisciplinary research**
+</div>
 
-**OnePersonLab-Agents** enables a single researcher to coordinate an entire virtual laboratory of AI-powered agents, each specializing in different scientific disciplines.
+<div class="cta-group">
+  <a href="https://github.com/onepersonlab/onepersonlab-agents" class="md-button md-button--primary">
+    🚀 View on GitHub
+  </a>
+  <a href="#features" class="md-button md-button--secondary">
+    Learn More ↓
+  </a>
+</div>
 
 ---
 
-## 🎯 Quick Start
+## 🎯 What is OnePersonLab?
 
-### 1. Install Universal Skills
+<div class="feature-grid" id="features">
+  <div class="feature-card">
+    <span class="emoji">🤖</span>
+    <h3>242 AI Agents</h3>
+    <p>Virtual researchers across 11 disciplines</p>
+  </div>
+  
+  <div class="feature-card">
+    <span class="emoji">🧪</span>
+    <h3>11 Disciplines</h3>
+    <p>From Biology to Computer Science</p>
+  </div>
+  
+  <div class="feature-card">
+    <span class="emoji">⚡</span>
+    <h3>Zero Setup</h3>
+    <p>Just describe your research goal</p>
+  </div>
+  
+  <div class="feature-card">
+    <span class="emoji">🎓</span>
+    <h3>3-Tier Structure</h3>
+    <p>PI → Postdoc → Students</p>
+  </div>
+</div>
+
+---
+
+## 📊 By the Numbers
+
+<div class="stats-grid">
+  <div class="stat-item">
+    <span class="stat-number">242</span>
+    <span class="stat-label">Total Agents</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">78</span>
+    <span class="stat-label">Postdocs</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">153</span>
+    <span class="stat-label">Students</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">11</span>
+    <span class="stat-label">Disciplines</span>
+  </div>
+</div>
+
+---
+
+## 🔬 Disciplines
+
+<div class="discipline-tags">
+  <span class="discipline-tag">🖥️ Computer Science</span>
+  <span class="discipline-tag">🧪 Chemistry</span>
+  <span class="discipline-tag">🧬 Biology</span>
+  <span class="discipline-tag">🔩 Materials</span>
+  <span class="discipline-tag">⚙️ Engineering</span>
+  <span class="discipline-tag">🌍 Environmental</span>
+  <span class="discipline-tag">🌾 Agriculture</span>
+  <span class="discipline-tag">🏥 Medicine</span>
+  <span class="discipline-tag">📈 Economics</span>
+  <span class="discipline-tag">🧠 Psychology</span>
+  <span class="discipline-tag">📊 Data Science</span>
+</div>
+
+---
+
+## 💻 Quick Start
 
 ```bash
-# Install required skills
+# Install universal skills
 clawhub install memory-setup
 clawhub install tavily-search
 clawhub install academic-research-hub
@@ -20,137 +98,31 @@ clawhub install find-skills
 clawhub install nano-pdf
 ```
 
-### 2. Start a Conversation
-
 ```
 You are now the Lab-Director of my OnePersonLab.
-Based on my research goal, please configure and activate the required agent team.
-```
-
-### 3. Describe Your Research
-
-```
 I want to build an AI-driven drug discovery platform.
-I need expertise in chemistry, biology, and machine learning.
 ```
 
-**That's it!** Your research team is assembled and ready.
+**That's it.** Your team is ready.
 
 ---
 
-## 🏗️ Architecture
+## 🔗 Resources
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    Lab-Director                         │
-│              (Central Coordinator)                      │
-└─────────────────────────────────────────────────────────┘
-                              │
-        ┌─────────────────────┼─────────────────────┐
-        │                     │                     │
-        ▼                     ▼                     ▼
-   ┌─────────┐          ┌─────────┐          ┌─────────┐
-   │   CS    │          │  BIO    │          │  CHEM   │
-   │   PI    │          │   PI    │          │   PI    │
-   └────┬────┘          └────┬────┘          └────┬────┘
-        │                    │                    │
-   ┌────┴────┐          ┌────┴────┐          ┌────┴────┐
-   │Postdocs │          │Postdocs │          │Postdocs │
-   │Students │          │Students │          │Students │
-   └─────────┘          └─────────┘          └─────────┘
-```
-
-**11 Disciplines** · **78 Postdocs** · **153 Students** · **242 Total Agents**
+| Resource | Link |
+|----------|------|
+| 📦 Source Code | [github.com/onepersonlab/onepersonlab-agents](https://github.com/onepersonlab/onepersonlab-agents) |
+| 📚 Documentation | [docs.openclaw.ai](https://docs.openclaw.ai) |
+| 💬 Community | [Discord](https://discord.gg/clawd) |
 
 ---
 
-## 📊 Available Disciplines
+<div style="text-align: center; margin-top: 3rem;">
 
-### Core Sciences
+**Ready to build your virtual lab?**
 
-| Discipline | PI ID | Postdocs | Students |
-|------------|-------|----------|----------|
-| 🖥️ Computer Science | CS-PI | 8 | 17 |
-| 🧪 Chemistry | CHEM-PI | 8 | 16 |
-| 🧬 Biology | BIO-PI | 8 | 17 |
-| 🔩 Materials Science | MAT-PI | 6 | 12 |
-| 🌍 Environmental Science | ENV-PI | 7 | 14 |
-| 🌾 Agriculture | AGR-PI | 7 | 14 |
-| ⚙️ Engineering | ENG-PI | 8 | 14 |
+<a href="https://github.com/onepersonlab/onepersonlab-agents" class="md-button md-button--primary" style="font-size: 1.2rem; padding: 1rem 3rem;">
+  Get Started →
+</a>
 
-### Expanded Disciplines
-
-| Discipline | PI ID | Postdocs | Students |
-|------------|-------|----------|----------|
-| 🏥 Medicine | MED-PI | 7 | 13 |
-| 📈 Economics | ECON-PI | 6 | 12 |
-| 🧠 Psychology | PSYCH-PI | 7 | 12 |
-| 📊 Data Science | DS-PI | 6 | 12 |
-
----
-
-## 🛠️ Skills System
-
-### Universal Skills (Required)
-
-All agents have these core capabilities:
-
-| Skill | Purpose |
-|-------|---------|
-| **memory-setup** | Persistent memory and context |
-| **tavily-search** | Web search for current information |
-| **academic-research-hub** | Academic paper search |
-| **self-improving** | Self-reflection and learning |
-| **find-skills** | Discover new skills |
-| **nano-pdf** | PDF reading and editing |
-
-### Discipline-Specific Skills
-
-Discovered via `find-skills` and configured through Lab-Director consultation.
-
----
-
-## 📚 Documentation
-
-- **[Agents]**(agents/overview.md) - Learn about the agent hierarchy
-- **[Skills]**(skills/universal.md) - Understand the skills system
-- **[Protocols]**(protocols/communication.md) - Communication protocols
-- **[Examples]**(examples/single-discipline.md) - See real use cases
-
----
-
-## 🚀 Get Started
-
-Ready to build your virtual research team?
-
-[View Quick Start Guide](#quick-start){ .md-button .md-button--primary }
-
-[Explore Agents](agents/overview.md){ .md-button }
-
----
-
-## 📖 Citation
-
-If you use OnePersonLab-Agents in your research, please cite:
-
-```bibtex
-@software{onepersonlab2026,
-  title = {OnePersonLab-Agents: A Multi-Agent System for Interdisciplinary Research},
-  author = {OnePersonLab Team},
-  year = {2026},
-  url = {https://github.com/onepersonlab/onepersonlab-agents}
-}
-```
-
----
-
-## 🤝 Community
-
-- **Source Code**: [onepersonlab/onepersonlab-agents](https://github.com/onepersonlab/onepersonlab-agents)
-- **Website**: [onepersonlab/onepersonlab-website](https://github.com/onepersonlab/onepersonlab-website)
-- **Discord**: [Join our community](https://discord.gg/clawd)
-- **Documentation**: [docs.openclaw.ai](https://docs.openclaw.ai)
-
----
-
-**License**: MIT · **Built with**: [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/)
+</div>

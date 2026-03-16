@@ -1,6 +1,5 @@
-site_name: OnePersonLab-Agents
-site_description: A multi-agent system for interdisciplinary research
-site_url: https://onepersonlab.github.io/onepersonlab-agents
+site_name: OnePersonLab
+site_url: https://onepersonlab.github.io/onepersonlab-website
 
 repo_name: onepersonlab/onepersonlab-website
 repo_url: https://github.com/onepersonlab/onepersonlab-website
@@ -8,50 +7,36 @@ repo_url: https://github.com/onepersonlab/onepersonlab-website
 theme:
   name: material
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
+    - scheme: slate
       primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: indigo
-      accent: indigo
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
+      accent: purple
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.expand
-    - navigation.top
-    - search.suggest
-    - search.highlight
-    - content.tabs.link
-    - content.code.annotation
     - content.code.copy
-  language: en
-  logo: assets/logo.png
-  favicon: assets/favicon.ico
+    - content.action.edit
+  font:
+    text: Inter
+    code: Roboto Mono
+  favicon: assets/favicon.png
+  logo: assets/logo.svg
 
 markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.superfences
-  - admonition
-  - pymdownx.details
   - attr_list
   - md_in_html
-  - tables
-  - footnotes
-
-plugins:
-  - search
-  - social
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
 
 extra:
   social:
@@ -59,7 +44,8 @@ extra:
       link: https://github.com/onepersonlab/onepersonlab-agents
     - icon: fontawesome/brands/discord
       link: https://discord.gg/clawd
-  generator: false
 
-copyright: |
-  &copy; 2026 OnePersonLab-Agents Team
+extra_css:
+  - stylesheets/extra.css
+
+copyright: © 2026 OnePersonLab
