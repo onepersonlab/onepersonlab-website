@@ -143,10 +143,17 @@
   border-radius: 1rem;
   margin-bottom: 3rem;
   text-align: center;
-  color: white;
+  color: white !important;
 }
 
 .hero-section h1,
-.hero-section p {
+.hero-section h2,
+.hero-section p,
+.hero-section strong {
   color: white !important;
+}
+
+.hero-section .md-button {
+  display: inline-block;
+  margin-top: 1rem;
 }
