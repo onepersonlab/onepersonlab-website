@@ -1,7 +1,7 @@
 <div class="hero-section">
-# 👨‍🔬 One Person<br><span style="font-size: 0.7em">Entire Laboratory</span>
+# 👨‍🔬 One Person<br><span style="font-size: 0.7em">Multi-Agent Laboratory</span>
 
-**AI-powered multi-agent system for interdisciplinary research**
+**AI-powered virtual researchers for interdisciplinary science**
 </div>
 
 <div class="cta-group">
