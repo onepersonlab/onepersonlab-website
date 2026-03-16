@@ -146,7 +146,8 @@ If you use OnePersonLab-Agents in your research, please cite:
 
 ## 🤝 Community
 
-- **GitHub**: [onepersonlab/onepersonlab-agents](https://github.com/onepersonlab/onepersonlab-agents)
+- **Source Code**: [onepersonlab/onepersonlab-agents](https://github.com/onepersonlab/onepersonlab-agents)
+- **Website**: [onepersonlab/onepersonlab-website](https://github.com/onepersonlab/onepersonlab-website)
 - **Discord**: [Join our community](https://discord.gg/clawd)
 - **Documentation**: [docs.openclaw.ai](https://docs.openclaw.ai)
 

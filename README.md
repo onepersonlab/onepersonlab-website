@@ -94,7 +94,8 @@ Create `docs/assets/stylesheets/extra.css` and reference in `mkdocs.yml`.
 
 ## 🔗 Links
 
-- **Main Repository**: https://github.com/onepersonlab/onepersonlab-agents
+- **Source Code Repository**: https://github.com/onepersonlab/onepersonlab-agents
+- **Website Repository**: https://github.com/onepersonlab/onepersonlab-website
 - **Material for MkDocs**: https://squidfunk.github.io/mkdocs-material/
 - **MkDocs Documentation**: https://www.mkdocs.org/
 

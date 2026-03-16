@@ -2,8 +2,8 @@ site_name: OnePersonLab-Agents
 site_description: A multi-agent system for interdisciplinary research
 site_url: https://onepersonlab.github.io/onepersonlab-agents
 
-repo_name: onepersonlab/onepersonlab-agents
-repo_url: https://github.com/onepersonlab/onepersonlab-agents
+repo_name: onepersonlab/onepersonlab-website
+repo_url: https://github.com/onepersonlab/onepersonlab-website
 
 theme:
   name: material
