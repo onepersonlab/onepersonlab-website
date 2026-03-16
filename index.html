@@ -6,26 +6,22 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A multi-agent system for interdisciplinary research">
       
       
-      
-        <link rel="canonical" href="https://onepersonlab.github.io/onepersonlab-agents/">
-      
+        <link rel="canonical" href="https://onepersonlab.github.io/onepersonlab-website/">
       
       
-        <link rel="next" href="agents/biology/">
       
       
         
       
       
-      <link rel="icon" href="assets/favicon.ico">
+      <link rel="icon" href="assets/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.5">
     
     
       
-        <title>OnePersonLab-Agents</title>
+        <title>OnePersonLab</title>
       
     
     
@@ -46,10 +42,12 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="stylesheets/extra.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -67,7 +65,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -76,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#onepersonlab-agents" class="md-skip">
+        <a href="#what-is-onepersonlab" class="md-skip">
           Skip to content
         </a>
       
@@ -88,11 +86,13 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="OnePersonLab-Agents" class="md-header__button md-logo" aria-label="OnePersonLab-Agents" data-md-component="logo">
+    <a href="." title="OnePersonLab" class="md-header__button md-logo" aria-label="OnePersonLab" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  <img src="assets/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -103,13 +103,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            OnePersonLab-Agents
+            OnePersonLab
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              👨‍🔬🤖🤖🤖 OnePersonLab-Agents
+              Home
             
           </span>
         </div>
@@ -122,21 +122,7 @@
     
     
     
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
-    
-      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
-    
-  
-    
-    
-    
-    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
-    
-      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
-      </label>
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="purple"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
     
   
 </form>
@@ -172,8 +158,6 @@
         </button>
       </nav>
       
-        <div class="md-search__suggest" data-md-component="search-suggest"></div>
-      
     </form>
     <div class="md-search__output">
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
@@ -204,14 +188,8 @@
     
   </nav>
   
-</header>
     
-    <div class="md-container" data-md-component="container">
       
-      
-        
-          
-            
 <nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
   <div class="md-grid">
     <ul class="md-tabs__list">
@@ -230,97 +208,23 @@
   
     
   
-  👨‍🔬🤖🤖🤖 OnePersonLab-Agents
+  Home
 
       </a>
     </li>
   
 
       
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="agents/biology/" class="md-tabs__link">
-          
-  
-  
-  Agents
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="examples/" class="md-tabs__link">
-          
-  
-  
-  Examples
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="protocols/" class="md-tabs__link">
-          
-  
-  
-  Protocols
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="skills/universal/" class="md-tabs__link">
-          
-  
-  
-  Skills
-
-        </a>
-      </li>
-    
-  
-
-      
     </ul>
   </div>
 </nav>
-          
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
         
       
       <main class="md-main" data-md-component="main">
@@ -339,12 +243,12 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="OnePersonLab-Agents" class="md-nav__button md-logo" aria-label="OnePersonLab-Agents" data-md-component="logo">
+    <a href="." title="OnePersonLab" class="md-nav__button md-logo" aria-label="OnePersonLab" data-md-component="logo">
       
-  <img src="assets/logo.png" alt="logo">
+  <img src="assets/logo.svg" alt="logo">
 
     </a>
-    OnePersonLab-Agents
+    OnePersonLab
   </label>
   
     <div class="md-nav__source">
@@ -374,8 +278,6 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
@@ -384,7 +286,7 @@
   <span class="md-ellipsis">
     
   
-    👨‍🔬🤖🤖🤖 OnePersonLab-Agents
+    Home
   
 
     
@@ -402,7 +304,7 @@
   <span class="md-ellipsis">
     
   
-    👨‍🔬🤖🤖🤖 OnePersonLab-Agents
+    Home
   
 
     
@@ -418,8 +320,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -428,10 +328,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#a-multi-agent-system-for-interdisciplinary-research" class="md-nav__link">
+  <a href="#what-is-onepersonlab" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A Multi-Agent System for Interdisciplinary Research
+        🎯 What is OnePersonLab?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#by-the-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 By the Numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disciplines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Disciplines
       
     </span>
   </a>
@@ -442,57 +364,7 @@
   <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎯 Quick Start
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🎯 Quick Start">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-install-universal-skills" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Install Universal Skills
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-start-a-conversation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Start a Conversation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-describe-your-research" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Describe Your Research
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🏗️ Architecture
+        💻 Quick Start
       
     </span>
   </a>
@@ -500,121 +372,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#available-disciplines" class="md-nav__link">
+  <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📊 Available Disciplines
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📊 Available Disciplines">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#core-sciences" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Core Sciences
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#expanded-disciplines" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Expanded Disciplines
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#skills-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🛠️ Skills System
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🛠️ Skills System">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#universal-skills-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Universal Skills (Required)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#discipline-specific-skills" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Discipline-Specific Skills
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📚 Documentation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#get-started" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🚀 Get Started
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#citation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📖 Citation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#community" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🤝 Community
+        🔗 Resources
       
     </span>
   </a>
@@ -624,502 +385,6 @@
     </ul>
   
 </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Agents
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Agents
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="agents/biology/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Biology Agents
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="agents/overview/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Agents Overview
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Examples
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Examples
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="examples/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Examples
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="examples/cross-discipline/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Cross-Discipline Project Example
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="examples/matbench/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    MatBench Discovery Research
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="examples/single-discipline/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Single-Discipline Project Example
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Protocols
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_4">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Protocols
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="protocols/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Protocols
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="protocols/skills/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Skills Configuration Protocol
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
-        
-          
-          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Skills
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    Skills
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="skills/universal/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Universal Skills
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1142,8 +407,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1152,10 +415,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#a-multi-agent-system-for-interdisciplinary-research" class="md-nav__link">
+  <a href="#what-is-onepersonlab" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A Multi-Agent System for Interdisciplinary Research
+        🎯 What is OnePersonLab?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#by-the-numbers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📊 By the Numbers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#disciplines" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🔬 Disciplines
       
     </span>
   </a>
@@ -1166,57 +451,7 @@
   <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🎯 Quick Start
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🎯 Quick Start">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-install-universal-skills" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1. Install Universal Skills
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-start-a-conversation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2. Start a Conversation
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-describe-your-research" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3. Describe Your Research
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#architecture" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🏗️ Architecture
+        💻 Quick Start
       
     </span>
   </a>
@@ -1224,121 +459,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#available-disciplines" class="md-nav__link">
+  <a href="#resources" class="md-nav__link">
     <span class="md-ellipsis">
       
-        📊 Available Disciplines
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="📊 Available Disciplines">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#core-sciences" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Core Sciences
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#expanded-disciplines" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Expanded Disciplines
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#skills-system" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🛠️ Skills System
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🛠️ Skills System">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#universal-skills-required" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Universal Skills (Required)
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#discipline-specific-skills" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Discipline-Specific Skills
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#documentation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📚 Documentation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#get-started" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🚀 Get Started
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#citation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📖 Citation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#community" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🤝 Community
+        🔗 Resources
       
     </span>
   </a>
@@ -1362,220 +486,144 @@
 
 
   
+    <a href="https://github.com/onepersonlab/onepersonlab-website/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
   
 
 
-<h1 id="onepersonlab-agents">👨‍🔬🤖🤖🤖 OnePersonLab-Agents</h1>
-<h2 id="a-multi-agent-system-for-interdisciplinary-research">A Multi-Agent System for Interdisciplinary Research</h2>
-<p><strong>OnePersonLab-Agents</strong> enables a single researcher to coordinate an entire virtual laboratory of AI-powered agents, each specializing in different scientific disciplines.</p>
+  <h1>Home</h1>
+
+<div class="hero-section">
+# 👨‍🔬 One Person<br><span style="font-size: 0.7em">Entire Laboratory</span>
+
+**AI-powered multi-agent system for interdisciplinary research**
+</div>
+
+<div class="cta-group">
+  <a href="https://github.com/onepersonlab/onepersonlab-agents" class="md-button md-button--primary">
+    🚀 View on GitHub
+  </a>
+  <a href="#features" class="md-button md-button--secondary">
+    Learn More ↓
+  </a>
+</div>
+
 <hr />
-<h2 id="quick-start">🎯 Quick Start</h2>
-<h3 id="1-install-universal-skills">1. Install Universal Skills</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Install required skills</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>clawhub<span class="w"> </span>install<span class="w"> </span>memory-setup
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>clawhub<span class="w"> </span>install<span class="w"> </span>tavily-search
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>clawhub<span class="w"> </span>install<span class="w"> </span>academic-research-hub
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>clawhub<span class="w"> </span>install<span class="w"> </span>self-improving
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>clawhub<span class="w"> </span>install<span class="w"> </span>find-skills
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>clawhub<span class="w"> </span>install<span class="w"> </span>nano-pdf
-</code></pre></div>
-<h3 id="2-start-a-conversation">2. Start a Conversation</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>You are now the Lab-Director of my OnePersonLab.
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Based on my research goal, please configure and activate the required agent team.
-</code></pre></div>
-<h3 id="3-describe-your-research">3. Describe Your Research</h3>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>I want to build an AI-driven drug discovery platform.
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>I need expertise in chemistry, biology, and machine learning.
-</code></pre></div>
-<p><strong>That's it!</strong> Your research team is assembled and ready.</p>
+<h2 id="what-is-onepersonlab">🎯 What is OnePersonLab?</h2>
+<div class="feature-grid" id="features">
+  <div class="feature-card">
+    <span class="emoji">🤖</span>
+    <h3>242 AI Agents</h3>
+    <p>Virtual researchers across 11 disciplines</p>
+  </div>
+
+  <div class="feature-card">
+    <span class="emoji">🧪</span>
+    <h3>11 Disciplines</h3>
+    <p>From Biology to Computer Science</p>
+  </div>
+
+  <div class="feature-card">
+    <span class="emoji">⚡</span>
+    <h3>Zero Setup</h3>
+    <p>Just describe your research goal</p>
+  </div>
+
+  <div class="feature-card">
+    <span class="emoji">🎓</span>
+    <h3>3-Tier Structure</h3>
+    <p>PI → Postdoc → Students</p>
+  </div>
+</div>
+
 <hr />
-<h2 id="architecture">🏗️ Architecture</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>┌─────────────────────────────────────────────────────────┐
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>│                    Lab-Director                         │
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│              (Central Coordinator)                      │
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>└─────────────────────────────────────────────────────────┘
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>                              │
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        ┌─────────────────────┼─────────────────────┐
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>        │                     │                     │
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>        ▼                     ▼                     ▼
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>   ┌─────────┐          ┌─────────┐          ┌─────────┐
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>   │   CS    │          │  BIO    │          │  CHEM   │
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>   │   PI    │          │   PI    │          │   PI    │
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>   └────┬────┘          └────┬────┘          └────┬────┘
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        │                    │                    │
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>   ┌────┴────┐          ┌────┴────┐          ┌────┴────┐
-<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>   │Postdocs │          │Postdocs │          │Postdocs │
-<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>   │Students │          │Students │          │Students │
-<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>   └─────────┘          └─────────┘          └─────────┘
-</code></pre></div>
-<p><strong>11 Disciplines</strong> · <strong>78 Postdocs</strong> · <strong>153 Students</strong> · <strong>242 Total Agents</strong></p>
+<h2 id="by-the-numbers">📊 By the Numbers</h2>
+<div class="stats-grid">
+  <div class="stat-item">
+    <span class="stat-number">242</span>
+    <span class="stat-label">Total Agents</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">78</span>
+    <span class="stat-label">Postdocs</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">153</span>
+    <span class="stat-label">Students</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">11</span>
+    <span class="stat-label">Disciplines</span>
+  </div>
+</div>
+
 <hr />
-<h2 id="available-disciplines">📊 Available Disciplines</h2>
-<h3 id="core-sciences">Core Sciences</h3>
+<h2 id="disciplines">🔬 Disciplines</h2>
+<div class="discipline-tags">
+  <span class="discipline-tag">🖥️ Computer Science</span>
+  <span class="discipline-tag">🧪 Chemistry</span>
+  <span class="discipline-tag">🧬 Biology</span>
+  <span class="discipline-tag">🔩 Materials</span>
+  <span class="discipline-tag">⚙️ Engineering</span>
+  <span class="discipline-tag">🌍 Environmental</span>
+  <span class="discipline-tag">🌾 Agriculture</span>
+  <span class="discipline-tag">🏥 Medicine</span>
+  <span class="discipline-tag">📈 Economics</span>
+  <span class="discipline-tag">🧠 Psychology</span>
+  <span class="discipline-tag">📊 Data Science</span>
+</div>
+
+<hr />
+<h2 id="quick-start">💻 Quick Start</h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Install universal skills</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>clawhub<span class="w"> </span>install<span class="w"> </span>memory-setup
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>clawhub<span class="w"> </span>install<span class="w"> </span>tavily-search
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>clawhub<span class="w"> </span>install<span class="w"> </span>academic-research-hub
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>clawhub<span class="w"> </span>install<span class="w"> </span>self-improving
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>clawhub<span class="w"> </span>install<span class="w"> </span>find-skills
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>clawhub<span class="w"> </span>install<span class="w"> </span>nano-pdf
+</span></code></pre></div>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>You are now the Lab-Director of my OnePersonLab.
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>I want to build an AI-driven drug discovery platform.
+</span></code></pre></div>
+<p><strong>That's it.</strong> Your team is ready.</p>
+<hr />
+<h2 id="resources">🔗 Resources</h2>
 <table>
 <thead>
 <tr>
-<th>Discipline</th>
-<th>PI ID</th>
-<th>Postdocs</th>
-<th>Students</th>
+<th>Resource</th>
+<th>Link</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>🖥️ Computer Science</td>
-<td>CS-PI</td>
-<td>8</td>
-<td>17</td>
+<td>📦 Source Code</td>
+<td><a href="https://github.com/onepersonlab/onepersonlab-agents">github.com/onepersonlab/onepersonlab-agents</a></td>
 </tr>
 <tr>
-<td>🧪 Chemistry</td>
-<td>CHEM-PI</td>
-<td>8</td>
-<td>16</td>
+<td>📚 Documentation</td>
+<td><a href="https://docs.openclaw.ai">docs.openclaw.ai</a></td>
 </tr>
 <tr>
-<td>🧬 Biology</td>
-<td>BIO-PI</td>
-<td>8</td>
-<td>17</td>
-</tr>
-<tr>
-<td>🔩 Materials Science</td>
-<td>MAT-PI</td>
-<td>6</td>
-<td>12</td>
-</tr>
-<tr>
-<td>🌍 Environmental Science</td>
-<td>ENV-PI</td>
-<td>7</td>
-<td>14</td>
-</tr>
-<tr>
-<td>🌾 Agriculture</td>
-<td>AGR-PI</td>
-<td>7</td>
-<td>14</td>
-</tr>
-<tr>
-<td>⚙️ Engineering</td>
-<td>ENG-PI</td>
-<td>8</td>
-<td>14</td>
-</tr>
-</tbody>
-</table>
-<h3 id="expanded-disciplines">Expanded Disciplines</h3>
-<table>
-<thead>
-<tr>
-<th>Discipline</th>
-<th>PI ID</th>
-<th>Postdocs</th>
-<th>Students</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>🏥 Medicine</td>
-<td>MED-PI</td>
-<td>7</td>
-<td>13</td>
-</tr>
-<tr>
-<td>📈 Economics</td>
-<td>ECON-PI</td>
-<td>6</td>
-<td>12</td>
-</tr>
-<tr>
-<td>🧠 Psychology</td>
-<td>PSYCH-PI</td>
-<td>7</td>
-<td>12</td>
-</tr>
-<tr>
-<td>📊 Data Science</td>
-<td>DS-PI</td>
-<td>6</td>
-<td>12</td>
+<td>💬 Community</td>
+<td><a href="https://discord.gg/clawd">Discord</a></td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h2 id="skills-system">🛠️ Skills System</h2>
-<h3 id="universal-skills-required">Universal Skills (Required)</h3>
-<p>All agents have these core capabilities:</p>
-<table>
-<thead>
-<tr>
-<th>Skill</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>memory-setup</strong></td>
-<td>Persistent memory and context</td>
-</tr>
-<tr>
-<td><strong>tavily-search</strong></td>
-<td>Web search for current information</td>
-</tr>
-<tr>
-<td><strong>academic-research-hub</strong></td>
-<td>Academic paper search</td>
-</tr>
-<tr>
-<td><strong>self-improving</strong></td>
-<td>Self-reflection and learning</td>
-</tr>
-<tr>
-<td><strong>find-skills</strong></td>
-<td>Discover new skills</td>
-</tr>
-<tr>
-<td><strong>nano-pdf</strong></td>
-<td>PDF reading and editing</td>
-</tr>
-</tbody>
-</table>
-<h3 id="discipline-specific-skills">Discipline-Specific Skills</h3>
-<p>Discovered via <code>find-skills</code> and configured through Lab-Director consultation.</p>
-<hr />
-<h2 id="documentation">📚 Documentation</h2>
-<ul>
-<li><strong>[Agents]</strong>(agents/overview.md) - Learn about the agent hierarchy</li>
-<li><strong>[Skills]</strong>(skills/universal.md) - Understand the skills system</li>
-<li><strong>[Protocols]</strong>(protocols/communication.md) - Communication protocols</li>
-<li><strong>[Examples]</strong>(examples/single-discipline.md) - See real use cases</li>
-</ul>
-<hr />
-<h2 id="get-started">🚀 Get Started</h2>
-<p>Ready to build your virtual research team?</p>
-<p><a class="md-button md-button--primary" href="#quick-start">View Quick Start Guide</a></p>
-<p><a class="md-button" href="agents/overview/">Explore Agents</a></p>
-<hr />
-<h2 id="citation">📖 Citation</h2>
-<p>If you use OnePersonLab-Agents in your research, please cite:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nc">@software</span><span class="p">{</span><span class="nl">onepersonlab2026</span><span class="p">,</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="na">title</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{OnePersonLab-Agents: A Multi-Agent System for Interdisciplinary Research}</span><span class="p">,</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="na">author</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{OnePersonLab Team}</span><span class="p">,</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="na">year</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{2026}</span><span class="p">,</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="na">url</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">{https://github.com/onepersonlab/onepersonlab-agents}</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">}</span>
-</code></pre></div>
-<hr />
-<h2 id="community">🤝 Community</h2>
-<ul>
-<li><strong>Source Code</strong>: <a href="https://github.com/onepersonlab/onepersonlab-agents">onepersonlab/onepersonlab-agents</a></li>
-<li><strong>Website</strong>: <a href="https://github.com/onepersonlab/onepersonlab-website">onepersonlab/onepersonlab-website</a></li>
-<li><strong>Discord</strong>: <a href="https://discord.gg/clawd">Join our community</a></li>
-<li><strong>Documentation</strong>: <a href="https://docs.openclaw.ai">docs.openclaw.ai</a></li>
-</ul>
-<hr />
-<p><strong>License</strong>: MIT · <strong>Built with</strong>: <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a></p>
+<div style="text-align: center; margin-top: 3rem;">
+
+**Ready to build your virtual lab?**
+
+<a href="https://github.com/onepersonlab/onepersonlab-agents" class="md-button md-button--primary" style="font-size: 1.2rem; padding: 1rem 3rem;">
+  Get Started →
+</a>
+
+</div>
 
 
 
@@ -1593,16 +641,8 @@
             </div>
           
           
-  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
-
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
-        
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  Back to top
-</button>
         
       </main>
       
@@ -1613,10 +653,14 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      &copy; 2026 OnePersonLab-Agents Team
-
+      © 2026 OnePersonLab
     </div>
   
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
   
 </div>
       
@@ -1660,7 +704,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "content.code.copy", "content.action.edit"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.79ae519e.min.js"></script>

@@ -1,0 +1,152 @@
+/* Custom styles for OnePersonLab website */
+
+/* Hero section */
+.md-content__inner h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.md-content__inner h1 + p {
+  font-size: 1.5rem;
+  color: var(--md-default-fg-color--light);
+  font-weight: 300;
+}
+
+/* Feature cards */
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.feature-card {
+  background: var(--md-primary-fg-color--dark);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  transition: transform 0.2s;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+}
+
+.feature-card .emoji {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Stats section */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.stat-item {
+  padding: 1.5rem;
+}
+
+.stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--md-accent-fg-color);
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--md-default-fg-color--light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* CTA buttons */
+.cta-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.md-button--primary {
+  background: var(--md-accent-fg-color);
+  color: var(--md-accent-bg-color);
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  border: none;
+  font-size: 1.1rem;
+}
+
+.md-button--secondary {
+  background: transparent;
+  color: var(--md-primary-fg-color);
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 2rem;
+  border: 2px solid var(--md-primary-fg-color);
+  font-size: 1.1rem;
+}
+
+/* Disciplines section */
+.discipline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.discipline-tag {
+  background: var(--md-primary-fg-color--light);
+  color: var(--md-primary-bg-color);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Code blocks */
+.md-code__content {
+  border-radius: 0.5rem;
+}
+
+/* Remove default margins */
+.md-main__inner {
+  margin-top: 0;
+}
+
+/* Hero gradient background */
+.hero-section {
+  background: linear-gradient(135deg, 
+    var(--md-primary-fg-color) 0%, 
+    var(--md-accent-fg-color) 100%);
+  padding: 4rem 2rem;
+  border-radius: 1rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: white;
+}
+
+.hero-section h1,
+.hero-section p {
+  color: white !important;
+}

@@ -1,43 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://onepersonlab.github.io/onepersonlab-agents/</loc>
-         <lastmod>2026-03-16</lastmod>
-    </url>
-    <url>
-         <loc>https://onepersonlab.github.io/onepersonlab-agents/agents/biology/</loc>
-         <lastmod>2026-03-16</lastmod>
-    </url>
-    <url>
-         <loc>https://onepersonlab.github.io/onepersonlab-agents/agents/overview/</loc>
-         <lastmod>2026-03-16</lastmod>
-    </url>
-    <url>
-         <loc>https://onepersonlab.github.io/onepersonlab-agents/examples/</loc>
-         <lastmod>2026-03-16</lastmod>
-    </url>
-    <url>
-         <loc>https://onepersonlab.github.io/onepersonlab-agents/examples/cross-discipline/</loc>
-         <lastmod>2026-03-16</lastmod>
-    </url>
-    <url>
-         <loc>https://onepersonlab.github.io/onepersonlab-agents/examples/matbench/</loc>
-         <lastmod>2026-03-16</lastmod>
-    </url>
-    <url>
-         <loc>https://onepersonlab.github.io/onepersonlab-agents/examples/single-discipline/</loc>
-         <lastmod>2026-03-16</lastmod>
-    </url>
-    <url>
-         <loc>https://onepersonlab.github.io/onepersonlab-agents/protocols/</loc>
-         <lastmod>2026-03-16</lastmod>
-    </url>
-    <url>
-         <loc>https://onepersonlab.github.io/onepersonlab-agents/protocols/skills/</loc>
-         <lastmod>2026-03-16</lastmod>
-    </url>
-    <url>
-         <loc>https://onepersonlab.github.io/onepersonlab-agents/skills/universal/</loc>
+         <loc>https://onepersonlab.github.io/onepersonlab-website/</loc>
          <lastmod>2026-03-16</lastmod>
     </url>
 </urlset>
