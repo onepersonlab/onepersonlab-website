@@ -1,1 +1,6 @@
 @import "./styles/design-system.css";
+
+/* 平滑滚动 */
+html {
+  scroll-behavior: smooth;
+}
