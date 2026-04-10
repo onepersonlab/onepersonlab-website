@@ -1,0 +1,10 @@
+{
+  "id": "task-20260410-211300",
+  "type": "finite",
+  "title": "第一轮迭代：修复关键问题",
+  "status": "assigned",
+  "assigned_to": "web-dev",
+  "created_at": "2026-04-10T13:13:00Z",
+  "project_id": "onepersonlab-website",
+  "project_room_id": "!JP821jDTECtmEKYNkT:matrix-local.hiclaw.io:18080"
+}

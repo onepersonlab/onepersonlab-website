@@ -7,7 +7,7 @@ interface VisionCardProps {
 function VisionCard({ title, description, icon }: VisionCardProps) {
   return (
     <div 
-      className="bg-white dark:bg-neutral-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 theme-transition"
+      className="bg-white dark:bg-neutral-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 theme-transition card-hover-lift"
       role="article"
       aria-labelledby={`vision-${title}`}
     >

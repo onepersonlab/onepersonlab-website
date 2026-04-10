@@ -1,10 +1,12 @@
 export interface Paper {
   title: string;
-  authors: string[];
+  authors: string[] | Array<{ name: string }>;
   abstract: string;
   url: string;
-  publishedDate: string;
+  publishedDate?: string;
+  publicationDate?: string;
   venue?: string;
+  citationCount?: number;
 }
 
 interface PaperCardProps {
@@ -12,7 +14,8 @@ interface PaperCardProps {
 }
 
 function PaperCard({ paper }: PaperCardProps) {
-  const formatDate = (dateString: string) => {
+  const formatDate = (dateString?: string) => {
+    if (!dateString) return '暂无日期';
     return new Date(dateString).toLocaleDateString('zh-CN', {
       year: 'numeric',
       month: 'short',
@@ -20,9 +23,23 @@ function PaperCard({ paper }: PaperCardProps) {
     });
   };
 
+  // 处理作者格式（可能是字符串数组或对象数组）
+  const getAuthors = () => {
+    if (!paper.authors || paper.authors.length === 0) return [];
+    
+    if (typeof paper.authors[0] === 'string') {
+      return paper.authors as string[];
+    }
+    
+    return (paper.authors as Array<{ name: string }>).map(a => a.name);
+  };
+
+  const authors = getAuthors();
+  const pubDate = paper.publicationDate || paper.publishedDate;
+
   return (
     <article 
-      className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100"
+      className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 card-hover-lift border border-gray-100"
       aria-labelledby={`paper-${paper.title}`}
     >
       <h3 
@@ -32,10 +49,10 @@ function PaperCard({ paper }: PaperCardProps) {
         {paper.title}
       </h3>
       
-      {paper.authors.length > 0 && (
+      {authors.length > 0 && (
         <p className="text-sm text-gray-600 mb-3">
-          {paper.authors.slice(0, 3).join(', ')}
-          {paper.authors.length > 3 && ` 等`}
+          {authors.slice(0, 3).join(', ')}
+          {authors.length > 3 && ` 等`}
         </p>
       )}
       
@@ -45,13 +62,19 @@ function PaperCard({ paper }: PaperCardProps) {
         </p>
       )}
       
+      {paper.citationCount !== undefined && (
+        <p className="text-xs text-neutral-500 mb-3">
+          引用：{paper.citationCount.toLocaleString()}
+        </p>
+      )}
+      
       <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-        {paper.abstract}
+        {paper.abstract || '暂无摘要'}
       </p>
       
       <div className="flex items-center justify-between">
         <span className="text-xs text-gray-500">
-          {formatDate(paper.publishedDate)}
+          {formatDate(pubDate)}
         </span>
         <a
           href={paper.url}

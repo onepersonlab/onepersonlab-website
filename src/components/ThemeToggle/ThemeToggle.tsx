@@ -57,6 +57,7 @@ export function ThemeToggle({ className = '' }: ThemeToggleProps) {
                  dark:bg-neutral-800 dark:hover:bg-neutral-700
                  text-neutral-700 dark:text-neutral-300
                  transition-colors duration-200
+                 button-press
                  focus:outline-none focus:ring-2 focus:ring-brand-primary
                  ${className}`}
       aria-label={`切换主题，当前：${getThemeLabel()}`}

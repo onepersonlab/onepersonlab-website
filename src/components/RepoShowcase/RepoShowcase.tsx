@@ -10,6 +10,31 @@ export interface RepoData {
   language?: string;
 }
 
+// GitHub 语言颜色映射
+const LANGUAGE_COLORS: Record<string, string> = {
+  TypeScript: 'bg-blue-500',
+  JavaScript: 'bg-yellow-400',
+  Python: 'bg-green-500',
+  Rust: 'bg-orange-600',
+  Go: 'bg-cyan-500',
+  Java: 'bg-red-500',
+  Cpp: 'bg-purple-500',
+  'C++': 'bg-purple-500',
+  C: 'bg-gray-500',
+  HTML: 'bg-orange-400',
+  CSS: 'bg-blue-400',
+  Vue: 'bg-green-400',
+  React: 'bg-cyan-400',
+  Shell: 'bg-green-600',
+  Jupyter: 'bg-orange-300',
+  default: 'bg-gray-400',
+};
+
+function getLanguageColor(language?: string): string {
+  if (!language) return LANGUAGE_COLORS.default;
+  return LANGUAGE_COLORS[language] || LANGUAGE_COLORS.default;
+}
+
 interface RepoTableProps {
   repos: RepoData[];
   isLoading?: boolean;
@@ -69,7 +94,7 @@ function SearchBar({
 
 function RepoRow({ repo }: { repo: RepoData }) {
   return (
-    <tr className="hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors theme-transition">
+    <tr className="table-row-hover theme-transition">
       <td className="px-6 py-4 whitespace-nowrap">
         <a 
           href={repo.html_url}
@@ -85,8 +110,9 @@ function RepoRow({ repo }: { repo: RepoData }) {
       </td>
       <td className="px-6 py-4 whitespace-nowrap">
         {repo.language && (
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-brand-light text-brand-dark dark:bg-brand-dark dark:text-brand-light">
-            {repo.language}
+          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-medium">
+            <span className={`w-2 h-2 rounded-full ${getLanguageColor(repo.language)}`}></span>
+            <span className="text-neutral-700 dark:text-neutral-300">{repo.language}</span>
           </span>
         )}
       </td>
@@ -116,17 +142,38 @@ function RepoRow({ repo }: { repo: RepoData }) {
 
 export function RepoShowcase({ repos, isLoading = false, onRefresh, lastUpdated }: RepoTableProps) {
   const [searchQuery, setSearchQuery] = useState('');
+  const [sortBy, setSortBy] = useState<'stars' | 'issues' | 'updated'>('stars');
 
-  const filteredRepos = useMemo(() => {
-    if (!searchQuery.trim()) return repos;
-    const query = searchQuery.toLowerCase();
-    return repos.filter(
-      (repo) =>
-        repo.name.toLowerCase().includes(query) ||
-        repo.description?.toLowerCase().includes(query) ||
-        repo.language?.toLowerCase().includes(query)
-    );
-  }, [repos, searchQuery]);
+  const filteredAndSortedRepos = useMemo(() => {
+    let result = [...repos];
+    
+    // 先过滤
+    if (searchQuery.trim()) {
+      const query = searchQuery.toLowerCase();
+      result = result.filter(
+        (repo) =>
+          repo.name.toLowerCase().includes(query) ||
+          repo.description?.toLowerCase().includes(query) ||
+          repo.language?.toLowerCase().includes(query)
+      );
+    }
+    
+    // 再排序
+    result.sort((a, b) => {
+      switch (sortBy) {
+        case 'stars':
+          return b.stargazers_count - a.stargazers_count;
+        case 'issues':
+          return b.open_issues_count - a.open_issues_count;
+        case 'updated':
+          return new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime();
+        default:
+          return 0;
+      }
+    });
+    
+    return result;
+  }, [repos, searchQuery, sortBy]);
 
   const formatLastUpdated = (date: Date | null) => {
     if (!date) return '';
@@ -136,14 +183,31 @@ export function RepoShowcase({ repos, isLoading = false, onRefresh, lastUpdated 
   return (
     <section className="py-20 bg-white dark:bg-neutral-900 theme-transition" aria-labelledby="repos-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-12">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
           <h2 
             id="repos-heading"
             className="text-4xl font-bold text-neutral-900 dark:text-neutral-100"
           >
             GitHub 仓库
           </h2>
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center gap-4">
+            {/* 排序选择器 */}
+            <div className="flex items-center gap-2">
+              <label className="text-sm text-neutral-600 dark:text-neutral-400">排序:</label>
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value as 'stars' | 'issues' | 'updated')}
+                className="px-3 py-2 rounded-lg border border-neutral-300 dark:border-neutral-600
+                           bg-white dark:bg-neutral-800
+                           text-neutral-700 dark:text-neutral-300
+                           text-sm focus:ring-2 focus:ring-brand-primary focus:outline-none"
+              >
+                <option value="stars">Stars ⭐</option>
+                <option value="issues">Issues 🐛</option>
+                <option value="updated">最近更新 📅</option>
+              </select>
+            </div>
+            
             {lastUpdated && (
               <span className="text-sm text-neutral-500 dark:text-neutral-400">
                 {formatLastUpdated(lastUpdated)}
@@ -157,6 +221,7 @@ export function RepoShowcase({ repos, isLoading = false, onRefresh, lastUpdated 
                            bg-brand-primary hover:bg-brand-secondary
                            disabled:opacity-50 disabled:cursor-not-allowed
                            text-white transition-colors duration-200
+                           button-press
                            focus:outline-none focus:ring-2 focus:ring-brand-primary"
                 aria-label="刷新仓库数据"
               >
@@ -217,7 +282,7 @@ export function RepoShowcase({ repos, isLoading = false, onRefresh, lastUpdated 
                 </tr>
               </thead>
               <tbody className="bg-white dark:bg-neutral-900 divide-y divide-neutral-200 dark:divide-neutral-700">
-                {filteredRepos.map((repo) => (
+                {filteredAndSortedRepos.map((repo) => (
                   <RepoRow key={repo.name} repo={repo} />
                 ))}
               </tbody>
