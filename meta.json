@@ -1,10 +1,10 @@
 {
-  "id": "task-20260410-211300",
+  "id": "task-20260411-002800",
   "type": "finite",
-  "title": "第一轮迭代：修复关键问题",
-  "status": "assigned",
+  "title": "第二轮迭代：视觉细节优化",
+  "status": "paused",
   "assigned_to": "web-dev",
-  "created_at": "2026-04-10T13:13:00Z",
+  "created_at": "2026-04-10T16:28:00Z",
   "project_id": "onepersonlab-website",
   "project_room_id": "!JP821jDTECtmEKYNkT:matrix-local.hiclaw.io:18080"
 }

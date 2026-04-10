@@ -186,7 +186,7 @@ export function RepoShowcase({ repos, isLoading = false, onRefresh, lastUpdated 
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
           <h2 
             id="repos-heading"
-            className="text-4xl font-bold text-neutral-900 dark:text-neutral-100"
+            className="text-3xl font-bold text-neutral-900 dark:text-neutral-100"
           >
             GitHub 仓库
           </h2>

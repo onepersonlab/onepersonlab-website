@@ -104,7 +104,7 @@ export function PaperList({ papers, isLoading = false }: PaperListProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 
           id="papers-heading"
-          className="text-4xl font-bold text-center text-gray-900 mb-12"
+          className="text-3xl font-bold text-center text-gray-900 mb-12"
         >
           相关论文
         </h2>

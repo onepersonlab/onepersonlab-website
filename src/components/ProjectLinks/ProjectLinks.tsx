@@ -29,7 +29,7 @@ function ProjectCard({ project }: ProjectCardProps) {
           className="text-blue-600 hover:text-blue-800"
           aria-label={`访问 ${project.name} 网站`}
         >
-          <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
           </svg>
         </a>
@@ -65,7 +65,7 @@ export function ProjectLinks({ projects }: ProjectLinksProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 
           id="projects-heading"
-          className="text-4xl font-bold text-center text-gray-900 mb-12"
+          className="text-3xl font-bold text-center text-gray-900 mb-12"
         >
           相关项目
         </h2>
