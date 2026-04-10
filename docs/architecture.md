@@ -4,8 +4,33 @@
 
 - **框架**: React 19 + TypeScript
 - **构建工具**: Vite 8
-- **样式**: Tailwind CSS 4
+- **样式**: Tailwind CSS 4 + 自定义设计系统
 - **部署**: GitHub Pages / Vercel / Netlify
+
+## 设计系统
+
+### 颜色 Token
+
+语义化颜色命名，支持亮色/暗色主题：
+
+- `--color-brand-primary`: 品牌主色
+- `--color-brand-secondary`: 品牌辅助色
+- `--color-brand-accent`: 品牌强调色
+- `--color-success/warning/error`: 功能色
+
+### 间距系统
+
+基于 4px/8px 网格：
+
+- `--spacing-xs/sm/md/lg/xl/2xl`: 元素间距
+- `--spacing-section`: 区块间距
+
+### 主题切换
+
+- **三种模式**: light / dark / system
+- **持久化**: localStorage
+- **系统检测**: prefers-color-scheme
+- **组件**: ThemeToggle
 
 ## 项目结构
 

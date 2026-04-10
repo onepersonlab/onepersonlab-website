@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  /* 品牌色 - 语义化命名 */
+  --color-brand-primary: #2563eb; /* blue-600 */
+  --color-brand-secondary: #1e40af; /* blue-800 */
+  --color-brand-accent: #6366f1; /* indigo-500 */
+  --color-brand-light: #dbeafe; /* blue-100 */
+  --color-brand-dark: #1e3a8a; /* blue-900 */
+
+  /* 功能色 */
+  --color-success: #16a34a; /* green-600 */
+  --color-success-light: #dcfce7; /* green-100 */
+  --color-warning: #ca8a04; /* yellow-600 */
+  --color-warning-light: #fef9c3; /* yellow-100 */
+  --color-error: #dc2626; /* red-600 */
+  --color-error-light: #fee2e2; /* red-100 */
+
+  /* 中性色 */
+  --color-neutral-50: #f9fafb;
+  --color-neutral-100: #f3f4f6;
+  --color-neutral-200: #e5e7eb;
+  --color-neutral-300: #d1d5db;
+  --color-neutral-400: #9ca3af;
+  --color-neutral-500: #6b7280;
+  --color-neutral-600: #4b5563;
+  --color-neutral-700: #374151;
+  --color-neutral-800: #1f2937;
+  --color-neutral-900: #111827;
+
+  /* 字号阶梯 */
+  --text-size-display: 3.75rem; /* 60px */
+  --text-size-heading-1: 2.25rem; /* 36px */
+  --text-size-heading-2: 1.875rem; /* 30px */
+  --text-size-heading-3: 1.5rem; /* 24px */
+  --text-size-heading-4: 1.25rem; /* 20px */
+  --text-size-body: 1rem; /* 16px */
+  --text-size-small: 0.875rem; /* 14px */
+  --text-size-xs: 0.75rem; /* 12px */
+
+  /* 间距系统 - 基于 4px/8px 网格 */
+  --spacing-xs: 0.25rem; /* 4px */
+  --spacing-sm: 0.5rem; /* 8px */
+  --spacing-md: 1rem; /* 16px */
+  --spacing-lg: 1.5rem; /* 24px */
+  --spacing-xl: 2rem; /* 32px */
+  --spacing-2xl: 3rem; /* 48px */
+  --spacing-section: 5rem; /* 80px */
+
+  /* 圆角系统 */
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.5rem; /* 8px */
+  --radius-lg: 0.75rem; /* 12px */
+  --radius-xl: 1rem; /* 16px */
+  --radius-2xl: 1.5rem; /* 24px */
+  --radius-full: 9999px;
+
+  /* 阴影系统 */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+  /* 过渡动画 */
+  --transition-fast: 150ms;
+  --transition-normal: 300ms;
+  --transition-slow: 500ms;
+}
+
+/* 容器系统 */
+.container-custom {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding: 0 var(--spacing-xl);
+  }
+}
+
+/* 暗色主题支持 - 跟随系统 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-brand-primary: #3b82f6; /* blue-500 */
+    --color-brand-secondary: #2563eb; /* blue-600 */
+    --color-brand-light: #1e3a8a; /* blue-900 */
+    --color-neutral-50: #111827;
+    --color-neutral-100: #1f2937;
+    --color-neutral-200: #374151;
+    --color-neutral-300: #4b5563;
+    --color-neutral-400: #6b7280;
+    --color-neutral-500: #9ca3af;
+    --color-neutral-600: #d1d5db;
+    --color-neutral-700: #e5e7eb;
+    --color-neutral-800: #f3f4f6;
+    --color-neutral-900: #f9fafb;
+  }
+}
+
+/* 暗色主题类 - 用于手动切换 */
+.dark {
+  --color-brand-primary: #3b82f6; /* blue-500 */
+  --color-brand-secondary: #2563eb; /* blue-600 */
+  --color-brand-light: #1e3a8a; /* blue-900 */
+  --color-neutral-50: #111827;
+  --color-neutral-100: #1f2937;
+  --color-neutral-200: #374151;
+  --color-neutral-300: #4b5563;
+  --color-neutral-400: #6b7280;
+  --color-neutral-500: #9ca3af;
+  --color-neutral-600: #d1d5db;
+  --color-neutral-700: #e5e7eb;
+  --color-neutral-800: #f3f4f6;
+  --color-neutral-900: #f9fafb;
+}
+
+/* 平滑过渡 */
+.theme-transition {
+  transition: background-color var(--transition-normal),
+              color var(--transition-normal),
+              border-color var(--transition-normal);
+}

@@ -13,6 +13,8 @@ export interface RepoData {
 interface RepoTableProps {
   repos: RepoData[];
   isLoading?: boolean;
+  onRefresh?: () => void;
+  lastUpdated?: Date | null;
 }
 
 function formatDate(dateString: string): string {
@@ -40,12 +42,15 @@ function SearchBar({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         aria-label="搜索仓库"
-        className="w-full px-4 py-3 pl-12 rounded-xl border border-gray-300 
-                   focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
-                   focus:outline-none transition-all duration-200"
+        className="w-full px-4 py-3 pl-12 rounded-xl border border-neutral-300 dark:border-neutral-600
+                   bg-white dark:bg-neutral-800
+                   text-neutral-900 dark:text-neutral-100
+                   placeholder-neutral-400 dark:placeholder-neutral-500
+                   focus:ring-2 focus:ring-brand-primary focus:border-brand-primary 
+                   focus:outline-none transition-all duration-200 theme-transition"
       />
       <svg 
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
+        className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400"
         fill="none" 
         viewBox="0 0 24 24" 
         stroke="currentColor"
@@ -64,29 +69,29 @@ function SearchBar({
 
 function RepoRow({ repo }: { repo: RepoData }) {
   return (
-    <tr className="hover:bg-gray-50 transition-colors">
+    <tr className="hover:bg-neutral-50 dark:hover:bg-neutral-800 transition-colors theme-transition">
       <td className="px-6 py-4 whitespace-nowrap">
         <a 
           href={repo.html_url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-600 hover:text-blue-800 font-medium hover:underline"
+          className="text-brand-primary hover:text-brand-secondary font-medium hover:underline"
         >
           {repo.name}
         </a>
         {repo.description && (
-          <p className="text-sm text-gray-500 mt-1">{repo.description}</p>
+          <p className="text-sm text-neutral-500 dark:text-neutral-400 mt-1">{repo.description}</p>
         )}
       </td>
       <td className="px-6 py-4 whitespace-nowrap">
         {repo.language && (
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-brand-light text-brand-dark dark:bg-brand-dark dark:text-brand-light">
             {repo.language}
           </span>
         )}
       </td>
       <td className="px-6 py-4 whitespace-nowrap text-center">
-        <div className="flex items-center justify-center gap-1 text-gray-600">
+        <div className="flex items-center justify-center gap-1 text-neutral-600 dark:text-neutral-400">
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
           </svg>
@@ -96,20 +101,20 @@ function RepoRow({ repo }: { repo: RepoData }) {
       <td className="px-6 py-4 whitespace-nowrap text-center">
         <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
           repo.open_issues_count > 0 
-            ? 'bg-yellow-100 text-yellow-800' 
-            : 'bg-green-100 text-green-800'
+            ? 'bg-warning-light text-warning dark:bg-warning-light/20 dark:text-warning' 
+            : 'bg-success-light text-success dark:bg-success-light/20 dark:text-success'
         }`}>
           {repo.open_issues_count}
         </span>
       </td>
-      <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-gray-500">
+      <td className="px-6 py-4 whitespace-nowrap text-center text-sm text-neutral-500 dark:text-neutral-400">
         {formatDate(repo.updated_at)}
       </td>
     </tr>
   );
 }
 
-export function RepoShowcase({ repos, isLoading = false }: RepoTableProps) {
+export function RepoShowcase({ repos, isLoading = false, onRefresh, lastUpdated }: RepoTableProps) {
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredRepos = useMemo(() => {
@@ -123,15 +128,56 @@ export function RepoShowcase({ repos, isLoading = false }: RepoTableProps) {
     );
   }, [repos, searchQuery]);
 
+  const formatLastUpdated = (date: Date | null) => {
+    if (!date) return '';
+    return `更新于 ${date.toLocaleTimeString('zh-CN', { hour: '2-digit', minute: '2-digit' })}`;
+  };
+
   return (
-    <section className="py-20 bg-white" aria-labelledby="repos-heading">
+    <section className="py-20 bg-white dark:bg-neutral-900 theme-transition" aria-labelledby="repos-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 
-          id="repos-heading"
-          className="text-4xl font-bold text-center text-gray-900 mb-12"
-        >
-          GitHub 仓库
-        </h2>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-12">
+          <h2 
+            id="repos-heading"
+            className="text-4xl font-bold text-neutral-900 dark:text-neutral-100"
+          >
+            GitHub 仓库
+          </h2>
+          <div className="flex items-center gap-4">
+            {lastUpdated && (
+              <span className="text-sm text-neutral-500 dark:text-neutral-400">
+                {formatLastUpdated(lastUpdated)}
+              </span>
+            )}
+            {onRefresh && (
+              <button
+                onClick={onRefresh}
+                disabled={isLoading}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg
+                           bg-brand-primary hover:bg-brand-secondary
+                           disabled:opacity-50 disabled:cursor-not-allowed
+                           text-white transition-colors duration-200
+                           focus:outline-none focus:ring-2 focus:ring-brand-primary"
+                aria-label="刷新仓库数据"
+              >
+                <svg 
+                  className={`w-4 h-4 ${isLoading ? 'animate-spin' : ''}`} 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path 
+                    strokeLinecap="round" 
+                    strokeLinejoin="round" 
+                    strokeWidth={2} 
+                    d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" 
+                  />
+                </svg>
+                <span className="text-sm">刷新</span>
+              </button>
+            )}
+          </div>
+        </div>
         
         <SearchBar 
           value={searchQuery}
@@ -141,36 +187,36 @@ export function RepoShowcase({ repos, isLoading = false }: RepoTableProps) {
 
         {isLoading ? (
           <div className="text-center py-12" role="status">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
-            <p className="mt-4 text-gray-600">加载中...</p>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-primary mx-auto"></div>
+            <p className="mt-4 text-neutral-600 dark:text-neutral-400">加载中...</p>
           </div>
         ) : filteredRepos.length === 0 ? (
           <div className="text-center py-12" role="status">
-            <p className="text-gray-500">暂无仓库数据</p>
+            <p className="text-neutral-500 dark:text-neutral-400">暂无仓库数据</p>
           </div>
         ) : (
-          <div className="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50">
+          <div className="overflow-x-auto rounded-xl border border-neutral-200 dark:border-neutral-700 shadow-sm">
+            <table className="min-w-full divide-y divide-neutral-200 dark:divide-neutral-700">
+              <thead className="bg-neutral-50 dark:bg-neutral-800">
                 <tr>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
                     仓库
                   </th>
-                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
                     语言
                   </th>
-                  <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
                     Stars
                   </th>
-                  <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
                     Issues
                   </th>
-                  <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                  <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-neutral-500 dark:text-neutral-400 uppercase tracking-wider">
                     最近更新
                   </th>
                 </tr>
               </thead>
-              <tbody className="bg-white divide-y divide-gray-200">
+              <tbody className="bg-white dark:bg-neutral-900 divide-y divide-neutral-200 dark:divide-neutral-700">
                 {filteredRepos.map((repo) => (
                   <RepoRow key={repo.name} repo={repo} />
                 ))}

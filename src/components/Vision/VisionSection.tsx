@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 interface VisionCardProps {
   title: string;
   description: string;
@@ -9,20 +7,20 @@ interface VisionCardProps {
 function VisionCard({ title, description, icon }: VisionCardProps) {
   return (
     <div 
-      className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+      className="bg-white dark:bg-neutral-800 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 theme-transition"
       role="article"
       aria-labelledby={`vision-${title}`}
     >
-      <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+      <div className="w-16 h-16 bg-brand-light dark:bg-brand-dark rounded-full flex items-center justify-center mb-6">
         {icon}
       </div>
       <h3 
         id={`vision-${title}`}
-        className="text-xl font-bold text-gray-900 mb-3"
+        className="text-xl font-bold text-neutral-900 dark:text-neutral-100 mb-3"
       >
         {title}
       </h3>
-      <p className="text-gray-600 leading-relaxed">
+      <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
         {description}
       </p>
     </div>
@@ -61,11 +59,11 @@ export function VisionSection() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50" aria-labelledby="vision-heading">
+    <section className="py-20 bg-neutral-50 dark:bg-neutral-800 theme-transition" aria-labelledby="vision-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 
           id="vision-heading"
-          className="text-4xl font-bold text-center text-gray-900 mb-16"
+          className="text-4xl font-bold text-center text-neutral-900 dark:text-neutral-100 mb-16"
         >
           我们的愿景
         </h2>

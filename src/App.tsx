@@ -2,6 +2,7 @@ import { VisionSection } from './components/Vision/VisionSection';
 import { RepoShowcase } from './components/RepoShowcase/RepoShowcase';
 import { PaperList } from './components/PaperList/PaperList';
 import { ProjectLinks } from './components/ProjectLinks/ProjectLinks';
+import { ThemeToggle } from './components/ThemeToggle/ThemeToggle';
 import { useRepoData } from './hooks/useRepoData';
 import type { Paper, ProjectLink } from './types';
 
@@ -42,31 +43,44 @@ const sampleProjects: ProjectLink[] = [
 ];
 
 function App() {
-  const { repos, isLoading, error } = useRepoData('onepersonlab');
+  const { repos, isLoading, error, refresh, lastUpdated } = useRepoData('onepersonlab');
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-neutral-900 theme-transition">
+      {/* 跳过导航链接 - 无障碍增强 */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 
+                   bg-brand-primary text-white px-4 py-2 rounded-lg z-50
+                   focus:ring-2 focus:ring-brand-primary focus:outline-none"
+      >
+        跳转到主要内容
+      </a>
+
       {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
+      <header className="bg-white dark:bg-neutral-900 shadow-sm sticky top-0 z-50 theme-transition">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="主导航">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <a href="/" className="text-2xl font-bold text-blue-600">
+              <a href="/" className="text-2xl font-bold text-brand-primary">
                 OnePersonLab
               </a>
             </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#vision" className="text-gray-600 hover:text-gray-900">愿景</a>
-              <a href="#repos" className="text-gray-600 hover:text-gray-900">仓库</a>
-              <a href="#papers" className="text-gray-600 hover:text-gray-900">论文</a>
-              <a href="#projects" className="text-gray-600 hover:text-gray-900">项目</a>
+            <div className="flex items-center gap-4">
+              <div className="hidden md:flex items-center space-x-8">
+                <a href="#vision" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">愿景</a>
+                <a href="#repos" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">仓库</a>
+                <a href="#papers" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">论文</a>
+                <a href="#projects" className="text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">项目</a>
+              </div>
+              <ThemeToggle />
             </div>
           </div>
         </nav>
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-24">
+      <section className="bg-gradient-to-br from-brand-primary to-brand-secondary text-white py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             OnePersonLab
@@ -77,21 +91,28 @@ function App() {
         </div>
       </section>
 
-      {/* Vision Section */}
-      <div id="vision">
-        <VisionSection />
-      </div>
+      {/* Main Content - 跳过导航链接目标 */}
+      <main id="main-content">
+        {/* Vision Section */}
+        <div id="vision">
+          <VisionSection />
+        </div>
 
       {/* GitHub Repos Section */}
       <div id="repos">
         {error ? (
-          <section className="py-20 bg-white">
+          <section className="py-20 bg-white dark:bg-neutral-900">
             <div className="max-w-7xl mx-auto px-4 text-center">
-              <p className="text-red-600">加载仓库数据失败：{error}</p>
+              <p className="text-error">加载仓库数据失败：{error}</p>
             </div>
           </section>
         ) : (
-          <RepoShowcase repos={repos} isLoading={isLoading} />
+          <RepoShowcase 
+            repos={repos} 
+            isLoading={isLoading} 
+            onRefresh={refresh}
+            lastUpdated={lastUpdated}
+          />
         )}
       </div>
 
@@ -104,18 +125,19 @@ function App() {
       <div id="projects">
         <ProjectLinks projects={sampleProjects} />
       </div>
+      </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      <footer className="bg-neutral-900 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
+            <p className="text-neutral-400 text-sm">
               © 2026 OnePersonLab. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a 
                 href="https://github.com/onepersonlab" 
-                className="text-gray-400 hover:text-white"
+                className="text-neutral-400 hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
