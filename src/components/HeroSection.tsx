@@ -82,7 +82,7 @@ export function HeroSection() {
           className={`mt-12 opacity-0 ${isVisible ? 'animate-fade-in animation-delay-1800' : ''}`}
         >
           <a
-            href="#repos"
+            href="#agents"
             className="inline-flex items-center gap-2 px-8 py-4 bg-mint-400 hover:bg-mint-500 text-navy-900 font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-mint-400/25 focus-visible:ring-2 focus-visible:ring-mint-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900"
             style={{ fontFamily: 'var(--font-body)' }}
           >
