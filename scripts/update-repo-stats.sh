@@ -1,6 +1,7 @@
 #!/bin/bash
-# AI Agent Repository Stats Updater - Dual List Version
+# AI Agent Repository Stats Updater - Dual List Version with Auto Deploy
 # Updates both Research and General agent lists
+# Automatically rebuilds and deploys to gh-pages
 # Usage: ./update-repo-stats.sh
 
 set -e
@@ -119,5 +120,39 @@ HEADER
 update_list "Research"
 update_list "General"
 
+# Copy to src/data for frontend
+echo ""
+echo "--- Copying to src/data ---"
+cp "$DATA_DIR/Research-agent-list-update.json" "/root/onepersonlab-website/src/data/Research-agent-list-update.json" 2>/dev/null || true
+cp "$DATA_DIR/General-agent-list-update.json" "/root/onepersonlab-website/src/data/General-agent-list-update.json" 2>/dev/null || true
+echo "✓ Copied to src/data"
+
+# Rebuild and deploy site
+echo ""
+echo "--- Rebuilding and deploying site ---"
+cd /root/onepersonlab-website
+
+# Build
+npm run build 2>&1 | tail -5
+
+# Deploy to gh-pages
+rm -rf /tmp/gh-pages-deploy
+mkdir -p /tmp/gh-pages-deploy
+cp -r dist/* /tmp/gh-pages-deploy/
+
+cd /tmp/gh-pages-deploy
+git init
+git config user.email "onepersonlab@github.com"
+git config user.name "OnePersonLab"
+git add -A
+git commit -m "auto-deploy: repo stats update $NOW"
+git remote add origin https://github.com/onepersonlab/onepersonlab-website.git
+git push origin master:gh-pages --force 2>&1 || echo "⚠️ Deploy may have failed"
+
+rm -rf /tmp/gh-pages-deploy
+
+echo "✓ Site deployed to gh-pages"
+
+echo ""
 echo "=== All Updates Complete ==="
 echo "Generated at: $NOW"

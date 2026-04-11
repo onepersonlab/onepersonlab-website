@@ -143,11 +143,31 @@ cp "$DATA_DIR/all-papers-update.json" "/root/onepersonlab-website/src/data/all-p
 cp "$DATA_DIR/developer-papers-update.json" "/root/onepersonlab-website/src/data/developer-papers-update.json" 2>/dev/null || true
 echo "✓ Copied to src/data"
 
-# Rebuild site (optional - uncomment if you want auto-deploy)
-# echo ""
-# echo "--- Rebuilding site ---"
-# cd /root/onepersonlab-website && npm run build
-# echo "✓ Site rebuilt"
+# Rebuild and deploy site
+echo ""
+echo "--- Rebuilding and deploying site ---"
+cd /root/onepersonlab-website
+
+# Build
+npm run build 2>&1 | tail -5
+
+# Deploy to gh-pages
+rm -rf /tmp/gh-pages-deploy
+mkdir -p /tmp/gh-pages-deploy
+cp -r dist/* /tmp/gh-pages-deploy/
+
+cd /tmp/gh-pages-deploy
+git init
+git config user.email "onepersonlab@github.com"
+git config user.name "OnePersonLab"
+git add -A
+git commit -m "auto-deploy: papers stats update $NOW"
+git remote add origin https://github.com/onepersonlab/onepersonlab-website.git
+git push origin master:gh-pages --force 2>&1 || echo "⚠️ Deploy may have failed"
+
+rm -rf /tmp/gh-pages-deploy
+
+echo "✓ Site deployed to gh-pages"
 
 echo ""
 echo "=== Papers Update Complete ==="
