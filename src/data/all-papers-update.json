@@ -1,8 +1,8 @@
 {
   "description": "All Papers - Detailed Info (Extended)",
-  "source": "OpenAlex + arXiv APIs",
-  "generated_at": "2026-04-12T00:05:00Z",
-  "paper_count": 30,
+  "source": "OpenAlex + arXiv + Semantic Scholar APIs",
+  "generated_at": "2026-04-12T00:10:00Z",
+  "paper_count": 35,
   "papers": [
     {
       "title": "From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery",
@@ -303,6 +303,56 @@
       "citationCount": 938,
       "abstract": "A comprehensive survey of LLM-based autonomous agents from a holistic perspective.",
       "url": "https://doi.org/10.1007/s11704-024-40231-1"
+    },
+    {
+      "title": "Streamline automated biomedical discoveries with agentic bioinformatics",
+      "doi": "10.1093/bib/bbaf505",
+      "year": 2025,
+      "venue": "Briefings in Bioinformatics",
+      "authors": [],
+      "citationCount": 6,
+      "abstract": "Automated biomedical discoveries using agentic bioinformatics approaches.",
+      "url": "https://doi.org/10.1093/bib/bbaf505"
+    },
+    {
+      "title": "Automated and Autonomous Experiments in Electron and Scanning Probe Microscopy",
+      "doi": "10.1021/acsnano.1c02104",
+      "year": 2021,
+      "venue": "ACS Nano",
+      "authors": [],
+      "citationCount": 134,
+      "abstract": "Autonomous experiments in microscopy enabled by AI agents.",
+      "url": "https://doi.org/10.1021/acsnano.1c02104"
+    },
+    {
+      "title": "Combinatorial synthesis for AI-driven materials discovery",
+      "doi": "10.1038/s44160-023-00251-4",
+      "year": 2023,
+      "venue": "Nature Synthesis",
+      "authors": [],
+      "citationCount": 94,
+      "abstract": "AI-driven materials discovery through combinatorial synthesis approaches.",
+      "url": "https://doi.org/10.1038/s44160-023-00251-4"
+    },
+    {
+      "title": "Artificial intelligence for assisting cancer diagnosis and treatment in the era of precision medicine",
+      "doi": "10.1002/cac2.12215",
+      "year": 2021,
+      "venue": "Cancer Communications",
+      "authors": [],
+      "citationCount": 257,
+      "abstract": "AI-assisted cancer diagnosis and treatment in precision medicine.",
+      "url": "https://doi.org/10.1002/cac2.12215"
+    },
+    {
+      "title": "Causability and explainability of artificial intelligence in medicine",
+      "doi": "10.1002/widm.1312",
+      "year": 2019,
+      "venue": "Wiley Interdisciplinary Reviews Data Mining and Knowledge Discovery",
+      "authors": [],
+      "citationCount": 1633,
+      "abstract": "Explainability and causability of AI systems in medical applications.",
+      "url": "https://doi.org/10.1002/widm.1312"
     }
   ]
 }

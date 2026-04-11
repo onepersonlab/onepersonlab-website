@@ -10,7 +10,7 @@
     "AI agent chemistry synthesis",
     "autonomous agent protein design"
   ],
-  "paper_count": 30,
+  "paper_count": 35,
   "papers": [
     {"title": "From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery", "doi": "10.48550/arxiv.2508.14111"},
     {"title": "SciAgents: Automating Scientific Discovery Through Bioinspired Multi-Agent Intelligent Graph Reasoning", "doi": "10.1002/adma.202413523"},
@@ -41,6 +41,11 @@
     {"title": "ChatGPT Utility in Healthcare Education, Research, and Practice: Systematic Review", "doi": "10.3390/healthcare11060887"},
     {"title": "Retrieve, Summarize, and Verify: How Will ChatGPT Affect Information Seeking from the Medical Literature?", "doi": "10.1681/asn.0000000000000166"},
     {"title": "AI, agentic models and lab automation for scientific discovery — the beginning of scAInce", "doi": "10.3389/frai.2025.1649155"},
-    {"title": "A survey on large language model based autonomous agents", "doi": "10.1007/s11704-024-40231-1"}
+    {"title": "A survey on large language model based autonomous agents", "doi": "10.1007/s11704-024-40231-1"},
+    {"title": "Streamline automated biomedical discoveries with agentic bioinformatics", "doi": "10.1093/bib/bbaf505"},
+    {"title": "Automated and Autonomous Experiments in Electron and Scanning Probe Microscopy", "doi": "10.1021/acsnano.1c02104"},
+    {"title": "Combinatorial synthesis for AI-driven materials discovery", "doi": "10.1038/s44160-023-00251-4"},
+    {"title": "Artificial intelligence for assisting cancer diagnosis and treatment in the era of precision medicine", "doi": "10.1002/cac2.12215"},
+    {"title": "Causability and explainability of artificial intelligence in medicine", "doi": "10.1002/widm.1312"}
   ]
 }
