@@ -46,7 +46,7 @@ export function ReposSection() {
       { threshold: 0.1 }
     );
 
-    const section = document.getElementById('repos');
+    const section = document.getElementById('agents');
     if (section) observer.observe(section);
 
     return () => observer.disconnect();
