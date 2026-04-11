@@ -8,7 +8,7 @@ interface NavItem {
 
 const NAV_ITEMS: NavItem[] = [
   { id: 'vision', label: 'Our Vision', href: '#' },
-  { id: 'repos', label: 'Agents', href: '#repos' },
+  { id: 'agents', label: 'Agents', href: '#agents' },
   { id: 'papers', label: 'Papers', href: '#papers' },
   { id: 'skills', label: 'Skills & Templates', href: '#skills' },
   { id: 'contact', label: 'Contact', href: '#contact' },
@@ -25,7 +25,7 @@ export function Navigation() {
       setIsScrolled(scrollY > 100);
 
       // Determine active section
-      const sections = ['repos', 'papers', 'skills', 'contact'];
+      const sections = ['agents', 'papers', 'skills', 'contact'];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
