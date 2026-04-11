@@ -65,10 +65,9 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a 
-            href="#" 
+            href="/" 
             className="flex items-center gap-2 text-white font-semibold hover:text-mint-400 transition-colors"
             style={{ fontFamily: 'var(--font-display)' }}
-            onClick={(e) => handleClick(e, '#', 'vision')}
           >
             <img 
               src="/favicon.svg" 
