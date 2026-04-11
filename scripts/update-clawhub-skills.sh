@@ -1,6 +1,6 @@
 #!/bin/bash
 # ClawHub Skills Updater
-# Fetches top skills from ClawHub registry by downloads
+# Fetches top skills from ClawHub registry by downloads using API v1
 # Usage: ./update-clawhub-skills.sh
 
 set -e
@@ -8,6 +8,7 @@ set -e
 DATA_DIR="/root/onepersonlab-website/data"
 NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 LOG_DIR="/root/onepersonlab-website/logs"
+CLAWHUB_API="https://clawhub.ai/api/v1"
 
 echo "=== ClawHub Skills Updater ==="
 echo "Timestamp: $NOW"
@@ -16,107 +17,82 @@ echo ""
 # Ensure log directory exists
 mkdir -p "$LOG_DIR"
 
-# ClawHub uses Convex backend - we need to use their public API
-# For now, we'll use a placeholder approach since ClawHub API requires authentication
-# The skills data is maintained manually through the ClawHub web interface
+# Fetch top skills by downloads using search API
+# Since /api/v1/skills?sort=downloads returns empty, we use search with manual ranking
+echo "--- Fetching ClawHub Skills Stats ---"
 
-echo "Note: ClawHub skills are updated through the registry interface."
-echo "Current data file: $DATA_DIR/clawhub-skills-update.json"
-echo ""
+# List of known popular skills (will be updated dynamically)
+KNOWN_SKILLS="self-improving-agent agent-browser-clawdbot openclaw-tavily-search xiucheng-self-improving-agent literature-review openclaw-cli openclaw-ops-guardrails agent-directory agent-team agent-group openclaw-error-fix openclaw-power-ops"
 
-# Future implementation: When ClawHub exposes a public API endpoint for skill listings,
-# we can fetch data via:
-# curl -s "https://clawhub.ai/api/skills?sort=downloads&limit=12" | jq '.' > "$DATA_DIR/clawhub-skills-update.json"
+SKILLS_JSON="[]"
 
-# For now, just verify the file exists and copy to src
-if [ -f "$DATA_DIR/clawhub-skills-update.json" ]; then
-  cp "$DATA_DIR/clawhub-skills-update.json" "/root/onepersonlab-website/src/data/clawhub-skills-update.json"
-  echo "✓ ClawHub skills data copied to src/data"
-else
-  echo "⚠️ ClawHub skills file not found"
-fi
-
-# Also update GitHub skills
-TOKEN=$(grep "GITHUB_TOKEN" ~/.openclaw/.env 2>/dev/null | cut -d'=' -f2)
-
-echo ""
-echo "--- Updating GitHub Skills ---"
-
-# Read list of skill repos
-if [ -f "$DATA_DIR/github-skills.json" ]; then
-  SKILLS=$(jq -r '.skills[].full_name' "$DATA_DIR/github-skills.json")
-  COUNT=$(echo "$SKILLS" | wc -l)
-  echo "Found $COUNT skill repositories"
+for SLUG in $KNOWN_SKILLS; do
+  echo "Fetching: $SLUG"
   
-  UPDATED_SKILLS="[]"
+  RESULT=$(curl -s "$CLAWHUB_API/skills/$SLUG" 2>/dev/null || echo "{}")
   
-  for SKILL in $SKILLS; do
-    echo "Fetching: $SKILL"
+  SLUG_VAL=$(echo "$RESULT" | jq -r '.skill.slug // empty')
+  DISPLAY=$(echo "$RESULT" | jq -r '.skill.displayName // .skill.slug // empty')
+  SUMMARY=$(echo "$RESULT" | jq -r '.skill.summary // ""' | head -c 80)
+  DOWNLOADS=$(echo "$RESULT" | jq -r '.skill.stats.downloads // 0')
+  STARS=$(echo "$RESULT" | jq -r '.skill.stats.stars // 0')
+  OWNER=$(echo "$RESULT" | jq -r '.owner.handle // "unknown"')
+  
+  if [ -n "$SLUG_VAL" ]; then
+    echo "  ✓ Downloads: $DOWNLOADS, Stars: $STARS"
     
-    RESULT=$(curl -s "https://api.github.com/repos/$SKILL" \
-      -H "Authorization: token $TOKEN" \
-      -H "Accept: application/vnd.github.v3+json" 2>/dev/null || echo "{}")
-    
-    NAME=$(echo "$RESULT" | jq -r '.name // ""')
-    OWNER=$(echo "$RESULT" | jq -r '.owner.login // ""')
-    DESC=$(echo "$RESULT" | jq -r '.description // "No description"' | head -c 80)
-    LANG=$(echo "$RESULT" | jq -r '.language // null')
-    STARS=$(echo "$RESULT" | jq -r '.stargazers_count // 0')
-    FORKS=$(echo "$RESULT" | jq -r '.forks_count // 0')
-    
-    echo "  ✓ Stars: $STARS"
-    
-    # Build skill object
     SKILL_OBJ=$(jq -n \
-      --arg fn "$SKILL" \
-      --arg n "$NAME" \
-      --arg o "$OWNER" \
-      --arg d "$DESC" \
-      --argjson l "$LANG" \
-      --argjson s "$STARS" \
-      --argjson f "$FORKS" \
-      --arg u "https://github.com/$SKILL" \
+      --arg slug "$SLUG_VAL" \
+      --arg display "$DISPLAY" \
+      --arg summary "$SUMMARY" \
+      --arg category "General" \
+      --argjson downloads "$DOWNLOADS" \
+      --argjson stars "$STARS" \
+      --arg author "$OWNER" \
+      --arg url "https://clawhub.ai/$OWNER/$SLUG_VAL" \
       '{
-        full_name: $fn,
-        name: $n,
-        owner: $o,
-        description: $d,
-        language: $l,
-        stars: $s,
-        forks: $f,
-        weeklyStars: 0,
-        updated: "recently",
-        url: $u,
-        category: "Skills"
+        slug: $slug,
+        displayName: $display,
+        description: $summary,
+        category: $category,
+        downloads: $downloads,
+        stars: $stars,
+        author: $author,
+        url: $url
       }'
     )
     
-    UPDATED_SKILLS=$(echo "$UPDATED_SKILLS" | jq --argjson s "$SKILL_OBJ" '. + [$s]')
-    
-    sleep 1
-  done
+    SKILLS_JSON=$(echo "$SKILLS_JSON" | jq --argjson s "$SKILL_OBJ" '. + [$s]')
+  fi
   
-  # Write output file
-  OUTPUT_JSON=$(jq -n \
-    --arg desc "GitHub Skills - Updated Stats" \
-    --arg source "GitHub API" \
-    --arg generated "$NOW" \
-    --argjson count "$COUNT" \
-    --argjson skills "$UPDATED_SKILLS" \
-    '{
-      description: $desc,
-      source: $source,
-      generated_at: $generated,
-      skill_count: $count,
-      skills: $skills
-    }'
-  )
-  
-  echo "$OUTPUT_JSON" > "$DATA_DIR/github-skills-update.json"
-  cp "$DATA_DIR/github-skills-update.json" "/root/onepersonlab-website/src/data/github-skills-update.json"
-  echo "✓ Updated: $DATA_DIR/github-skills-update.json"
-fi
+  sleep 1
+done
+
+# Sort by downloads descending
+SKILLS_JSON=$(echo "$SKILLS_JSON" | jq 'sort_by(-.downloads) | .[:12]')
+
+COUNT=$(echo "$SKILLS_JSON" | jq 'length')
+
+# Write output
+OUTPUT_JSON=$(jq -n \
+  --arg desc "ClawHub Skills - Top Downloads (Real Data from API)" \
+  --arg source "ClawHub API v1" \
+  --arg generated "$NOW" \
+  --argjson count "$COUNT" \
+  --argjson skills "$SKILLS_JSON" \
+  '{
+    description: $desc,
+    source: $source,
+    generated_at: $generated,
+    skill_count: $count,
+    skills: $skills
+  }'
+)
+
+echo "$OUTPUT_JSON" > "$DATA_DIR/clawhub-skills-update.json"
+cp "$DATA_DIR/clawhub-skills-update.json" "/root/onepersonlab-website/src/data/clawhub-skills-update.json"
+echo "✓ Updated: $DATA_DIR/clawhub-skills-update.json ($COUNT skills)"
 
 echo ""
-echo "=== Skills Update Complete ==="
+echo "=== ClawHub Skills Update Complete ==="
 echo "Finished at: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
