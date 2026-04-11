@@ -2,7 +2,7 @@
   "description": "Research Agent Repositories - Base List",
   "source": "GitHub API + Manual Classification",
   "updated": "2026-04-11",
-  "total": 28,
+  "total": 39,
   "repos": [
     "karpathy/autoresearch",
     "SakanaAI/AI-Scientist",
@@ -31,6 +31,17 @@
     "Future-House/robin",
     "mshumer/autonomous-researcher",
     "mattprusak/autoresearch-genealogy",
-    "TianGzlab/OmicsClaw"
+    "TianGzlab/OmicsClaw",
+    "assafelovic/gpt-researcher",
+    "dzhng/deep-research",
+    "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "SamuelSchmidgall/AgentLaboratory",
+    "Galaxy-Dawn/claude-scholar",
+    "jmiao24/Paper2Agent",
+    "starpig1129/DATAGEN",
+    "wentorai/Research-Claw",
+    "TIGER-AI-Lab/OpenResearcher",
+    "ymx10086/ResearchClaw",
+    "sjtu-sai-agents/MagiClaw"
   ]
 }

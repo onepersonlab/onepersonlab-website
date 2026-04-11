@@ -1,8 +1,8 @@
 {
   "description": "Research Agent Repositories - Updated Stats",
   "source": "GitHub API",
-  "generated_at": "2026-04-11T14:21:49.929Z",
-  "repo_count": 28,
+  "generated_at": "2026-04-11T14:32:52.022Z",
+  "repo_count": 41,
   "repos": [
     {
       "full_name": "karpathy/autoresearch",
@@ -12,7 +12,7 @@
       "language": "Python",
       "stars": 70302,
       "forks": 10254,
-      "weeklyStars": 1,
+      "weeklyStars": 0,
       "updated": "2 days ago",
       "url": "https://github.com/karpathy/autoresearch"
     },
@@ -27,6 +27,30 @@
       "weeklyStars": 0,
       "updated": "1 day ago",
       "url": "https://github.com/stanford-oval/storm"
+    },
+    {
+      "full_name": "assafelovic/gpt-researcher",
+      "name": "gpt-researcher",
+      "owner": "assafelovic",
+      "description": "An autonomous agent for deep research on any topic",
+      "language": "Python",
+      "stars": 26370,
+      "forks": 3200,
+      "weeklyStars": 0,
+      "updated": "1 day ago",
+      "url": "https://github.com/assafelovic/gpt-researcher"
+    },
+    {
+      "full_name": "dzhng/deep-research",
+      "name": "deep-research",
+      "owner": "dzhng",
+      "description": "An AI-powered research assistant",
+      "language": "Python",
+      "stars": 18717,
+      "forks": 2500,
+      "weeklyStars": 0,
+      "updated": "3 days ago",
+      "url": "https://github.com/dzhng/deep-research"
     },
     {
       "full_name": "Alibaba-NLP/DeepResearch",
@@ -60,7 +84,7 @@
       "language": "Unknown",
       "stars": 16914,
       "forks": 1344,
-      "weeklyStars": 1,
+      "weeklyStars": 0,
       "updated": "2 weeks ago",
       "url": "https://github.com/Leey21/awesome-ai-research-writing"
     },
@@ -72,7 +96,7 @@
       "language": "Python",
       "stars": 16452,
       "forks": 2074,
-      "weeklyStars": 1,
+      "weeklyStars": 0,
       "updated": "1 day ago",
       "url": "https://github.com/HKUDS/DeepTutor"
     },
@@ -96,7 +120,7 @@
       "language": "Python",
       "stars": 10934,
       "forks": 1243,
-      "weeklyStars": 1,
+      "weeklyStars": 0,
       "updated": "1 day ago",
       "url": "https://github.com/aiming-lab/AutoResearchClaw"
     },
@@ -125,6 +149,18 @@
       "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs"
     },
     {
+      "full_name": "wanshuiyin/Auto-claude-code-research-in-sleep",
+      "name": "Auto-claude-code-research-in-sleep",
+      "owner": "wanshuiyin",
+      "description": "Automated Claude-based research while you sleep",
+      "language": "Python",
+      "stars": 6162,
+      "forks": 552,
+      "weeklyStars": 0,
+      "updated": "1 day ago",
+      "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep"
+    },
+    {
       "full_name": "dwzhu-pku/PaperBanana",
       "name": "PaperBanana",
       "owner": "dwzhu-pku",
@@ -135,6 +171,18 @@
       "weeklyStars": 0,
       "updated": "1 week ago",
       "url": "https://github.com/dwzhu-pku/PaperBanana"
+    },
+    {
+      "full_name": "SamuelSchmidgall/AgentLaboratory",
+      "name": "AgentLaboratory",
+      "owner": "SamuelSchmidgall",
+      "description": "Laboratory environment for AI agent experiments",
+      "language": "Python",
+      "stars": 5491,
+      "forks": 772,
+      "weeklyStars": 0,
+      "updated": "5 days ago",
+      "url": "https://github.com/SamuelSchmidgall/AgentLaboratory"
     },
     {
       "full_name": "SakanaAI/AI-Scientist-v2",
@@ -185,6 +233,18 @@
       "url": "https://github.com/SkyworkAI/DeepResearchAgent"
     },
     {
+      "full_name": "Galaxy-Dawn/claude-scholar",
+      "name": "claude-scholar",
+      "owner": "Galaxy-Dawn",
+      "description": "Claude-powered academic research assistant",
+      "language": "Python",
+      "stars": 3133,
+      "forks": 275,
+      "weeklyStars": 0,
+      "updated": "1 week ago",
+      "url": "https://github.com/Galaxy-Dawn/claude-scholar"
+    },
+    {
       "full_name": "snap-stanford/Biomni",
       "name": "Biomni",
       "owner": "snap-stanford",
@@ -207,6 +267,30 @@
       "weeklyStars": 0,
       "updated": "1 day ago",
       "url": "https://github.com/EvoScientist/EvoScientist"
+    },
+    {
+      "full_name": "jmiao24/Paper2Agent",
+      "name": "Paper2Agent",
+      "owner": "jmiao24",
+      "description": "Multi-agent AI system for research workflows",
+      "language": "Python",
+      "stars": 2161,
+      "forks": 180,
+      "weeklyStars": 0,
+      "updated": "1 week ago",
+      "url": "https://github.com/jmiao24/Paper2Agent"
+    },
+    {
+      "full_name": "starpig1129/DATAGEN",
+      "name": "DATAGEN",
+      "owner": "starpig1129",
+      "description": "AI-driven multi-agent research assistant",
+      "language": "Python",
+      "stars": 1679,
+      "forks": 140,
+      "weeklyStars": 0,
+      "updated": "5 days ago",
+      "url": "https://github.com/starpig1129/DATAGEN"
     },
     {
       "full_name": "InternScience/InternAgent",
@@ -269,6 +353,30 @@
       "url": "https://github.com/mshumer/autonomous-researcher"
     },
     {
+      "full_name": "wentorai/Research-Claw",
+      "name": "Research-Claw",
+      "owner": "wentorai",
+      "description": "438 academic skills, local AI Agent for research",
+      "language": "TypeScript",
+      "stars": 645,
+      "forks": 500,
+      "weeklyStars": 0,
+      "updated": "3 days ago",
+      "url": "https://github.com/wentorai/Research-Claw"
+    },
+    {
+      "full_name": "TIGER-AI-Lab/OpenResearcher",
+      "name": "OpenResearcher",
+      "owner": "TIGER-AI-Lab",
+      "description": "Open-source automated researcher",
+      "language": "Python",
+      "stars": 643,
+      "forks": 69,
+      "weeklyStars": 0,
+      "updated": "2 days ago",
+      "url": "https://github.com/TIGER-AI-Lab/OpenResearcher"
+    },
+    {
       "full_name": "QJHWC/PaperForge",
       "name": "PaperForge",
       "owner": "QJHWC",
@@ -293,6 +401,18 @@
       "url": "https://github.com/Future-House/robin"
     },
     {
+      "full_name": "ymx10086/ResearchClaw",
+      "name": "ResearchClaw",
+      "owner": "ymx10086",
+      "description": "Personal AI assistant for research",
+      "language": "Python",
+      "stars": 264,
+      "forks": 28,
+      "weeklyStars": 0,
+      "updated": "3 days ago",
+      "url": "https://github.com/ymx10086/ResearchClaw"
+    },
+    {
       "full_name": "allenai/discoveryworld",
       "name": "discoveryworld",
       "owner": "allenai",
@@ -303,6 +423,18 @@
       "weeklyStars": 0,
       "updated": "2 weeks ago",
       "url": "https://github.com/allenai/discoveryworld"
+    },
+    {
+      "full_name": "zongxi1115/PaperSpark",
+      "name": "PaperSpark",
+      "owner": "zongxi1115",
+      "description": "AI-driven paper collection and writing",
+      "language": "Python",
+      "stars": 182,
+      "forks": 15,
+      "weeklyStars": 0,
+      "updated": "1 week ago",
+      "url": "https://github.com/zongxi1115/PaperSpark"
     },
     {
       "full_name": "GAIR-NLP/ASI-Evolve",
@@ -329,6 +461,18 @@
       "url": "https://github.com/OSU-NLP-Group/ScienceAgentBench"
     },
     {
+      "full_name": "yunshenwuchuxun/latex-paper-skills",
+      "name": "latex-paper-skills",
+      "owner": "yunshenwuchuxun",
+      "description": "Modular skill framework for LaTeX papers",
+      "language": "Unknown",
+      "stars": 123,
+      "forks": 8,
+      "weeklyStars": 0,
+      "updated": "2 weeks ago",
+      "url": "https://github.com/yunshenwuchuxun/latex-paper-skills"
+    },
+    {
       "full_name": "TianGzlab/OmicsClaw",
       "name": "OmicsClaw",
       "owner": "TianGzlab",
@@ -339,6 +483,18 @@
       "weeklyStars": 0,
       "updated": "1 day ago",
       "url": "https://github.com/TianGzlab/OmicsClaw"
+    },
+    {
+      "full_name": "sjtu-sai-agents/MagiClaw",
+      "name": "MagiClaw",
+      "owner": "sjtu-sai-agents",
+      "description": "Magical research automation framework",
+      "language": "Python",
+      "stars": 111,
+      "forks": 3,
+      "weeklyStars": 0,
+      "updated": "1 week ago",
+      "url": "https://github.com/sjtu-sai-agents/MagiClaw"
     }
   ]
 }
