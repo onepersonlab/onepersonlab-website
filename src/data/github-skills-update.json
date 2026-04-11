@@ -2,7 +2,7 @@
   "description": "GitHub Skills Repositories - Detailed Info",
   "source": "GitHub API",
   "generated_at": "2026-04-12T00:30:00Z",
-  "skill_count": 8,
+  "skill_count": 9,
   "skills": [
     {
       "full_name": "anthropics/skills",
@@ -107,6 +107,19 @@
       "updated": "2 days ago",
       "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
       "category": "Research Skills"
+    },
+    {
+      "full_name": "yunshenwuchuxun/latex-paper-skills",
+      "name": "latex-paper-skills",
+      "owner": "yunshenwuchuxun",
+      "description": "Modular skill framework for LaTeX paper writing automation",
+      "language": null,
+      "stars": 123,
+      "forks": 8,
+      "weeklyStars": 0,
+      "updated": "2 weeks ago",
+      "url": "https://github.com/yunshenwuchuxun/latex-paper-skills",
+      "category": "Writing Skills"
     }
   ]
 }
