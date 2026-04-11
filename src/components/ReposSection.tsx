@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { AGENT_REPOS } from '../data/repos';
+import { AGENT_REPOS, REPO_DATA_META } from '../data/repos';
 import type { Repo } from '../data/repos';
 
 const LANGUAGE_COLORS: Record<string, string> = {
@@ -64,7 +64,7 @@ export function ReposSection() {
           Multi-agent systems and automated research tools for scientific discovery
         </p>
         <p className="text-white/40 text-sm mt-2" style={{ fontFamily: 'var(--font-body)' }}>
-          Data source: <a href="https://github.com/cadslab/Pantheon" target="_blank" rel="noopener noreferrer" className="text-mint-400 hover:underline">Pantheon</a> • {AGENT_REPOS.length} repositories (min 100 Stars)
+          Data source: <a href="https://github.com/cadslab/Pantheon" target="_blank" rel="noopener noreferrer" className="text-mint-400 hover:underline">Pantheon</a> • {AGENT_REPOS.length} repos • Updated: {new Date(REPO_DATA_META.generated_at).toLocaleDateString()}
         </p>
       </div>
 

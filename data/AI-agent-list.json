@@ -1,0 +1,29 @@
+{
+  "description": "AI Agent Research Repositories - Base List",
+  "source": "https://github.com/cadslab/Pantheon",
+  "updated": "2026-04-11",
+  "repos": [
+    "karpathy/autoresearch",
+    "stanford-oval/storm",
+    "Alibaba-NLP/DeepResearch",
+    "K-Dense-AI/scientific-agent-skills",
+    "Leey21/awesome-ai-research-writing",
+    "HKUDS/DeepTutor",
+    "SakanaAI/AI-Scientist",
+    "aiming-lab/AutoResearchClaw",
+    "langchain-ai/local-deep-researcher",
+    "Orchestra-Research/AI-Research-SKILLs",
+    "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "SamuelSchmidgall/AgentLaboratory",
+    "SakanaAI/AI-Scientist-v2",
+    "HKUDS/AI-Researcher",
+    "wentorai/Research-Claw",
+    "aiming-lab/MetaClaw",
+    "Galaxy-Dawn/claude-scholar",
+    "snap-stanford/Biomni",
+    "EvoScientist/EvoScientist",
+    "TIGER-AI-Lab/OpenResearcher",
+    "TianGzlab/OmicsClaw",
+    "sjtu-sai-agents/MagiClaw"
+  ]
+}
