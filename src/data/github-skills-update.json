@@ -81,6 +81,32 @@
       "updated": "2 weeks ago",
       "url": "https://github.com/GPTomics/bioSkills",
       "category": "Bioinformatics"
+    },
+    {
+      "full_name": "K-Dense-AI/scientific-agent-skills",
+      "name": "scientific-agent-skills",
+      "owner": "K-Dense-AI",
+      "description": "Comprehensive skills for scientific AI agents - Research automation toolkit",
+      "language": "Python",
+      "stars": 18126,
+      "forks": 1989,
+      "weeklyStars": 0,
+      "updated": "1 day ago",
+      "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
+      "category": "Research Skills"
+    },
+    {
+      "full_name": "Orchestra-Research/AI-Research-SKILLs",
+      "name": "AI-Research-SKILLs",
+      "owner": "Orchestra-Research",
+      "description": "Skills library for AI research agents - Modular scientific discovery",
+      "language": "TeX",
+      "stars": 6583,
+      "forks": 512,
+      "weeklyStars": 0,
+      "updated": "2 days ago",
+      "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
+      "category": "Research Skills"
     }
   ]
 }
