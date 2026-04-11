@@ -45,8 +45,9 @@ export function getGitHubSkills(): GitHubSkill[] {
 
 export function getClawHubSkills(): ClawHubSkill[] {
   return clawhubSkillsData.skills.map((s: any) => ({
-    name: s.name,
+    name: s.name || s.displayName || s.slug,
     slug: s.slug,
+    displayName: s.displayName || s.name || s.slug,
     description: s.description,
     category: s.category,
     downloads: s.downloads,
