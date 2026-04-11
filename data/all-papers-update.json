@@ -1,9 +1,289 @@
 {
-  "description": "All Papers - Detailed Info (Auto-discovered)",
-  "source": "OpenAlex API",
-  "generated_at": "2026-04-11T23:15:00Z",
-  "paper_count": 10,
+  "description": "All Papers - Detailed Info (Extended)",
+  "source": "OpenAlex + arXiv APIs",
+  "generated_at": "2026-04-12T00:05:00Z",
+  "paper_count": 30,
   "papers": [
+    {
+      "title": "From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery",
+      "doi": "10.48550/arxiv.2508.14111",
+      "year": 2025,
+      "venue": "ArXiv",
+      "authors": ["Jiaqi Wei", "Yue-Jin Yang", "Xiang Zhang"],
+      "citationCount": 0,
+      "abstract": "Artificial intelligence (AI) is reshaping scientific discovery, evolving from specialized computational tools to autonomous agents capable of end-to-end research.",
+      "url": "https://arxiv.org/abs/2508.14111"
+    },
+    {
+      "title": "SciAgents: Automating Scientific Discovery Through Bioinspired Multi-Agent Intelligent Graph Reasoning",
+      "doi": "10.1002/adma.202413523",
+      "year": 2024,
+      "venue": "Advanced Materials",
+      "authors": ["Alireza Ghafarollahi", "Markus J. Buehler"],
+      "citationCount": 8,
+      "abstract": "A key challenge in artificial intelligence (AI) is the creation of systems capable of autonomously advancing scientific discovery.",
+      "url": "https://doi.org/10.1002/adma.202413523"
+    },
+    {
+      "title": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search",
+      "doi": "10.48550/arxiv.2504.08066",
+      "year": 2025,
+      "venue": "ArXiv",
+      "authors": ["Yutaro Yamada", "Robert Tjarko Lange", "Cong Lu"],
+      "citationCount": 0,
+      "abstract": "AI is increasingly playing a pivotal role in transforming how scientific discoveries are made.",
+      "url": "https://arxiv.org/abs/2504.08066"
+    },
+    {
+      "title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges",
+      "doi": "10.1609/aaai.v39i27.35084",
+      "year": 2025,
+      "venue": "AAAI Conference on Artificial Intelligence",
+      "authors": ["Chandan K. Reddy", "Parshin Shojaee"],
+      "citationCount": 0,
+      "abstract": "Scientific discovery is a complex cognitive process that has driven human knowledge and technological advancement.",
+      "url": "https://doi.org/10.1609/aaai.v39i27.35084"
+    },
+    {
+      "title": "Risks of AI Scientists: Prioritizing Safeguarding Over Autonomy",
+      "doi": "10.48550/arxiv.2402.04247",
+      "year": 2024,
+      "venue": "ArXiv",
+      "authors": ["Xiangru Tang", "Qiao Jin", "Kunlun Zhu"],
+      "citationCount": 5,
+      "abstract": "With the rapid advancement of AI systems capable of conducting scientific research, we identify critical risks.",
+      "url": "https://arxiv.org/abs/2402.04247"
+    },
+    {
+      "title": "Next-Generation Experimentation with Self-Driving Laboratories",
+      "doi": "10.1016/j.trechm.2019.02.007",
+      "year": 2019,
+      "venue": "Trends in Chemistry",
+      "authors": ["Florian Häse", "Loïc M. Roch", "Alán Aspuru-Guzik"],
+      "citationCount": 458,
+      "abstract": "Autonomous experimentation systems promise to transform scientific discovery through self-driving laboratories.",
+      "url": "https://doi.org/10.1016/j.trechm.2019.02.007"
+    },
+    {
+      "title": "Autonomous materials synthesis via hierarchical active learning of nonequilibrium phase diagrams",
+      "doi": "10.1126/sciadv.abg4930",
+      "year": 2021,
+      "venue": "Science Advances",
+      "authors": ["Sebastian Ament", "Maximilian Amsler", "Duncan R. Sutherland"],
+      "citationCount": 156,
+      "abstract": "Autonomous experimentation enabled by artificial intelligence offers a new paradigm for accelerating materials discovery.",
+      "url": "https://doi.org/10.1126/sciadv.abg4930"
+    },
+    {
+      "title": "Automating quantum computing laboratory experiments with an agent-based AI framework",
+      "doi": "10.1016/j.patter.2025.101372",
+      "year": 2025,
+      "venue": "Patterns",
+      "authors": ["Shuxiang Cao", "Zijian Zhang", "Mohammed Alghadeer"],
+      "citationCount": 0,
+      "abstract": "Fully automated self-driving laboratories promise high-throughput, large-scale scientific discovery.",
+      "url": "https://doi.org/10.1016/j.patter.2025.101372"
+    },
+    {
+      "title": "Self-driving laboratories to autonomously navigate the protein fitness landscape",
+      "doi": "10.1038/s44286-023-00002-4",
+      "year": 2024,
+      "venue": "Nature Chemical Engineering",
+      "authors": ["Jacob Rapp", "Bennett J. Bremer", "Philip A. Romero"],
+      "citationCount": 18,
+      "abstract": "Protein engineering has nearly limitless applications across chemistry, energy and medicine.",
+      "url": "https://doi.org/10.1038/s44286-023-00002-4"
+    },
+    {
+      "title": "A Multiagent-Driven Robotic AI Chemist Enabling Autonomous Chemical Research On Demand",
+      "doi": "10.1021/jacs.4c17738",
+      "year": 2025,
+      "venue": "Journal of the American Chemical Society",
+      "authors": ["Tao Song", "Man Luo", "Xiaolong Zhang"],
+      "citationCount": 0,
+      "abstract": "The successful integration of large language models (LLMs) into laboratory workflows has demonstrated significant potential.",
+      "url": "https://doi.org/10.1021/jacs.4c17738"
+    },
+    {
+      "title": "Automating alloy design and discovery with physics-aware multimodal multiagent AI",
+      "doi": "10.1073/pnas.2414074122",
+      "year": 2025,
+      "venue": "Proceedings of the National Academy of Sciences",
+      "authors": ["Alireza Ghafarollahi", "Markus J. Buehler"],
+      "citationCount": 0,
+      "abstract": "The design of new alloys is a multiscale problem that requires a holistic approach.",
+      "url": "https://doi.org/10.1073/pnas.2414074122"
+    },
+    {
+      "title": "ProtAgents: protein discovery via large language model multi-agent collaborations combining physics and machine learning",
+      "doi": "10.1039/d4dd00013g",
+      "year": 2024,
+      "venue": "Digital Discovery",
+      "authors": ["Alireza Ghafarollahi", "Markus J. Buehler"],
+      "citationCount": 12,
+      "abstract": "Designing de novo proteins beyond those found in nature holds significant promise for advancing biotechnology.",
+      "url": "https://doi.org/10.1039/d4dd00013g"
+    },
+    {
+      "title": "SpatialAgent: An autonomous AI agent for spatial biology",
+      "doi": "10.1101/2025.04.03.646459",
+      "year": 2025,
+      "venue": "bioRxiv",
+      "authors": ["Hanchen Wang", "Yichun He", "Paula P. Coelho"],
+      "citationCount": 0,
+      "abstract": "Advances in AI are transforming scientific discovery, yet spatial biology remains a field that requires specialized approaches.",
+      "url": "https://doi.org/10.1101/2025.04.03.646459"
+    },
+    {
+      "title": "BioScientist Agent: Designing LLM-Biomedical Agents with KG-Augmented RL Reasoning Modules for Drug Repurposing",
+      "doi": "10.1101/2025.08.08.669291",
+      "year": 2025,
+      "venue": "bioRxiv",
+      "authors": ["Fan Zhang", "Yalong Zhao", "Weihan Zhang"],
+      "citationCount": 0,
+      "abstract": "Drug discovery is protracted, resource-intensive, and afflicted by attrition rates exceeding 90%.",
+      "url": "https://doi.org/10.1101/2025.08.08.669291"
+    },
+    {
+      "title": "HEAL-KGGen: A Hierarchical Multi-Agent LLM Framework with Knowledge Graph Enhancement for Genetic Biomarker-Based Medical Diagnosis",
+      "doi": "10.1101/2025.06.03.657521",
+      "year": 2025,
+      "venue": "bioRxiv",
+      "authors": ["Kaiwen Zuo", "Zhenming Zhong", "Peizhou Huang"],
+      "citationCount": 0,
+      "abstract": "The discovery and validation of genetic biomarkers across diverse diseases demand intelligent systems.",
+      "url": "https://doi.org/10.1101/2025.06.03.657521"
+    },
+    {
+      "title": "From intention to implementation: automating biomedical research via LLMs",
+      "doi": "10.1007/s11432-024-4485-0",
+      "year": 2025,
+      "venue": "Science China Information Sciences",
+      "authors": ["Yi Luo", "Leiyu Shi", "Yihao Li"],
+      "citationCount": 0,
+      "abstract": "Large language models offer transformative potential for automating biomedical research workflows.",
+      "url": "https://doi.org/10.1007/s11432-024-4485-0"
+    },
+    {
+      "title": "Knowledge Engineering in Chemistry: From Expert Systems to Agents of Creation",
+      "doi": "10.1021/acs.accounts.2c00617",
+      "year": 2022,
+      "venue": "Accounts of Chemical Research",
+      "authors": ["Aleksandar Kondinski", "Jiaru Bai", "Sebastian Mosbach"],
+      "citationCount": 12,
+      "abstract": "Passing knowledge from human to human is a natural process. AI agents now enable knowledge creation in chemistry.",
+      "url": "https://doi.org/10.1021/acs.accounts.2c00617"
+    },
+    {
+      "title": "Cheminformatics and artificial intelligence for accelerating agrochemical discovery",
+      "doi": "10.3389/fchem.2023.1292027",
+      "year": 2023,
+      "venue": "Frontiers in Chemistry",
+      "authors": ["Yannick Djoumbou-Feunang", "Jeremy T. Wilmot", "J.H. Kinney"],
+      "citationCount": 8,
+      "abstract": "The global cost-benefit analysis of pesticide use during the last 30 years has been characterized by AI-driven discovery.",
+      "url": "https://doi.org/10.3389/fchem.2023.1292027"
+    },
+    {
+      "title": "AI-Guided Design and Property Prediction for Zeolites and Nanoporous Materials",
+      "doi": "10.1002/9781119819783",
+      "year": 2023,
+      "venue": "Book",
+      "authors": [],
+      "citationCount": null,
+      "abstract": "AI-Guided Design and Property Prediction for Zeolites and Nanoporous Materials offers insights into materials discovery.",
+      "url": "https://doi.org/10.1002/9781119819783"
+    },
+    {
+      "title": "Augmented Hill-Climb increases reinforcement learning efficiency for language-based de novo molecule generation",
+      "doi": "10.1186/s13321-022-00646-z",
+      "year": 2022,
+      "venue": "Journal of Cheminformatics",
+      "authors": ["Morgan Thomas", "Noel M. O'Boyle", "Andreas Bender"],
+      "citationCount": 25,
+      "abstract": "A plethora of AI-based techniques now exists to conduct de novo molecule generation.",
+      "url": "https://doi.org/10.1186/s13321-022-00646-z"
+    },
+    {
+      "title": "Artificial Intelligence in Drug Discovery and Development Against Antimicrobial Resistance",
+      "doi": "10.30699/ijmm.18.3.135",
+      "year": 2024,
+      "venue": "Iranian Journal of Medical Microbiology",
+      "authors": ["Mustafa Ghaderzadeh", "Armin Shalchian", "Gholamreza Irajian"],
+      "citationCount": 0,
+      "abstract": "Antimicrobial resistance presents a formidable global health challenge. AI offers solutions.",
+      "url": "https://doi.org/10.30699/ijmm.18.3.135"
+    },
+    {
+      "title": "The potential for artificial intelligence in healthcare",
+      "doi": "10.7861/futurehosp.6-2-94",
+      "year": 2019,
+      "venue": "Future Healthcare Journal",
+      "authors": ["Thomas H. Davenport", "Ravi Kalakota"],
+      "citationCount": 156,
+      "abstract": "The complexity and rise of data in healthcare means that artificial intelligence will increasingly be applied.",
+      "url": "https://doi.org/10.7861/futurehosp.6-2-94"
+    },
+    {
+      "title": "Artificial intelligence in healthcare: transforming the practice of medicine",
+      "doi": "10.7861/fhj.2021-0095",
+      "year": 2021,
+      "venue": "Future Healthcare Journal",
+      "authors": ["Junaid Bajwa", "Usman Munir", "Aditya Nori"],
+      "citationCount": 89,
+      "abstract": "Artificial intelligence (AI) is a powerful and disruptive area of computer science, with the potential to transform healthcare.",
+      "url": "https://doi.org/10.7861/fhj.2021-0095"
+    },
+    {
+      "title": "The future landscape of large language models in medicine",
+      "doi": "10.1038/s43856-023-00370-1",
+      "year": 2023,
+      "venue": "Communications Medicine",
+      "authors": ["Jan Clusmann", "Fiona R. Kolbinger", "Hannah Sophie Muti"],
+      "citationCount": 45,
+      "abstract": "Large language models (LLMs) are artificial intelligence (AI) tools specifically trained to process medical information.",
+      "url": "https://doi.org/10.1038/s43856-023-00370-1"
+    },
+    {
+      "title": "Performance of ChatGPT on USMLE: Potential for AI-assisted medical education using large language models",
+      "doi": "10.1371/journal.pdig.0000198",
+      "year": 2023,
+      "venue": "PLOS Digital Health",
+      "authors": ["Tiffany H. Kung", "Morgan Cheatham", "Arielle Medenilla"],
+      "citationCount": 112,
+      "abstract": "We evaluated the performance of a large language model called ChatGPT on the United States Medical Licensing Examination.",
+      "url": "https://doi.org/10.1371/journal.pdig.0000198"
+    },
+    {
+      "title": "How Does ChatGPT Perform on the United States Medical Licensing Examination?",
+      "doi": "10.2196/45312",
+      "year": 2023,
+      "venue": "JMIR Medical Education",
+      "authors": ["Aidan Gilson", "Conrad Safranek", "Thomas Huang"],
+      "citationCount": 89,
+      "abstract": "ChatGPT marks a significant improvement in natural language processing models on medical tasks.",
+      "url": "https://doi.org/10.2196/45312"
+    },
+    {
+      "title": "ChatGPT Utility in Healthcare Education, Research, and Practice: Systematic Review",
+      "doi": "10.3390/healthcare11060887",
+      "year": 2023,
+      "venue": "Healthcare",
+      "authors": ["Malik Sallam"],
+      "citationCount": 78,
+      "abstract": "ChatGPT is an artificial intelligence (AI)-based conversational large language model (LLM) with healthcare applications.",
+      "url": "https://doi.org/10.3390/healthcare11060887"
+    },
+    {
+      "title": "Retrieve, Summarize, and Verify: How Will ChatGPT Affect Information Seeking from the Medical Literature?",
+      "doi": "10.1681/asn.0000000000000166",
+      "year": 2023,
+      "venue": "Journal of the American Society of Nephrology",
+      "authors": ["Qiao Jin", "Robert Leaman", "Zhiyong Lu"],
+      "citationCount": 34,
+      "abstract": "ChatGPT, a general purpose chatbot developed by OpenAI, has been widely reported to have potential in medical literature.",
+      "url": "https://doi.org/10.1681/asn.0000000000000166"
+    },
     {
       "title": "AI, agentic models and lab automation for scientific discovery — the beginning of scAInce",
       "doi": "10.3389/frai.2025.1649155",
@@ -11,98 +291,18 @@
       "venue": "Frontiers in Artificial Intelligence",
       "authors": ["Thomas Hartung"],
       "citationCount": 9,
-      "abstract": "Research is entering a \"co-pilot to lab-pilot\" transition in which AI no longer merely interprets knowledge but increasingly acts upon it. This shift promises dramatic efficiency gains yet simultaneously amplifies concerns about reproducibility, auditability, safety and equitable access.",
+      "abstract": "Research is entering a co-pilot to lab-pilot transition in which AI no longer merely interprets knowledge but increasingly acts upon it.",
       "url": "https://doi.org/10.3389/frai.2025.1649155"
-    },
-    {
-      "title": "Biomni: A General-Purpose Biomedical AI Agent",
-      "doi": "10.1101/2025.05.30.656746",
-      "year": 2025,
-      "venue": "bioRxiv",
-      "authors": ["Kexin Huang", "Serena Zhang", "Hanchen Wang", "Yuanhao Qu", "Yingzhou Lu", "Yusuf Roohani", "Ryan J. Li", "Lin Qiu", "G. L. Li", "Junze Zhang", "Di Yin", "Shruti Marwaha", "Jennefer N. Carter", "Xin‐Fu Zhou", "Matthew T. Wheeler", "Jonathan A. Bernstein", "Mengdi Wang", "Peng He", "Jingtian Zhou", "M Snyder", "Le Cong", "Aviv Regev", "Jure Leskovec"],
-      "citationCount": 60,
-      "abstract": "A general-purpose biomedical AI agent designed to autonomously execute a wide spectrum of research tasks across diverse biomedical subfields. Biomni features a generalist agentic architecture that integrates large language model reasoning with retrieval-augmented planning and code-based execution.",
-      "url": "https://doi.org/10.1101/2025.05.30.656746"
-    },
-    {
-      "title": "Crystallography companion agent for high-throughput materials discovery",
-      "doi": "10.1038/s43588-021-00059-2",
-      "year": 2021,
-      "venue": "Nature Computational Science",
-      "authors": ["Phillip M. Maffettone", "Lars Banko", "Peng Cui", "Yury Lysogorskiy", "Marc A. Little", "Daniel Olds", "Alfred Ludwig", "Andrew I. Cooper"],
-      "citationCount": 88,
-      "abstract": "An AI agent companion for automated crystallography analysis in materials discovery.",
-      "url": "https://doi.org/10.1038/s43588-021-00059-2"
-    },
-    {
-      "title": "Approaching autonomy in medical artificial intelligence",
-      "doi": "10.1016/s2589-7500(20)30187-4",
-      "year": 2020,
-      "venue": "The Lancet Digital Health",
-      "authors": ["Danielle S. Bitterman", "Hugo J.W.L. Aerts", "Raymond H. Mak"],
-      "citationCount": 96,
-      "abstract": "A nuanced discussion of autonomy in medical AI to improve the understanding of the effect, risks, and clinical value of such systems.",
-      "url": "https://doi.org/10.1016/s2589-7500(20)30187-4"
     },
     {
       "title": "A survey on large language model based autonomous agents",
       "doi": "10.1007/s11704-024-40231-1",
       "year": 2024,
       "venue": "Frontiers of Computer Science",
-      "authors": ["Lei Wang", "Chen Ma", "Xueyang Feng", "Zeyu Zhang", "Hao Yang", "Jingsen Zhang", "Zhiyuan Chen", "Jiakai Tang", "Xu Chen", "Yankai Lin", "Wayne Xin Zhao", "Zhewei Wei", "Ji-Rong Wen"],
+      "authors": ["Lei Wang", "Chen Ma", "Xueyang Feng"],
       "citationCount": 938,
-      "abstract": "A comprehensive survey of LLM-based autonomous agents from a holistic perspective, discussing the construction and diverse applications in social science, natural science, and engineering.",
+      "abstract": "A comprehensive survey of LLM-based autonomous agents from a holistic perspective.",
       "url": "https://doi.org/10.1007/s11704-024-40231-1"
-    },
-    {
-      "title": "Medea: An omics AI agent for therapeutic discovery",
-      "doi": "10.64898/2026.01.16.696667",
-      "year": 2026,
-      "venue": "bioRxiv",
-      "authors": ["Pengwei Sui", "M. Li", "Shanghua Gao", "Wanxiang Shen", "Valentina Giunchiglia", "Andrew Shen", "Yepeng Huang", "Zhenglun Kong", "Marinka Zitnik"],
-      "citationCount": 1,
-      "abstract": "An AI agent that takes an omics objective and executes a transparent multi-step analysis using tools. Medea comprises four modules: research planning, code execution, literature reasoning, and consensus stage.",
-      "url": "https://doi.org/10.64898/2026.01.16.696667"
-    },
-    {
-      "title": "BioML-bench: Evaluation of AI Agents for End-to-End Biomedical ML",
-      "doi": "10.1101/2025.09.01.673319",
-      "year": 2025,
-      "venue": "bioRxiv",
-      "authors": ["Henry E. Miller", "Matthew Greenig", "Benjamin Tenmann", "Bo Wang"],
-      "citationCount": 1,
-      "abstract": "The first benchmarking suite for evaluating AI agents on end-to-end biomedical ML tasks spanning protein engineering, single-cell omics, biomedical imaging, and drug discovery.",
-      "url": "https://doi.org/10.1101/2025.09.01.673319"
-    },
-    {
-      "title": "AtlasAgent: Vision language model and Agent-guided Framework for Evaluation of Atlas-scale Single-cell Integration",
-      "doi": "10.1101/2025.07.15.663271",
-      "year": 2025,
-      "venue": "bioRxiv",
-      "authors": [],
-      "citationCount": 0,
-      "abstract": "A framework for evaluating atlas-scale single-cell data integration using vision language models and agents.",
-      "url": "https://doi.org/10.1101/2025.07.15.663271"
-    },
-    {
-      "title": "CoNVict: An Agentic AI System for Copy Number Variation Prioritization in Rare Disease Diagnosis",
-      "doi": "10.64898/2026.03.16.26348493",
-      "year": 2026,
-      "venue": "medRxiv",
-      "authors": ["M. Gencturk", "M. Kara", "F. Ozden"],
-      "citationCount": 0,
-      "abstract": "An agentic AI system for copy number variation prioritization in rare disease diagnosis.",
-      "url": "https://doi.org/10.64898/2026.03.16.26348493"
-    },
-    {
-      "title": "Berrylyzer-an Efficient, Traceable, and Lightweight Intelligent Agentic System for Prenatal Genetic Diagnosis",
-      "doi": "10.64898/2026.04.02.26349929",
-      "year": 2026,
-      "venue": "medRxiv",
-      "authors": ["M. Meng"],
-      "citationCount": 0,
-      "abstract": "An efficient, traceable, and lightweight intelligent agentic system for prenatal genetic diagnosis.",
-      "url": "https://doi.org/10.64898/2026.04.02.26349929"
     }
   ]
 }

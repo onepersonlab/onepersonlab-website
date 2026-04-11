@@ -1,52 +1,46 @@
 {
-  "description": "All Papers - Auto-discovered from Literature Review",
-  "source": "OpenAlex API + Semantic Scholar",
-  "updated": "2026-04-11",
+  "description": "All Papers - Extended List from Multi-source Search",
+  "source": "OpenAlex + arXiv + PubMed APIs",
+  "updated": "2026-04-12",
   "search_queries": [
-    "AI agent scientific discovery automation",
-    "autonomous AI research scientist agent",
-    "multi-agent biomedical research"
+    "autonomous AI agent scientific discovery",
+    "AI agent genomics proteomics",
+    "agent automated laboratory",
+    "LLM agent biomedical",
+    "AI agent chemistry synthesis",
+    "autonomous agent protein design"
   ],
+  "paper_count": 30,
   "papers": [
-    {
-      "title": "AI, agentic models and lab automation for scientific discovery — the beginning of scAInce",
-      "doi": "10.3389/frai.2025.1649155"
-    },
-    {
-      "title": "Biomni: A General-Purpose Biomedical AI Agent",
-      "doi": "10.1101/2025.05.30.656746"
-    },
-    {
-      "title": "Crystallography companion agent for high-throughput materials discovery",
-      "doi": "10.1038/s43588-021-00059-2"
-    },
-    {
-      "title": "Approaching autonomy in medical artificial intelligence",
-      "doi": "10.1016/s2589-7500(20)30187-4"
-    },
-    {
-      "title": "A survey on large language model based autonomous agents",
-      "doi": "10.1007/s11704-024-40231-1"
-    },
-    {
-      "title": "Medea: An omics AI agent for therapeutic discovery",
-      "doi": "10.64898/2026.01.16.696667"
-    },
-    {
-      "title": "BioML-bench: Evaluation of AI Agents for End-to-End Biomedical ML",
-      "doi": "10.1101/2025.09.01.673319"
-    },
-    {
-      "title": "AtlasAgent: Vision language model and Agent-guided Framework for Evaluation of Atlas-scale Single-cell Integration",
-      "doi": "10.1101/2025.07.15.663271"
-    },
-    {
-      "title": "CoNVict: An Agentic AI System for Copy Number Variation Prioritization in Rare Disease Diagnosis",
-      "doi": "10.64898/2026.03.16.26348493"
-    },
-    {
-      "title": "Berrylyzer-an Efficient, Traceable, and Lightweight Intelligent Agentic System for Prenatal Genetic Diagnosis",
-      "doi": "10.64898/2026.04.02.26349929"
-    }
+    {"title": "From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery", "doi": "10.48550/arxiv.2508.14111"},
+    {"title": "SciAgents: Automating Scientific Discovery Through Bioinspired Multi-Agent Intelligent Graph Reasoning", "doi": "10.1002/adma.202413523"},
+    {"title": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search", "doi": "10.48550/arxiv.2504.08066"},
+    {"title": "Towards Scientific Discovery with Generative AI: Progress, Opportunities, and Challenges", "doi": "10.1609/aaai.v39i27.35084"},
+    {"title": "Risks of AI Scientists: Prioritizing Safeguarding Over Autonomy", "doi": "10.48550/arxiv.2402.04247"},
+    {"title": "Next-Generation Experimentation with Self-Driving Laboratories", "doi": "10.1016/j.trechm.2019.02.007"},
+    {"title": "Autonomous materials synthesis via hierarchical active learning of nonequilibrium phase diagrams", "doi": "10.1126/sciadv.abg4930"},
+    {"title": "Automating quantum computing laboratory experiments with an agent-based AI framework", "doi": "10.1016/j.patter.2025.101372"},
+    {"title": "Self-driving laboratories to autonomously navigate the protein fitness landscape", "doi": "10.1038/s44286-023-00002-4"},
+    {"title": "A Multiagent-Driven Robotic AI Chemist Enabling Autonomous Chemical Research On Demand", "doi": "10.1021/jacs.4c17738"},
+    {"title": "Automating alloy design and discovery with physics-aware multimodal multiagent AI", "doi": "10.1073/pnas.2414074122"},
+    {"title": "ProtAgents: protein discovery via large language model multi-agent collaborations combining physics and machine learning", "doi": "10.1039/d4dd00013g"},
+    {"title": "SpatialAgent: An autonomous AI agent for spatial biology", "doi": "10.1101/2025.04.03.646459"},
+    {"title": "BioScientist Agent: Designing LLM-Biomedical Agents with KG-Augmented RL Reasoning Modules for Drug Repurposing", "doi": "10.1101/2025.08.08.669291"},
+    {"title": "HEAL-KGGen: A Hierarchical Multi-Agent LLM Framework with Knowledge Graph Enhancement for Genetic Biomarker-Based Medical Diagnosis", "doi": "10.1101/2025.06.03.657521"},
+    {"title": "From intention to implementation: automating biomedical research via LLMs", "doi": "10.1007/s11432-024-4485-0"},
+    {"title": "Knowledge Engineering in Chemistry: From Expert Systems to Agents of Creation", "doi": "10.1021/acs.accounts.2c00617"},
+    {"title": "Cheminformatics and artificial intelligence for accelerating agrochemical discovery", "doi": "10.3389/fchem.2023.1292027"},
+    {"title": "AI-Guided Design and Property Prediction for Zeolites and Nanoporous Materials", "doi": "10.1002/9781119819783"},
+    {"title": "Augmented Hill-Climb increases reinforcement learning efficiency for language-based de novo molecule generation", "doi": "10.1186/s13321-022-00646-z"},
+    {"title": "Artificial Intelligence in Drug Discovery and Development Against Antimicrobial Resistance: A Narrative Review", "doi": "10.30699/ijmm.18.3.135"},
+    {"title": "The potential for artificial intelligence in healthcare", "doi": "10.7861/futurehosp.6-2-94"},
+    {"title": "Artificial intelligence in healthcare: transforming the practice of medicine", "doi": "10.7861/fhj.2021-0095"},
+    {"title": "The future landscape of large language models in medicine", "doi": "10.1038/s43856-023-00370-1"},
+    {"title": "Performance of ChatGPT on USMLE: Potential for AI-assisted medical education using large language models", "doi": "10.1371/journal.pdig.0000198"},
+    {"title": "How Does ChatGPT Perform on the United States Medical Licensing Examination?", "doi": "10.2196/45312"},
+    {"title": "ChatGPT Utility in Healthcare Education, Research, and Practice: Systematic Review", "doi": "10.3390/healthcare11060887"},
+    {"title": "Retrieve, Summarize, and Verify: How Will ChatGPT Affect Information Seeking from the Medical Literature?", "doi": "10.1681/asn.0000000000000166"},
+    {"title": "AI, agentic models and lab automation for scientific discovery — the beginning of scAInce", "doi": "10.3389/frai.2025.1649155"},
+    {"title": "A survey on large language model based autonomous agents", "doi": "10.1007/s11704-024-40231-1"}
   ]
 }
