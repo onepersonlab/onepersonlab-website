@@ -13,11 +13,11 @@ const Navbar = () => {
   }, [])
 
   const navLinks = [
-    { name: '首页', href: '#hero' },
-    { name: '关于', href: '#intro' },
-    { name: '仓库', href: '#repos' },
-    { name: '论文', href: '#papers' },
-    { name: '项目', href: '#projects' },
+    { name: 'Home', href: '#hero' },
+    { name: 'About', href: '#intro' },
+    { name: 'Repos', href: '#repos' },
+    { name: 'Papers', href: '#papers' },
+    { name: 'Projects', href: '#projects' },
   ]
 
   return (

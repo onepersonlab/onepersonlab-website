@@ -9,23 +9,23 @@ const IntroSection = () => {
   const features = [
     {
       icon: "🤖",
-      title: "多智能体协作",
-      description: "让多个 AI Agent 协同工作，模拟一个完整的研究团队"
+      title: "Multi-Agent Collaboration",
+      description: "Multiple AI Agents work together, simulating a complete research team"
     },
     {
       icon: "🔬",
-      title: "科研自动化",
-      description: "文献检索、数据分析、论文写作，AI 助力每一个研究环节"
+      title: "Research Automation",
+      description: "Literature search, data analysis, paper writing - AI assists every research step"
     },
     {
       icon: "🌐",
-      title: "开放生态",
-      description: "开源工具链，与社区共享研究成果与方法论"
+      title: "Open Ecosystem",
+      description: "Open-source toolchain, sharing research results and methodologies with the community"
     },
     {
       icon: "⚡",
-      title: "高效迭代",
-      description: "从想法到实验，缩短研究周期，加速科学发现"
+      title: "Fast Iteration",
+      description: "From idea to experiment, shorten research cycles and accelerate scientific discovery"
     }
   ]
 
@@ -39,13 +39,13 @@ const IntroSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="badge badge-cyan mb-4">关于 OnePersonLab</span>
+          <span className="badge badge-cyan mb-4">About OnePersonLab</span>
           <h2 className="heading-section text-soft-white mb-6">
-            一个人的实验室，<span className="text-bright-cyan">无限可能</span>
+            One person's lab, <span className="text-bright-cyan">infinite possibilities</span>
           </h2>
           <p className="text-muted-gray max-w-2xl mx-auto text-lg leading-relaxed">
-            OnePersonLab 致力于探索多智能体系统在科学研究中的应用。我们相信，通过 AI Agents 的协作，
-            一个人的创造力可以延伸成一个团队的生产力。
+            OnePersonLab explores multi-agent systems in scientific research. We believe that through AI Agents collaboration, 
+            one person's creativity can extend into a team's productivity.
           </p>
         </motion.div>
 
@@ -80,10 +80,10 @@ const IntroSection = () => {
           className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { value: "5+", label: "开源项目" },
-            { value: "100+", label: "研究论文" },
-            { value: "10K+", label: "社区用户" },
-            { value: "24/7", label: "AI 协作" },
+            { value: "5+", label: "Open Source Projects" },
+            { value: "100+", label: "Research Papers" },
+            { value: "10K+", label: "Community Users" },
+            { value: "24/7", label: "AI Collaboration" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="font-display text-3xl md:text-4xl font-bold text-bright-cyan mb-2">

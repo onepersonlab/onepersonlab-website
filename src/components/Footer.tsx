@@ -9,10 +9,10 @@ const Footer = () => {
   ]
 
   const footerLinks = [
-    { name: "关于我们", href: "#intro" },
+    { name: "About Us", href: "#intro" },
     { name: "GitHub", href: "#repos" },
-    { name: "论文", href: "#papers" },
-    { name: "项目", href: "#projects" },
+    { name: "Papers", href: "#papers" },
+    { name: "Projects", href: "#projects" },
   ]
 
   return (
@@ -45,14 +45,14 @@ const Footer = () => {
               </span>
             </div>
             <p className="text-muted-gray text-sm leading-relaxed max-w-md">
-              多智能体协作科研平台。我们相信 AI 可以扩展每个人的研究能力，
-              让一个科学家的创造力变成一个团队的生产力。
+              Multi-agent collaboration platform for scientific research. We believe AI can extend everyone's research capabilities,
+              making one scientist's creativity become a team's productivity.
             </p>
           </div>
 
           {/* Links */}
           <div>
-            <h4 className="font-display font-semibold text-soft-white mb-4">快速链接</h4>
+            <h4 className="font-display font-semibold text-soft-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.name}>

@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 
 const HeroSection = () => {
-  const slogan1 = "每个人都是科学家"
-  const slogan2 = "每个科学家都是一个团队"
+  const slogan1 = "Everyone is a scientist"
+  const slogan2 = "Every scientist is a team"
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
@@ -101,7 +101,7 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 2.5 }}
           className="text-muted-gray text-lg md:text-xl max-w-2xl mx-auto mb-12 font-body leading-relaxed"
         >
-          多智能体协作科研平台，让 AI Agents 成为你研究团队的一部分
+          Multi-agent collaboration platform for scientific research. Let AI Agents become part of your research team.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -117,7 +117,7 @@ const HeroSection = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            探索仓库
+            Explore Repos
           </motion.a>
           <motion.a
             href="#intro"
@@ -125,7 +125,7 @@ const HeroSection = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            了解更多
+            Learn More
           </motion.a>
         </motion.div>
 

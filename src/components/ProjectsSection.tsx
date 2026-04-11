@@ -85,13 +85,13 @@ const ProjectsSection = () => {
         >
           <span className="badge badge-amber mb-4">
             <Globe className="w-3 h-3 mr-1" />
-            项目网站
+            Project Websites
           </span>
           <h2 className="heading-section text-soft-white mb-4">
-            相关项目与工具
+            Related Projects & Tools
           </h2>
           <p className="text-muted-gray max-w-xl mx-auto">
-            探索多智能体生态中的平台、工具和社区资源
+            Explore platforms, tools, and community resources in the multi-agent ecosystem
           </p>
         </motion.div>
 
@@ -137,7 +137,7 @@ const ProjectsSection = () => {
               {/* Link Indicator */}
               <div className="flex items-center gap-2 text-bright-cyan text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                 <ExternalLink className="w-4 h-4" />
-                <span>访问网站</span>
+                <span>Visit Website</span>
               </div>
             </motion.a>
           ))}

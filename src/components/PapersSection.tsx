@@ -98,13 +98,13 @@ const PapersSection = () => {
         >
           <span className="badge badge-cyan mb-4">
             <FileText className="w-3 h-3 mr-1" />
-            研究论文
+            Research Papers
           </span>
           <h2 className="heading-section text-soft-white mb-4">
-            多智能体科研论文集
+            Multi-Agent Research Collection
           </h2>
           <p className="text-muted-gray max-w-xl mx-auto">
-            收录关于多智能体协作、LLM 应用、科学发现方法论的前沿研究
+            Curated papers on multi-agent collaboration, LLM applications, and scientific discovery methodologies
           </p>
         </motion.div>
 
@@ -163,7 +163,7 @@ const PapersSection = () => {
                 className="inline-flex items-center gap-2 text-bright-cyan hover:text-amber-gold transition-colors text-sm font-medium"
               >
                 <ExternalLink className="w-4 h-4" />
-                阅读论文
+                Read Paper
               </a>
             </motion.article>
           ))}
@@ -183,7 +183,7 @@ const PapersSection = () => {
             className="btn-secondary inline-flex items-center gap-2"
           >
             <FileText className="w-4 h-4" />
-            搜索更多论文
+            Search More Papers
           </a>
         </motion.div>
       </div>

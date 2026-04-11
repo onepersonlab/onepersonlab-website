@@ -129,10 +129,10 @@ const ReposSection = () => {
     const date = new Date(dateStr)
     const now = new Date()
     const diffDays = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24))
-    if (diffDays < 1) return '今天'
-    if (diffDays < 7) return `${diffDays} 天前`
-    if (diffDays < 30) return `${Math.floor(diffDays / 7)} 周前`
-    return date.toLocaleDateString('zh-CN')
+    if (diffDays < 1) return 'Today'
+    if (diffDays < 7) return `${diffDays} days ago`
+    if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`
+    return date.toLocaleDateString('en-US')
   }
 
   const getLanguageColor = (lang: string) => {
@@ -158,13 +158,13 @@ const ReposSection = () => {
         >
           <span className="badge badge-amber mb-4">
             <Github className="w-3 h-3 mr-1" />
-            GitHub 仓库
+            GitHub Repositories
           </span>
           <h2 className="heading-section text-soft-white mb-4">
-            多智能体开源项目
+            Multi-Agent Open Source Projects
           </h2>
           <p className="text-muted-gray max-w-xl mx-auto">
-            探索来自 OnePersonLab 和社区的多智能体框架与工具
+            Explore multi-agent frameworks and tools from OnePersonLab and the community
           </p>
         </motion.div>
 
@@ -176,7 +176,7 @@ const ReposSection = () => {
           className="flex flex-wrap justify-center gap-2 mb-8"
         >
           {[
-            { key: 'all', label: '全部' },
+            { key: 'all', label: 'All' },
             { key: 'onepersonlab', label: 'OnePersonLab' },
             { key: 'microsoft', label: 'Microsoft' },
             { key: 'crewAIInc', label: 'crewAI' },
@@ -207,9 +207,9 @@ const ReposSection = () => {
             <table className="data-table">
               <thead>
                 <tr>
-                  <th>仓库</th>
-                  <th>描述</th>
-                  <th className="text-center">语言</th>
+                  <th>Repository</th>
+                  <th>Description</th>
+                  <th className="text-center">Language</th>
                   <th className="text-center">
                     <Star className="w-4 h-4 inline mr-1" />
                     Stars
@@ -220,9 +220,9 @@ const ReposSection = () => {
                   </th>
                   <th className="text-center">
                     <Clock className="w-4 h-4 inline mr-1" />
-                    更新
+                    Updated
                   </th>
-                  <th className="text-center">链接</th>
+                  <th className="text-center">Link</th>
                 </tr>
               </thead>
               <tbody>
@@ -294,7 +294,7 @@ const ReposSection = () => {
             className="btn-secondary inline-flex items-center gap-2"
           >
             <Github className="w-4 h-4" />
-            查看更多仓库
+            View More Repos
           </a>
         </motion.div>
       </div>
