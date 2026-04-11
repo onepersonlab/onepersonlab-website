@@ -1,0 +1,351 @@
+[
+  {
+    "full_name": "karpathy/autoresearch",
+    "name": "autoresearch",
+    "owner": "karpathy",
+    "description": "AI agents running research on single-GPU nanochat training automatically",
+    "language": "Python",
+    "stars": 70224,
+    "forks": 10244,
+    "weeklyStars": 0,
+    "updated": "just now",
+    "url": "https://github.com/karpathy/autoresearch"
+  }
+,
+  {
+    "full_name": "stanford-oval/storm",
+    "name": "storm",
+    "owner": "stanford-oval",
+    "description": "An LLM-powered knowledge curation system that researches a topic and generates a full-length report ",
+    "language": "Python",
+    "stars": 28068,
+    "forks": 2556,
+    "weeklyStars": 0,
+    "updated": "1 hours ago",
+    "url": "https://github.com/stanford-oval/storm"
+  }
+,
+  {
+    "full_name": "Alibaba-NLP/DeepResearch",
+    "name": "DeepResearch",
+    "owner": "Alibaba-NLP",
+    "description": "Tongyi Deep Research, the Leading Open-source Deep Research Agent",
+    "language": "Python",
+    "stars": 18634,
+    "forks": 1438,
+    "weeklyStars": 0,
+    "updated": "1 hours ago",
+    "url": "https://github.com/Alibaba-NLP/DeepResearch"
+  }
+,
+  {
+    "full_name": "K-Dense-AI/scientific-agent-skills",
+    "name": "scientific-agent-skills",
+    "owner": "K-Dense-AI",
+    "description": "A set of ready to use Agent Skills for research, science, engineering, analysis, finance and writing",
+    "language": "Python",
+    "stars": 18097,
+    "forks": 2002,
+    "weeklyStars": 0,
+    "updated": "just now",
+    "url": "https://github.com/K-Dense-AI/scientific-agent-skills"
+  }
+,
+  {
+    "full_name": "Leey21/awesome-ai-research-writing",
+    "name": "awesome-ai-research-writing",
+    "owner": "Leey21",
+    "description": "Elevate your AI research writing, no more tedious polishing ✨ ",
+    "language": "Unknown",
+    "stars": 16884,
+    "forks": 1351,
+    "weeklyStars": 0,
+    "updated": "just now",
+    "url": "https://github.com/Leey21/awesome-ai-research-writing"
+  }
+,
+  {
+    "full_name": "HKUDS/DeepTutor",
+    "name": "DeepTutor",
+    "owner": "HKUDS",
+    "description": ""DeepTutor: Agent-Native Personalized Learning Assistant"",
+    "language": "Python",
+    "stars": 16311,
+    "forks": 2144,
+    "weeklyStars": 0,
+    "updated": "just now",
+    "url": "https://github.com/HKUDS/DeepTutor"
+  }
+,
+  {
+    "full_name": "SakanaAI/AI-Scientist",
+    "name": "AI-Scientist",
+    "owner": "SakanaAI",
+    "description": "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery 🧑‍🔬",
+    "language": "Jupyter Notebook",
+    "stars": 13168,
+    "forks": 1883,
+    "weeklyStars": 0,
+    "updated": "1 hours ago",
+    "url": "https://github.com/SakanaAI/AI-Scientist"
+  }
+,
+  {
+    "full_name": "aiming-lab/AutoResearchClaw",
+    "name": "AutoResearchClaw",
+    "owner": "aiming-lab",
+    "description": "Fully autonomous & self-evolving research from idea to paper. Chat an Idea. Get a Paper. 🦞",
+    "language": "Python",
+    "stars": 10923,
+    "forks": 1245,
+    "weeklyStars": 0,
+    "updated": "just now",
+    "url": "https://github.com/aiming-lab/AutoResearchClaw"
+  }
+,
+  {
+    "full_name": "langchain-ai/local-deep-researcher",
+    "name": "local-deep-researcher",
+    "owner": "langchain-ai",
+    "description": "Fully local web research and report writing assistant",
+    "language": "Python",
+    "stars": 9017,
+    "forks": 948,
+    "weeklyStars": 0,
+    "updated": "2 hours ago",
+    "url": "https://github.com/langchain-ai/local-deep-researcher"
+  }
+,
+  {
+    "full_name": "Orchestra-Research/AI-Research-SKILLs",
+    "name": "AI-Research-SKILLs",
+    "owner": "Orchestra-Research",
+    "description": "Comprehensive open-source library of AI research and engineering skills for any AI model. Package th",
+    "language": "TeX",
+    "stars": 6567,
+    "forks": 517,
+    "weeklyStars": 0,
+    "updated": "just now",
+    "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs"
+  }
+,
+  {
+    "full_name": "wanshuiyin/Auto-claude-code-research-in-sleep",
+    "name": "Auto-claude-code-research-in-sleep",
+    "owner": "wanshuiyin",
+    "description": "ARIS ⚔️ (Auto-Research-In-Sleep) — Lightweight Markdown-only skills for autonomous ML research",
+    "language": "Python",
+    "stars": 6142,
+    "forks": 557,
+    "weeklyStars": 0,
+    "updated": "1 hours ago",
+    "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep"
+  }
+,
+  {
+    "full_name": "SamuelSchmidgall/AgentLaboratory",
+    "name": "AgentLaboratory",
+    "owner": "SamuelSchmidgall",
+    "description": "Agent Laboratory is an end-to-end autonomous research workflow meant to assist you as the human rese",
+    "language": "Python",
+    "stars": 5491,
+    "forks": 773,
+    "weeklyStars": 0,
+    "updated": "1 hours ago",
+    "url": "https://github.com/SamuelSchmidgall/AgentLaboratory"
+  }
+,
+  {
+    "full_name": "SakanaAI/AI-Scientist-v2",
+    "name": "AI-Scientist-v2",
+    "owner": "SakanaAI",
+    "description": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search",
+    "language": "Python",
+    "stars": 5399,
+    "forks": 749,
+    "weeklyStars": 0,
+    "updated": "just now",
+    "url": "https://github.com/SakanaAI/AI-Scientist-v2"
+  }
+,
+  {
+    "full_name": "HKUDS/AI-Researcher",
+    "name": "AI-Researcher",
+    "owner": "HKUDS",
+    "description": "[NeurIPS2025] "AI-Researcher: Autonomous Scientific Innovation" -- A production-ready version: https",
+    "language": "Python",
+    "stars": 5100,
+    "forks": 635,
+    "weeklyStars": 0,
+    "updated": "2 hours ago",
+    "url": "https://github.com/HKUDS/AI-Researcher"
+  }
+,
+  {
+    "full_name": "wentorai/Research-Claw",
+    "name": "Research-Claw",
+    "owner": "wentorai",
+    "description": "In the AI era, why can't everyone be a Principal Investigator?",
+    "language": "TypeScript",
+    "stars": 643,
+    "forks": 84,
+    "weeklyStars": 0,
+    "updated": "just now",
+    "url": "https://github.com/wentorai/Research-Claw"
+  }
+,
+  {
+    "full_name": "aiming-lab/MetaClaw",
+    "name": "MetaClaw",
+    "owner": "aiming-lab",
+    "description": "🦞 Just talk to your agent — it learns and EVOLVES 🧬.",
+    "language": "Python",
+    "stars": 3362,
+    "forks": 398,
+    "weeklyStars": 0,
+    "updated": "just now",
+    "url": "https://github.com/aiming-lab/MetaClaw"
+  }
+,
+  {
+    "full_name": "Galaxy-Dawn/claude-scholar",
+    "name": "claude-scholar",
+    "owner": "Galaxy-Dawn",
+    "description": "Semi-automated research assistant for academic research and software development. Supports Claude Co",
+    "language": "Python",
+    "stars": 3122,
+    "forks": 279,
+    "weeklyStars": 0,
+    "updated": "just now",
+    "url": "https://github.com/Galaxy-Dawn/claude-scholar"
+  }
+,
+  {
+    "full_name": "snap-stanford/Biomni",
+    "name": "Biomni",
+    "owner": "snap-stanford",
+    "description": "Biomni: a general-purpose biomedical AI agent",
+    "language": "Python",
+    "stars": 2945,
+    "forks": 537,
+    "weeklyStars": 0,
+    "updated": "2 hours ago",
+    "url": "https://github.com/snap-stanford/Biomni"
+  }
+,
+  {
+    "full_name": "EvoScientist/EvoScientist",
+    "name": "EvoScientist",
+    "owner": "EvoScientist",
+    "description": "🔬 Harness Vibe Research with Self-evolving AI Scientists",
+    "language": "Python",
+    "stars": 2727,
+    "forks": 148,
+    "weeklyStars": 0,
+    "updated": "just now",
+    "url": "https://github.com/EvoScientist/EvoScientist"
+  }
+,
+  {
+    "full_name": "TIGER-AI-Lab/OpenResearcher",
+    "name": "OpenResearcher",
+    "owner": "TIGER-AI-Lab",
+    "description": "OpenResearcher: A Fully Open Pipeline for Long-Horizon Deep Research Trajectory Synthesis",
+    "language": "Python",
+    "stars": 641,
+    "forks": 70,
+    "weeklyStars": 0,
+    "updated": "4 hours ago",
+    "url": "https://github.com/TIGER-AI-Lab/OpenResearcher"
+  }
+,
+  {
+    "full_name": "TianGzlab/OmicsClaw",
+    "name": "OmicsClaw",
+    "owner": "TianGzlab",
+    "description": "Conversational & memory-enabled AI research partner for multi-omics analysis. From biological idea t",
+    "language": "Python",
+    "stars": 115,
+    "forks": 23,
+    "weeklyStars": 0,
+    "updated": "just now",
+    "url": "https://github.com/TianGzlab/OmicsClaw"
+  }
+,
+  {
+    "full_name": "sjtu-sai-agents/MagiClaw",
+    "name": "MagiClaw",
+    "owner": "sjtu-sai-agents",
+    "description": "MagiClaw: Conversational Command Center for Your Scientific Agent Team.",
+    "language": "Python",
+    "stars": 110,
+    "forks": 3,
+    "weeklyStars": 0,
+    "updated": "21 hours ago",
+    "url": "https://github.com/sjtu-sai-agents/MagiClaw"
+  }
+,
+  {
+    "full_name": "GAIR-NLP/ASI-Evolve",
+    "name": "ASI-Evolve",
+    "owner": "GAIR-NLP",
+    "description": "No description",
+    "language": "Python",
+    "stars": 178,
+    "forks": 31,
+    "weeklyStars": 0,
+    "updated": "2 hours ago",
+    "url": "https://github.com/GAIR-NLP/ASI-Evolve"
+  }
+,
+  {
+    "full_name": "mims-harvard/ToolUniverse",
+    "name": "ToolUniverse",
+    "owner": "mims-harvard",
+    "description": "Democratizing AI scientists with ToolUniverse",
+    "language": "Python",
+    "stars": 1241,
+    "forks": 191,
+    "weeklyStars": 0,
+    "updated": "2 hours ago",
+    "url": "https://github.com/mims-harvard/ToolUniverse"
+  }
+,
+  {
+    "full_name": "ur-whitelab/chemcrow-public",
+    "name": "chemcrow-public",
+    "owner": "ur-whitelab",
+    "description": "Chemcrow",
+    "language": "Python",
+    "stars": 895,
+    "forks": 141,
+    "weeklyStars": 0,
+    "updated": "7 hours ago",
+    "url": "https://github.com/ur-whitelab/chemcrow-public"
+  }
+,
+  {
+    "full_name": "mattprusak/autoresearch-genealogy",
+    "name": "autoresearch-genealogy",
+    "owner": "mattprusak",
+    "description": "Structured prompts, vault templates, and archive guides for AI-assisted genealogy research. Built fo",
+    "language": "Unknown",
+    "stars": 1072,
+    "forks": 108,
+    "weeklyStars": 0,
+    "updated": "4 hours ago",
+    "url": "https://github.com/mattprusak/autoresearch-genealogy"
+  }
+,
+  {
+    "full_name": "mshumer/autonomous-researcher",
+    "name": "autonomous-researcher",
+    "owner": "mshumer",
+    "description": "No description",
+    "language": "Python",
+    "stars": 798,
+    "forks": 168,
+    "weeklyStars": 0,
+    "updated": "7 hours ago",
+    "url": "https://github.com/mshumer/autonomous-researcher"
+  }
