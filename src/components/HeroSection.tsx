@@ -11,7 +11,7 @@ export function HeroSection() {
 
   return (
     <section 
-      className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden"
+      className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden pt-16"
       role="banner"
       aria-label="Hero section"
     >
@@ -86,7 +86,7 @@ export function HeroSection() {
             className="inline-flex items-center gap-2 px-8 py-4 bg-mint-400 hover:bg-mint-500 text-navy-900 font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-mint-400/25 focus-visible:ring-2 focus-visible:ring-mint-400 focus-visible:ring-offset-2 focus-visible:ring-offset-navy-900"
             style={{ fontFamily: 'var(--font-body)' }}
           >
-            <span>Explore Our Work</span>
+            <span>Explore</span>
             <svg 
               className="w-5 h-5" 
               fill="none" 
