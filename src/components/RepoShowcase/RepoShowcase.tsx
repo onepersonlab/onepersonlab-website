@@ -255,7 +255,7 @@ export function RepoShowcase({ repos, isLoading = false, onRefresh, lastUpdated 
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-brand-primary mx-auto"></div>
             <p className="mt-4 text-neutral-600 dark:text-neutral-400">加载中...</p>
           </div>
-        ) : filteredRepos.length === 0 ? (
+        ) : filteredAndSortedRepos.length === 0 ? (
           <div className="text-center py-12" role="status">
             <p className="text-neutral-500 dark:text-neutral-400">暂无仓库数据</p>
           </div>

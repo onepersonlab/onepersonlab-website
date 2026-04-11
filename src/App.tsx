@@ -25,7 +25,7 @@ const sampleProjects: ProjectLink[] = [
 
 function App() {
   const { repos, isLoading, error, refresh, lastUpdated } = useRepoData('onepersonlab');
-  const { papers, isLoading: papersLoading, error: papersError, refresh: refreshPapers, lastUpdated: papersUpdated } = usePapers();
+  const { papers, isLoading: papersLoading, error: papersError } = usePapers();
 
   return (
     <div className="min-h-screen bg-white dark:bg-neutral-900 theme-transition">
