@@ -65,10 +65,11 @@
       "doi": "10.1007/s10462-025-11365-w",
       "year": 2025,
       "venue": "Artificial Intelligence Review",
-      "authors": [],
-      "citationCount": null,
+      "authors": ["Hengjie Yu", "Yizhi Wang", "Tao Cheng", "Yan Yan", "Kenneth A. Dawson", "S. F. Y. Li", "Yefeng Zheng", "Yaochu Jin"],
+      "citationCount": 0,
       "abstract": "A comprehensive review exploring how combining domain-specific small models with large language models can empower scientific discovery with explainable AI capabilities. Presents a knowledge-oriented taxonomy of XAI methods for scientific research, discussing knowledge-agnostic, knowledge-based, knowledge-infused, and knowledge-verified approaches.",
-      "url": "https://link.springer.com/article/10.1007/s10462-025-11365-w"
+      "url": "https://link.springer.com/article/10.1007/s10462-025-11365-w",
+      "isDeveloperPaper": true
     }
   ]
 }

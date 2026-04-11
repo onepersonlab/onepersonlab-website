@@ -11,6 +11,7 @@ export interface Paper {
   citationCount: number | null;
   abstract: string;
   url: string;
+  isDeveloperPaper?: boolean;
 }
 
 export function getTopPapers(): Paper[] {
@@ -23,7 +24,8 @@ export function getTopPapers(): Paper[] {
     authors: p.authors || [],
     citationCount: p.citationCount,
     abstract: p.abstract || '',
-    url: p.url
+    url: p.url,
+    isDeveloperPaper: p.isDeveloperPaper || false
   }));
 }
 

@@ -92,38 +92,48 @@ export function PapersSection() {
       <div className={`max-w-6xl mx-auto transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {topPapers.map((paper, index) => (
-            <article key={paper.doi || paper.title} className="group relative bg-navy-900/50 border border-white/10 rounded-xl p-6 hover:border-mint-400/50 transition-all duration-300">
-              <div className="flex items-start justify-between mb-4">
-                <span className="text-mint-400 font-bold text-lg" style={{ fontFamily: 'var(--font-mono)' }}>#{index + 1}</span>
-                <div className="flex items-center gap-2">
-                  <span className="text-sm text-white/50" style={{ fontFamily: 'var(--font-body)' }}>{paper.year}</span>
-                  {paper.citationCount !== null && (
-                    <span className="inline-flex items-center px-2 py-1 rounded text-xs bg-mint-400/20 text-mint-400" style={{ fontFamily: 'var(--font-mono)' }}>
-                      {paper.citationCount} citations
-                    </span>
-                  )}
-                </div>
-              </div>
-              <a href={paper.url} target="_blank" rel="noopener noreferrer" className="block">
-                <h3 className="text-white font-medium mb-3 group-hover:text-mint-400 transition-colors line-clamp-2" style={{ fontFamily: 'var(--font-display)' }}>
-                  {paper.title}
-                </h3>
-                <p className="text-sm text-white/50 mb-3 line-clamp-3" style={{ fontFamily: 'var(--font-body)' }}>
-                  {paper.abstract || 'No abstract available'}
-                </p>
-                <div className="flex items-center gap-2 text-sm text-white/40">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                  </svg>
-                  <span style={{ fontFamily: 'var(--font-body)' }}>{paper.venue}</span>
-                </div>
-                {paper.authors.length > 0 && (
-                  <p className="text-xs text-white/30 mt-2 line-clamp-1" style={{ fontFamily: 'var(--font-body)' }}>
-                    {paper.authors.slice(0, 3).join(', ')}{paper.authors.length > 3 ? ' et al.' : ''}
+            <>
+              {paper.isDeveloperPaper && (
+                <div key="developer-note" className="md:col-span-2 bg-mint-400/10 border border-mint-400/30 rounded-xl p-4 mb-2 flex items-center gap-3">
+                  <span className="text-2xl">😊</span>
+                  <p className="text-white/70" style={{ fontFamily: 'var(--font-body)' }}>
+                    This is <strong className="text-mint-400">our own paper</strong> — we're excited to share it with you! Feel free to read and explore.
                   </p>
-                )}
-              </a>
-            </article>
+                </div>
+              )}
+              <article key={paper.doi || paper.title} className="group relative bg-navy-900/50 border border-white/10 rounded-xl p-6 hover:border-mint-400/50 transition-all duration-300">
+                <div className="flex items-start justify-between mb-4">
+                  <span className="text-mint-400 font-bold text-lg" style={{ fontFamily: 'var(--font-mono)' }}>#{index + 1}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-white/50" style={{ fontFamily: 'var(--font-body)' }}>{paper.year}</span>
+                    {paper.citationCount !== null && (
+                      <span className="inline-flex items-center px-2 py-1 rounded text-xs bg-mint-400/20 text-mint-400" style={{ fontFamily: 'var(--font-mono)' }}>
+                        {paper.citationCount} citations
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <a href={paper.url} target="_blank" rel="noopener noreferrer" className="block">
+                  <h3 className="text-white font-medium mb-3 group-hover:text-mint-400 transition-colors line-clamp-2" style={{ fontFamily: 'var(--font-display)' }}>
+                    {paper.title}
+                  </h3>
+                  <p className="text-sm text-white/50 mb-3 line-clamp-3" style={{ fontFamily: 'var(--font-body)' }}>
+                    {paper.abstract || 'No abstract available'}
+                  </p>
+                  <div className="flex items-center gap-2 text-sm text-white/40">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                    <span style={{ fontFamily: 'var(--font-body)' }}>{paper.venue}</span>
+                  </div>
+                  {paper.authors.length > 0 && (
+                    <p className="text-xs text-white/30 mt-2 line-clamp-1" style={{ fontFamily: 'var(--font-body)' }}>
+                      {paper.authors.slice(0, 3).join(', ')}{paper.authors.length > 3 ? ' et al.' : ''}
+                    </p>
+                  )}
+                </a>
+              </article>
+            </>
           ))}
         </div>
 
