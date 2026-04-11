@@ -10,17 +10,11 @@ export function Footer() {
         {/* Logo and tagline */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
           <div className="flex items-center gap-3">
-            <div 
-              className="w-10 h-10 rounded-lg bg-gradient-to-br from-mint-400 to-mint-500 flex items-center justify-center"
-              aria-hidden="true"
-            >
-              <span 
-                className="text-navy-900 font-bold text-lg"
-                style={{ fontFamily: 'var(--font-display)' }}
-              >
-                1
-              </span>
-            </div>
+            <img 
+              src="/favicon.svg" 
+              alt="OnePersonLab Logo" 
+              className="w-10 h-10 rounded-lg"
+            />
             <span 
               className="text-white font-semibold text-xl"
               style={{ fontFamily: 'var(--font-display)' }}
