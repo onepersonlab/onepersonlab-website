@@ -1,128 +1,128 @@
 {
-  "description": "ClawHub Skills - Top 12 by Downloads - Detailed Info",
-  "source": "ClawHub Registry",
-  "generated_at": "2026-04-12T00:30:00Z",
+  "description": "ClawHub Skills - Top Downloads (Real Data from API)",
+  "source": "ClawHub API v1",
+  "generated_at": "2026-04-12T00:45:00Z",
   "skill_count": 12,
   "skills": [
     {
-      "name": "agent-browser-clawdbot",
+      "slug": "self-improving-agent",
+      "displayName": "self-improving-agent",
+      "description": "Captures learnings, errors, and corrections to enable continuous improvement",
+      "category": "Automation",
+      "downloads": 376023,
+      "stars": 3120,
+      "author": "pskoett",
+      "url": "https://clawhub.ai/pskoett/self-improving-agent"
+    },
+    {
       "slug": "agent-browser-clawdbot",
-      "description": "Headless browser automation CLI optimized for AI agents with accessibility tree snapshots and ref-based element selection",
+      "displayName": "Agent Browser",
+      "description": "Headless browser automation CLI optimized for AI agents with accessibility tree snapshots",
       "category": "Browser Automation",
-      "downloads": 1250,
-      "stars": 45,
-      "author": "openclaw",
-      "url": "https://clawhub.ai/skills/agent-browser-clawdbot"
+      "downloads": 81108,
+      "stars": 298,
+      "author": "matrixy",
+      "url": "https://clawhub.ai/matrixy/agent-browser-clawdbot"
     },
     {
-      "name": "literature-review",
-      "slug": "literature-review",
-      "description": "Assistance with writing literature reviews by searching for academic sources via Semantic Scholar, OpenAlex, Crossref, PubMed, arXiv, and bioRxiv APIs",
-      "category": "Research",
-      "downloads": 980,
-      "stars": 38,
-      "author": "openclaw",
-      "url": "https://clawhub.ai/skills/literature-review"
-    },
-    {
-      "name": "openclaw-tavily-search",
       "slug": "openclaw-tavily-search",
-      "description": "Web search via Tavily API - Returns relevant results with optional short answer summaries",
+      "displayName": "Tavily Search",
+      "description": "Web search via Tavily API - Returns relevant results with short answer summaries",
       "category": "Search",
-      "downloads": 850,
-      "stars": 32,
-      "author": "openclaw",
-      "url": "https://clawhub.ai/skills/openclaw-tavily-search"
+      "downloads": 78213,
+      "stars": 211,
+      "author": "jacky1n7",
+      "url": "https://clawhub.ai/jacky1n7/openclaw-tavily-search"
     },
     {
-      "name": "ai-humanizer",
-      "slug": "ai-humanizer",
-      "description": "Humanize AI-generated text by detecting and removing patterns typical of LLM output. Rewrites text to sound natural, specific, and human",
-      "category": "Writing",
-      "downloads": 720,
-      "stars": 28,
-      "author": "community",
-      "url": "https://clawhub.ai/skills/ai-humanizer"
-    },
-    {
-      "name": "openclaw-skill-vetter",
-      "slug": "openclaw-skill-vetter",
-      "description": "Security vetting protocol before installing any AI agent skill. Red flag detection for credential theft, obfuscated code, exfiltration",
-      "category": "Security",
-      "downloads": 650,
-      "stars": 25,
-      "author": "openclaw",
-      "url": "https://clawhub.ai/skills/openclaw-skill-vetter"
-    },
-    {
-      "name": "xiucheng-self-improving-agent",
       "slug": "xiucheng-self-improving-agent",
-      "description": "Self-improving agent system that analyzes conversation quality, identifies improvement opportunities, and continuously optimizes response strategies",
+      "displayName": "Self Improving Agent",
+      "description": "Self-improving agent system that analyzes conversation quality and optimizes response strategies",
       "category": "Automation",
-      "downloads": 580,
-      "stars": 22,
+      "downloads": 30277,
+      "stars": 48,
       "author": "xiucheng",
-      "url": "https://clawhub.ai/skills/xiucheng-self-improving-agent"
+      "url": "https://clawhub.ai/xiucheng/xiucheng-self-improving-agent"
     },
     {
-      "name": "git-delegation",
-      "slug": "git-delegation",
-      "description": "Execute git operations on behalf of Workers who don't have git credentials - clone, push, pull, commit, rebase operations",
+      "slug": "agent-directory",
+      "displayName": "Agent Directory",
+      "description": "The directory for AI agent services - Discover tools, platforms, and infrastructure",
+      "category": "Discovery",
+      "downloads": 7068,
+      "stars": null,
+      "author": "unknown",
+      "url": "https://clawhub.ai/agent-directory"
+    },
+    {
+      "slug": "literature-review",
+      "displayName": "Literature Review",
+      "description": "Assistance with writing literature reviews by searching for academic sources via Semantic Scholar, OpenAlex, PubMed",
+      "category": "Research",
+      "downloads": 7551,
+      "stars": 19,
+      "author": "weird-aftertaste",
+      "url": "https://clawhub.ai/weird-aftertaste/literature-review"
+    },
+    {
+      "slug": "openclaw-cli",
+      "displayName": "OpenClaw CLI",
+      "description": "Operate and troubleshoot the OpenClaw CLI across setup, gateway/node lifecycle",
       "category": "Tools",
-      "downloads": 520,
-      "stars": 18,
-      "author": "hiclaw",
-      "url": "https://clawhub.ai/skills/git-delegation"
+      "downloads": 5739,
+      "stars": 3,
+      "author": "ramensushi2026",
+      "url": "https://clawhub.ai/ramensushi2026/openclaw-cli"
     },
     {
-      "name": "github-operations",
-      "slug": "github-operations",
-      "description": "Comprehensive GitHub operations skill for repository management, PR handling, issue tracking, and code review workflows",
+      "slug": "openclaw-ops-guardrails",
+      "displayName": "OpenClaw Ops Guardrails",
+      "description": "Operational guardrails and safety checks for OpenClaw operations",
+      "category": "Security",
+      "downloads": 2015,
+      "stars": null,
+      "author": "xyezir",
+      "url": "https://clawhub.ai/xyezir/openclaw-ops-guardrails"
+    },
+    {
+      "slug": "agent-team",
+      "displayName": "Agent Team",
+      "description": "Manage multi-agent teams with different identities and specialized models",
+      "category": "Multi-Agent",
+      "downloads": 1476,
+      "stars": null,
+      "author": "unknown",
+      "url": "https://clawhub.ai/agent-team"
+    },
+    {
+      "slug": "agent-group",
+      "displayName": "Agent Group",
+      "description": "Minimal multi-agent group - as simple as creating a WeChat group",
+      "category": "Multi-Agent",
+      "downloads": 879,
+      "stars": null,
+      "author": "unknown",
+      "url": "https://clawhub.ai/agent-group"
+    },
+    {
+      "slug": "openclaw-error-fix",
+      "displayName": "OpenClaw Error Fix",
+      "description": "Automatically diagnose and fix common OpenClaw errors",
       "category": "Tools",
-      "downloads": 450,
-      "stars": 15,
-      "author": "community",
-      "url": "https://clawhub.ai/skills/github-operations"
+      "downloads": 627,
+      "stars": null,
+      "author": "unknown",
+      "url": "https://clawhub.ai/openclaw-error-fix"
     },
     {
-      "name": "web-search",
-      "slug": "web-search",
-      "description": "General web search capability with Brave Search API integration - returns titles, URLs, and snippets for fast research",
-      "category": "Search",
-      "downloads": 420,
-      "stars": 14,
-      "author": "openclaw",
-      "url": "https://clawhub.ai/skills/web-search"
-    },
-    {
-      "name": "email-assistant",
-      "slug": "email-assistant",
-      "description": "Email management skill for reading, composing, and organizing emails across multiple providers",
-      "category": "Communication",
-      "downloads": 380,
-      "stars": 12,
-      "author": "community",
-      "url": "https://clawhub.ai/skills/email-assistant"
-    },
-    {
-      "name": "calendar-manager",
-      "slug": "calendar-manager",
-      "description": "Calendar and scheduling management with Google Calendar, Outlook, and other provider integrations",
-      "category": "Planning",
-      "downloads": 350,
-      "stars": 11,
-      "author": "community",
-      "url": "https://clawhub.ai/skills/calendar-manager"
-    },
-    {
-      "name": "notification-handler",
-      "slug": "notification-handler",
-      "description": "Handle system notifications, alerts, and reminders across desktop and mobile platforms",
-      "category": "Automation",
-      "downloads": 320,
-      "stars": 10,
-      "author": "openclaw",
-      "url": "https://clawhub.ai/skills/notification-handler"
+      "slug": "openclaw-power-ops",
+      "displayName": "OpenClaw Power Ops",
+      "description": "Advanced operational utilities for OpenClaw power users",
+      "category": "Tools",
+      "downloads": 500,
+      "stars": null,
+      "author": "unknown",
+      "url": "https://clawhub.ai/openclaw-power-ops"
     }
   ]
 }
