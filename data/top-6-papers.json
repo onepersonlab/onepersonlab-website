@@ -1,0 +1,31 @@
+{
+  "description": "Top 6 Featured Papers - User specified",
+  "source": "Admin selection",
+  "updated": "2026-04-11",
+  "papers": [
+    {
+      "title": "Empowering AI data scientists using a multi-agent LLM framework with self-evolving capabilities for autonomous, tool-aware biomedical data analyses",
+      "order": 1
+    },
+    {
+      "title": "An agentic system for rare disease diagnosis with traceable reasoning",
+      "order": 2
+    },
+    {
+      "title": "Agentic AI and the rise of in silico team science in biomedical research",
+      "order": 3
+    },
+    {
+      "title": "Towards end-to-end automation of AI research",
+      "order": 4
+    },
+    {
+      "title": "CellVoyager: AI CompBio agent generates new insights by autonomously analyzing biological data",
+      "order": 5
+    },
+    {
+      "title": "Empowering scientific discovery with explainable small domain-specific and large language models",
+      "order": 6
+    }
+  ]
+}

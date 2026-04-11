@@ -1,0 +1,108 @@
+{
+  "description": "All Papers - Detailed Info (Auto-discovered)",
+  "source": "OpenAlex API",
+  "generated_at": "2026-04-11T23:15:00Z",
+  "paper_count": 10,
+  "papers": [
+    {
+      "title": "AI, agentic models and lab automation for scientific discovery — the beginning of scAInce",
+      "doi": "10.3389/frai.2025.1649155",
+      "year": 2025,
+      "venue": "Frontiers in Artificial Intelligence",
+      "authors": ["Thomas Hartung"],
+      "citationCount": 9,
+      "abstract": "Research is entering a \"co-pilot to lab-pilot\" transition in which AI no longer merely interprets knowledge but increasingly acts upon it. This shift promises dramatic efficiency gains yet simultaneously amplifies concerns about reproducibility, auditability, safety and equitable access.",
+      "url": "https://doi.org/10.3389/frai.2025.1649155"
+    },
+    {
+      "title": "Biomni: A General-Purpose Biomedical AI Agent",
+      "doi": "10.1101/2025.05.30.656746",
+      "year": 2025,
+      "venue": "bioRxiv",
+      "authors": ["Kexin Huang", "Serena Zhang", "Hanchen Wang", "Yuanhao Qu", "Yingzhou Lu", "Yusuf Roohani", "Ryan J. Li", "Lin Qiu", "G. L. Li", "Junze Zhang", "Di Yin", "Shruti Marwaha", "Jennefer N. Carter", "Xin‐Fu Zhou", "Matthew T. Wheeler", "Jonathan A. Bernstein", "Mengdi Wang", "Peng He", "Jingtian Zhou", "M Snyder", "Le Cong", "Aviv Regev", "Jure Leskovec"],
+      "citationCount": 60,
+      "abstract": "A general-purpose biomedical AI agent designed to autonomously execute a wide spectrum of research tasks across diverse biomedical subfields. Biomni features a generalist agentic architecture that integrates large language model reasoning with retrieval-augmented planning and code-based execution.",
+      "url": "https://doi.org/10.1101/2025.05.30.656746"
+    },
+    {
+      "title": "Crystallography companion agent for high-throughput materials discovery",
+      "doi": "10.1038/s43588-021-00059-2",
+      "year": 2021,
+      "venue": "Nature Computational Science",
+      "authors": ["Phillip M. Maffettone", "Lars Banko", "Peng Cui", "Yury Lysogorskiy", "Marc A. Little", "Daniel Olds", "Alfred Ludwig", "Andrew I. Cooper"],
+      "citationCount": 88,
+      "abstract": "An AI agent companion for automated crystallography analysis in materials discovery.",
+      "url": "https://doi.org/10.1038/s43588-021-00059-2"
+    },
+    {
+      "title": "Approaching autonomy in medical artificial intelligence",
+      "doi": "10.1016/s2589-7500(20)30187-4",
+      "year": 2020,
+      "venue": "The Lancet Digital Health",
+      "authors": ["Danielle S. Bitterman", "Hugo J.W.L. Aerts", "Raymond H. Mak"],
+      "citationCount": 96,
+      "abstract": "A nuanced discussion of autonomy in medical AI to improve the understanding of the effect, risks, and clinical value of such systems.",
+      "url": "https://doi.org/10.1016/s2589-7500(20)30187-4"
+    },
+    {
+      "title": "A survey on large language model based autonomous agents",
+      "doi": "10.1007/s11704-024-40231-1",
+      "year": 2024,
+      "venue": "Frontiers of Computer Science",
+      "authors": ["Lei Wang", "Chen Ma", "Xueyang Feng", "Zeyu Zhang", "Hao Yang", "Jingsen Zhang", "Zhiyuan Chen", "Jiakai Tang", "Xu Chen", "Yankai Lin", "Wayne Xin Zhao", "Zhewei Wei", "Ji-Rong Wen"],
+      "citationCount": 938,
+      "abstract": "A comprehensive survey of LLM-based autonomous agents from a holistic perspective, discussing the construction and diverse applications in social science, natural science, and engineering.",
+      "url": "https://doi.org/10.1007/s11704-024-40231-1"
+    },
+    {
+      "title": "Medea: An omics AI agent for therapeutic discovery",
+      "doi": "10.64898/2026.01.16.696667",
+      "year": 2026,
+      "venue": "bioRxiv",
+      "authors": ["Pengwei Sui", "M. Li", "Shanghua Gao", "Wanxiang Shen", "Valentina Giunchiglia", "Andrew Shen", "Yepeng Huang", "Zhenglun Kong", "Marinka Zitnik"],
+      "citationCount": 1,
+      "abstract": "An AI agent that takes an omics objective and executes a transparent multi-step analysis using tools. Medea comprises four modules: research planning, code execution, literature reasoning, and consensus stage.",
+      "url": "https://doi.org/10.64898/2026.01.16.696667"
+    },
+    {
+      "title": "BioML-bench: Evaluation of AI Agents for End-to-End Biomedical ML",
+      "doi": "10.1101/2025.09.01.673319",
+      "year": 2025,
+      "venue": "bioRxiv",
+      "authors": ["Henry E. Miller", "Matthew Greenig", "Benjamin Tenmann", "Bo Wang"],
+      "citationCount": 1,
+      "abstract": "The first benchmarking suite for evaluating AI agents on end-to-end biomedical ML tasks spanning protein engineering, single-cell omics, biomedical imaging, and drug discovery.",
+      "url": "https://doi.org/10.1101/2025.09.01.673319"
+    },
+    {
+      "title": "AtlasAgent: Vision language model and Agent-guided Framework for Evaluation of Atlas-scale Single-cell Integration",
+      "doi": "10.1101/2025.07.15.663271",
+      "year": 2025,
+      "venue": "bioRxiv",
+      "authors": [],
+      "citationCount": 0,
+      "abstract": "A framework for evaluating atlas-scale single-cell data integration using vision language models and agents.",
+      "url": "https://doi.org/10.1101/2025.07.15.663271"
+    },
+    {
+      "title": "CoNVict: An Agentic AI System for Copy Number Variation Prioritization in Rare Disease Diagnosis",
+      "doi": "10.64898/2026.03.16.26348493",
+      "year": 2026,
+      "venue": "medRxiv",
+      "authors": ["M. Gencturk", "M. Kara", "F. Ozden"],
+      "citationCount": 0,
+      "abstract": "An agentic AI system for copy number variation prioritization in rare disease diagnosis.",
+      "url": "https://doi.org/10.64898/2026.03.16.26348493"
+    },
+    {
+      "title": "Berrylyzer-an Efficient, Traceable, and Lightweight Intelligent Agentic System for Prenatal Genetic Diagnosis",
+      "doi": "10.64898/2026.04.02.26349929",
+      "year": 2026,
+      "venue": "medRxiv",
+      "authors": ["M. Meng"],
+      "citationCount": 0,
+      "abstract": "An efficient, traceable, and lightweight intelligent agentic system for prenatal genetic diagnosis.",
+      "url": "https://doi.org/10.64898/2026.04.02.26349929"
+    }
+  ]
+}

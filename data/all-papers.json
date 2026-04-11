@@ -1,0 +1,52 @@
+{
+  "description": "All Papers - Auto-discovered from Literature Review",
+  "source": "OpenAlex API + Semantic Scholar",
+  "updated": "2026-04-11",
+  "search_queries": [
+    "AI agent scientific discovery automation",
+    "autonomous AI research scientist agent",
+    "multi-agent biomedical research"
+  ],
+  "papers": [
+    {
+      "title": "AI, agentic models and lab automation for scientific discovery — the beginning of scAInce",
+      "doi": "10.3389/frai.2025.1649155"
+    },
+    {
+      "title": "Biomni: A General-Purpose Biomedical AI Agent",
+      "doi": "10.1101/2025.05.30.656746"
+    },
+    {
+      "title": "Crystallography companion agent for high-throughput materials discovery",
+      "doi": "10.1038/s43588-021-00059-2"
+    },
+    {
+      "title": "Approaching autonomy in medical artificial intelligence",
+      "doi": "10.1016/s2589-7500(20)30187-4"
+    },
+    {
+      "title": "A survey on large language model based autonomous agents",
+      "doi": "10.1007/s11704-024-40231-1"
+    },
+    {
+      "title": "Medea: An omics AI agent for therapeutic discovery",
+      "doi": "10.64898/2026.01.16.696667"
+    },
+    {
+      "title": "BioML-bench: Evaluation of AI Agents for End-to-End Biomedical ML",
+      "doi": "10.1101/2025.09.01.673319"
+    },
+    {
+      "title": "AtlasAgent: Vision language model and Agent-guided Framework for Evaluation of Atlas-scale Single-cell Integration",
+      "doi": "10.1101/2025.07.15.663271"
+    },
+    {
+      "title": "CoNVict: An Agentic AI System for Copy Number Variation Prioritization in Rare Disease Diagnosis",
+      "doi": "10.64898/2026.03.16.26348493"
+    },
+    {
+      "title": "Berrylyzer-an Efficient, Traceable, and Lightweight Intelligent Agentic System for Prenatal Genetic Diagnosis",
+      "doi": "10.64898/2026.04.02.26349929"
+    }
+  ]
+}
