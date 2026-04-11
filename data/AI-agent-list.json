@@ -1,7 +1,8 @@
 {
   "description": "AI Agent Research Repositories - Base List",
-  "source": "GitHub API + Manual Search",
+  "source": "GitHub API Search",
   "updated": "2026-04-11",
+  "total": 52,
   "repos": [
     "karpathy/autoresearch",
     "stanford-oval/storm",
@@ -29,6 +30,30 @@
     "mims-harvard/ToolUniverse",
     "ur-whitelab/chemcrow-public",
     "mattprusak/autoresearch-genealogy",
-    "mshumer/autonomous-researcher"
+    "mshumer/autonomous-researcher",
+    "assafelovic/gpt-researcher",
+    "bytedance/deer-flow",
+    "khoj-ai/khoj",
+    "virattt/dexter",
+    "dzhng/deep-research",
+    "arc53/DocsGPT",
+    "microsoft/RD-Agent",
+    "bytedance/UI-TARS",
+    "SkyworkAI/DeepResearchAgent",
+    "dwzhu-pku/PaperBanana",
+    "DeepInsight-AI/DeepBI",
+    "hzwer/WritingAIPaper",
+    "QJHWC/PaperForge",
+    "ymx10086/ResearchClaw",
+    "zongxi1115/PaperSpark",
+    "yunshenwuchuxun/latex-paper-skills",
+    "InternScience/InternAgent",
+    "Future-House/robin",
+    "allenai/discoveryworld",
+    "OSU-NLP-Group/ScienceAgentBench",
+    "MervinPraison/PraisonAI",
+    "jmiao24/Paper2Agent",
+    "starpig1129/DATAGEN",
+    "guy-hartstein/company-research-agent"
   ]
 }
