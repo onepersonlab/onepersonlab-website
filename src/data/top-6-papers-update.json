@@ -62,13 +62,13 @@
     {
       "order": 6,
       "title": "Empowering scientific discovery with explainable small domain-specific and large language models",
-      "doi": null,
-      "year": 2024,
-      "venue": "Google Scholar",
+      "doi": "10.1007/s10462-025-11365-w",
+      "year": 2025,
+      "venue": "Artificial Intelligence Review",
       "authors": [],
       "citationCount": null,
-      "abstract": "Explores how combining domain-specific small models with large language models can empower scientific discovery with explainable AI capabilities.",
-      "url": "https://scholar.google.com.hk/citations?view_op=view_citation&hl=zh-CN&user=vI5pie8AAAAJ&sortby=pubdate&citation_for_view=vI5pie8AAAAJ:ufrVoPGSRksC"
+      "abstract": "A comprehensive review exploring how combining domain-specific small models with large language models can empower scientific discovery with explainable AI capabilities. Presents a knowledge-oriented taxonomy of XAI methods for scientific research, discussing knowledge-agnostic, knowledge-based, knowledge-infused, and knowledge-verified approaches.",
+      "url": "https://link.springer.com/article/10.1007/s10462-025-11365-w"
     }
   ]
 }
