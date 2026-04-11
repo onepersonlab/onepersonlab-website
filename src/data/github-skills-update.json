@@ -2,7 +2,7 @@
   "description": "GitHub Skills Repositories - Detailed Info",
   "source": "GitHub API",
   "generated_at": "2026-04-12T00:30:00Z",
-  "skill_count": 6,
+  "skill_count": 8,
   "skills": [
     {
       "full_name": "anthropics/skills",

@@ -2,7 +2,7 @@
   "description": "Research Agent Repositories - Updated Stats",
   "source": "GitHub API",
   "generated_at": "2026-04-11T14:47:56.976Z",
-  "repo_count": 39,
+  "repo_count": 37,
   "repos": [
     {
       "full_name": "karpathy/autoresearch",
@@ -65,18 +65,6 @@
       "url": "https://github.com/Alibaba-NLP/DeepResearch"
     },
     {
-      "full_name": "K-Dense-AI/scientific-agent-skills",
-      "name": "scientific-agent-skills",
-      "owner": "K-Dense-AI",
-      "description": "Comprehensive skills for scientific AI agents",
-      "language": "Python",
-      "stars": 18113,
-      "forks": 1987,
-      "weeklyStars": 0,
-      "updated": "1 day ago",
-      "url": "https://github.com/K-Dense-AI/scientific-agent-skills"
-    },
-    {
       "full_name": "Leey21/awesome-ai-research-writing",
       "name": "awesome-ai-research-writing",
       "owner": "Leey21",
@@ -135,18 +123,6 @@
       "weeklyStars": 0,
       "updated": "3 days ago",
       "url": "https://github.com/langchain-ai/local-deep-researcher"
-    },
-    {
-      "full_name": "Orchestra-Research/AI-Research-SKILLs",
-      "name": "AI-Research-SKILLs",
-      "owner": "Orchestra-Research",
-      "description": "Skills library for AI research agents",
-      "language": "TeX",
-      "stars": 6578,
-      "forks": 510,
-      "weeklyStars": 0,
-      "updated": "2 days ago",
-      "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs"
     },
     {
       "full_name": "wanshuiyin/Auto-claude-code-research-in-sleep",

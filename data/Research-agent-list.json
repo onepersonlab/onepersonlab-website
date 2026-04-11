@@ -1,8 +1,8 @@
 {
   "description": "Research Agent Repositories - Base List",
   "source": "GitHub API + Manual Classification",
-  "updated": "2026-04-11",
-  "total": 39,
+  "updated": "2026-04-12",
+  "total": 37,
   "repos": [
     "karpathy/autoresearch",
     "SakanaAI/AI-Scientist",
@@ -11,8 +11,6 @@
     "HKUDS/AI-Researcher",
     "Alibaba-NLP/DeepResearch",
     "stanford-oval/storm",
-    "K-Dense-AI/scientific-agent-skills",
-    "Orchestra-Research/AI-Research-SKILLs",
     "snap-stanford/Biomni",
     "ur-whitelab/chemcrow-public",
     "InternScience/InternAgent",

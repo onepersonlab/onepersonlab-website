@@ -2,13 +2,15 @@
   "description": "GitHub Skills Repositories - Skills/Agent Templates Collections",
   "source": "GitHub API",
   "updated": "2026-04-12",
-  "skill_count": 6,
+  "skill_count": 8,
   "skills": [
     {"full_name": "anthropics/skills"},
     {"full_name": "msitarzewski/agency-agents"},
     {"full_name": "FreedomIntelligence/OpenClaw-Medical-Skills"},
     {"full_name": "travisvn/awesome-claude-skills"},
     {"full_name": "Jeffallan/claude-skills"},
-    {"full_name": "GPTomics/bioSkills"}
+    {"full_name": "GPTomics/bioSkills"},
+    {"full_name": "K-Dense-AI/scientific-agent-skills"},
+    {"full_name": "Orchestra-Research/AI-Research-SKILLs"}
   ]
 }
