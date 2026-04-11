@@ -1,8 +1,8 @@
 {
   "description": "Research Agent Repositories - Updated Stats",
   "source": "GitHub API",
-  "generated_at": "2026-04-11T14:32:52.022Z",
-  "repo_count": 41,
+  "generated_at": "2026-04-11T14:47:56.976Z",
+  "repo_count": 39,
   "repos": [
     {
       "full_name": "karpathy/autoresearch",
@@ -425,18 +425,6 @@
       "url": "https://github.com/allenai/discoveryworld"
     },
     {
-      "full_name": "zongxi1115/PaperSpark",
-      "name": "PaperSpark",
-      "owner": "zongxi1115",
-      "description": "AI-driven paper collection and writing",
-      "language": "Python",
-      "stars": 182,
-      "forks": 15,
-      "weeklyStars": 0,
-      "updated": "1 week ago",
-      "url": "https://github.com/zongxi1115/PaperSpark"
-    },
-    {
       "full_name": "GAIR-NLP/ASI-Evolve",
       "name": "ASI-Evolve",
       "owner": "GAIR-NLP",
@@ -459,18 +447,6 @@
       "weeklyStars": 0,
       "updated": "1 week ago",
       "url": "https://github.com/OSU-NLP-Group/ScienceAgentBench"
-    },
-    {
-      "full_name": "yunshenwuchuxun/latex-paper-skills",
-      "name": "latex-paper-skills",
-      "owner": "yunshenwuchuxun",
-      "description": "Modular skill framework for LaTeX papers",
-      "language": "Unknown",
-      "stars": 123,
-      "forks": 8,
-      "weeklyStars": 0,
-      "updated": "2 weeks ago",
-      "url": "https://github.com/yunshenwuchuxun/latex-paper-skills"
     },
     {
       "full_name": "TianGzlab/OmicsClaw",
