@@ -82,7 +82,7 @@ export function ReposSection() {
 
   return (
     <section 
-      id="repos" 
+      id="agents" 
       className="min-h-screen py-24 px-6 bg-navy-900 relative"
       aria-labelledby="repos-heading"
     >
