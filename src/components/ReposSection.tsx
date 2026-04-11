@@ -54,10 +54,16 @@ export function ReposSection() {
 
   const displayRepos = expanded ? repos : repos.slice(0, 10);
 
-  const formatDate = (dateStr: string) => {
-    if (!dateStr || dateStr === 'unknown') return 'unknown';
+  // If updated is already a relative time string (contains 'ago'), use it directly
+  // Otherwise parse as date
+  const formatUpdated = (updatedStr: string) => {
+    if (!updatedStr || updatedStr === 'unknown' || updatedStr === 'NaN months ago') return 'unknown';
+    // Already relative time? Just use it
+    if (updatedStr.includes('ago') || updatedStr.includes('just now')) return updatedStr;
+    // Otherwise try to parse as date
     try {
-      const date = new Date(dateStr);
+      const date = new Date(updatedStr);
+      if (isNaN(date.getTime())) return 'unknown';
       const now = new Date();
       const diffMs = now.getTime() - date.getTime();
       const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
@@ -221,7 +227,7 @@ export function ReposSection() {
                       <span className="text-sm" style={{ fontFamily: 'var(--font-mono)' }}>{repo.forks >= 1000 ? `${(repo.forks / 1000).toFixed(1)}k` : repo.forks}</span>
                     </div>
                   </td>
-                  <td className="px-6 py-4 text-right hidden lg:table-cell"><span className="text-sm text-white/50" style={{ fontFamily: 'var(--font-body)' }}>{formatDate(repo.updated)}</span></td>
+                  <td className="px-6 py-4 text-right hidden lg:table-cell"><span className="text-sm text-white/50" style={{ fontFamily: 'var(--font-body)' }}>{formatUpdated(repo.updated)}</span></td>
                 </tr>
               ))}
             </tbody>
