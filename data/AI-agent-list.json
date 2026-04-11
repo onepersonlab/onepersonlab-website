@@ -1,6 +1,6 @@
 {
   "description": "AI Agent Research Repositories - Base List",
-  "source": "https://github.com/cadslab/Pantheon",
+  "source": "GitHub API + Manual Search",
   "updated": "2026-04-11",
   "repos": [
     "karpathy/autoresearch",
@@ -24,6 +24,11 @@
     "EvoScientist/EvoScientist",
     "TIGER-AI-Lab/OpenResearcher",
     "TianGzlab/OmicsClaw",
-    "sjtu-sai-agents/MagiClaw"
+    "sjtu-sai-agents/MagiClaw",
+    "GAIR-NLP/ASI-Evolve",
+    "mims-harvard/ToolUniverse",
+    "ur-whitelab/chemcrow-public",
+    "mattprusak/autoresearch-genealogy",
+    "mshumer/autonomous-researcher"
   ]
 }
