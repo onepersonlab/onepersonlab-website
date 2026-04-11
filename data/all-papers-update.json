@@ -2,7 +2,7 @@
   "description": "All Papers - Detailed Info (Extended)",
   "source": "OpenAlex + arXiv + Semantic Scholar APIs",
   "generated_at": "2026-04-12T00:10:00Z",
-  "paper_count": 35,
+  "paper_count": 50,
   "papers": [
     {
       "title": "From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery",
@@ -353,6 +353,146 @@
       "citationCount": 1633,
       "abstract": "Explainability and causability of AI systems in medical applications.",
       "url": "https://doi.org/10.1002/widm.1312"
+    },
+    {
+      "title": "AlphaEvolve: A coding agent for scientific and algorithmic discovery",
+      "doi": "10.48550/arXiv.2506.13131",
+      "year": 2025,
+      "venue": "arXiv",
+      "authors": [],
+      "citationCount": 367,
+      "abstract": "A coding agent for scientific and algorithmic discovery.",
+      "url": "https://arxiv.org/abs/2506.13131"
+    },
+    {
+      "title": "Kosmos: An AI Scientist for Autonomous Discovery",
+      "doi": "10.48550/arXiv.2511.02824",
+      "year": 2025,
+      "venue": "arXiv",
+      "authors": [],
+      "citationCount": 34,
+      "abstract": "An AI scientist system for autonomous discovery.",
+      "url": "https://arxiv.org/abs/2511.02824"
+    },
+    {
+      "title": "Towards an AI co-scientist",
+      "doi": "10.48550/arXiv.2502.18864",
+      "year": 2025,
+      "venue": "arXiv",
+      "authors": [],
+      "citationCount": 236,
+      "abstract": "AI co-scientist for collaborative research.",
+      "url": "https://arxiv.org/abs/2502.18864"
+    },
+    {
+      "title": "Aleks: AI powered Multi Agent System for Autonomous Scientific Discovery via Data-Driven Approaches in Plant Science",
+      "doi": "10.48550/arXiv.2508.19383",
+      "year": 2025,
+      "venue": "arXiv",
+      "authors": [],
+      "citationCount": 0,
+      "abstract": "Multi-agent system for plant science discovery.",
+      "url": "https://arxiv.org/abs/2508.19383"
+    },
+    {
+      "title": "HealthFlow: A Self-Evolving AI Agent with Meta Planning for Autonomous Healthcare Research",
+      "doi": "10.48550/arXiv.2508.02621",
+      "year": 2025,
+      "venue": "arXiv",
+      "authors": [],
+      "citationCount": 6,
+      "abstract": "Self-evolving AI agent for healthcare research.",
+      "url": "https://arxiv.org/abs/2508.02621"
+    },
+    {
+      "title": "DrugAgent: Automating AI-aided Drug Discovery Programming through LLM Multi-Agent Collaboration",
+      "doi": "10.48550/arXiv.2411.15692",
+      "year": 2024,
+      "venue": "arXiv",
+      "authors": [],
+      "citationCount": 36,
+      "abstract": "LLM multi-agent collaboration for drug discovery.",
+      "url": "https://arxiv.org/abs/2411.15692"
+    },
+    {
+      "title": "Accelerating Drug Discovery Through Agentic AI: A Multi-Agent Approach to Laboratory Automation in the DMTA Cycle",
+      "doi": "10.48550/arXiv.2507.09023",
+      "year": 2025,
+      "venue": "arXiv",
+      "authors": [],
+      "citationCount": 9,
+      "abstract": "Agentic AI for drug discovery DMTA cycle.",
+      "url": "https://arxiv.org/abs/2507.09023"
+    },
+    {
+      "title": "Self-Driving Laboratories for Chemistry and Materials Science",
+      "doi": "10.1021/acs.chemrev.4c00055",
+      "year": 2024,
+      "venue": "Chemical Reviews",
+      "authors": [],
+      "citationCount": 372,
+      "abstract": "Comprehensive review of self-driving laboratories.",
+      "url": "https://doi.org/10.1021/acs.chemrev.4c00055"
+    },
+    {
+      "title": "Autonomous 'self-driving' laboratories: a review of technology and policy implications",
+      "doi": "10.1098/rsos.250646",
+      "year": 2025,
+      "venue": "Royal Society Open Science",
+      "authors": [],
+      "citationCount": 21,
+      "abstract": "Review of self-driving laboratory technology and policy.",
+      "url": "https://doi.org/10.1098/rsos.250646"
+    },
+    {
+      "title": "Role of the human-in-the-loop in emerging self-driving laboratories for heterogeneous catalysis",
+      "doi": "10.1038/s41929-024-01275-5",
+      "year": 2025,
+      "venue": "Nature Catalysis",
+      "authors": [],
+      "citationCount": 24,
+      "abstract": "Human-in-the-loop for self-driving catalysis labs.",
+      "url": "https://doi.org/10.1038/s41929-024-01275-5"
+    },
+    {
+      "title": "How to build an effective self-driving laboratory",
+      "doi": "10.1557/s43577-023-00476-w",
+      "year": 2023,
+      "venue": "MRS Bulletin",
+      "authors": [],
+      "citationCount": 9,
+      "abstract": "Guide to building effective self-driving laboratories.",
+      "url": "https://doi.org/10.1557/s43577-023-00476-w"
+    },
+    {
+      "title": "Democratizing Self-Driving Labs: Advances in Low-Cost 3D Printing for Laboratory Automation",
+      "doi": "10.1039/d4dd00411f",
+      "year": 2025,
+      "venue": "Digital Discovery",
+      "authors": [],
+      "citationCount": 10,
+      "abstract": "Low-cost 3D printing for self-driving lab automation.",
+      "url": "https://doi.org/10.1039/d4dd00411f"
+    },
+    {
+      "title": "BioML-bench: Evaluation of AI Agents for End-to-End Biomedical ML",
+      "doi": "10.1101/2025.09.01.673319",
+      "year": 2025,
+      "venue": "bioRxiv",
+      "authors": [],
+      "citationCount": 6,
+      "abstract": "Benchmark for AI agents in biomedical ML.",
+      "url": "https://doi.org/10.1101/2025.09.01.673319"
+    },
+    {
+      "title": "Multi agent large language models for biomedical hypothesis generation in drug combination discovery",
+      "doi": "10.1016/j.isci.2025.113984",
+      "year": 2025,
+      "venue": "iScience",
+      "authors": [],
+      "citationCount": 1,
+      "abstract": "Multi-agent LLMs for drug combination discovery.",
+      "url": "https://doi.org/10.1016/j.isci.2025.113984"
     }
   ]
 }
