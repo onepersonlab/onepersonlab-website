@@ -10,7 +10,7 @@
     "AI agent chemistry synthesis",
     "autonomous agent protein design"
   ],
-  "paper_count": 50,
+  "paper_count": 62,
   "papers": [
     {"title": "From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery", "doi": "10.48550/arxiv.2508.14111"},
     {"title": "SciAgents: Automating Scientific Discovery Through Bioinspired Multi-Agent Intelligent Graph Reasoning", "doi": "10.1002/adma.202413523"},
@@ -60,6 +60,17 @@
     {"title": "How to build an effective self-driving laboratory", "doi": "10.1557/s43577-023-00476-w"},
     {"title": "Democratizing Self-Driving Labs: Advances in Low-Cost 3D Printing for Laboratory Automation", "doi": "10.1039/d4dd00411f"},
     {"title": "BioML-bench: Evaluation of AI Agents for End-to-End Biomedical ML", "doi": "10.1101/2025.09.01.673319"},
-    {"title": "Multi agent large language models for biomedical hypothesis generation in drug combination discovery", "doi": "10.1016/j.isci.2025.113984"}
+    {"title": "Multi agent large language models for biomedical hypothesis generation in drug combination discovery", "doi": "10.1016/j.isci.2025.113984"},
+    {"title": "Zephyrus: An Agentic Framework for Weather Science", "doi": "10.48550/arXiv.2510.04017"},
+    {"title": "EarthLink: A Self-Evolving AI Agent for Climate Science", "doi": "10.48550/arXiv.2507.17311"},
+    {"title": "RoboCulture: A Robotics Platform for Automated Biological Experimentation", "doi": "10.48550/arXiv.2505.14941"},
+    {"title": "AI-Driven Robotics Laboratory Identifies Pharmacological TNIK Inhibition", "doi": "10.14336/AD.2024.1492"},
+    {"title": "Accelerating aqueous electrolyte design with automated full-cell battery experimentation", "doi": "10.1016/j.xcrp.2025.102548"},
+    {"title": "AI-Driven Future Farming: Achieving Climate-Smart and Sustainable Agriculture", "doi": "10.3390/agriengineering7030089"},
+    {"title": "Human-Centered AI in Smart Farming: Toward Agriculture 5.0", "doi": "10.1109/ACCESS.2024.3395532"},
+    {"title": "The IoT and AI in Agriculture: Smart Sensing Technologies", "doi": "10.3390/s25123583"},
+    {"title": "Edge-Enabled Smart Agriculture Framework: Integrating IoT, Lightweight Deep Learning, and Agentic AI", "doi": "10.1016/j.rineng.2025.107342"},
+    {"title": "An automated workflow for multiplexed single-cell proteomics sample preparation", "doi": "10.1101/2021.04.14.439828"},
+    {"title": "AI-driven smart agriculture using hybrid transformer-CNN for real time disease detection", "doi": "10.1038/s41598-025-10537-6"}
   ]
 }

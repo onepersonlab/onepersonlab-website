@@ -2,7 +2,7 @@
   "description": "All Papers - Detailed Info (Extended)",
   "source": "OpenAlex + arXiv + Semantic Scholar APIs",
   "generated_at": "2026-04-12T00:10:00Z",
-  "paper_count": 50,
+  "paper_count": 62,
   "papers": [
     {
       "title": "From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery",
@@ -493,6 +493,116 @@
       "citationCount": 1,
       "abstract": "Multi-agent LLMs for drug combination discovery.",
       "url": "https://doi.org/10.1016/j.isci.2025.113984"
+    },
+    {
+      "title": "Zephyrus: An Agentic Framework for Weather Science",
+      "doi": "10.48550/arXiv.2510.04017",
+      "year": 2025,
+      "venue": "arXiv",
+      "authors": [],
+      "citationCount": 4,
+      "abstract": "Agentic framework for weather and climate science.",
+      "url": "https://arxiv.org/abs/2510.04017"
+    },
+    {
+      "title": "EarthLink: A Self-Evolving AI Agent for Climate Science",
+      "doi": "10.48550/arXiv.2507.17311",
+      "year": 2025,
+      "venue": "arXiv",
+      "authors": [],
+      "citationCount": 3,
+      "abstract": "Self-evolving AI agent for climate science research.",
+      "url": "https://arxiv.org/abs/2507.17311"
+    },
+    {
+      "title": "RoboCulture: A Robotics Platform for Automated Biological Experimentation",
+      "doi": "10.48550/arXiv.2505.14941",
+      "year": 2025,
+      "venue": "arXiv",
+      "authors": [],
+      "citationCount": 10,
+      "abstract": "Robotics platform for automated biological experiments.",
+      "url": "https://arxiv.org/abs/2505.14941"
+    },
+    {
+      "title": "AI-Driven Robotics Laboratory Identifies Pharmacological TNIK Inhibition",
+      "doi": "10.14336/AD.2024.1492",
+      "year": 2025,
+      "venue": "Aging and Disease",
+      "authors": [],
+      "citationCount": 10,
+      "abstract": "AI-driven robotics lab for pharmacological discovery.",
+      "url": "https://doi.org/10.14336/AD.2024.1492"
+    },
+    {
+      "title": "Accelerating aqueous electrolyte design with automated full-cell battery experimentation",
+      "doi": "10.1016/j.xcrp.2025.102548",
+      "year": 2025,
+      "venue": "Cell Reports Physical Science",
+      "authors": [],
+      "citationCount": 16,
+      "abstract": "Automated battery experimentation with Bayesian optimization.",
+      "url": "https://doi.org/10.1016/j.xcrp.2025.102548"
+    },
+    {
+      "title": "AI-Driven Future Farming: Achieving Climate-Smart and Sustainable Agriculture",
+      "doi": "10.3390/agriengineering7030089",
+      "year": 2025,
+      "venue": "AgriEngineering",
+      "authors": [],
+      "citationCount": 31,
+      "abstract": "AI-driven climate-smart sustainable agriculture.",
+      "url": "https://doi.org/10.3390/agriengineering7030089"
+    },
+    {
+      "title": "Human-Centered AI in Smart Farming: Toward Agriculture 5.0",
+      "doi": "10.1109/ACCESS.2024.3395532",
+      "year": 2024,
+      "venue": "IEEE Access",
+      "authors": [],
+      "citationCount": 99,
+      "abstract": "Human-centered AI for smart farming Agriculture 5.0.",
+      "url": "https://doi.org/10.1109/ACCESS.2024.3395532"
+    },
+    {
+      "title": "The IoT and AI in Agriculture: Smart Sensing Technologies",
+      "doi": "10.3390/s25123583",
+      "year": 2025,
+      "venue": "Sensors",
+      "authors": [],
+      "citationCount": 100,
+      "abstract": "IoT and AI smart sensing for agriculture.",
+      "url": "https://doi.org/10.3390/s25123583"
+    },
+    {
+      "title": "Edge-Enabled Smart Agriculture Framework: Integrating IoT, Lightweight Deep Learning, and Agentic AI",
+      "doi": "10.1016/j.rineng.2025.107342",
+      "year": 2025,
+      "venue": "Results in Engineering",
+      "authors": [],
+      "citationCount": 13,
+      "abstract": "Edge-enabled smart agriculture with agentic AI.",
+      "url": "https://doi.org/10.1016/j.rineng.2025.107342"
+    },
+    {
+      "title": "An automated workflow for multiplexed single-cell proteomics sample preparation",
+      "doi": "10.1101/2021.04.14.439828",
+      "year": 2021,
+      "venue": "bioRxiv",
+      "authors": [],
+      "citationCount": 48,
+      "abstract": "Automated workflow for single-cell proteomics.",
+      "url": "https://doi.org/10.1101/2021.04.14.439828"
+    },
+    {
+      "title": "AI-driven smart agriculture using hybrid transformer-CNN for real time disease detection",
+      "doi": "10.1038/s41598-025-10537-6",
+      "year": 2025,
+      "venue": "Scientific Reports",
+      "authors": [],
+      "citationCount": 13,
+      "abstract": "AI-driven disease detection in sustainable farming.",
+      "url": "https://doi.org/10.1038/s41598-025-10537-6"
     }
   ]
 }
