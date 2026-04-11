@@ -11,6 +11,7 @@ const NAV_ITEMS: NavItem[] = [
   { id: 'repos', label: 'Agents', href: '#repos' },
   { id: 'papers', label: 'Papers', href: '#papers' },
   { id: 'skills', label: 'Skills & Templates', href: '#skills' },
+  { id: 'contact', label: 'Contact', href: '#contact' },
 ];
 
 export function Navigation() {
@@ -24,7 +25,7 @@ export function Navigation() {
       setIsScrolled(scrollY > 100);
 
       // Determine active section
-      const sections = ['repos', 'papers', 'skills'];
+      const sections = ['repos', 'papers', 'skills', 'contact'];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
