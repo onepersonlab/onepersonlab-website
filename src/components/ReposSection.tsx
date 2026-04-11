@@ -164,7 +164,7 @@ export function ReposSection() {
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
             </svg>
-            Weekly
+            Daily
           </span>
         </button>
       </div>
@@ -179,7 +179,7 @@ export function ReposSection() {
                 <th scope="col" className="text-left px-6 py-4 text-sm font-semibold text-white/80">Repository</th>
                 <th scope="col" className="text-left px-6 py-4 text-sm font-semibold text-white/80 hidden md:table-cell">Language</th>
                 <th scope="col" className="text-center px-6 py-4 text-sm font-semibold text-white/80">Stars</th>
-                <th scope="col" className="text-center px-6 py-4 text-sm font-semibold text-white/80 hidden sm:table-cell">Weekly</th>
+                <th scope="col" className="text-center px-6 py-4 text-sm font-semibold text-white/80 hidden sm:table-cell">Daily</th>
                 <th scope="col" className="text-center px-6 py-4 text-sm font-semibold text-white/80 hidden lg:table-cell">Forks</th>
                 <th scope="col" className="text-right px-6 py-4 text-sm font-semibold text-white/80 hidden lg:table-cell">Updated</th>
               </tr>

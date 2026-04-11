@@ -1,72 +1,76 @@
 #!/bin/bash
-# AI Agent Repository Stats Updater
+# AI Agent Repository Stats Updater - Dual List Version
+# Updates both Research and General agent lists
 # Usage: ./update-repo-stats.sh
 
 set -e
 
 DATA_DIR="/root/onepersonlab-website/data"
-BASE_LIST="$DATA_DIR/AI-agent-list.json"
-UPDATE_LIST="$DATA_DIR/AI-agent-list-update.json"
+TOKEN=$(grep "GITHUB_TOKEN" ~/.openclaw/.env 2>/dev/null | cut -d'=' -f2)
+NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 
-echo "=== AI Agent Repository Stats Updater ==="
-echo "Base list: $BASE_LIST"
-echo "Output: $UPDATE_LIST"
+echo "=== AI Agent Repository Stats Updater (Dual List) ==="
+echo "Timestamp: $NOW"
 echo ""
 
-# Read repos from base list
-REPOS=$(jq -r '.repos[]' "$BASE_LIST")
-
-echo "Found $(echo "$REPOS" | wc -l) repositories to update"
-echo ""
-
-# Build JSON array
-echo '[' > "$UPDATE_LIST"
-
-FIRST=true
-for REPO in $REPOS; do
-    echo "Fetching: $REPO"
+# Function to update a single list
+update_list() {
+  LIST_NAME=$1
+  BASE_LIST="$DATA_DIR/${LIST_NAME}-agent-list.json"
+  UPDATE_LIST="$DATA_DIR/${LIST_NAME}-agent-list-update.json"
+  HISTORY_FILE="$DATA_DIR/${LIST_NAME}-stars-history.json"
+  
+  echo "--- Updating: $LIST_NAME ---"
+  
+  # Read repos from base list
+  REPOS=$(jq -r '.repos[]' "$BASE_LIST")
+  TOTAL=$(echo "$REPOS" | wc -l)
+  echo "Found $TOTAL repositories"
+  
+  # Initialize history file if not exists
+  if [ ! -f "$HISTORY_FILE" ]; then
+    echo '{}' > "$HISTORY_FILE"
+  fi
+  
+  # Build JSON array
+  echo '[' > "$UPDATE_LIST.tmp"
+  FIRST=true
+  COUNT=0
+  
+  for REPO in $REPOS; do
+    COUNT=$((COUNT + 1))
+    echo "[$COUNT/$TOTAL] Fetching: $REPO"
     
-    # Call GitHub API (with retry on rate limit)
-    RESPONSE=$(curl -s "https://api.github.com/repos/$REPO" 2>/dev/null)
+    # Call GitHub API
+    RESPONSE=$(curl -s -H "Authorization: token $TOKEN" -H "Accept: application/vnd.github.v3+json" "https://api.github.com/repos/$REPO" 2>/dev/null)
     
     if [ -z "$RESPONSE" ] || echo "$RESPONSE" | jq -e '.message' > /dev/null 2>&1; then
-        echo "  ⚠️ API limit or error, using fallback data"
-        # Fallback: try web fetch
-        WEB_DATA=$(curl -sI "https://github.com/$REPO" | grep -E "^HTTP|^last-modified" | head -2)
-        echo "  Web check: $WEB_DATA"
-        
-        # Use placeholder data if API fails
-        NAME=$(echo "$REPO" | cut -d'/' -f2)
-        OWNER=$(echo "$REPO" | cut -d'/' -f1)
-        DESCRIPTION="AI research repository"
-        LANGUAGE="Unknown"
-        STARS=0
-        FORKS=0
-        WEEKLY=0
-        UPDATED="unknown"
-    else
-        # Parse API response
-        NAME=$(echo "$RESPONSE" | jq -r '.name')
-        OWNER=$(echo "$RESPONSE" | jq -r '.owner.login')
-        DESCRIPTION=$(echo "$RESPONSE" | jq -r '.description // "No description"')
-        LANGUAGE=$(echo "$RESPONSE" | jq -r '.language // "Unknown"')
-        STARS=$(echo "$RESPONSE" | jq -r '.stargazers_count')
-        FORKS=$(echo "$RESPONSE" | jq -r '.forks_count')
-        UPDATED=$(echo "$RESPONSE" | jq -r '.updated_at')
-        
-        # Weekly stars - estimate based on recent activity (placeholder)
-        WEEKLY=0
+      echo "  ⚠️ Skipped (API error or not found)"
+      continue
     fi
     
-    # Add comma if not first
-    if [ "$FIRST" = true ]; then
-        FIRST=false
-    else
-        echo ',' >> "$UPDATE_LIST"
-    fi
+    # Parse response
+    NAME=$(echo "$RESPONSE" | jq -r '.name')
+    OWNER=$(echo "$RESPONSE" | jq -r '.owner.login')
+    DESCRIPTION=$(echo "$RESPONSE" | jq -r '.description // "No description"' | head -c 100)
+    LANGUAGE=$(echo "$RESPONSE" | jq -r '.language // "Unknown"')
+    STARS=$(echo "$RESPONSE" | jq -r '.stargazers_count')
+    FORKS=$(echo "$RESPONSE" | jq -r '.forks_count')
+    UPDATED=$(echo "$RESPONSE" | jq -r '.updated_at')
     
-    # Write JSON object
-    cat >> "$UPDATE_LIST" << EOF
+    # Calculate Daily Stars (will become Weekly after 7 days)
+    PREVIOUS_STARS=$(jq -r '.["'$REPO'"].stars // 0' "$HISTORY_FILE" 2>/dev/null)
+    DAILY=$((STARS - PREVIOUS_STARS))
+    [ $DAILY -lt 0 ] && DAILY=0
+    
+    # Format relative time
+    UPDATED_RELATIVE="unknown"
+    
+    # Add to JSON
+    [ "$FIRST" = false ] && echo ',' >> "$UPDATE_LIST.tmp"
+    FIRST=false
+    
+    cat >> "$UPDATE_LIST.tmp" << EOF
   {
     "full_name": "$REPO",
     "name": "$NAME",
@@ -75,35 +79,45 @@ for REPO in $REPOS; do
     "language": "$LANGUAGE",
     "stars": $STARS,
     "forks": $FORKS,
-    "weeklyStars": $WEEKLY,
+    "weeklyStars": $DAILY,
     "updated": "$UPDATED",
     "url": "https://github.com/$REPO"
   }
 EOF
     
-    echo "  ✓ Stars: $STARS, Language: $LANGUAGE"
+    # Update history
+    jq --arg repo "$REPO" --argjson stars "$STARS" --arg time "$NOW" \
+      '.[$repo] = {"stars": $stars, "timestamp": $time}' \
+      "$HISTORY_FILE" > "$HISTORY_FILE.tmp" && mv "$HISTORY_FILE.tmp" "$HISTORY_FILE"
     
-    # Sleep to avoid rate limit (1 second between requests)
-    sleep 1
-done
-
-echo ']' >> "$UPDATE_LIST"
-
-# Add metadata header
-FINAL_OUTPUT=$(cat << EOF
+    echo "  ✓ Stars: $STARS, Daily: +$DAILY"
+    
+    sleep 0.3
+  done
+  
+  echo ']' >> "$UPDATE_LIST.tmp"
+  
+  # Create final JSON with metadata
+  echo "Creating final JSON..."
+  cat > "$UPDATE_LIST" << HEADER
 {
-  "description": "AI Agent Research Repositories - Updated Stats",
-  "source": "https://github.com/cadslab/Pantheon",
-  "generated_at": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
-  "repo_count": $(echo "$REPOS" | wc -l),
-  "repos": $(cat "$UPDATE_LIST")
+  "description": "${LIST_NAME} Agent Repositories - Updated Stats",
+  "source": "GitHub API",
+  "generated_at": "$NOW",
+  "repo_count": $COUNT,
+  "repos":
+HEADER
+  cat "$UPDATE_LIST.tmp" >> "$UPDATE_LIST"
+  echo "}" >> "$UPDATE_LIST"
+  
+  rm -f "$UPDATE_LIST.tmp"
+  echo "✓ $LIST_NAME complete: $COUNT repos"
+  echo ""
 }
-EOF
-)
 
-echo "$FINAL_OUTPUT" > "$UPDATE_LIST"
+# Update both lists
+update_list "Research"
+update_list "General"
 
-echo ""
-echo "=== Update Complete ==="
-echo "Output saved to: $UPDATE_LIST"
-echo "Total repos: $(jq '.repo_count' "$UPDATE_LIST")"
+echo "=== All Updates Complete ==="
+echo "Generated at: $NOW"
