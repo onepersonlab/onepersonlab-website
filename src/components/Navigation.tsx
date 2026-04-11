@@ -69,7 +69,11 @@ export function Navigation() {
             style={{ fontFamily: 'var(--font-display)' }}
             onClick={(e) => handleClick(e, '#', 'vision')}
           >
-            <span className="text-2xl">🧬</span>
+            <img 
+              src="/favicon.svg" 
+              alt="OnePersonLab Logo" 
+              className="w-8 h-8 rounded-lg"
+            />
             <span className="text-lg">OnePersonLab</span>
           </a>
 
