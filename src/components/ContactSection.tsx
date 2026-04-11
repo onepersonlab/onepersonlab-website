@@ -53,68 +53,40 @@ export function ContactSection() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-white/70 hover:text-mint-400 transition-colors"
-              style={{ fontFamily: 'var(--font-body)' }}
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-              </svg>
-              Personal Website
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-              </svg>
-            </a>
-          </div>
-
           {/* Email Section */}
           <div className="border-t border-white/10 pt-8">
             <h4 className="text-white/80 font-semibold mb-4 text-center" style={{ fontFamily: 'var(--font-display)' }}>
               Email
             </h4>
             <div className="flex flex-col md:flex-row justify-center gap-6">
-              {/* Email 1 - as SVG image to avoid scraping */}
+              {/* Email 1 - real image */}
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-mint-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                {/* Email as SVG image */}
-                <svg 
-                  width="160" 
-                  height="20" 
-                  viewBox="0 0 160 20"
-                  className="inline-block"
-                  aria-label="Email: hengjieyu at yeah dot net"
-                >
-                  <text 
-                    x="0" 
-                    y="15" 
-                    fill="rgba(255,255,255,0.7)" 
-                    fontSize="14"
-                    fontFamily="var(--font-body), sans-serif"
-                  >
-                    hengjieyu@yeah.net
-                  </text>
-                </svg>
+                <img 
+                  src="/email1.svg" 
+                  alt="Email address" 
+                  className="h-5 select-none"
+                  draggable="false"
+                />
               </div>
 
-              {/* Email 2 - as SVG image */}
+              {/* Email 2 - real image */}
               <div className="flex items-center gap-2">
                 <svg className="w-5 h-5 text-mint-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                {/* Email as SVG image */}
-                <svg 
-                  width="200" 
-                  height="20" 
-                  viewBox="0 0 200 20"
-                  className="inline-block"
-                  aria-label="Email: yuhengjie at westlake dot edu dot cn"
-                >
-                  <text 
-                    x="0" 
-                    y="15" 
-                    fill="rgba(255,255,255,0.7)" 
-                    fontSize="14"
-                    fontFamily="var(--font-body), sans-serif"
+                <img 
+                  src="/email2.svg" 
+                  alt="Email address" 
+                  className="h-5 select-none"
+                  draggable="false"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
                   >
                     yuhengjie@westlake.edu.cn
                   </text>
