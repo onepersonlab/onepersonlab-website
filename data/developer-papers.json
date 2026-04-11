@@ -1,0 +1,15 @@
+{
+  "description": "Developer's Own Papers",
+  "source": "Google Scholar",
+  "updated": "2026-04-11",
+  "papers": [
+    {
+      "title": "Empowering scientific discovery with explainable small domain-specific and large language models",
+      "doi": "10.1007/s10462-025-11365-w"
+    },
+    {
+      "title": "Unlocking the Potential of AI Researchers in Scientific Discovery: What Is Missing?",
+      "doi": "10.48550/arxiv.2503.05822"
+    }
+  ]
+}

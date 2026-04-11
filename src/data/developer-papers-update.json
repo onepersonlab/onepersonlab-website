@@ -1,0 +1,28 @@
+{
+  "description": "Developer's Own Papers - Detailed Info",
+  "source": "Semantic Scholar + OpenAlex APIs",
+  "generated_at": "2026-04-11T23:35:00Z",
+  "paper_count": 2,
+  "papers": [
+    {
+      "title": "Empowering scientific discovery with explainable small domain-specific and large language models",
+      "doi": "10.1007/s10462-025-11365-w",
+      "year": 2025,
+      "venue": "Artificial Intelligence Review",
+      "authors": ["Hengjie Yu", "Yizhi Wang", "Tao Cheng", "Yan Yan", "Kenneth A. Dawson", "S. F. Y. Li", "Yefeng Zheng", "Yaochu Jin"],
+      "citationCount": 0,
+      "abstract": "A comprehensive review exploring how combining domain-specific small models with large language models can empower scientific discovery with explainable AI capabilities.",
+      "url": "https://link.springer.com/article/10.1007/s10462-025-11365-w"
+    },
+    {
+      "title": "Unlocking the Potential of AI Researchers in Scientific Discovery: What Is Missing?",
+      "doi": "10.48550/arxiv.2503.05822",
+      "year": 2025,
+      "venue": "ArXiv",
+      "authors": ["Hui-Chu Yu", "Shuya Liu", "Haiyun Yang", "Yuping Yan", "Ming Qu", "Yaochu Jin"],
+      "citationCount": 1,
+      "abstract": "The potential of AI researchers in scientific discovery remains largely untapped. Over the past decade, AI4Science publications in 145 Nature Index journals have increased fifteen-fold, yet they still account for less than 3% of the total publications.",
+      "url": "https://arxiv.org/abs/2503.05822"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import topPapersData from './top-6-papers-update.json';
 import allPapersData from './all-papers-update.json';
+import developerPapersData from './developer-papers-update.json';
 
 export interface Paper {
   order?: number;
@@ -11,7 +12,6 @@ export interface Paper {
   citationCount: number | null;
   abstract: string;
   url: string;
-  isDeveloperPaper?: boolean;
 }
 
 export function getTopPapers(): Paper[] {
@@ -24,8 +24,7 @@ export function getTopPapers(): Paper[] {
     authors: p.authors || [],
     citationCount: p.citationCount,
     abstract: p.abstract || '',
-    url: p.url,
-    isDeveloperPaper: p.isDeveloperPaper || false
+    url: p.url
   }));
 }
 
@@ -42,10 +41,24 @@ export function getAllPapers(): Paper[] {
   }));
 }
 
-export function getPaperMeta(): { top_count: number; all_count: number; generated_at: string } {
+export function getDeveloperPapers(): Paper[] {
+  return developerPapersData.papers.map((p: any) => ({
+    title: p.title,
+    doi: p.doi,
+    year: p.year,
+    venue: p.venue,
+    authors: p.authors || [],
+    citationCount: p.citationCount,
+    abstract: p.abstract || '',
+    url: p.url
+  }));
+}
+
+export function getPaperMeta(): { top_count: number; all_count: number; developer_count: number; generated_at: string } {
   return {
     top_count: topPapersData.paper_count,
     all_count: allPapersData.paper_count,
+    developer_count: developerPapersData.paper_count,
     generated_at: topPapersData.generated_at
   };
 }
