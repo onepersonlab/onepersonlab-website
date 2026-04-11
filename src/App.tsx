@@ -3,6 +3,7 @@ import { HeroSection } from './components/HeroSection';
 import { ReposSection } from './components/ReposSection';
 import { PapersSection } from './components/PapersSection';
 import { SkillsSection } from './components/SkillsSection';
+import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <ReposSection />
       <PapersSection />
       <SkillsSection />
+      <ContactSection />
       <Footer />
     </div>
   );
