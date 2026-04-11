@@ -1,0 +1,20 @@
+{
+  "description": "ClawHub Skills - Top 12 by Downloads",
+  "source": "ClawHub API (manual fetch)",
+  "updated": "2026-04-12",
+  "skill_count": 12,
+  "skills": [
+    {"name": "agent-browser-clawdbot", "slug": "agent-browser-clawdbot"},
+    {"name": "literature-review", "slug": "literature-review"},
+    {"name": "openclaw-tavily-search", "slug": "openclaw-tavily-search"},
+    {"name": "ai-humanizer", "slug": "ai-humanizer"},
+    {"name": "openclaw-skill-vetter", "slug": "openclaw-skill-vetter"},
+    {"name": "xiucheng-self-improving-agent", "slug": "xiucheng-self-improving-agent"},
+    {"name": "git-delegation", "slug": "git-delegation"},
+    {"name": "github-operations", "slug": "github-operations"},
+    {"name": "web-search", "slug": "web-search"},
+    {"name": "email-assistant", "slug": "email-assistant"},
+    {"name": "calendar-manager", "slug": "calendar-manager"},
+    {"name": "notification-handler", "slug": "notification-handler"}
+  ]
+}
