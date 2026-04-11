@@ -18,10 +18,11 @@ export interface GitHubSkill {
 export interface ClawHubSkill {
   name: string;
   slug: string;
+  displayName: string;
   description: string;
   category: string;
   downloads: number;
-  stars: number;
+  stars: number | null;
   author: string;
   url: string;
 }
