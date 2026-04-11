@@ -9,19 +9,20 @@ export function Footer() {
       <div className="max-w-6xl mx-auto">
         {/* Logo and tagline */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
-          <div className="flex items-center gap-3">
+          <a 
+            href="/" 
+            className="flex items-center gap-3 text-white font-semibold hover:text-mint-400 transition-colors"
+            style={{ fontFamily: 'var(--font-display)' }}
+          >
             <img 
               src="/favicon.svg" 
               alt="OnePersonLab Logo" 
               className="w-10 h-10 rounded-lg"
             />
-            <span 
-              className="text-white font-semibold text-xl"
-              style={{ fontFamily: 'var(--font-display)' }}
-            >
+            <span className="text-xl">
               OnePersonLab
             </span>
-          </div>
+          </a>
           
           <p 
             className="text-white/60 text-center"
