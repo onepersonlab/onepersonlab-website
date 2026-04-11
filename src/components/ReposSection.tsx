@@ -57,14 +57,14 @@ export function ReposSection() {
     >
       <div className={`max-w-6xl mx-auto mb-12 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <h2 id="repos-heading" className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-          AI Research{' '}
+          Research Agent{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-mint-400 to-mint-500">Repositories</span>
         </h2>
         <p className="text-white/60 max-w-2xl mx-auto" style={{ fontFamily: 'var(--font-body)' }}>
-          Multi-agent systems and automated research tools for scientific discovery
+          Agent systems and automated research tools for scientific discovery
         </p>
         <p className="text-white/40 text-sm mt-2" style={{ fontFamily: 'var(--font-body)' }}>
-          Data source: <a href="https://github.com/cadslab/Pantheon" target="_blank" rel="noopener noreferrer" className="text-mint-400 hover:underline">Pantheon</a> • {AGENT_REPOS.length} repos • Updated: {new Date(REPO_DATA_META.generated_at).toLocaleDateString()}
+          {AGENT_REPOS.length} repositories • Updated: {new Date(REPO_DATA_META.generated_at).toLocaleDateString()}
         </p>
       </div>
 
@@ -92,7 +92,7 @@ export function ReposSection() {
                 <th scope="col" className="text-left px-6 py-4 text-sm font-semibold text-white/80">Repository</th>
                 <th scope="col" className="text-left px-6 py-4 text-sm font-semibold text-white/80 hidden md:table-cell">Language</th>
                 <th scope="col" className="text-center px-6 py-4 text-sm font-semibold text-white/80">Stars</th>
-                <th scope="col" className="text-center px-6 py-4 text-sm font-semibold text-white/80 hidden sm:table-cell">Weekly ⬆️</th>
+                <th scope="col" className="text-center px-6 py-4 text-sm font-semibold text-white/80 hidden sm:table-cell">Weekly</th>
                 <th scope="col" className="text-center px-6 py-4 text-sm font-semibold text-white/80 hidden lg:table-cell">Forks</th>
                 <th scope="col" className="text-right px-6 py-4 text-sm font-semibold text-white/80 hidden lg:table-cell">Updated</th>
               </tr>
