@@ -2,14 +2,6 @@ import { useState, useEffect } from 'react';
 import { getGitHubSkills, getClawHubSkills } from '../data/skills';
 import type { GitHubSkill, ClawHubSkill } from '../data/skills';
 
-const LANGUAGE_COLORS: Record<string, string> = {
-  TypeScript: '#3178c6',
-  Python: '#3572A5',
-  JavaScript: '#f1e05a',
-  Shell: '#89e051',
-  null: '#8b949e',
-};
-
 const CATEGORY_COLORS: Record<string, string> = {
   'Official Skills': 'bg-blue-500/20 text-blue-400',
   'Agent Templates': 'bg-purple-500/20 text-purple-400',
@@ -17,15 +9,16 @@ const CATEGORY_COLORS: Record<string, string> = {
   'Awesome List': 'bg-yellow-500/20 text-yellow-400',
   'Developer Skills': 'bg-green-500/20 text-green-400',
   'Bioinformatics': 'bg-cyan-500/20 text-cyan-400',
+  'Research Skills': 'bg-indigo-500/20 text-indigo-400',
+  'Writing Skills': 'bg-amber-500/20 text-amber-400',
   'Browser Automation': 'bg-orange-500/20 text-orange-400',
   'Research': 'bg-indigo-500/20 text-indigo-400',
   'Search': 'bg-pink-500/20 text-pink-400',
-  'Writing': 'bg-amber-500/20 text-amber-400',
   'Security': 'bg-rose-500/20 text-rose-400',
   'Automation': 'bg-teal-500/20 text-teal-400',
   'Tools': 'bg-slate-500/20 text-slate-400',
-  'Communication': 'bg-violet-500/20 text-violet-400',
-  'Planning': 'bg-emerald-500/20 text-emerald-400',
+  'Discovery': 'bg-violet-500/20 text-violet-400',
+  'Multi-Agent': 'bg-emerald-500/20 text-emerald-400',
 };
 
 export function SkillsSection() {
@@ -59,7 +52,7 @@ export function SkillsSection() {
     <section id="skills" className="min-h-screen py-24 px-6 bg-navy-900 relative" aria-labelledby="skills-heading">
       <div className={`max-w-6xl mx-auto mb-12 text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <h2 id="skills-heading" className="text-3xl md:text-4xl font-bold text-white mb-4" style={{ fontFamily: 'var(--font-display)' }}>
-          Research <span className="text-transparent bg-clip-text bg-gradient-to-r from-mint-400 to-mint-500">Skills</span>
+          Research <span className="text-transparent bg-clip-text bg-gradient-to-r from-mint-400 to-mint-500">Skills & Templates</span>
         </h2>
         <p className="text-white/60 max-w-2xl mx-auto" style={{ fontFamily: 'var(--font-body)' }}>
           Agent skills and templates from GitHub and ClawHub registry
@@ -78,16 +71,13 @@ export function SkillsSection() {
           {githubSkills.map((skill) => (
             <article key={skill.full_name} className="group relative bg-navy-800/50 border border-white/10 rounded-xl p-5 hover:border-mint-400/50 transition-all duration-300">
               <div className="flex items-start justify-between mb-3">
-                {skill.language && (
-                  <span className="w-3 h-3 rounded-full" style={{ backgroundColor: LANGUAGE_COLORS[skill.language] || '#8b949e' }} />
-                )}
                 <span className={`px-2 py-1 rounded text-xs font-medium ${CATEGORY_COLORS[skill.category] || 'bg-white/10 text-white/70'}`} style={{ fontFamily: 'var(--font-body)' }}>
                   {skill.category}
                 </span>
               </div>
               <a href={skill.url} target="_blank" rel="noopener noreferrer" className="block">
                 <h4 className="text-white font-medium mb-2 group-hover:text-mint-400 transition-colors line-clamp-1" style={{ fontFamily: 'var(--font-display)' }}>
-                  {skill.owner}/{skill.name}
+                  {skill.name}
                 </h4>
                 <p className="text-sm text-white/50 mb-3 line-clamp-2" style={{ fontFamily: 'var(--font-body)' }}>
                   {skill.description}
@@ -130,22 +120,21 @@ export function SkillsSection() {
       <div className={`max-w-6xl mx-auto transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <h3 className="text-xl font-semibold text-white mb-6 flex items-center gap-3" style={{ fontFamily: 'var(--font-display)' }}>
           <svg className="w-6 h-6 text-mint-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
           </svg>
-          Top Downloads from ClawHub
+          Hot Skills from ClawHub
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {clawhubSkills.slice(0, 12).map((skill, index) => (
+          {clawhubSkills.slice(0, 12).map((skill) => (
             <article key={skill.slug} className="group relative bg-mint-400/5 border border-mint-400/20 rounded-xl p-5 hover:border-mint-400/50 transition-all duration-300">
               <div className="flex items-start justify-between mb-3">
-                <span className="text-mint-400 font-bold text-lg" style={{ fontFamily: 'var(--font-mono)' }}>#{index + 1}</span>
                 <span className={`px-2 py-1 rounded text-xs font-medium ${CATEGORY_COLORS[skill.category] || 'bg-white/10 text-white/70'}`} style={{ fontFamily: 'var(--font-body)' }}>
                   {skill.category}
                 </span>
               </div>
               <a href={skill.url} target="_blank" rel="noopener noreferrer" className="block">
                 <h4 className="text-white font-medium mb-2 group-hover:text-mint-400 transition-colors line-clamp-1" style={{ fontFamily: 'var(--font-display)' }}>
-                  {skill.name}
+                  {skill.displayName}
                 </h4>
                 <p className="text-sm text-white/50 mb-3 line-clamp-2" style={{ fontFamily: 'var(--font-body)' }}>
                   {skill.description}
@@ -155,14 +144,16 @@ export function SkillsSection() {
                     <svg className="w-4 h-4 text-mint-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                     </svg>
-                    {skill.downloads}
+                    {skill.downloads >= 1000 ? `${(skill.downloads / 1000).toFixed(0)}k` : skill.downloads}
                   </span>
-                  <span className="flex items-center gap-1">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
-                      <path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z" />
-                    </svg>
-                    {skill.stars}
-                  </span>
+                  {skill.stars && (
+                    <span className="flex items-center gap-1">
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z" />
+                      </svg>
+                      {skill.stars}
+                    </span>
+                  )}
                   <span className="text-white/30">by {skill.author}</span>
                 </div>
               </a>
