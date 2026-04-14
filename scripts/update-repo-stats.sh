@@ -50,10 +50,10 @@ update_list() {
       continue
     fi
     
-    # Parse response
+    # Parse response using jq to properly escape strings
     NAME=$(echo "$RESPONSE" | jq -r '.name')
     OWNER=$(echo "$RESPONSE" | jq -r '.owner.login')
-    DESCRIPTION=$(echo "$RESPONSE" | jq -r '.description // "No description"' | head -c 100)
+    DESCRIPTION=$(echo "$RESPONSE" | jq -r '.description // "No description"' | cut -c1-100)
     LANGUAGE=$(echo "$RESPONSE" | jq -r '.language // "Unknown"')
     STARS=$(echo "$RESPONSE" | jq -r '.stargazers_count')
     FORKS=$(echo "$RESPONSE" | jq -r '.forks_count')
@@ -64,27 +64,16 @@ update_list() {
     DAILY=$((STARS - PREVIOUS_STARS))
     [ $DAILY -lt 0 ] && DAILY=0
     
-    # Format relative time
-    UPDATED_RELATIVE="unknown"
-    
-    # Add to JSON
+    # Add to JSON using jq to properly escape special characters
     [ "$FIRST" = false ] && echo ',' >> "$UPDATE_LIST.tmp"
     FIRST=false
     
-    cat >> "$UPDATE_LIST.tmp" << EOF
-  {
-    "full_name": "$REPO",
-    "name": "$NAME",
-    "owner": "$OWNER",
-    "description": "$DESCRIPTION",
-    "language": "$LANGUAGE",
-    "stars": $STARS,
-    "forks": $FORKS,
-    "weeklyStars": $DAILY,
-    "updated": "$UPDATED",
-    "url": "https://github.com/$REPO"
-  }
-EOF
+    # Use jq to safely build the JSON object with proper escaping
+    DAILY_INT=$DAILY
+    echo "$RESPONSE" | jq -c \
+      --argjson daily "$DAILY_INT" \
+      '{full_name: .full_name, name: .name, owner: .owner.login, description: ((.description // "No description") | .[0:100]), language: (.language // "Unknown"), stars: .stargazers_count, forks: .forks_count, weeklyStars: $daily, updated: .updated_at, url: ("https://github.com/" + .full_name)}' \
+      >> "$UPDATE_LIST.tmp"
     
     # Update history
     jq --arg repo "$REPO" --argjson stars "$STARS" --arg time "$NOW" \
@@ -98,18 +87,13 @@ EOF
   
   echo ']' >> "$UPDATE_LIST.tmp"
   
-  # Create final JSON with metadata
+  # Create final JSON with metadata using jq
   echo "Creating final JSON..."
-  cat > "$UPDATE_LIST" << HEADER
-{
-  "description": "${LIST_NAME} Agent Repositories - Updated Stats",
-  "source": "GitHub API",
-  "generated_at": "$NOW",
-  "repo_count": $COUNT,
-  "repos":
-HEADER
-  cat "$UPDATE_LIST.tmp" >> "$UPDATE_LIST"
-  echo "}" >> "$UPDATE_LIST"
+  jq -s --arg desc "${LIST_NAME} Agent Repositories - Updated Stats" \
+       --arg source "GitHub API" \
+       --arg generated "$NOW" \
+       '.[0] | {description: $desc, source: $source, generated_at: $generated, repo_count: length, repos: .}' \
+       "$UPDATE_LIST.tmp" > "$UPDATE_LIST"
   
   rm -f "$UPDATE_LIST.tmp"
   echo "✓ $LIST_NAME complete: $COUNT repos"
