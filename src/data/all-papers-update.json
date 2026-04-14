@@ -9,7 +9,11 @@
       "doi": "10.48550/arxiv.2508.14111",
       "year": 2025,
       "venue": "ArXiv",
-      "authors": ["Jiaqi Wei", "Yue-Jin Yang", "Xiang Zhang"],
+      "authors": [
+        "Jiaqi Wei",
+        "Yue-Jin Yang",
+        "Xiang Zhang"
+      ],
       "citationCount": 0,
       "abstract": "Artificial intelligence (AI) is reshaping scientific discovery, evolving from specialized computational tools to autonomous agents capable of end-to-end research.",
       "url": "https://arxiv.org/abs/2508.14111"
@@ -19,7 +23,10 @@
       "doi": "10.1002/adma.202413523",
       "year": 2024,
       "venue": "Advanced Materials",
-      "authors": ["Alireza Ghafarollahi", "Markus J. Buehler"],
+      "authors": [
+        "Alireza Ghafarollahi",
+        "Markus J. Buehler"
+      ],
       "citationCount": 8,
       "abstract": "A key challenge in artificial intelligence (AI) is the creation of systems capable of autonomously advancing scientific discovery.",
       "url": "https://doi.org/10.1002/adma.202413523"
@@ -29,7 +36,11 @@
       "doi": "10.48550/arxiv.2504.08066",
       "year": 2025,
       "venue": "ArXiv",
-      "authors": ["Yutaro Yamada", "Robert Tjarko Lange", "Cong Lu"],
+      "authors": [
+        "Yutaro Yamada",
+        "Robert Tjarko Lange",
+        "Cong Lu"
+      ],
       "citationCount": 0,
       "abstract": "AI is increasingly playing a pivotal role in transforming how scientific discoveries are made.",
       "url": "https://arxiv.org/abs/2504.08066"
@@ -39,7 +50,10 @@
       "doi": "10.1609/aaai.v39i27.35084",
       "year": 2025,
       "venue": "AAAI Conference on Artificial Intelligence",
-      "authors": ["Chandan K. Reddy", "Parshin Shojaee"],
+      "authors": [
+        "Chandan K. Reddy",
+        "Parshin Shojaee"
+      ],
       "citationCount": 0,
       "abstract": "Scientific discovery is a complex cognitive process that has driven human knowledge and technological advancement.",
       "url": "https://doi.org/10.1609/aaai.v39i27.35084"
@@ -49,7 +63,11 @@
       "doi": "10.48550/arxiv.2402.04247",
       "year": 2024,
       "venue": "ArXiv",
-      "authors": ["Xiangru Tang", "Qiao Jin", "Kunlun Zhu"],
+      "authors": [
+        "Xiangru Tang",
+        "Qiao Jin",
+        "Kunlun Zhu"
+      ],
       "citationCount": 5,
       "abstract": "With the rapid advancement of AI systems capable of conducting scientific research, we identify critical risks.",
       "url": "https://arxiv.org/abs/2402.04247"
@@ -59,7 +77,11 @@
       "doi": "10.1016/j.trechm.2019.02.007",
       "year": 2019,
       "venue": "Trends in Chemistry",
-      "authors": ["Florian Häse", "Loïc M. Roch", "Alán Aspuru-Guzik"],
+      "authors": [
+        "Florian Häse",
+        "Loïc M. Roch",
+        "Alán Aspuru-Guzik"
+      ],
       "citationCount": 458,
       "abstract": "Autonomous experimentation systems promise to transform scientific discovery through self-driving laboratories.",
       "url": "https://doi.org/10.1016/j.trechm.2019.02.007"
@@ -69,7 +91,11 @@
       "doi": "10.1126/sciadv.abg4930",
       "year": 2021,
       "venue": "Science Advances",
-      "authors": ["Sebastian Ament", "Maximilian Amsler", "Duncan R. Sutherland"],
+      "authors": [
+        "Sebastian Ament",
+        "Maximilian Amsler",
+        "Duncan R. Sutherland"
+      ],
       "citationCount": 156,
       "abstract": "Autonomous experimentation enabled by artificial intelligence offers a new paradigm for accelerating materials discovery.",
       "url": "https://doi.org/10.1126/sciadv.abg4930"
@@ -79,7 +105,11 @@
       "doi": "10.1016/j.patter.2025.101372",
       "year": 2025,
       "venue": "Patterns",
-      "authors": ["Shuxiang Cao", "Zijian Zhang", "Mohammed Alghadeer"],
+      "authors": [
+        "Shuxiang Cao",
+        "Zijian Zhang",
+        "Mohammed Alghadeer"
+      ],
       "citationCount": 0,
       "abstract": "Fully automated self-driving laboratories promise high-throughput, large-scale scientific discovery.",
       "url": "https://doi.org/10.1016/j.patter.2025.101372"
@@ -89,7 +119,11 @@
       "doi": "10.1038/s44286-023-00002-4",
       "year": 2024,
       "venue": "Nature Chemical Engineering",
-      "authors": ["Jacob Rapp", "Bennett J. Bremer", "Philip A. Romero"],
+      "authors": [
+        "Jacob Rapp",
+        "Bennett J. Bremer",
+        "Philip A. Romero"
+      ],
       "citationCount": 18,
       "abstract": "Protein engineering has nearly limitless applications across chemistry, energy and medicine.",
       "url": "https://doi.org/10.1038/s44286-023-00002-4"
@@ -99,7 +133,11 @@
       "doi": "10.1021/jacs.4c17738",
       "year": 2025,
       "venue": "Journal of the American Chemical Society",
-      "authors": ["Tao Song", "Man Luo", "Xiaolong Zhang"],
+      "authors": [
+        "Tao Song",
+        "Man Luo",
+        "Xiaolong Zhang"
+      ],
       "citationCount": 0,
       "abstract": "The successful integration of large language models (LLMs) into laboratory workflows has demonstrated significant potential.",
       "url": "https://doi.org/10.1021/jacs.4c17738"
@@ -109,7 +147,10 @@
       "doi": "10.1073/pnas.2414074122",
       "year": 2025,
       "venue": "Proceedings of the National Academy of Sciences",
-      "authors": ["Alireza Ghafarollahi", "Markus J. Buehler"],
+      "authors": [
+        "Alireza Ghafarollahi",
+        "Markus J. Buehler"
+      ],
       "citationCount": 0,
       "abstract": "The design of new alloys is a multiscale problem that requires a holistic approach.",
       "url": "https://doi.org/10.1073/pnas.2414074122"
@@ -119,7 +160,10 @@
       "doi": "10.1039/d4dd00013g",
       "year": 2024,
       "venue": "Digital Discovery",
-      "authors": ["Alireza Ghafarollahi", "Markus J. Buehler"],
+      "authors": [
+        "Alireza Ghafarollahi",
+        "Markus J. Buehler"
+      ],
       "citationCount": 12,
       "abstract": "Designing de novo proteins beyond those found in nature holds significant promise for advancing biotechnology.",
       "url": "https://doi.org/10.1039/d4dd00013g"
@@ -129,7 +173,11 @@
       "doi": "10.1101/2025.04.03.646459",
       "year": 2025,
       "venue": "bioRxiv",
-      "authors": ["Hanchen Wang", "Yichun He", "Paula P. Coelho"],
+      "authors": [
+        "Hanchen Wang",
+        "Yichun He",
+        "Paula P. Coelho"
+      ],
       "citationCount": 0,
       "abstract": "Advances in AI are transforming scientific discovery, yet spatial biology remains a field that requires specialized approaches.",
       "url": "https://doi.org/10.1101/2025.04.03.646459"
@@ -139,7 +187,11 @@
       "doi": "10.1101/2025.08.08.669291",
       "year": 2025,
       "venue": "bioRxiv",
-      "authors": ["Fan Zhang", "Yalong Zhao", "Weihan Zhang"],
+      "authors": [
+        "Fan Zhang",
+        "Yalong Zhao",
+        "Weihan Zhang"
+      ],
       "citationCount": 0,
       "abstract": "Drug discovery is protracted, resource-intensive, and afflicted by attrition rates exceeding 90%.",
       "url": "https://doi.org/10.1101/2025.08.08.669291"
@@ -149,7 +201,11 @@
       "doi": "10.1101/2025.06.03.657521",
       "year": 2025,
       "venue": "bioRxiv",
-      "authors": ["Kaiwen Zuo", "Zhenming Zhong", "Peizhou Huang"],
+      "authors": [
+        "Kaiwen Zuo",
+        "Zhenming Zhong",
+        "Peizhou Huang"
+      ],
       "citationCount": 0,
       "abstract": "The discovery and validation of genetic biomarkers across diverse diseases demand intelligent systems.",
       "url": "https://doi.org/10.1101/2025.06.03.657521"
@@ -159,7 +215,11 @@
       "doi": "10.1007/s11432-024-4485-0",
       "year": 2025,
       "venue": "Science China Information Sciences",
-      "authors": ["Yi Luo", "Leiyu Shi", "Yihao Li"],
+      "authors": [
+        "Yi Luo",
+        "Leiyu Shi",
+        "Yihao Li"
+      ],
       "citationCount": 0,
       "abstract": "Large language models offer transformative potential for automating biomedical research workflows.",
       "url": "https://doi.org/10.1007/s11432-024-4485-0"
@@ -169,7 +229,11 @@
       "doi": "10.1021/acs.accounts.2c00617",
       "year": 2022,
       "venue": "Accounts of Chemical Research",
-      "authors": ["Aleksandar Kondinski", "Jiaru Bai", "Sebastian Mosbach"],
+      "authors": [
+        "Aleksandar Kondinski",
+        "Jiaru Bai",
+        "Sebastian Mosbach"
+      ],
       "citationCount": 12,
       "abstract": "Passing knowledge from human to human is a natural process. AI agents now enable knowledge creation in chemistry.",
       "url": "https://doi.org/10.1021/acs.accounts.2c00617"
@@ -179,19 +243,23 @@
       "doi": "10.3389/fchem.2023.1292027",
       "year": 2023,
       "venue": "Frontiers in Chemistry",
-      "authors": ["Yannick Djoumbou-Feunang", "Jeremy T. Wilmot", "J.H. Kinney"],
+      "authors": [
+        "Yannick Djoumbou-Feunang",
+        "Jeremy T. Wilmot",
+        "J.H. Kinney"
+      ],
       "citationCount": 8,
       "abstract": "The global cost-benefit analysis of pesticide use during the last 30 years has been characterized by AI-driven discovery.",
       "url": "https://doi.org/10.3389/fchem.2023.1292027"
     },
     {
-      "title": "AI-Guided Design and Property Prediction for Zeolites and Nanoporous Materials",
+      "title": "AI‐Guided Design and Property Prediction for Zeolites and Nanoporous Materials",
       "doi": "10.1002/9781119819783",
       "year": 2023,
       "venue": "Book",
       "authors": [],
       "citationCount": null,
-      "abstract": "AI-Guided Design and Property Prediction for Zeolites and Nanoporous Materials offers insights into materials discovery.",
+      "abstract": "AI-Guided Design and Property Prediction for Zeolites Nanoporous Materials A cohesive insightful compilation of resources explaining the latest discoveries methods in field nanoporous materials In Artificial Intelligence Materials: Design, Synthesis Properties a team distinguished researchers delivers robust knowledge most recent developments computational chemistry, synthetic artificial intelligence as it applies to zeolites, porous molecular materials, covalent organic frameworks metal-organic frameworks. The book presents common language that unifies these fields research advances discovery new materials. editors have included describe strategies synthesize construct databases structure directing agents, synthesis conditions, explain generate They also offer material discusses AI machine learning algorithms, well other, similar approaches field. Readers will find comprehensive approach applied written guiding reader through fundamental questions on how far computer algorithms numerical representations can drive our search specific applications. Designed academic industry professionals with an interest earn place libraries working large energy, chemical, biochemical companies responsibilities related design",
       "url": "https://doi.org/10.1002/9781119819783"
     },
     {
@@ -199,7 +267,11 @@
       "doi": "10.1186/s13321-022-00646-z",
       "year": 2022,
       "venue": "Journal of Cheminformatics",
-      "authors": ["Morgan Thomas", "Noel M. O'Boyle", "Andreas Bender"],
+      "authors": [
+        "Morgan Thomas",
+        "Noel M. O'Boyle",
+        "Andreas Bender"
+      ],
       "citationCount": 25,
       "abstract": "A plethora of AI-based techniques now exists to conduct de novo molecule generation.",
       "url": "https://doi.org/10.1186/s13321-022-00646-z"
@@ -209,7 +281,11 @@
       "doi": "10.30699/ijmm.18.3.135",
       "year": 2024,
       "venue": "Iranian Journal of Medical Microbiology",
-      "authors": ["Mustafa Ghaderzadeh", "Armin Shalchian", "Gholamreza Irajian"],
+      "authors": [
+        "Mustafa Ghaderzadeh",
+        "Armin Shalchian",
+        "Gholamreza Irajian"
+      ],
       "citationCount": 0,
       "abstract": "Antimicrobial resistance presents a formidable global health challenge. AI offers solutions.",
       "url": "https://doi.org/10.30699/ijmm.18.3.135"
@@ -219,7 +295,10 @@
       "doi": "10.7861/futurehosp.6-2-94",
       "year": 2019,
       "venue": "Future Healthcare Journal",
-      "authors": ["Thomas H. Davenport", "Ravi Kalakota"],
+      "authors": [
+        "Thomas H. Davenport",
+        "Ravi Kalakota"
+      ],
       "citationCount": 156,
       "abstract": "The complexity and rise of data in healthcare means that artificial intelligence will increasingly be applied.",
       "url": "https://doi.org/10.7861/futurehosp.6-2-94"
@@ -229,7 +308,11 @@
       "doi": "10.7861/fhj.2021-0095",
       "year": 2021,
       "venue": "Future Healthcare Journal",
-      "authors": ["Junaid Bajwa", "Usman Munir", "Aditya Nori"],
+      "authors": [
+        "Junaid Bajwa",
+        "Usman Munir",
+        "Aditya Nori"
+      ],
       "citationCount": 89,
       "abstract": "Artificial intelligence (AI) is a powerful and disruptive area of computer science, with the potential to transform healthcare.",
       "url": "https://doi.org/10.7861/fhj.2021-0095"
@@ -239,7 +322,11 @@
       "doi": "10.1038/s43856-023-00370-1",
       "year": 2023,
       "venue": "Communications Medicine",
-      "authors": ["Jan Clusmann", "Fiona R. Kolbinger", "Hannah Sophie Muti"],
+      "authors": [
+        "Jan Clusmann",
+        "Fiona R. Kolbinger",
+        "Hannah Sophie Muti"
+      ],
       "citationCount": 45,
       "abstract": "Large language models (LLMs) are artificial intelligence (AI) tools specifically trained to process medical information.",
       "url": "https://doi.org/10.1038/s43856-023-00370-1"
@@ -249,7 +336,11 @@
       "doi": "10.1371/journal.pdig.0000198",
       "year": 2023,
       "venue": "PLOS Digital Health",
-      "authors": ["Tiffany H. Kung", "Morgan Cheatham", "Arielle Medenilla"],
+      "authors": [
+        "Tiffany H. Kung",
+        "Morgan Cheatham",
+        "Arielle Medenilla"
+      ],
       "citationCount": 112,
       "abstract": "We evaluated the performance of a large language model called ChatGPT on the United States Medical Licensing Examination.",
       "url": "https://doi.org/10.1371/journal.pdig.0000198"
@@ -259,7 +350,11 @@
       "doi": "10.2196/45312",
       "year": 2023,
       "venue": "JMIR Medical Education",
-      "authors": ["Aidan Gilson", "Conrad Safranek", "Thomas Huang"],
+      "authors": [
+        "Aidan Gilson",
+        "Conrad Safranek",
+        "Thomas Huang"
+      ],
       "citationCount": 89,
       "abstract": "ChatGPT marks a significant improvement in natural language processing models on medical tasks.",
       "url": "https://doi.org/10.2196/45312"
@@ -269,7 +364,9 @@
       "doi": "10.3390/healthcare11060887",
       "year": 2023,
       "venue": "Healthcare",
-      "authors": ["Malik Sallam"],
+      "authors": [
+        "Malik Sallam"
+      ],
       "citationCount": 78,
       "abstract": "ChatGPT is an artificial intelligence (AI)-based conversational large language model (LLM) with healthcare applications.",
       "url": "https://doi.org/10.3390/healthcare11060887"
@@ -279,7 +376,11 @@
       "doi": "10.1681/asn.0000000000000166",
       "year": 2023,
       "venue": "Journal of the American Society of Nephrology",
-      "authors": ["Qiao Jin", "Robert Leaman", "Zhiyong Lu"],
+      "authors": [
+        "Qiao Jin",
+        "Robert Leaman",
+        "Zhiyong Lu"
+      ],
       "citationCount": 34,
       "abstract": "ChatGPT, a general purpose chatbot developed by OpenAI, has been widely reported to have potential in medical literature.",
       "url": "https://doi.org/10.1681/asn.0000000000000166"
@@ -289,7 +390,9 @@
       "doi": "10.3389/frai.2025.1649155",
       "year": 2025,
       "venue": "Frontiers in Artificial Intelligence",
-      "authors": ["Thomas Hartung"],
+      "authors": [
+        "Thomas Hartung"
+      ],
       "citationCount": 9,
       "abstract": "Research is entering a co-pilot to lab-pilot transition in which AI no longer merely interprets knowledge but increasingly acts upon it.",
       "url": "https://doi.org/10.3389/frai.2025.1649155"
@@ -299,7 +402,11 @@
       "doi": "10.1007/s11704-024-40231-1",
       "year": 2024,
       "venue": "Frontiers of Computer Science",
-      "authors": ["Lei Wang", "Chen Ma", "Xueyang Feng"],
+      "authors": [
+        "Lei Wang",
+        "Chen Ma",
+        "Xueyang Feng"
+      ],
       "citationCount": 938,
       "abstract": "A comprehensive survey of LLM-based autonomous agents from a holistic perspective.",
       "url": "https://doi.org/10.1007/s11704-024-40231-1"
@@ -308,20 +415,36 @@
       "title": "Streamline automated biomedical discoveries with agentic bioinformatics",
       "doi": "10.1093/bib/bbaf505",
       "year": 2025,
-      "venue": "Briefings in Bioinformatics",
-      "authors": [],
+      "venue": "Briefings Bioinform.",
+      "authors": [
+        "Juexiao Zhou",
+        "Jindong Jiang",
+        "Zhongyi Han",
+        "Zijian Wang",
+        "Xin Gao"
+      ],
       "citationCount": 6,
-      "abstract": "Automated biomedical discoveries using agentic bioinformatics approaches.",
+      "abstract": "Abstract The emergence of artificial intelligence agents powered by large language models marks a transformative shift in computational biology. In this new paradigm, autonomous, adaptive, and intelligent agents are deployed to tackle complex biological challenges, leading to a new research field named agentic bioinformatics. Here, we explore the core principles, evolving methodologies, and diverse applications of agentic bioinformatics. We examine how agentic bioinformatics systems work synergistically to facilitate data-driven decision-making and enable self-directed exploration of biological datasets. Furthermore, we highlight the integration of agentic frameworks in key areas such as personalized medicine, drug discovery, and synthetic biology, illustrating their potential to revolutionize healthcare and biotechnology. In addition, we address the ethical, technical, and scalability challenges associated with agentic bioinformatics, identifying key opportunities for future advancements. By emphasizing the importance of interdisciplinary collaboration and innovation, we envision agentic bioinformatics as a major force in overcoming the grand challenges of modern biology, ultimately advancing both research and clinical applications.",
       "url": "https://doi.org/10.1093/bib/bbaf505"
     },
     {
-      "title": "Automated and Autonomous Experiments in Electron and Scanning Probe Microscopy",
+      "title": "Automated and Autonomous Experiments in Electron and Scanning Probe Microscopy.",
       "doi": "10.1021/acsnano.1c02104",
       "year": 2021,
       "venue": "ACS Nano",
-      "authors": [],
+      "authors": [
+        "Sergei V. Kalinin",
+        "M. Ziatdinov",
+        "Jacob D. Hinkle",
+        "S. Jesse",
+        "Ayana Ghosh",
+        "K. Kelley",
+        "A. Lupini",
+        "B. Sumpter",
+        "R. Vasudevan"
+      ],
       "citationCount": 134,
-      "abstract": "Autonomous experiments in microscopy enabled by AI agents.",
+      "abstract": "Machine learning and artificial intelligence (ML/AI) are rapidly becoming an indispensable part of physics research, with domain applications ranging from theory and materials prediction to high-throughput data analysis. In parallel, the recent successes in applying ML/AI methods for autonomous systems from robotics to self-driving cars to organic and inorganic synthesis are generating enthusiasm for the potential of these techniques to enable automated and autonomous experiments (AE) in imaging. Here, we aim to analyze the major pathways toward AE in imaging methods with sequential image formation mechanisms, focusing on scanning probe microscopy (SPM) and (scanning) transmission electron microscopy ((S)TEM). We argue that automated experiments should necessarily be discussed in a broader context of the general domain knowledge that both informs the experiment and is increased as the result of the experiment. As such, this analysis should explore the human and ML/AI roles prior to and during the experiment and consider the latencies, biases, and prior knowledge of the decision-making process. Similarly, such discussion should include the limitations of the existing imaging systems, including intrinsic latencies, non-idealities, and drifts comprising both correctable and stochastic components. We further pose that the role of the AE in microscopy is not the exclusion of human operators (as is the case for autonomous driving), but rather automation of routine operations such as microscope tuning, etc., prior to the experiment, and conversion of low latency decision making processes on the time scale spanning from image acquisition to human-level high-order experiment planning. Overall, we argue that ML/AI can dramatically alter the (S)TEM and SPM fields; however, this process is likely to be highly nontrivial and initiated by combined human-ML workflows and will bring challenges both from the microscope and ML/AI sides. At the same time, these methods will enable opportunities and paradigms for scientific discovery and nanostructure fabrication.",
       "url": "https://doi.org/10.1021/acsnano.1c02104"
     },
     {
@@ -329,7 +452,11 @@
       "doi": "10.1038/s44160-023-00251-4",
       "year": 2023,
       "venue": "Nature Synthesis",
-      "authors": [],
+      "authors": [
+        "J. Gregoire",
+        "Lan Zhou",
+        "J. Haber"
+      ],
       "citationCount": 94,
       "abstract": "AI-driven materials discovery through combinatorial synthesis approaches.",
       "url": "https://doi.org/10.1038/s44160-023-00251-4"
@@ -339,89 +466,234 @@
       "doi": "10.1002/cac2.12215",
       "year": 2021,
       "venue": "Cancer Communications",
-      "authors": [],
+      "authors": [
+        "Zi-Hang Chen",
+        "Li Lin",
+        "Chen-Fei Wu",
+        "Chaofeng Li",
+        "R. Xu",
+        "Ying Sun"
+      ],
       "citationCount": 257,
-      "abstract": "AI-assisted cancer diagnosis and treatment in precision medicine.",
+      "abstract": "Over the past decade, artificial intelligence (AI) has contributed substantially to the resolution of various medical problems, including cancer. Deep learning (DL), a subfield of AI, is characterized by its ability to perform automated feature extraction and has great power in the assimilation and evaluation of large amounts of complicated data. On the basis of a large quantity of medical data and novel computational technologies, AI, especially DL, has been applied in various aspects of oncology research and has the potential to enhance cancer diagnosis and treatment. These applications range from early cancer detection, diagnosis, classification and grading, molecular characterization of tumors, prediction of patient outcomes and treatment responses, personalized treatment, automatic radiotherapy workflows, novel anti‐cancer drug discovery, and clinical trials. In this review, we introduced the general principle of AI, summarized major areas of its application for cancer diagnosis and treatment, and discussed its future directions and remaining challenges. As the adoption of AI in clinical use is increasing, we anticipate the arrival of AI‐powered cancer care.",
       "url": "https://doi.org/10.1002/cac2.12215"
     },
     {
       "title": "Causability and explainability of artificial intelligence in medicine",
       "doi": "10.1002/widm.1312",
       "year": 2019,
-      "venue": "Wiley Interdisciplinary Reviews Data Mining and Knowledge Discovery",
-      "authors": [],
+      "venue": "WIREs Data Mining Knowl. Discov.",
+      "authors": [
+        "Andreas Holzinger",
+        "G. Langs",
+        "H. Denk",
+        "K. Zatloukal",
+        "Heimo Müller"
+      ],
       "citationCount": 1633,
-      "abstract": "Explainability and causability of AI systems in medical applications.",
+      "abstract": "Explainable artificial intelligence (AI) is attracting much interest in medicine. Technically, the problem of explainability is as old as AI itself and classic AI represented comprehensible retraceable approaches. However, their weakness was in dealing with uncertainties of the real world. Through the introduction of probabilistic learning, applications became increasingly successful, but increasingly opaque. Explainable AI deals with the implementation of transparency and traceability of statistical black‐box machine learning methods, particularly deep learning (DL). We argue that there is a need to go beyond explainable AI. To reach a level of explainable medicine we need causability. In the same way that usability encompasses measurements for the quality of use, causability encompasses measurements for the quality of explanations. In this article, we provide some necessary definitions to discriminate between explainability and causability as well as a use‐case of DL interpretation and of human explanation in histopathology. The main contribution of this article is the notion of causability, which is differentiated from explainability in that causability is a property of a person, while explainability is a property of a system",
       "url": "https://doi.org/10.1002/widm.1312"
     },
     {
       "title": "AlphaEvolve: A coding agent for scientific and algorithmic discovery",
       "doi": "10.48550/arXiv.2506.13131",
       "year": 2025,
-      "venue": "arXiv",
-      "authors": [],
+      "venue": "arXiv.org",
+      "authors": [
+        "Alexander Novikov",
+        "Ngân V˜u",
+        "Marvin Eisenberger",
+        "Emilien Dupont",
+        "Po-Sen Huang",
+        "Adam Zsolt Wagner",
+        "S. Shirobokov",
+        "Borislav M. Kozlovskii",
+        "Francisco J. R. Ruiz",
+        "Abbas Mehrabian",
+        "M. P. Kumar",
+        "Abigail See",
+        "Swarat Chaudhuri",
+        "George Holland",
+        "A. Davies",
+        "Sebastian Nowozin",
+        "Pushmeet Kohli",
+        "Matej Balog",
+        "Google DeepMind"
+      ],
       "citationCount": 367,
-      "abstract": "A coding agent for scientific and algorithmic discovery.",
+      "abstract": "In this white paper, we present AlphaEvolve, an evolutionary coding agent that substantially enhances capabilities of state-of-the-art LLMs on highly challenging tasks such as tackling open scientific problems or optimizing critical pieces of computational infrastructure. AlphaEvolve orchestrates an autonomous pipeline of LLMs, whose task is to improve an algorithm by making direct changes to the code. Using an evolutionary approach, continuously receiving feedback from one or more evaluators, AlphaEvolve iteratively improves the algorithm, potentially leading to new scientific and practical discoveries. We demonstrate the broad applicability of this approach by applying it to a number of important computational problems. When applied to optimizing critical components of large-scale computational stacks at Google, AlphaEvolve developed a more efficient scheduling algorithm for data centers, found a functionally equivalent simplification in the circuit design of hardware accelerators, and accelerated the training of the LLM underpinning AlphaEvolve itself. Furthermore, AlphaEvolve discovered novel, provably correct algorithms that surpass state-of-the-art solutions on a spectrum of problems in mathematics and computer science, significantly expanding the scope of prior automated discovery methods (Romera-Paredes et al., 2023). Notably, AlphaEvolve developed a search algorithm that found a procedure to multiply two $4 \\times 4$ complex-valued matrices using $48$ scalar multiplications; offering the first improvement, after 56 years, over Strassen's algorithm in this setting. We believe AlphaEvolve and coding agents like it can have a significant impact in improving solutions of problems across many areas of science and computation.",
       "url": "https://arxiv.org/abs/2506.13131"
     },
     {
       "title": "Kosmos: An AI Scientist for Autonomous Discovery",
       "doi": "10.48550/arXiv.2511.02824",
       "year": 2025,
-      "venue": "arXiv",
-      "authors": [],
+      "venue": "arXiv.org",
+      "authors": [
+        "Ludovico Mitchener",
+        "Angela Yiu",
+        "Benjamin Chang",
+        "M. Bourdenx",
+        "Tyler Nadolski",
+        "Arvis Sulovari",
+        "E. Landsness",
+        "Dániel L. Barabási",
+        "Siddharth Narayanan",
+        "Nicky Evans",
+        "S. Reddy",
+        "M. Foiani",
+        "Aizad Kamal",
+        "Leah P. Shriver",
+        "F. Cao",
+        "A. Wassie",
+        "Jon M. Laurent",
+        "Edwin Melville-Green",
+        "M. C. Ramos",
+        "Albert Bou",
+        "K. Roberts",
+        "Sladjana Zagorac",
+        "Timothy C. Orr",
+        "Miranda E. Orr",
+        "K. Zwezdaryk",
+        "Ali E. Ghareeb",
+        "L. McCoy",
+        "B. Gomes",
+        "Euan A Ashley",
+        "K. Duff",
+        "T. Buonassisi",
+        "Tom Rainforth",
+        "Randall J. Bateman",
+        "Michael Skarlinski",
+        "Samuel G. Rodriques",
+        "Michaela M. Hinks",
+        "Andrew D. White"
+      ],
       "citationCount": 34,
-      "abstract": "An AI scientist system for autonomous discovery.",
+      "abstract": "Data-driven scientific discovery requires iterative cycles of literature search, hypothesis generation, and data analysis. Substantial progress has been made towards AI agents that can automate scientific research, but all such agents remain limited in the number of actions they can take before losing coherence, thus limiting the depth of their findings. Here we present Kosmos, an AI scientist that automates data-driven discovery. Given an open-ended objective and a dataset, Kosmos runs for up to 12 hours performing cycles of parallel data analysis, literature search, and hypothesis generation before synthesizing discoveries into scientific reports. Unlike prior systems, Kosmos uses a structured world model to share information between a data analysis agent and a literature search agent. The world model enables Kosmos to coherently pursue the specified objective over 200 agent rollouts, collectively executing an average of 42,000 lines of code and reading 1,500 papers per run. Kosmos cites all statements in its reports with code or primary literature, ensuring its reasoning is traceable. Independent scientists found 79.4% of statements in Kosmos reports to be accurate, and collaborators reported that a single 20-cycle Kosmos run performed the equivalent of 6 months of their own research time on average. Furthermore, collaborators reported that the number of valuable scientific findings generated scales linearly with Kosmos cycles (tested up to 20 cycles). We highlight seven discoveries made by Kosmos that span metabolomics, materials science, neuroscience, and statistical genetics. Three discoveries independently reproduce findings from preprinted or unpublished manuscripts that were not accessed by Kosmos at runtime, while four make novel contributions to the scientific literature.",
       "url": "https://arxiv.org/abs/2511.02824"
     },
     {
       "title": "Towards an AI co-scientist",
       "doi": "10.48550/arXiv.2502.18864",
       "year": 2025,
-      "venue": "arXiv",
-      "authors": [],
+      "venue": "arXiv.org",
+      "authors": [
+        "Juraj Gottweis",
+        "Wei-Hung Weng",
+        "Alexander Daryin",
+        "Tao Tu",
+        "Anil Palepu",
+        "Petar Sirkovic",
+        "Artiom Myaskovsky",
+        "Felix Weissenberger",
+        "Keran Rong",
+        "Ryutaro Tanno",
+        "Khaled Saab",
+        "D. Popovici",
+        "Jacob Blum",
+        "Fan Zhang",
+        "Katherine Chou",
+        "Avinatan Hassidim",
+        "Burak Gokturk",
+        "Amin Vahdat",
+        "Pushmeet Kohli",
+        "Yossi Matias",
+        "A. Carroll",
+        "Kavita Kulkarni",
+        "Nenad Tomašev",
+        "Yuan Guan",
+        "Vikram Dhillon",
+        "E. D. Vaishnav",
+        "Byron Lee",
+        "Tiago R D Costa",
+        "Jos'e R Penad'es",
+        "Gary Peltz",
+        "Yunhan Xu",
+        "Annalisa Pawlosky",
+        "A. Karthikesalingam",
+        "Vivek Natarajan"
+      ],
       "citationCount": 236,
-      "abstract": "AI co-scientist for collaborative research.",
+      "abstract": "Scientific discovery relies on scientists generating novel hypotheses that undergo rigorous experimental validation. To augment this process, we introduce an AI co-scientist, a multi-agent system built on Gemini 2.0. The AI co-scientist is intended to help uncover new, original knowledge and to formulate demonstrably novel research hypotheses and proposals, building upon prior evidence and aligned to scientist-provided research objectives and guidance. The system's design incorporates a generate, debate, and evolve approach to hypothesis generation, inspired by the scientific method and accelerated by scaling test-time compute. Key contributions include: (1) a multi-agent architecture with an asynchronous task execution framework for flexible compute scaling; (2) a tournament evolution process for self-improving hypotheses generation. Automated evaluations show continued benefits of test-time compute, improving hypothesis quality. While general purpose, we focus development and validation in three biomedical areas: drug repurposing, novel target discovery, and explaining mechanisms of bacterial evolution and anti-microbial resistance. For drug repurposing, the system proposes candidates with promising validation findings, including candidates for acute myeloid leukemia that show tumor inhibition in vitro at clinically applicable concentrations. For novel target discovery, the AI co-scientist proposed new epigenetic targets for liver fibrosis, validated by anti-fibrotic activity and liver cell regeneration in human hepatic organoids. Finally, the AI co-scientist recapitulated unpublished experimental results via a parallel in silico discovery of a novel gene transfer mechanism in bacterial evolution. These results, detailed in separate, co-timed reports, demonstrate the potential to augment biomedical and scientific discovery and usher an era of AI empowered scientists.",
       "url": "https://arxiv.org/abs/2502.18864"
     },
     {
       "title": "Aleks: AI powered Multi Agent System for Autonomous Scientific Discovery via Data-Driven Approaches in Plant Science",
       "doi": "10.48550/arXiv.2508.19383",
       "year": 2025,
-      "venue": "arXiv",
-      "authors": [],
+      "venue": "arXiv.org",
+      "authors": [
+        "Daoyuan Jin",
+        "Nick Gunner",
+        "Niko Carvajal Janke",
+        "Shivranjani Baruah",
+        "K. Gold",
+        "Yu Jiang"
+      ],
       "citationCount": 0,
-      "abstract": "Multi-agent system for plant science discovery.",
+      "abstract": "Modern plant science increasingly relies on large, heterogeneous datasets, but challenges in experimental design, data preprocessing, and reproducibility hinder research throughput. Here we introduce Aleks, an AI-powered multi-agent system that integrates domain knowledge, data analysis, and machine learning within a structured framework to autonomously conduct data-driven scientific discovery. Once provided with a research question and dataset, Aleks iteratively formulated problems, explored alternative modeling strategies, and refined solutions across multiple cycles without human intervention. In a case study on grapevine red blotch disease, Aleks progressively identified biologically meaningful features and converged on interpretable models with robust performance. Ablation studies underscored the importance of domain knowledge and memory for coherent outcomes. This exploratory work highlights the promise of agentic AI as an autonomous collaborator for accelerating scientific discovery in plant sciences.",
       "url": "https://arxiv.org/abs/2508.19383"
     },
     {
       "title": "HealthFlow: A Self-Evolving AI Agent with Meta Planning for Autonomous Healthcare Research",
       "doi": "10.48550/arXiv.2508.02621",
       "year": 2025,
-      "venue": "arXiv",
-      "authors": [],
+      "venue": "arXiv.org",
+      "authors": [
+        "Yinghao Zhu",
+        "Yifan Qi",
+        "Zixiang Wang",
+        "Lei Gu",
+        "Dehao Sui",
+        "Haoran Hu",
+        "Xichen Zhang",
+        "Ziyi He",
+        "Liantao Ma",
+        "Lequan Yu"
+      ],
       "citationCount": 6,
-      "abstract": "Self-evolving AI agent for healthcare research.",
+      "abstract": "The rapid proliferation of scientific knowledge presents a grand challenge: transforming this vast repository of information into an active engine for discovery, especially in high-stakes domains like healthcare. Current AI agents, however, are constrained by static, predefined strategies, limiting their ability to navigate the complex, evolving ecosystem of scientific research. This paper introduces HealthFlow, a self-evolving AI agent that overcomes this limitation through a novel meta-level evolution mechanism. HealthFlow autonomously refines its high-level problem-solving policies by distilling procedural successes and failures into a durable, structured knowledge base, enabling it to learn not just how to use tools, but how to strategize. To anchor our research and provide a community resource, we introduce EHRFlowBench, a new benchmark featuring complex health data analysis tasks systematically derived from peer-reviewed scientific literature. Our experiments demonstrate that HealthFlow's self-evolving approach significantly outperforms state-of-the-art agent frameworks. This work offers a new paradigm for intelligent systems that can learn to operationalize the procedural knowledge embedded in scientific content, marking a critical step toward more autonomous and effective AI for healthcare scientific discovery.",
       "url": "https://arxiv.org/abs/2508.02621"
     },
     {
       "title": "DrugAgent: Automating AI-aided Drug Discovery Programming through LLM Multi-Agent Collaboration",
       "doi": "10.48550/arXiv.2411.15692",
       "year": 2024,
-      "venue": "arXiv",
-      "authors": [],
+      "venue": "arXiv.org",
+      "authors": [
+        "Sizhe Liu",
+        "Yizhou Lu",
+        "Siyu Chen",
+        "Xiyang Hu",
+        "Jieyu Zhao",
+        "Tianfan Fu",
+        "Yue Zhao"
+      ],
       "citationCount": 36,
-      "abstract": "LLM multi-agent collaboration for drug discovery.",
+      "abstract": "Recent progress in Large Language Models (LLMs) has drawn attention to their potential for accelerating drug discovery. However, a central problem remains: translating theoretical ideas into robust implementations in the highly specialized context of pharmaceutical research. This limitation prevents practitioners from making full use of the latest AI developments in drug discovery. To address this challenge, we introduce DrugAgent, a multi-agent framework that automates machine learning (ML) programming for drug discovery tasks. DrugAgent employs an LLM Planner that formulates high-level ideas and an LLM Instructor that identifies and integrates domain knowledge when implementing those ideas. We present case studies on three representative drug discovery tasks. Our results show that DrugAgent consistently outperforms leading baselines, including a relative improvement of 4.92% in ROC-AUC compared to ReAct for drug-target interaction (DTI). DrugAgent is publicly available at https://anonymous.4open.science/r/drugagent-5C42/.",
       "url": "https://arxiv.org/abs/2411.15692"
     },
     {
       "title": "Accelerating Drug Discovery Through Agentic AI: A Multi-Agent Approach to Laboratory Automation in the DMTA Cycle",
       "doi": "10.48550/arXiv.2507.09023",
       "year": 2025,
-      "venue": "arXiv",
-      "authors": [],
+      "venue": "arXiv.org",
+      "authors": [
+        "Yao Fehlis",
+        "Charles Crain",
+        "Aidan Jensen",
+        "Michael Watson",
+        "James Juhasz",
+        "Paul Mandel",
+        "Betty Liu",
+        "Shawn Mahon",
+        "Daren Wilson",
+        "Nick Lynch-Jonely",
+        "Ben Leedom",
+        "David Fuller"
+      ],
       "citationCount": 9,
-      "abstract": "Agentic AI for drug discovery DMTA cycle.",
+      "abstract": "The pharmaceutical industry faces unprecedented challenges in drug discovery, with traditional approaches struggling to meet modern therapeutic development demands. This paper introduces a novel AI framework, Tippy, that transforms laboratory automation through specialized AI agents operating within the Design-Make-Test-Analyze (DMTA) cycle. Our multi-agent system employs five specialized agents - Supervisor, Molecule, Lab, Analysis, and Report, with Safety Guardrail oversight - each designed to excel in specific phases of the drug discovery pipeline. Tippy represents the first production-ready implementation of specialized AI agents for automating the DMTA cycle, providing a concrete example of how AI can transform laboratory workflows. By leveraging autonomous AI agents that reason, plan, and collaborate, we demonstrate how Tippy accelerates DMTA cycles while maintaining scientific rigor essential for pharmaceutical research. The system shows significant improvements in workflow efficiency, decision-making speed, and cross-disciplinary coordination, offering a new paradigm for AI-assisted drug discovery.",
       "url": "https://arxiv.org/abs/2507.09023"
     },
     {
@@ -429,19 +701,39 @@
       "doi": "10.1021/acs.chemrev.4c00055",
       "year": 2024,
       "venue": "Chemical Reviews",
-      "authors": [],
+      "authors": [
+        "Gary Tom",
+        "Stefan P Schmid",
+        "Sterling G. Baird",
+        "Yang Cao",
+        "K. Darvish",
+        "Han Hao",
+        "Stanley Lo",
+        "Sergio Pablo-García",
+        "Ella M Rajaonson",
+        "Marta Skreta",
+        "Naruki Yoshikawa",
+        "Samantha Corapi",
+        "G. Akkoc",
+        "Felix Strieth-Kalthoff",
+        "Martin Seifrid",
+        "Alán Aspuru-Guzik"
+      ],
       "citationCount": 372,
-      "abstract": "Comprehensive review of self-driving laboratories.",
+      "abstract": "Self-driving laboratories (SDLs) promise an accelerated application of the scientific method. Through the automation of experimental workflows, along with autonomous experimental planning, SDLs hold the potential to greatly accelerate research in chemistry and materials discovery. This review provides an in-depth analysis of the state-of-the-art in SDL technology, its applications across various scientific disciplines, and the potential implications for research and industry. This review additionally provides an overview of the enabling technologies for SDLs, including their hardware, software, and integration with laboratory infrastructure. Most importantly, this review explores the diverse range of scientific domains where SDLs have made significant contributions, from drug discovery and materials science to genomics and chemistry. We provide a comprehensive review of existing real-world examples of SDLs, their different levels of automation, and the challenges and limitations associated with each domain.",
       "url": "https://doi.org/10.1021/acs.chemrev.4c00055"
     },
     {
-      "title": "Autonomous 'self-driving' laboratories: a review of technology and policy implications",
+      "title": "Autonomous ‘self-driving’ laboratories: a review of technology and policy implications",
       "doi": "10.1098/rsos.250646",
       "year": 2025,
       "venue": "Royal Society Open Science",
-      "authors": [],
+      "authors": [
+        "A. Tobias",
+        "Adam Wahab"
+      ],
       "citationCount": 21,
-      "abstract": "Review of self-driving laboratory technology and policy.",
+      "abstract": "This article reviews and provides perspective on the emerging technology of autonomous, ‘self-driving’ laboratories (SDLs) that combine artificial intelligence (AI) and laboratory automation to perform research in chemistry, materials science and biological sciences. Today’s most capable SDLs automate nearly the entire scientific method, from hypothesis generation, experimental design, experiment execution and data analysis, to drawing conclusions and updating hypotheses for subsequent rounds of optimization or discovery. ‘Cloud labs’ offer subscription-based remote-control access to experimental capabilities. Reports of AI-directed experiments executed in cloud labs are appearing in the literature, previewing a democratization of science that intrigues but inspires concern. Indeed, SDLs have potential implications for society far beyond the academy. Inventions emerging from AI-driven science pose a grand challenge, as patent laws across the world recognize only human inventors. If the inventions they generate remain unpatentable, funding for SDLs may be constrained. SDLs raise safety and security concerns. We deem them surmountable with a proactive approach, ultimate human accountability and robust cybersecurity measures. Finally, we estimate the impacts of SDLs on the technical labour force. Our analysis suggests that SDLs may displace some scientific roles but are likely to create many new opportunities.",
       "url": "https://doi.org/10.1098/rsos.250646"
     },
     {
@@ -449,7 +741,10 @@
       "doi": "10.1038/s41929-024-01275-5",
       "year": 2025,
       "venue": "Nature Catalysis",
-      "authors": [],
+      "authors": [
+        "C. Scheurer",
+        "K. Reuter"
+      ],
       "citationCount": 24,
       "abstract": "Human-in-the-loop for self-driving catalysis labs.",
       "url": "https://doi.org/10.1038/s41929-024-01275-5"
@@ -458,10 +753,14 @@
       "title": "How to build an effective self-driving laboratory",
       "doi": "10.1557/s43577-023-00476-w",
       "year": 2023,
-      "venue": "MRS Bulletin",
-      "authors": [],
+      "venue": "MRS bulletin",
+      "authors": [
+        "B. MacLeod",
+        "F. G. L. Parlane",
+        "C. Berlinguette"
+      ],
       "citationCount": 9,
-      "abstract": "Guide to building effective self-driving laboratories.",
+      "abstract": "Self-driving laboratories can accelerate materials discovery by achieving scientific objectives hundreds of times faster than automation alone. However, a self-driving laboratory can take years to adapt to a new study. We contend that effective self-driving laboratories must (1) work faster than automation alone, and (2) be readily adapted to new studies. Here, we examine the characteristics of effective self-driving laboratories and highlight the challenges of reusing these laboratories for new studies. We then provide strategies for building effective self-driving laboratories that accelerate the discovery of new materials. Graphical abstract",
       "url": "https://doi.org/10.1557/s43577-023-00476-w"
     },
     {
@@ -469,9 +768,18 @@
       "doi": "10.1039/d4dd00411f",
       "year": 2025,
       "venue": "Digital Discovery",
-      "authors": [],
+      "authors": [
+        "Sayan Doloi",
+        "Maloy Das",
+        "Matthew Osvaldo",
+        "Yujia Li",
+        "Zen Han Cho",
+        "Xingchi Xiao",
+        "J. Hanna",
+        "Leonard Ng Wei Tat"
+      ],
       "citationCount": 10,
-      "abstract": "Low-cost 3D printing for self-driving lab automation.",
+      "abstract": "Laboratory automation through self-driving labs represents a transformative approach to accelerating scientific discovery, particularly in chemical sciences, biological sciences, materials science, and high-throughput experimentation. However, widespread adoption of these technologies...",
       "url": "https://doi.org/10.1039/d4dd00411f"
     },
     {
@@ -479,9 +787,14 @@
       "doi": "10.1101/2025.09.01.673319",
       "year": 2025,
       "venue": "bioRxiv",
-      "authors": [],
+      "authors": [
+        "Henry E. Miller",
+        "M. Greenig",
+        "Benjamin Tenmann",
+        "Bo Wang"
+      ],
       "citationCount": 6,
-      "abstract": "Benchmark for AI agents in biomedical ML.",
+      "abstract": "Abstract Large language model (LLM) agents hold promise for accelerating biomedical research and development (R&amp;D). Several have recently been proposed, but their evaluation has largely restricted to question answering (e.g., LAB-Bench) or narrow bioinformatics tasks. Presently, there remains a lack of benchmarks evaluating agent capability in multi-step data analysis workflows solving the machine learning (ML) challenges central AI-driven therapeutics development, such as perturbation response modeling drug toxicity prediction. We introduce BioML-bench , first benchmarking suite AI on end-to-end ML spans four domains (protein engineering, single-cell omics, imaging, discovery) with tasks that require parse task description, build pipeline, implement models, submit predictions graded by established metrics AUROC, Spearman). evaluate open-source agents: two specialists (STELLA, Biomni) generalists (AIDE, MLAgentBench). On average, underperform relative human baselines, specialization does not confer consistent advantage. also found which employed more diverse strategies often tended score highest, suggesting architecture scaffolding may be stronger determinants performance. These findings underscore both potential current limits agentic systems ML, highlight need systematic, reproducible evaluations. is provided at github.com/science-machine/biomlbench .",
       "url": "https://doi.org/10.1101/2025.09.01.673319"
     },
     {
@@ -489,59 +802,140 @@
       "doi": "10.1016/j.isci.2025.113984",
       "year": 2025,
       "venue": "iScience",
-      "authors": [],
+      "authors": [
+        "Qidi Xu",
+        "Claudio Soto",
+        "Mohammad Shahnawaz",
+        "Xiaozhong Liu",
+        "Xiaoqian Jiang",
+        "Yejin Kim"
+      ],
       "citationCount": 1,
-      "abstract": "Multi-agent LLMs for drug combination discovery.",
+      "abstract": "Summary Recent advancements in large language models (LLMs) have demonstrated their potential in scientific reasoning, but their ability to open-ended hypotheses in data-scarce domains remains underexplored. Here, we introduce Combinatorial Alzheimer’s Disease Therapeutic Efficacy Decision (Coated-LLM), an AI-driven framework that is inspired by scientific collaboration to predict efficacious combinatorial therapy when data-driven prediction is infeasible. Coated-LLM employs multiple specialized LLM agents—Researcher, Reviewers, and Moderator—to systematically generate and evaluate hypotheses through several in-context learning techniques. Using Alzheimer’s disease (AD) as a test case, Coated-LLM outperformed traditional knowledge-based methods (accuracy: 0.74 vs. 0.52), with external validation achieving an accuracy of 0.82. In addition, a drug combination predicted from Coated-LLM was experimentally validated to significantly reduce amyloid aggregation in vitro. These findings highlight the potential of our framework to augment human reasoning in complex scientific reasoning tasks, offering a scalable approach for hypothesis generation in biomedical research.",
       "url": "https://doi.org/10.1016/j.isci.2025.113984"
     },
     {
       "title": "Zephyrus: An Agentic Framework for Weather Science",
       "doi": "10.48550/arXiv.2510.04017",
       "year": 2025,
-      "venue": "arXiv",
-      "authors": [],
+      "venue": "arXiv.org",
+      "authors": [
+        "Sumanth Varambally",
+        "Marshall Fisher",
+        "J. Thakker",
+        "Yiwei Chen",
+        "Zhirui Xia",
+        "Yasaman Jafari",
+        "Ruijia Niu",
+        "Manas Jain",
+        "V. Manivannan",
+        "Zachary Novack",
+        "Luyu Han",
+        "Srikar Eranky",
+        "Salva Rühling Cachay",
+        "Taylor Berg-Kirkpatrick",
+        "Duncan Watson-Parris",
+        "Yi-An Ma",
+        "Rose Yu"
+      ],
       "citationCount": 4,
-      "abstract": "Agentic framework for weather and climate science.",
+      "abstract": "Foundation models for weather science are pre-trained on vast amounts of structured numerical data and outperform traditional weather forecasting systems. However, these models lack language-based reasoning capabilities, limiting their utility in interactive scientific workflows. Large language models (LLMs) excel at understanding and generating text but cannot reason about high-dimensional meteorological datasets. We bridge this gap by building the first agentic framework for weather science. Our framework includes a Python code-based environment for agents (ZephyrusWorld) to interact with weather data, featuring tools including a WeatherBench 2 dataset indexer, geolocator for geocoding from natural language, weather forecasting, climate simulation capabilities, and a climatology module for querying precomputed climatological statistics (e.g., means, extremes, and quantiles) across multiple timescales. We design Zephyrus, a multi-turn LLM-based weather agent that iteratively analyzes weather datasets, observes results, and refines its approach through conversational feedback loops. We accompany the agent with a new benchmark, ZephyrusBench, with a scalable data generation pipeline that constructs diverse question-answer pairs across weather-related tasks, from basic lookups to advanced forecasting, extreme event detection, and counterfactual reasoning. Experiments on this benchmark demonstrate the strong performance of Zephyrus agents over text-only baselines, outperforming them by up to 44 percentage points in correctness. However, the hard tasks are still difficult even with frontier LLMs, highlighting the challenging nature of our benchmark and suggesting room for future development. Our codebase and benchmark are available at https://github.com/Rose-STL-Lab/Zephyrus.",
       "url": "https://arxiv.org/abs/2510.04017"
     },
     {
       "title": "EarthLink: A Self-Evolving AI Agent for Climate Science",
       "doi": "10.48550/arXiv.2507.17311",
       "year": 2025,
-      "venue": "arXiv",
-      "authors": [],
+      "venue": "arXiv.org",
+      "authors": [
+        "Zijie Guo",
+        "Jiong Wang",
+        "Xiaoyu Yue",
+        "Wangxu Wei",
+        "Zhe Jiang",
+        "Wanghan Xu",
+        "Ben Fei",
+        "Wenlong Zhang",
+        "Xinyu Gu",
+        "Lijing Cheng",
+        "Jing-Jia Luo",
+        "Chao Li",
+        "Yaqiang Wang",
+        "Tao Chen",
+        "Wanli Ouyang",
+        "Fenghua Ling",
+        "Lei Bai"
+      ],
       "citationCount": 3,
-      "abstract": "Self-evolving AI agent for climate science research.",
+      "abstract": "Scientific progress in Earth science depends on integrating data across the planet's interconnected spheres. However, accelerating volume and fragmentation of multi-sphere knowledge have surpassed human analytical capacity. This creates a major bottleneck for discovery, especially climate science. To address this challenge, we introduce EarthLink, first self-evolving AI agent system designed as an interactive \"copilot\" scientists. Through natural language interaction, EarthLink automates entire research workflow by planning, code execution, analysis, physical reasoning into unified process that directly addresses limitation. Beyond efficiency, it exhibits human-like cross-disciplinary ability achieves proficiency comparable to junior researcher expert evaluations core large-scale tasks, including model-observation comparison change understanding. When tasked with open scientific problem, specifically discovery precursors Atlantic Niño, autonomously developed strategy, identified sources predictability, verified its hypotheses available data, proposed physically consistent mechanism. These emerging capabilities enable new human-AI paradigm. Scientists can focus value result judgments, while systems handle complex analysis integration. accelerates pace breadth sciences. The is accessible at our website https://earthlink.intern-ai.org.cn.",
       "url": "https://arxiv.org/abs/2507.17311"
     },
     {
       "title": "RoboCulture: A Robotics Platform for Automated Biological Experimentation",
       "doi": "10.48550/arXiv.2505.14941",
       "year": 2025,
-      "venue": "arXiv",
-      "authors": [],
+      "venue": "arXiv.org",
+      "authors": [
+        "Kevin Angers",
+        "K. Darvish",
+        "Naruki Yoshikawa",
+        "Sargol Okhovatian",
+        "Dawn Bannerman",
+        "I. Yakavets",
+        "F. Shkurti",
+        "Alán Aspuru-Guzik",
+        "Milica Radisic"
+      ],
       "citationCount": 10,
-      "abstract": "Robotics platform for automated biological experiments.",
+      "abstract": "Automating biological experimentation remains challenging due to the need for millimeter-scale precision, long and multi-step experiments, and the dynamic nature of living systems. Current liquid handlers only partially automate workflows, requiring human intervention for plate loading, tip replacement, and calibration. Industrial solutions offer more automation but are costly and lack the flexibility needed in research settings. Meanwhile, research in autonomous robotics has yet to bridge the gap for long-duration, failure-sensitive biological experiments. We introduce RoboCulture, a cost-effective and flexible platform that uses a general-purpose robotic manipulator to automate key biological tasks. RoboCulture performs liquid handling, interacts with lab equipment, and leverages computer vision for real-time decisions using optical density-based growth monitoring. We demonstrate a fully autonomous 15-hour yeast culture experiment where RoboCulture uses vision and force feedback and a modular behavior tree framework to robustly execute, monitor, and manage experiments. Video demonstrations of RoboCulture can be found at https://ac-rad.github.io/roboculture.",
       "url": "https://arxiv.org/abs/2505.14941"
     },
     {
-      "title": "AI-Driven Robotics Laboratory Identifies Pharmacological TNIK Inhibition",
+      "title": "AI-Driven Robotics Laboratory Identifies Pharmacological TNIK Inhibition as a Potent Senomorphic Agent",
       "doi": "10.14336/AD.2024.1492",
       "year": 2025,
       "venue": "Aging and Disease",
-      "authors": [],
+      "authors": [
+        "Qiuqiong Tang",
+        "Deyong Xiao",
+        "A. Veviorskiy",
+        "Ying Xin",
+        "S. W. Y. Lok",
+        "Fadi E. Pulous",
+        "Peiran Zhang",
+        "Yunfeng Zhu",
+        "Yongming Ma",
+        "Xiao Hu",
+        "Shoulai Gu",
+        "Chenting Zong",
+        "Sabina Mukba",
+        "Mikhail Korzinkin",
+        "Frank W. Pun",
+        "Man Zhang",
+        "Alex Aliper",
+        "Lijuan Wu",
+        "Feng Ren",
+        "L. Zhang",
+        "A. Zhavoronkov"
+      ],
       "citationCount": 10,
-      "abstract": "AI-driven robotics lab for pharmacological discovery.",
+      "abstract": "Assessing impact on the hallmarks of aging has emerged as a novel method for prioritizing dual-purpose longevity therapeutic targets and developing drugs simultaneously targeting aging and disease. Cellular senescence, a central hallmark of aging, progressively induces cellular growth arrest and accelerates the production of a pro-inflammatory senescence-associated secretory phenotype (SASP). TGF-β signaling is situated at the center of multiple senescence-associated and aging-associated signaling pathways, and its inhibition may be favorable for aging-related disorders. A recently developed Traf2- and Nck-interacting kinase (TNIK) inhibitor, INS018_055, was identified as a potent, novel anti-fibrotic agent affecting multiple hallmarks of aging across fibrotic diseases. Thus, we hypothesized that TNIK is a potential senescence modulator and INS018_055 could attenuate senescent cell accumulation to treat specific age-related pathological processes. Using a fully automated robotics laboratory designed for automated, highly parallel, and iterative phenotypic and multi-omic analyses, we determined that pharmacological or siRNA-mediated TNIK inhibition decreased cellular senescence in multiple experimental senescence models. INS018_055 mechanistically demonstrated senomorphic activity through its reduction of SASP. Furthermore, transcriptomics analysis revealed that INS018_055 treatment reduced aging signatures and extracellular matrix fibronectin through TGF-β signaling. These findings reveal TNIK’s previously unappreciated role in cellular senescence and INS018_055’s senomorphic potential in mitigating processes well-established as driving organismal aging. Thus, TNIK inhibition as a novel senomorphic strategy may inform future therapeutic approaches for diverse aging-related diseases.",
       "url": "https://doi.org/10.14336/AD.2024.1492"
     },
     {
-      "title": "Accelerating aqueous electrolyte design with automated full-cell battery experimentation",
+      "title": "Accelerating aqueous electrolyte design with automated full-cell battery experimentation and Bayesian optimization",
       "doi": "10.1016/j.xcrp.2025.102548",
       "year": 2025,
       "venue": "Cell Reports Physical Science",
-      "authors": [],
+      "authors": [
+        "Jackie T. Yik",
+        "Carl Hvarfner",
+        "Jens Sjölund",
+        "Erik J. Berg",
+        "Leiting Zhang"
+      ],
       "citationCount": 16,
-      "abstract": "Automated battery experimentation with Bayesian optimization.",
+      "abstract": "SUMMARY The integration of automation and data-driven methodologies offers a promising approach to accelerating materials discovery in energy storage research. Thus far, in battery research, coin-cell assembly has advanced to become nearly fully automated but remains largely disconnected from data-driven methods. To bridge the disconnect, this work presents a self-driving laboratory framework to accelerate electrolyte discovery by integrating automated coin-cell assembly, galvanostatic cycling of LiFePO 4 jj Li 4 Ti 5 O 12 organic-aqueous full cells, and Bayesian optimization for selecting subsequent experiments based on prior results. The study explored an organic-aqueous hybrid electrolyte system comprising four co-solvents and two lithium-conducting salts. Using this framework, cells with an optimized electrolyte cycled with at least 94% Coulombic efﬁciency. Additionally, online electrochemical mass spectrometry revealed that the optimized organic co-solvents successfully mitigated the parasitic hydrogen evolution reaction. The results high-light the potential of combining Bayesian optimization with autonomous full-cell experimentation while contributing new electrolyte design insights for next-generation aqueous batteries.",
       "url": "https://doi.org/10.1016/j.xcrp.2025.102548"
     },
     {
@@ -549,9 +943,14 @@
       "doi": "10.3390/agriengineering7030089",
       "year": 2025,
       "venue": "AgriEngineering",
-      "authors": [],
+      "authors": [
+        "K. Kumari",
+        "Ali Mirzakhani Nafchi",
+        "S. Mirzaee",
+        "Ahmed Abdalla"
+      ],
       "citationCount": 31,
-      "abstract": "AI-driven climate-smart sustainable agriculture.",
+      "abstract": "Agriculture, an essential driver of economic expansion, is faced by the issue of sustaining an increasing global population in the context of climatic uncertainty and limited resources. As a result, “Smart Farming”, which uses cutting-edge artificial intelligence (AI) to support autonomous decision-making, has become more popular. This article explores how the Internet of Things (IoT), AI, machine learning (ML), remote sensing, and variable-rate technology (VRT) work together to transform agriculture. Using sophisticated algorithms to predict soil conditions, improving agricultural yield projections, diagnosing water stress from sensor data, and identifying plant diseases and weeds through image recognition, crop mapping, and AI-guided crop selection are some of the main applications investigated. Furthermore, the precision with which VRT applies water, pesticides, and fertilizers optimizes resource utilization, enhancing sustainability and efficiency. To effectively meet the world’s food demands, this study forecasts a sustainable agricultural future that combines AI-driven approaches with conventional methods.",
       "url": "https://doi.org/10.3390/agriengineering7030089"
     },
     {
@@ -559,49 +958,82 @@
       "doi": "10.1109/ACCESS.2024.3395532",
       "year": 2024,
       "venue": "IEEE Access",
-      "authors": [],
+      "authors": [
+        "Andreas Holzinger",
+        "Iztok Fister",
+        "Iztok Fister",
+        "Hans-Peter Kaul",
+        "S. Asseng"
+      ],
       "citationCount": 99,
-      "abstract": "Human-centered AI for smart farming Agriculture 5.0.",
+      "abstract": "This paper delineates the contemporary landscape, challenges, and prospective developments in human-centred artificial intelligence (AI) within the ambit of smart farming, a pivotal element of the emergent Agriculture 5.0, supplanting Agriculture 4.0. Analogous to Industry 4.0, agriculture has witnessed a trend towards comprehensive automation, often marginalizing human involvement. However, this approach has encountered limitations in agricultural contexts for various reasons. While AI’s capacity to assume human tasks is acknowledged, the inclusion of human expertise and experiential knowledge (human-in-the-loop) often proves indispensable, corroborated by the Moravec’s Paradox: tasks simple for humans are complex for AI. Furthermore, social, ethical, and legal imperatives necessitate human oversight of AI, a stance strongly reflected in the European Union’s regulatory framework. Consequently, this paper explores the advancements in human-centred AI focusing on their application in agricultural processes. These technological strides aim to enhance crop yields, minimize labor and resource wastage, and optimize the farm-to-consumer supply chain. The potential of AI to augment human decision-making, thereby fostering a sustainable, efficient, and resilient agri-food sector, is a focal point of this discussion - motivated by the current worldwide extreme weather events. Finally, a framework for Agriculture 5.0 is presented, which balances technological prowess with the needs, capabilities, and contexts of human stakeholders. Such an approach, emphasizing accessible, intuitive AI systems that meaningfully complement human activities, is crucial for the successful realization of future Agriculture 5.0.",
       "url": "https://doi.org/10.1109/ACCESS.2024.3395532"
     },
     {
-      "title": "The IoT and AI in Agriculture: Smart Sensing Technologies",
+      "title": "The IoT and AI in Agriculture: The Time Is Now—A Systematic Review of Smart Sensing Technologies",
       "doi": "10.3390/s25123583",
       "year": 2025,
-      "venue": "Sensors",
-      "authors": [],
+      "venue": "Italian National Conference on Sensors",
+      "authors": [
+        "Tymoteusz Miller",
+        "G. Mikiciuk",
+        "Irmina Durlik",
+        "M. Mikiciuk",
+        "Adrianna Łobodzińska",
+        "Marek Śnieg"
+      ],
       "citationCount": 100,
-      "abstract": "IoT and AI smart sensing for agriculture.",
+      "abstract": "The integration of the Internet of Things (IoT) and artificial intelligence (AI) has reshaped modern agriculture by enabling precision farming, real-time monitoring, and data-driven decision-making. This systematic review, conducted in accordance with the PRISMA methodology, provides a comprehensive overview of recent advancements in smart sensing technologies for arable crops and grasslands. We analyzed the peer-reviewed literature published between 2020 and 2024, focusing on the adoption of IoT-based sensor networks and AI-driven analytics across various agricultural applications. The findings reveal a significant increase in research output, particularly in the use of optical, acoustic, electromagnetic, and soil sensors, alongside machine learning models such as SVMs, CNNs, and random forests for optimizing irrigation, fertilization, and pest management strategies. However, this review also identifies critical challenges, including high infrastructure costs, limited interoperability, connectivity constraints in rural areas, and ethical concerns regarding transparency and data privacy. To address these barriers, recent innovations have emphasized the potential of Edge AI for local inference, blockchain systems for decentralized data governance, and autonomous platforms for field-level automation. Moreover, policy interventions are needed to ensure fair data ownership, cybersecurity, and equitable access to smart farming tools, especially in developing regions. This review is the first to systematically examine AI-integrated sensing technologies with an exclusive focus on arable crops and grasslands, offering an in-depth synthesis of both technological progress and real-world implementation gaps.",
       "url": "https://doi.org/10.3390/s25123583"
     },
     {
-      "title": "Edge-Enabled Smart Agriculture Framework: Integrating IoT, Lightweight Deep Learning, and Agentic AI",
+      "title": "Edge-Enabled Smart Agriculture Framework: Integrating IoT, Lightweight Deep Learning, and Agentic AI for Context-Aware Farming",
       "doi": "10.1016/j.rineng.2025.107342",
       "year": 2025,
       "venue": "Results in Engineering",
-      "authors": [],
+      "authors": [
+        "Muhammad Tariq",
+        "Sheikh Muhammad Saqib",
+        "Tehseen Mazhar",
+        "Muhammad Amir Khan",
+        "Tariq Shahzad",
+        "Habib Hamam"
+      ],
       "citationCount": 13,
-      "abstract": "Edge-enabled smart agriculture with agentic AI.",
+      "abstract": "• Edge-first framework unites IoT, dual vision models, and rule-based actions. MiT-B0 at 128 × enables low-power on-device weather crop inference. Achieves 88% 93% accuracy with robust error metrics. Agentic layer closes perception-to-actuation loop for autonomous control. CPU-only Python case studies validate real-time decisions without cloud. Proposed a dual-vision deep learning architecture that performs simultaneous classification using lightweight, edge-optimized models operation. Developed agentic AI decision fuses multimodal predictions to autonomously drive IoT-enabled agricultural interventions. Demonstrated responsiveness through seamless integration field-deployable IoT devices such as irrigation controllers, drones, environmental sensors. Validated the system’s scalability deployment-readiness Agriculture 4.0 rigorous experimentation, applied scenarios, quantitative performance Addressed major limitations in existing smart agriculture frameworks—including lack of context-awareness, server dependency, resource inefficiency—by enabling autonomous, interpretable, low-cost actuation real-world environments. Smart farming connectivity-limited, energy-sensitive environments demands perception decision-making reduce latency cloud dependence. This article proposes an edge-enabled integrates lightweight learning, AI, Internet Things (IoT) real-time, decisions. The system features two vision-based models—one one identification—built on Vision Transformer optimized low-resolution (128 128) image inputs. These run resource-constrained hardware suitable rural deployment support efficient, processing. Weather prediction spans 11 classes (e.g., frost, lightning, rain, sandstorm), while covers 5 crops. achieves crops, high F1-scores low MAE, Kappa, Hamming loss values. Predictions are interpreted by triggers actions across multiple actuators, irrigation, NDVI sensors, frost alarms, pest detectors. engine supports both joint rule logic activating hail protectors when is detected maize fields) fallback single-condition rules. Python-implemented show model–AI–IoT interaction combined separate scenarios. By minimizing reducing communication overhead, operation, proposed addresses critical challenges contexts. It demonstrates potential scalable intelligent farming, aligning goals sustainable 4.0.",
       "url": "https://doi.org/10.1016/j.rineng.2025.107342"
     },
     {
-      "title": "An automated workflow for multiplexed single-cell proteomics sample preparation",
+      "title": "An automated workflow for multiplexed single-cell proteomics sample preparation at unprecedented sensitivity",
       "doi": "10.1101/2021.04.14.439828",
       "year": 2021,
       "venue": "bioRxiv",
-      "authors": [],
+      "authors": [
+        "C. Ctortecka",
+        "David Hartlmayr",
+        "A. Seth",
+        "Sasha Mendjan",
+        "G. Tourniaire",
+        "K. Mechtler"
+      ],
       "citationCount": 48,
-      "abstract": "Automated workflow for single-cell proteomics.",
+      "abstract": "The analysis of single-cell proteomes has recently become a viable complement to transcriptomics and genomics studies. Proteins are the primary driver of cellular functionality and mRNA levels are often an unreliable proxy of such. Therefore, the global analysis of the proteome is essential to study cellular identities. Multiplexed and label-free mass spectrometry-based approaches with single-cell resolution have lately attributed surprising heterogeneity to presumed homogenous cell populations. Even though specialized experimental designs and instrumentation have demonstrated remarkable advances, the efficient sample preparation of single cells still lag. Here, we introduce the proteoCHIP, a universal option for single-cell proteomics sample preparation at surprising sensitivity and throughput. The automated processing using a commercial system combining single-cell isolation and picoliter dispensing, the cellenONE®, reduces final sample volumes to low nanoliters submerged in a hexadecane layer simultaneously eliminating error-prone manual sample handling and overcoming evaporation. The specialized proteoCHIP design allows direct injection of single cells via a standard autosampler resulting in around 1,500 protein groups per analytical run at remarkable reporter ion signal to noise while reducing or eliminating the carrier proteome. We identified close to 2,600 proteins across 170 multiplexed single cells from two highly similar human cell types. This dedicated loss-less workflow allows distinguishing in vitro co-differentiated cell types of self-organizing cardiac organoids based on indicative markers across 150 single cells. In-depth characterization revealed enhanced cellular motility of cardiac endothelial cells and sarcomere organization in cardiomyocytes. Our versatile and automated sample preparation has not only proven to be easily adaptable but is also sufficiently sensitive to drive biological applications of single-cell proteomics.",
       "url": "https://doi.org/10.1101/2021.04.14.439828"
     },
     {
-      "title": "AI-driven smart agriculture using hybrid transformer-CNN for real time disease detection",
+      "title": "AI-driven smart agriculture using hybrid transformer-CNN for real time disease detection in sustainable farming",
       "doi": "10.1038/s41598-025-10537-6",
       "year": 2025,
       "venue": "Scientific Reports",
-      "authors": [],
+      "authors": [
+        "Z. Zeng",
+        "Tariq Mahmood",
+        "Yu Wang",
+        "Amjad Rehman",
+        "Muhammad Mujahid"
+      ],
       "citationCount": 13,
-      "abstract": "AI-driven disease detection in sustainable farming.",
+      "abstract": "Plant diseases pose a significant threat to global food security, with severe implications for agricultural productivity. Early and accurate detection of these diseases is crucial, yet it remains a challenging task, significantly impacting crop yields and food supply chains. Despite the progress in artificial intelligence, particularly deep learning, challenges persist in real-world applications due to environmental noise, varying light conditions, and other complicating factors that hinder detection accuracy. This study introduces the AttCM-Alex model, a novel deep-learning framework designed to boost the detection and classification of plant diseases under challenging environmental conditions. By integrating convolutional operations with self-attention mechanisms, AttCM-Alex effectively addresses the variability in light intensity and image noise, ensuring robust performance. To simulate practical agricultural scenarios, the study employs bilinear interpolation for image dimension adjustment and introduces Salt-and-Pepper noise. Additionally, the model’s robustness was evaluated by varying image brightness levels by ±10%, ±20%, and ±30%. Experimental results demonstrate that AttCM-Alex significantly outperforms traditional models, particularly in scenarios involving fluctuating light conditions and noise interference. The model achieved a peak detection accuracy of 0.97 with a 30% increase in image brightness and maintained an accuracy of 0.93 even with a 30% decrease in brightness, highlighting its robustness and reliability. The findings affirm the AttCM-Alex model as a powerful tool for real-world agricultural applications, capable of enhancing disease detection systems’ accuracy and efficiency. This advancement not only supports better crop management practices but also contributes to sustainable agriculture and global food security.",
       "url": "https://doi.org/10.1038/s41598-025-10537-6"
     }
   ]
