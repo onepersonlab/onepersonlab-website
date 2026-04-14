@@ -1,7 +1,7 @@
 {
   "description": "Research Agent Repositories - Updated Stats",
   "source": "GitHub API",
-  "generated_at": "2026-04-14T01:55:05Z",
+  "generated_at": "2026-04-14T02:30:30Z",
   "repo_count": 36,
   "repos": [
     {
@@ -10,10 +10,12 @@
       "owner": "karpathy",
       "description": "AI agents running research on single-GPU nanochat training automatically",
       "language": "Python",
-      "stars": 71647,
-      "forks": 10465,
-      "weeklyStars": 0,
-      "updated": "2026-04-14T01:53:29Z",
+      "stars": 71674,
+      "forks": 10466,
+      "weeklyStars": 1372,
+      "daysChange": 3,
+      "changeLabel": "(3天变化)",
+      "updated": "2026-04-14T02:28:23Z",
       "url": "https://github.com/karpathy/autoresearch"
     },
     {
@@ -22,10 +24,12 @@
       "owner": "SakanaAI",
       "description": "The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery 🧑‍🔬",
       "language": "Jupyter Notebook",
-      "stars": 13214,
+      "stars": 13215,
       "forks": 1891,
       "weeklyStars": 0,
-      "updated": "2026-04-13T22:10:19Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:05:07Z",
       "url": "https://github.com/SakanaAI/AI-Scientist"
     },
     {
@@ -34,10 +38,12 @@
       "owner": "SakanaAI",
       "description": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search",
       "language": "Python",
-      "stars": 5477,
+      "stars": 5478,
       "forks": 763,
       "weeklyStars": 0,
-      "updated": "2026-04-13T23:54:33Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:03:14Z",
       "url": "https://github.com/SakanaAI/AI-Scientist-v2"
     },
     {
@@ -47,8 +53,10 @@
       "description": "Fully autonomous & self-evolving research from idea to paper. Chat an Idea. Get a Paper. 🦞",
       "language": "Python",
       "stars": 11109,
-      "forks": 1273,
+      "forks": 1274,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-14T01:08:47Z",
       "url": "https://github.com/aiming-lab/AutoResearchClaw"
     },
@@ -58,10 +66,12 @@
       "owner": "HKUDS",
       "description": "[NeurIPS2025] \"AI-Researcher: Autonomous Scientific Innovation\" -- A production-ready version: https",
       "language": "Python",
-      "stars": 5121,
-      "forks": 641,
+      "stars": 5123,
+      "forks": 642,
       "weeklyStars": 0,
-      "updated": "2026-04-13T18:13:21Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:23:53Z",
       "url": "https://github.com/HKUDS/AI-Researcher"
     },
     {
@@ -70,10 +80,12 @@
       "owner": "Alibaba-NLP",
       "description": "Tongyi Deep Research, the Leading Open-source Deep Research Agent",
       "language": "Python",
-      "stars": 18657,
+      "stars": 18658,
       "forks": 1439,
       "weeklyStars": 0,
-      "updated": "2026-04-14T01:48:44Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T01:58:41Z",
       "url": "https://github.com/Alibaba-NLP/DeepResearch"
     },
     {
@@ -85,6 +97,8 @@
       "stars": 28074,
       "forks": 2556,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T23:53:32Z",
       "url": "https://github.com/stanford-oval/storm"
     },
@@ -94,10 +108,12 @@
       "owner": "snap-stanford",
       "description": "Biomni: a general-purpose biomedical AI agent",
       "language": "Python",
-      "stars": 2955,
+      "stars": 2956,
       "forks": 540,
       "weeklyStars": 0,
-      "updated": "2026-04-13T12:15:30Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:07:46Z",
       "url": "https://github.com/snap-stanford/Biomni"
     },
     {
@@ -109,6 +125,8 @@
       "stars": 895,
       "forks": 141,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-11T02:51:52Z",
       "url": "https://github.com/ur-whitelab/chemcrow-public"
     },
@@ -121,6 +139,8 @@
       "stars": 1272,
       "forks": 109,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T13:08:10Z",
       "url": "https://github.com/InternScience/InternAgent"
     },
@@ -130,10 +150,12 @@
       "owner": "SkyworkAI",
       "description": "DeepResearchAgent is a hierarchical multi-agent system designed not only for deep research tasks but",
       "language": "Python",
-      "stars": 3336,
+      "stars": 3337,
       "forks": 433,
       "weeklyStars": 0,
-      "updated": "2026-04-13T18:14:03Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:02:00Z",
       "url": "https://github.com/SkyworkAI/DeepResearchAgent"
     },
     {
@@ -142,10 +164,12 @@
       "owner": "GAIR-NLP",
       "description": "No description",
       "language": "Python",
-      "stars": 231,
+      "stars": 240,
       "forks": 48,
       "weeklyStars": 0,
-      "updated": "2026-04-14T01:48:40Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:29:48Z",
       "url": "https://github.com/GAIR-NLP/ASI-Evolve"
     },
     {
@@ -157,6 +181,8 @@
       "stars": 203,
       "forks": 21,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T22:06:21Z",
       "url": "https://github.com/allenai/discoveryworld"
     },
@@ -169,6 +195,8 @@
       "stars": 134,
       "forks": 19,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-08T21:22:33Z",
       "url": "https://github.com/OSU-NLP-Group/ScienceAgentBench"
     },
@@ -178,10 +206,12 @@
       "owner": "dwzhu-pku",
       "description": "PaperBanana: Automating Academic Illustration For AI Scientists",
       "language": "Python",
-      "stars": 5835,
+      "stars": 5836,
       "forks": 414,
       "weeklyStars": 0,
-      "updated": "2026-04-14T01:51:17Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:12:32Z",
       "url": "https://github.com/dwzhu-pku/PaperBanana"
     },
     {
@@ -193,6 +223,8 @@
       "stars": 3624,
       "forks": 128,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T18:53:13Z",
       "url": "https://github.com/hzwer/WritingAIPaper"
     },
@@ -205,6 +237,8 @@
       "stars": 497,
       "forks": 80,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-14T01:52:02Z",
       "url": "https://github.com/QJHWC/PaperForge"
     },
@@ -217,6 +251,8 @@
       "stars": 187,
       "forks": 16,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T07:30:12Z",
       "url": "https://github.com/zongxi1115/PaperSpark"
     },
@@ -226,10 +262,12 @@
       "owner": "Leey21",
       "description": "Elevate your AI research writing, no more tedious polishing ✨ ",
       "language": "Unknown",
-      "stars": 17368,
+      "stars": 17378,
       "forks": 1409,
       "weeklyStars": 0,
-      "updated": "2026-04-14T01:46:51Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:26:46Z",
       "url": "https://github.com/Leey21/awesome-ai-research-writing"
     },
     {
@@ -238,10 +276,12 @@
       "owner": "HKUDS",
       "description": "\"DeepTutor: Agent-Native Personalized Learning Assistant\"",
       "language": "Python",
-      "stars": 17772,
-      "forks": 2334,
+      "stars": 17789,
+      "forks": 2336,
       "weeklyStars": 0,
-      "updated": "2026-04-14T01:54:08Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:28:51Z",
       "url": "https://github.com/HKUDS/DeepTutor"
     },
     {
@@ -253,6 +293,8 @@
       "stars": 2750,
       "forks": 153,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T19:57:36Z",
       "url": "https://github.com/EvoScientist/EvoScientist"
     },
@@ -265,6 +307,8 @@
       "stars": 291,
       "forks": 40,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-07T22:28:44Z",
       "url": "https://github.com/Future-House/robin"
     },
@@ -277,6 +321,8 @@
       "stars": 797,
       "forks": 167,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T18:31:13Z",
       "url": "https://github.com/mshumer/autonomous-researcher"
     },
@@ -289,6 +335,8 @@
       "stars": 1085,
       "forks": 108,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T18:02:18Z",
       "url": "https://github.com/mattprusak/autoresearch-genealogy"
     },
@@ -301,6 +349,8 @@
       "stars": 117,
       "forks": 23,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-14T01:09:20Z",
       "url": "https://github.com/TianGzlab/OmicsClaw"
     },
@@ -313,6 +363,8 @@
       "stars": 26427,
       "forks": 3525,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-14T01:24:21Z",
       "url": "https://github.com/assafelovic/gpt-researcher"
     },
@@ -325,6 +377,8 @@
       "stars": 18740,
       "forks": 1935,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-14T00:46:08Z",
       "url": "https://github.com/dzhng/deep-research"
     },
@@ -334,10 +388,12 @@
       "owner": "wanshuiyin",
       "description": "ARIS ⚔️ (Auto-Research-In-Sleep) — Lightweight Markdown-only skills for autonomous ML research: cros",
       "language": "Python",
-      "stars": 6491,
-      "forks": 609,
+      "stars": 6494,
+      "forks": 610,
       "weeklyStars": 0,
-      "updated": "2026-04-14T01:51:19Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:22:35Z",
       "url": "https://github.com/wanshuiyin/Auto-claude-code-research-in-sleep"
     },
     {
@@ -349,6 +405,8 @@
       "stars": 5499,
       "forks": 775,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-14T00:57:11Z",
       "url": "https://github.com/SamuelSchmidgall/AgentLaboratory"
     },
@@ -361,6 +419,8 @@
       "stars": 3313,
       "forks": 302,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-14T01:11:58Z",
       "url": "https://github.com/Galaxy-Dawn/claude-scholar"
     },
@@ -373,6 +433,8 @@
       "stars": 2163,
       "forks": 334,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T11:51:33Z",
       "url": "https://github.com/jmiao24/Paper2Agent"
     },
@@ -385,6 +447,8 @@
       "stars": 1681,
       "forks": 223,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T07:32:50Z",
       "url": "https://github.com/starpig1129/DATAGEN"
     },
@@ -397,6 +461,8 @@
       "stars": 674,
       "forks": 87,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T22:25:36Z",
       "url": "https://github.com/wentorai/Research-Claw"
     },
@@ -409,6 +475,8 @@
       "stars": 653,
       "forks": 70,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T14:23:01Z",
       "url": "https://github.com/TIGER-AI-Lab/OpenResearcher"
     },
@@ -421,6 +489,8 @@
       "stars": 268,
       "forks": 28,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T09:27:51Z",
       "url": "https://github.com/ymx10086/ResearchClaw"
     },
@@ -433,6 +503,8 @@
       "stars": 115,
       "forks": 6,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T06:50:10Z",
       "url": "https://github.com/sjtu-sai-agents/MagiClaw"
     }

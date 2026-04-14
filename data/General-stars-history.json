@@ -1,190 +1,237 @@
 {
   "bytedance/deer-flow": {
-    "stars": 61176,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 61189
+    }
   },
   "khoj-ai/khoj": {
-    "stars": 34062,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 34063
+    }
   },
   "assafelovic/gpt-researcher": {
-    "stars": 26370,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 26370
+    }
   },
   "virattt/dexter": {
-    "stars": 21261,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 21262
+    }
   },
   "dzhng/deep-research": {
-    "stars": 18717,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 18717
+    }
   },
   "arc53/DocsGPT": {
-    "stars": 17824,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 17824
+    }
   },
   "microsoft/RD-Agent": {
-    "stars": 12487,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 12487
+    }
   },
   "bytedance/UI-TARS": {
-    "stars": 10078,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 10078
+    }
   },
   "MervinPraison/PraisonAI": {
-    "stars": 6923,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 6923
+    }
   },
   "langchain-ai/local-deep-researcher": {
-    "stars": 9019,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 9019
+    }
   },
   "wentorai/Research-Claw": {
-    "stars": 645,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 645
+    }
   },
   "aiming-lab/MetaClaw": {
-    "stars": 3389,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 3389
+    }
   },
   "Galaxy-Dawn/claude-scholar": {
-    "stars": 3133,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 3133
+    }
   },
   "wanshuiyin/Auto-claude-code-research-in-sleep": {
-    "stars": 6162,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 6162
+    }
   },
   "SamuelSchmidgall/AgentLaboratory": {
-    "stars": 5491,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 5491
+    }
   },
   "TIGER-AI-Lab/OpenResearcher": {
-    "stars": 643,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 643
+    }
   },
   "sjtu-sai-agents/MagiClaw": {
-    "stars": 111,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 111
+    }
   },
   "mims-harvard/ToolUniverse": {
-    "stars": 1241,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 1241
+    }
   },
   "ymx10086/ResearchClaw": {
-    "stars": 264,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 264
+    }
   },
   "jmiao24/Paper2Agent": {
-    "stars": 2161,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 2161
+    }
   },
   "starpig1129/DATAGEN": {
-    "stars": 1679,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 1679
+    }
   },
   "guy-hartstein/company-research-agent": {
-    "stars": 1664,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 1664
+    }
   },
   "DeepInsight-AI/DeepBI": {
-    "stars": 2344,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 2344
+    }
   },
   "microsoft/autogen": {
-    "stars": 57053,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 57055
+    }
   },
   "langchain-ai/langgraph": {
-    "stars": 29170,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 29172
+    }
   },
   "Significant-Gravitas/AutoGPT": {
-    "stars": 183400,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 183402
+    }
   },
   "openai/swarm": {
-    "stars": 21298,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 21298
+    }
   },
   "reworkd/AgentGPT": {
-    "stars": 35976,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 35976
+    }
   },
   "yoheinakajima/babyagi": {
-    "stars": 22222,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 22222
+    }
   },
   "camel-ai/camel": {
-    "stars": 16652,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 16652
+    }
   },
   "openclaw/openclaw": {
-    "stars": 356616,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 356642
+    }
   },
   "langchain-ai/langchain": {
-    "stars": 133448,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 133452
+    }
   },
   "FoundationAgents/MetaGPT": {
-    "stars": 67024,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 67028
+    }
   },
   "NousResearch/hermes-agent": {
-    "stars": 77633,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 78004
+    }
   },
   "crewAIInc/crewAI": {
-    "stars": 48807,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 48812
+    }
   },
   "run-llama/llama_index": {
-    "stars": 48562,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 48561
+    }
   },
   "CherryHQ/cherry-studio": {
-    "stars": 43431,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 43434
+    }
   },
   "CopilotKit/CopilotKit": {
-    "stars": 30189,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 30189
+    }
   },
   "openai/openai-agents-python": {
-    "stars": 20756,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 20758
+    }
   },
   "mastra-ai/mastra": {
-    "stars": 22968,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 22970
+    }
   },
   "elizaOS/eliza": {
-    "stars": 18178,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 18180
+    }
   },
   "zai-org/Open-AutoGLM": {
-    "stars": 24899,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 24899
+    }
   },
   "deepset-ai/haystack": {
-    "stars": 24828,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 24827
+    }
   },
   "eosphoros-ai/DB-GPT": {
-    "stars": 18497,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 18496
+    }
   },
   "TransformerOptimus/SuperAGI": {
-    "stars": 17440,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 17440
+    }
   },
   "agent0ai/agent-zero": {
-    "stars": 16985,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 16985
+    }
   },
   "agentscope-ai/HiClaw": {
-    "stars": 4084,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 4087
+    }
   }
 }

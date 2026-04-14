@@ -1,7 +1,7 @@
 {
   "description": "General Agent Repositories - Updated Stats",
   "source": "GitHub API",
-  "generated_at": "2026-04-14T01:55:05Z",
+  "generated_at": "2026-04-14T02:30:30Z",
   "repo_count": 31,
   "repos": [
     {
@@ -10,10 +10,12 @@
       "owner": "openclaw",
       "description": "Your own personal AI assistant. Any OS. Any Platform. The lobster way. 🦞 ",
       "language": "TypeScript",
-      "stars": 356616,
-      "forks": 72295,
-      "weeklyStars": 4,
-      "updated": "2026-04-14T01:55:06Z",
+      "stars": 356642,
+      "forks": 72304,
+      "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:31:35Z",
       "url": "https://github.com/openclaw/openclaw"
     },
     {
@@ -22,10 +24,12 @@
       "owner": "langchain-ai",
       "description": "The agent engineering platform",
       "language": "Python",
-      "stars": 133448,
+      "stars": 133452,
       "forks": 22047,
       "weeklyStars": 0,
-      "updated": "2026-04-14T01:23:07Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:31:39Z",
       "url": "https://github.com/langchain-ai/langchain"
     },
     {
@@ -34,10 +38,12 @@
       "owner": "Significant-Gravitas",
       "description": "AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provi",
       "language": "Python",
-      "stars": 183400,
-      "forks": 46228,
+      "stars": 183402,
+      "forks": 46229,
       "weeklyStars": 0,
-      "updated": "2026-04-14T01:35:59Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:29:54Z",
       "url": "https://github.com/Significant-Gravitas/AutoGPT"
     },
     {
@@ -46,10 +52,12 @@
       "owner": "microsoft",
       "description": "A programming framework for agentic AI",
       "language": "Python",
-      "stars": 57053,
-      "forks": 8585,
+      "stars": 57055,
+      "forks": 8588,
       "weeklyStars": 0,
-      "updated": "2026-04-14T01:39:59Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:08:48Z",
       "url": "https://github.com/microsoft/autogen"
     },
     {
@@ -58,10 +66,12 @@
       "owner": "FoundationAgents",
       "description": "🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming",
       "language": "Python",
-      "stars": 67024,
-      "forks": 8493,
+      "stars": 67028,
+      "forks": 8494,
       "weeklyStars": 0,
-      "updated": "2026-04-14T01:07:06Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:28:55Z",
       "url": "https://github.com/FoundationAgents/MetaGPT"
     },
     {
@@ -70,10 +80,12 @@
       "owner": "NousResearch",
       "description": "The agent that grows with you",
       "language": "Python",
-      "stars": 77633,
-      "forks": 10395,
-      "weeklyStars": 32,
-      "updated": "2026-04-14T01:55:59Z",
+      "stars": 78004,
+      "forks": 10427,
+      "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:31:47Z",
       "url": "https://github.com/NousResearch/hermes-agent"
     },
     {
@@ -82,10 +94,12 @@
       "owner": "bytedance",
       "description": "An open-source long-horizon SuperAgent harness that researches, codes, and creates. With the help of",
       "language": "Python",
-      "stars": 61176,
-      "forks": 7853,
-      "weeklyStars": 4,
-      "updated": "2026-04-14T01:55:54Z",
+      "stars": 61189,
+      "forks": 7855,
+      "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:30:36Z",
       "url": "https://github.com/bytedance/deer-flow"
     },
     {
@@ -97,6 +111,8 @@
       "stars": 35976,
       "forks": 9398,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-14T01:36:12Z",
       "url": "https://github.com/reworkd/AgentGPT"
     },
@@ -106,10 +122,12 @@
       "owner": "crewAIInc",
       "description": "Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intellige",
       "language": "Python",
-      "stars": 48807,
-      "forks": 6667,
-      "weeklyStars": 1,
-      "updated": "2026-04-14T01:54:04Z",
+      "stars": 48812,
+      "forks": 6668,
+      "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:18:42Z",
       "url": "https://github.com/crewAIInc/crewAI"
     },
     {
@@ -118,10 +136,12 @@
       "owner": "run-llama",
       "description": "LlamaIndex is the leading document agent and OCR platform",
       "language": "Python",
-      "stars": 48562,
+      "stars": 48561,
       "forks": 7195,
       "weeklyStars": 0,
-      "updated": "2026-04-14T01:24:04Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:12:33Z",
       "url": "https://github.com/run-llama/llama_index"
     },
     {
@@ -130,10 +150,12 @@
       "owner": "khoj-ai",
       "description": "Your AI second brain. Self-hostable. Get answers from the web or your docs. Build custom agents, sch",
       "language": "Python",
-      "stars": 34062,
+      "stars": 34063,
       "forks": 2131,
       "weeklyStars": 0,
-      "updated": "2026-04-14T01:44:10Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T01:58:32Z",
       "url": "https://github.com/khoj-ai/khoj"
     },
     {
@@ -142,10 +164,12 @@
       "owner": "CherryHQ",
       "description": "AI productivity studio with smart chat, autonomous agents, and 300+ assistants. Unified access to fr",
       "language": "TypeScript",
-      "stars": 43431,
-      "forks": 4075,
-      "weeklyStars": 1,
-      "updated": "2026-04-14T01:54:08Z",
+      "stars": 43434,
+      "forks": 4077,
+      "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:25:51Z",
       "url": "https://github.com/CherryHQ/cherry-studio"
     },
     {
@@ -154,10 +178,12 @@
       "owner": "langchain-ai",
       "description": "Build resilient language agents as graphs.",
       "language": "Python",
-      "stars": 29170,
-      "forks": 5008,
+      "stars": 29172,
+      "forks": 5009,
       "weeklyStars": 0,
-      "updated": "2026-04-14T01:35:13Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:25:12Z",
       "url": "https://github.com/langchain-ai/langgraph"
     },
     {
@@ -169,6 +195,8 @@
       "stars": 30189,
       "forks": 3896,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-14T00:10:33Z",
       "url": "https://github.com/CopilotKit/CopilotKit"
     },
@@ -181,6 +209,8 @@
       "stars": 21298,
       "forks": 2275,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T21:38:38Z",
       "url": "https://github.com/openai/swarm"
     },
@@ -190,10 +220,12 @@
       "owner": "openai",
       "description": "A lightweight, powerful framework for multi-agent workflows",
       "language": "Python",
-      "stars": 20756,
-      "forks": 3402,
+      "stars": 20758,
+      "forks": 3403,
       "weeklyStars": 0,
-      "updated": "2026-04-14T00:05:02Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:19:57Z",
       "url": "https://github.com/openai/openai-agents-python"
     },
     {
@@ -202,10 +234,12 @@
       "owner": "virattt",
       "description": "An autonomous agent for deep financial research",
       "language": "TypeScript",
-      "stars": 21261,
+      "stars": 21262,
       "forks": 2565,
       "weeklyStars": 0,
-      "updated": "2026-04-14T01:39:33Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:22:13Z",
       "url": "https://github.com/virattt/dexter"
     },
     {
@@ -217,6 +251,8 @@
       "stars": 22222,
       "forks": 2848,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T07:09:46Z",
       "url": "https://github.com/yoheinakajima/babyagi"
     },
@@ -226,10 +262,12 @@
       "owner": "mastra-ai",
       "description": "From the team behind Gatsby, Mastra is a framework for building AI-powered applications and agents w",
       "language": "TypeScript",
-      "stars": 22968,
+      "stars": 22970,
       "forks": 1884,
       "weeklyStars": 0,
-      "updated": "2026-04-14T01:22:36Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:21:48Z",
       "url": "https://github.com/mastra-ai/mastra"
     },
     {
@@ -241,6 +279,8 @@
       "stars": 17824,
       "forks": 2022,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-14T01:15:21Z",
       "url": "https://github.com/arc53/DocsGPT"
     },
@@ -250,10 +290,12 @@
       "owner": "elizaOS",
       "description": "Autonomous agents for everyone",
       "language": "TypeScript",
-      "stars": 18178,
+      "stars": 18180,
       "forks": 5498,
       "weeklyStars": 0,
-      "updated": "2026-04-13T22:54:03Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:23:21Z",
       "url": "https://github.com/elizaOS/eliza"
     },
     {
@@ -265,6 +307,8 @@
       "stars": 24899,
       "forks": 3915,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-14T01:42:46Z",
       "url": "https://github.com/zai-org/Open-AutoGLM"
     },
@@ -274,10 +318,12 @@
       "owner": "deepset-ai",
       "description": "Open-source AI orchestration framework for building context-engineered, production-ready LLM applica",
       "language": "MDX",
-      "stars": 24828,
+      "stars": 24827,
       "forks": 2715,
       "weeklyStars": 0,
-      "updated": "2026-04-13T21:35:16Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:20:09Z",
       "url": "https://github.com/deepset-ai/haystack"
     },
     {
@@ -286,10 +332,12 @@
       "owner": "eosphoros-ai",
       "description": "open-source agentic AI data assistant for the next generation of AI + Data products.",
       "language": "Python",
-      "stars": 18497,
+      "stars": 18496,
       "forks": 2626,
       "weeklyStars": 0,
-      "updated": "2026-04-14T01:51:03Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:29:10Z",
       "url": "https://github.com/eosphoros-ai/DB-GPT"
     },
     {
@@ -299,8 +347,10 @@
       "description": "<⚡️> SuperAGI - A dev-first open source autonomous AI agent framework. Enabling developers to build,",
       "language": "Python",
       "stars": 17440,
-      "forks": 2200,
+      "forks": 2201,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T19:29:51Z",
       "url": "https://github.com/TransformerOptimus/SuperAGI"
     },
@@ -313,6 +363,8 @@
       "stars": 16985,
       "forks": 3491,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T23:55:00Z",
       "url": "https://github.com/agent0ai/agent-zero"
     },
@@ -325,6 +377,8 @@
       "stars": 12487,
       "forks": 1485,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-14T01:30:21Z",
       "url": "https://github.com/microsoft/RD-Agent"
     },
@@ -337,6 +391,8 @@
       "stars": 10078,
       "forks": 731,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-14T01:41:08Z",
       "url": "https://github.com/bytedance/UI-TARS"
     },
@@ -349,6 +405,8 @@
       "stars": 6923,
       "forks": 1058,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T19:27:17Z",
       "url": "https://github.com/MervinPraison/PraisonAI"
     },
@@ -358,10 +416,12 @@
       "owner": "agentscope-ai",
       "description": "An open-source Collaborative Multi-Agent OS for transparent, human-in-the-loop task coordination via",
       "language": "Shell",
-      "stars": 4084,
+      "stars": 4087,
       "forks": 468,
       "weeklyStars": 0,
-      "updated": "2026-04-14T01:50:49Z",
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
+      "updated": "2026-04-14T02:19:05Z",
       "url": "https://github.com/agentscope-ai/HiClaw"
     },
     {
@@ -373,6 +433,8 @@
       "stars": 3389,
       "forks": 403,
       "weeklyStars": 0,
+      "daysChange": 0,
+      "changeLabel": "(首次记录)",
       "updated": "2026-04-13T18:57:08Z",
       "url": "https://github.com/aiming-lab/MetaClaw"
     }

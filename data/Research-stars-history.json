@@ -1,158 +1,200 @@
 {
   "karpathy/autoresearch": {
-    "stars": 71647,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 71674
+    },
+    "2026-04-11": {
+      "stars": 70302
+    }
   },
   "SakanaAI/AI-Scientist": {
-    "stars": 13214,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 13215
+    }
   },
   "SakanaAI/AI-Scientist-v2": {
-    "stars": 5477,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 5478
+    }
   },
   "aiming-lab/AutoResearchClaw": {
-    "stars": 11109,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 11109
+    }
   },
   "HKUDS/AI-Researcher": {
-    "stars": 5121,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 5123
+    }
   },
   "Alibaba-NLP/DeepResearch": {
-    "stars": 18657,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 18658
+    }
   },
   "stanford-oval/storm": {
-    "stars": 28074,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 28074
+    }
   },
   "K-Dense-AI/scientific-agent-skills": {
-    "stars": 18113,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 18113
+    }
   },
   "Orchestra-Research/AI-Research-SKILLs": {
-    "stars": 6578,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 6578
+    }
   },
   "snap-stanford/Biomni": {
-    "stars": 2955,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 2956
+    }
   },
   "ur-whitelab/chemcrow-public": {
-    "stars": 895,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 895
+    }
   },
   "InternScience/InternAgent": {
-    "stars": 1272,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 1272
+    }
   },
   "SkyworkAI/DeepResearchAgent": {
-    "stars": 3336,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 3337
+    }
   },
   "GAIR-NLP/ASI-Evolve": {
-    "stars": 231,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 240
+    }
   },
   "allenai/discoveryworld": {
-    "stars": 203,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 203
+    }
   },
   "OSU-NLP-Group/ScienceAgentBench": {
-    "stars": 134,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 134
+    }
   },
   "dwzhu-pku/PaperBanana": {
-    "stars": 5835,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 5836
+    }
   },
   "hzwer/WritingAIPaper": {
-    "stars": 3624,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 3624
+    }
   },
   "QJHWC/PaperForge": {
-    "stars": 497,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 497
+    }
   },
   "zongxi1115/PaperSpark": {
-    "stars": 187,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 187
+    }
   },
   "yunshenwuchuxun/latex-paper-skills": {
-    "stars": 123,
-    "timestamp": "2026-04-11T14:15:24Z"
+    "2026-04-11": {
+      "stars": 123
+    }
   },
   "Leey21/awesome-ai-research-writing": {
-    "stars": 17368,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 17378
+    }
   },
   "HKUDS/DeepTutor": {
-    "stars": 17772,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 17789
+    }
   },
   "EvoScientist/EvoScientist": {
-    "stars": 2750,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 2750
+    }
   },
   "Future-House/robin": {
-    "stars": 291,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 291
+    }
   },
   "mshumer/autonomous-researcher": {
-    "stars": 797,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 797
+    }
   },
   "mattprusak/autoresearch-genealogy": {
-    "stars": 1085,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 1085
+    }
   },
   "TianGzlab/OmicsClaw": {
-    "stars": 117,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 117
+    }
   },
   "assafelovic/gpt-researcher": {
-    "stars": 26427,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 26427
+    }
   },
   "dzhng/deep-research": {
-    "stars": 18740,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 18740
+    }
   },
   "wanshuiyin/Auto-claude-code-research-in-sleep": {
-    "stars": 6491,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 6494
+    }
   },
   "SamuelSchmidgall/AgentLaboratory": {
-    "stars": 5499,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 5499
+    }
   },
   "Galaxy-Dawn/claude-scholar": {
-    "stars": 3313,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 3313
+    }
   },
   "jmiao24/Paper2Agent": {
-    "stars": 2163,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 2163
+    }
   },
   "starpig1129/DATAGEN": {
-    "stars": 1681,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 1681
+    }
   },
   "wentorai/Research-Claw": {
-    "stars": 674,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 674
+    }
   },
   "TIGER-AI-Lab/OpenResearcher": {
-    "stars": 653,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 653
+    }
   },
   "ymx10086/ResearchClaw": {
-    "stars": 268,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 268
+    }
   },
   "sjtu-sai-agents/MagiClaw": {
-    "stars": 115,
-    "timestamp": "2026-04-14T01:55:05Z"
+    "2026-04-14": {
+      "stars": 115
+    }
   }
 }

@@ -10,7 +10,6 @@ DATA_DIR="/root/onepersonlab-website/data"
 TOKEN=$(grep "GITHUB_TOKEN" ~/.openclaw/.env 2>/dev/null | cut -d'=' -f2)
 NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 TODAY=$(date -u +%Y-%m-%d)
-YESTERDAY=$(date -u -d "yesterday" +%Y-%m-%d)
 
 echo "=== AI Agent Repository Stats Updater (Dual List) ==="
 echo "Timestamp: $NOW"
@@ -61,19 +60,34 @@ update_list() {
     FORKS=$(echo "$RESPONSE" | jq -r '.forks_count')
     UPDATED=$(echo "$RESPONSE" | jq -r '.updated_at')
     
-    # Calculate Daily Stars: compare with YESTERDAY's data
-    # History structure: {"repo": {"2026-04-13": {"stars": 70302}, "2026-04-14": {"stars": 71647}}}
-    YESTERDAY_STARS=$(jq -r '.["'$REPO'"]["'$YESTERDAY'"].stars // empty' "$HISTORY_FILE" 2>/dev/null)
+    # Calculate Daily Stars: compare with nearest historical date
+    # History structure: {"repo": {"2026-04-11": {"stars": 70302}, "2026-04-14": {"stars": 71647}}}
+    # Find the most recent historical date (before today)
+    NEAREST_DATE=$(jq -r '.["'$REPO'"] | keys | map(select(. < "'$TODAY'")) | max // empty' "$HISTORY_FILE" 2>/dev/null)
     
-    # If no yesterday data, Daily = 0 (first time recording, or data missing)
-    if [ -z "$YESTERDAY_STARS" ] || [ "$YESTERDAY_STARS" = "null" ]; then
+    if [ -z "$NEAREST_DATE" ] || [ "$NEAREST_DATE" = "null" ]; then
+      # No historical data, first time recording
       DAILY=0
-      YESTERDAY_STARS=0
-      FIRST_RECORD=" (首次记录)"
+      NEAREST_STARS=0
+      DAYS_DIFF=0
+      CHANGE_LABEL="(首次记录)"
     else
-      DAILY=$((STARS - YESTERDAY_STARS))
+      # Calculate days difference
+      DAYS_DIFF=$((($(date -d "$TODAY" +%s) - $(date -d "$NEAREST_DATE" +%s)) / 86400))
+      
+      # Get stars from nearest date
+      NEAREST_STARS=$(jq -r '.["'$REPO'"]["'$NEAREST_DATE'"].stars // 0' "$HISTORY_FILE" 2>/dev/null)
+      
+      # Calculate change
+      DAILY=$((STARS - NEAREST_STARS))
       [ $DAILY -lt 0 ] && DAILY=0
-      FIRST_RECORD=""
+      
+      # Show days label
+      if [ $DAYS_DIFF -eq 1 ]; then
+        CHANGE_LABEL="(1天变化)"
+      else
+        CHANGE_LABEL="($DAYS_DIFF天变化)"
+      fi
     fi
     
     # Add to JSON using jq to properly escape special characters
@@ -82,9 +96,12 @@ update_list() {
     
     # Use jq to safely build the JSON object with proper escaping
     DAILY_INT=$DAILY
+    DAYS_INT=$DAYS_DIFF
     echo "$RESPONSE" | jq -c \
       --argjson daily "$DAILY_INT" \
-      '{full_name: .full_name, name: .name, owner: .owner.login, description: ((.description // "No description") | .[0:100]), language: (.language // "Unknown"), stars: .stargazers_count, forks: .forks_count, weeklyStars: $daily, updated: .updated_at, url: ("https://github.com/" + .full_name)}' \
+      --argjson days "$DAYS_INT" \
+      --arg chglbl "$CHANGE_LABEL" \
+      '{full_name: .full_name, name: .name, owner: .owner.login, description: ((.description // "No description") | .[0:100]), language: (.language // "Unknown"), stars: .stargazers_count, forks: .forks_count, weeklyStars: $daily, daysChange: $days, changeLabel: $chglbl, updated: .updated_at, url: ("https://github.com/" + .full_name)}' \
       >> "$UPDATE_LIST.tmp"
     
     # Update history: store by date for daily comparison
@@ -93,7 +110,7 @@ update_list() {
       '.[$repo][$date] = {"stars": $stars}' \
       "$HISTORY_FILE" > "$HISTORY_FILE.tmp" && mv "$HISTORY_FILE.tmp" "$HISTORY_FILE"
     
-    echo "  ✓ Stars: $STARS, Yesterday: $YESTERDAY_STARS, Daily: +$DAILY$FIRST_RECORD"
+    echo "  ✓ Stars: $STARS, Baseline: $NEAREST_STARS ($NEAREST_DATE), Change: +$DAILY $CHANGE_LABEL"
     
     sleep 0.3
   done
