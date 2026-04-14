@@ -49,10 +49,10 @@
       "displayName": "Agent Directory",
       "description": "The directory for AI agent services - Discover tools, platforms, and infrastructure",
       "category": "Discovery",
-      "downloads": 7068,
-      "stars": null,
+      "downloads": 0,
+      "stars": 0,
       "author": "unknown",
-      "url": "https://clawhub.ai/agent-directory"
+      "url": "https://clawhub.ai/skills/agent-directory"
     },
     {
       "slug": "literature-review",
@@ -79,50 +79,50 @@
       "displayName": "OpenClaw Ops Guardrails",
       "description": "Operational guardrails and safety checks for OpenClaw operations",
       "category": "Security",
-      "downloads": 2015,
-      "stars": null,
-      "author": "xyezir",
-      "url": "https://clawhub.ai/xyezir/openclaw-ops-guardrails"
+      "downloads": 0,
+      "stars": 0,
+      "author": "unknown",
+      "url": "https://clawhub.ai/skills/openclaw-ops-guardrails"
     },
     {
       "slug": "agent-team",
       "displayName": "Agent Team",
       "description": "Manage multi-agent teams with different identities and specialized models",
       "category": "Multi-Agent",
-      "downloads": 1476,
-      "stars": null,
+      "downloads": 0,
+      "stars": 0,
       "author": "unknown",
-      "url": "https://clawhub.ai/agent-team"
+      "url": "https://clawhub.ai/skills/agent-team"
     },
     {
       "slug": "agent-group",
       "displayName": "Agent Group",
       "description": "Minimal multi-agent group - as simple as creating a WeChat group",
       "category": "Multi-Agent",
-      "downloads": 879,
-      "stars": null,
+      "downloads": 0,
+      "stars": 0,
       "author": "unknown",
-      "url": "https://clawhub.ai/agent-group"
+      "url": "https://clawhub.ai/skills/agent-group"
     },
     {
       "slug": "openclaw-error-fix",
       "displayName": "OpenClaw Error Fix",
       "description": "Automatically diagnose and fix common OpenClaw errors",
       "category": "Tools",
-      "downloads": 627,
-      "stars": null,
+      "downloads": 0,
+      "stars": 0,
       "author": "unknown",
-      "url": "https://clawhub.ai/openclaw-error-fix"
+      "url": "https://clawhub.ai/skills/openclaw-error-fix"
     },
     {
       "slug": "openclaw-power-ops",
       "displayName": "OpenClaw Power Ops",
       "description": "Advanced operational utilities for OpenClaw power users",
       "category": "Tools",
-      "downloads": 500,
-      "stars": null,
+      "downloads": 0,
+      "stars": 0,
       "author": "unknown",
-      "url": "https://clawhub.ai/openclaw-power-ops"
+      "url": "https://clawhub.ai/skills/openclaw-power-ops"
     }
   ]
 }

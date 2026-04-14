@@ -10,12 +10,13 @@
       "owner": "anthropics",
       "description": "Public repository for Agent Skills - official Anthropic skills library",
       "language": "Python",
-      "stars": 115063,
-      "forks": 13166,
+      "stars": 116677,
+      "forks": 13398,
       "weeklyStars": 0,
       "updated": "1 week ago",
       "url": "https://github.com/anthropics/skills",
-      "category": "Official Skills"
+      "category": "Official Skills",
+      "author": "anthropics"
     },
     {
       "full_name": "msitarzewski/agency-agents",
@@ -23,12 +24,13 @@
       "owner": "msitarzewski",
       "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community managers",
       "language": "Shell",
-      "stars": 78274,
-      "forks": 12425,
+      "stars": 79484,
+      "forks": 12678,
       "weeklyStars": 0,
       "updated": "2 weeks ago",
       "url": "https://github.com/msitarzewski/agency-agents",
-      "category": "Agent Templates"
+      "category": "Agent Templates",
+      "author": "msitarzewski"
     },
     {
       "full_name": "FreedomIntelligence/OpenClaw-Medical-Skills",
@@ -36,12 +38,13 @@
       "owner": "FreedomIntelligence",
       "description": "The largest open-source medical AI skills library for OpenClaw",
       "language": "Python",
-      "stars": 1994,
-      "forks": 274,
+      "stars": 2035,
+      "forks": 282,
       "weeklyStars": 0,
       "updated": "1 week ago",
       "url": "https://github.com/FreedomIntelligence/OpenClaw-Medical-Skills",
-      "category": "Medical Skills"
+      "category": "Medical Skills",
+      "author": "FreedomIntelligence"
     },
     {
       "full_name": "travisvn/awesome-claude-skills",
@@ -49,12 +52,13 @@
       "owner": "travisvn",
       "description": "A curated list of awesome Claude Skills, resources, and tools",
       "language": null,
-      "stars": 11017,
-      "forks": 1102,
+      "stars": 11209,
+      "forks": 1124,
       "weeklyStars": 0,
       "updated": "3 days ago",
       "url": "https://github.com/travisvn/awesome-claude-skills",
-      "category": "Awesome List"
+      "category": "Awesome List",
+      "author": "travisvn"
     },
     {
       "full_name": "Jeffallan/claude-skills",
@@ -62,12 +66,13 @@
       "owner": "Jeffallan",
       "description": "66 Specialized Skills for Full-Stack Developers - Transform Claude Code into your expert team",
       "language": "Python",
-      "stars": 8101,
-      "forks": 638,
+      "stars": 8170,
+      "forks": 651,
       "weeklyStars": 0,
       "updated": "1 week ago",
       "url": "https://github.com/Jeffallan/claude-skills",
-      "category": "Developer Skills"
+      "category": "Developer Skills",
+      "author": "Jeffallan"
     },
     {
       "full_name": "GPTomics/bioSkills",
@@ -75,12 +80,13 @@
       "owner": "GPTomics",
       "description": "A set of SKILLS.md for doing bioinformatics with agents like Claude Code",
       "language": "Python",
-      "stars": 473,
-      "forks": 83,
+      "stars": 487,
+      "forks": 86,
       "weeklyStars": 0,
       "updated": "2 weeks ago",
       "url": "https://github.com/GPTomics/bioSkills",
-      "category": "Bioinformatics"
+      "category": "Bioinformatics",
+      "author": "GPTomics"
     },
     {
       "full_name": "K-Dense-AI/scientific-agent-skills",
@@ -88,12 +94,13 @@
       "owner": "K-Dense-AI",
       "description": "Comprehensive skills for scientific AI agents - Research automation toolkit",
       "language": "Python",
-      "stars": 18126,
-      "forks": 1989,
+      "stars": 18346,
+      "forks": 2038,
       "weeklyStars": 0,
       "updated": "1 day ago",
       "url": "https://github.com/K-Dense-AI/scientific-agent-skills",
-      "category": "Research Skills"
+      "category": "Research Skills",
+      "author": "K-Dense-AI"
     },
     {
       "full_name": "Orchestra-Research/AI-Research-SKILLs",
@@ -101,12 +108,13 @@
       "owner": "Orchestra-Research",
       "description": "Skills library for AI research agents - Modular scientific discovery",
       "language": "TeX",
-      "stars": 6583,
-      "forks": 512,
+      "stars": 6751,
+      "forks": 524,
       "weeklyStars": 0,
       "updated": "2 days ago",
       "url": "https://github.com/Orchestra-Research/AI-Research-SKILLs",
-      "category": "Research Skills"
+      "category": "Research Skills",
+      "author": "Orchestra-Research"
     },
     {
       "full_name": "yunshenwuchuxun/latex-paper-skills",
@@ -114,12 +122,13 @@
       "owner": "yunshenwuchuxun",
       "description": "Modular skill framework for LaTeX paper writing automation",
       "language": null,
-      "stars": 123,
-      "forks": 8,
+      "stars": 127,
+      "forks": 10,
       "weeklyStars": 0,
       "updated": "2 weeks ago",
       "url": "https://github.com/yunshenwuchuxun/latex-paper-skills",
-      "category": "Writing Skills"
+      "category": "Writing Skills",
+      "author": "yunshenwuchuxun"
     }
   ]
 }
