@@ -9,6 +9,8 @@ set -e
 DATA_DIR="/root/onepersonlab-website/data"
 TOKEN=$(grep "GITHUB_TOKEN" ~/.openclaw/.env 2>/dev/null | cut -d'=' -f2)
 NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+TODAY=$(date -u +%Y-%m-%d)
+YESTERDAY=$(date -u -d "yesterday" +%Y-%m-%d)
 
 echo "=== AI Agent Repository Stats Updater (Dual List) ==="
 echo "Timestamp: $NOW"
@@ -59,10 +61,20 @@ update_list() {
     FORKS=$(echo "$RESPONSE" | jq -r '.forks_count')
     UPDATED=$(echo "$RESPONSE" | jq -r '.updated_at')
     
-    # Calculate Daily Stars (will become Weekly after 7 days)
-    PREVIOUS_STARS=$(jq -r '.["'$REPO'"].stars // 0' "$HISTORY_FILE" 2>/dev/null)
-    DAILY=$((STARS - PREVIOUS_STARS))
-    [ $DAILY -lt 0 ] && DAILY=0
+    # Calculate Daily Stars: compare with YESTERDAY's data
+    # History structure: {"repo": {"2026-04-13": {"stars": 70302}, "2026-04-14": {"stars": 71647}}}
+    YESTERDAY_STARS=$(jq -r '.["'$REPO'"]["'$YESTERDAY'"].stars // empty' "$HISTORY_FILE" 2>/dev/null)
+    
+    # If no yesterday data, Daily = 0 (first time recording, or data missing)
+    if [ -z "$YESTERDAY_STARS" ] || [ "$YESTERDAY_STARS" = "null" ]; then
+      DAILY=0
+      YESTERDAY_STARS=0
+      FIRST_RECORD=" (首次记录)"
+    else
+      DAILY=$((STARS - YESTERDAY_STARS))
+      [ $DAILY -lt 0 ] && DAILY=0
+      FIRST_RECORD=""
+    fi
     
     # Add to JSON using jq to properly escape special characters
     [ "$FIRST" = false ] && echo ',' >> "$UPDATE_LIST.tmp"
@@ -75,12 +87,13 @@ update_list() {
       '{full_name: .full_name, name: .name, owner: .owner.login, description: ((.description // "No description") | .[0:100]), language: (.language // "Unknown"), stars: .stargazers_count, forks: .forks_count, weeklyStars: $daily, updated: .updated_at, url: ("https://github.com/" + .full_name)}' \
       >> "$UPDATE_LIST.tmp"
     
-    # Update history
-    jq --arg repo "$REPO" --argjson stars "$STARS" --arg time "$NOW" \
-      '.[$repo] = {"stars": $stars, "timestamp": $time}' \
+    # Update history: store by date for daily comparison
+    # Structure: {"repo": {"2026-04-14": {"stars": 71647}}}
+    jq --arg repo "$REPO" --arg date "$TODAY" --argjson stars "$STARS" \
+      '.[$repo][$date] = {"stars": $stars}' \
       "$HISTORY_FILE" > "$HISTORY_FILE.tmp" && mv "$HISTORY_FILE.tmp" "$HISTORY_FILE"
     
-    echo "  ✓ Stars: $STARS, Daily: +$DAILY"
+    echo "  ✓ Stars: $STARS, Yesterday: $YESTERDAY_STARS, Daily: +$DAILY$FIRST_RECORD"
     
     sleep 0.3
   done
