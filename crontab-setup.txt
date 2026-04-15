@@ -1,0 +1,3 @@
+# OnePersonLab Website - Daily update at 5:00 AM, audit at 5:30 AM
+0 5 * * * cd /root/onepersonlab-website && ./scripts/update-repo-stats.sh >> logs/update-$(date +\%Y\%m\%d).log 2>&1
+30 5 * * * cd /root/onepersonlab-website && ./scripts/audit-data-completeness.sh --all --deploy >> logs/completeness-$(date +\%Y\%m\%d).log 2>&1

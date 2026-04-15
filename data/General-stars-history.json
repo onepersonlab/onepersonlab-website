@@ -2,11 +2,17 @@
   "bytedance/deer-flow": {
     "2026-04-14": {
       "stars": 61189
+    },
+    "2026-04-15": {
+      "stars": 61521
     }
   },
   "khoj-ai/khoj": {
     "2026-04-14": {
       "stars": 34063
+    },
+    "2026-04-15": {
+      "stars": 34073
     }
   },
   "assafelovic/gpt-researcher": {
@@ -17,6 +23,9 @@
   "virattt/dexter": {
     "2026-04-14": {
       "stars": 21262
+    },
+    "2026-04-15": {
+      "stars": 21286
     }
   },
   "dzhng/deep-research": {
@@ -27,21 +36,33 @@
   "arc53/DocsGPT": {
     "2026-04-14": {
       "stars": 17824
+    },
+    "2026-04-15": {
+      "stars": 17825
     }
   },
   "microsoft/RD-Agent": {
     "2026-04-14": {
       "stars": 12487
+    },
+    "2026-04-15": {
+      "stars": 12511
     }
   },
   "bytedance/UI-TARS": {
     "2026-04-14": {
       "stars": 10078
+    },
+    "2026-04-15": {
+      "stars": 10084
     }
   },
   "MervinPraison/PraisonAI": {
     "2026-04-14": {
       "stars": 6923
+    },
+    "2026-04-15": {
+      "stars": 6930
     }
   },
   "langchain-ai/local-deep-researcher": {
@@ -57,6 +78,9 @@
   "aiming-lab/MetaClaw": {
     "2026-04-14": {
       "stars": 3389
+    },
+    "2026-04-15": {
+      "stars": 3398
     }
   },
   "Galaxy-Dawn/claude-scholar": {
@@ -117,31 +141,49 @@
   "microsoft/autogen": {
     "2026-04-14": {
       "stars": 57055
+    },
+    "2026-04-15": {
+      "stars": 57083
     }
   },
   "langchain-ai/langgraph": {
     "2026-04-14": {
       "stars": 29172
+    },
+    "2026-04-15": {
+      "stars": 29261
     }
   },
   "Significant-Gravitas/AutoGPT": {
     "2026-04-14": {
       "stars": 183402
+    },
+    "2026-04-15": {
+      "stars": 183432
     }
   },
   "openai/swarm": {
     "2026-04-14": {
       "stars": 21298
+    },
+    "2026-04-15": {
+      "stars": 21308
     }
   },
   "reworkd/AgentGPT": {
     "2026-04-14": {
       "stars": 35976
+    },
+    "2026-04-15": {
+      "stars": 35986
     }
   },
   "yoheinakajima/babyagi": {
     "2026-04-14": {
       "stars": 22222
+    },
+    "2026-04-15": {
+      "stars": 22226
     }
   },
   "camel-ai/camel": {
@@ -152,86 +194,137 @@
   "openclaw/openclaw": {
     "2026-04-14": {
       "stars": 356642
+    },
+    "2026-04-15": {
+      "stars": 357391
     }
   },
   "langchain-ai/langchain": {
     "2026-04-14": {
       "stars": 133452
+    },
+    "2026-04-15": {
+      "stars": 133562
     }
   },
   "FoundationAgents/MetaGPT": {
     "2026-04-14": {
       "stars": 67028
+    },
+    "2026-04-15": {
+      "stars": 67072
     }
   },
   "NousResearch/hermes-agent": {
     "2026-04-14": {
       "stars": 78004
+    },
+    "2026-04-15": {
+      "stars": 84396
     }
   },
   "crewAIInc/crewAI": {
     "2026-04-14": {
       "stars": 48812
+    },
+    "2026-04-15": {
+      "stars": 48885
     }
   },
   "run-llama/llama_index": {
     "2026-04-14": {
       "stars": 48561
+    },
+    "2026-04-15": {
+      "stars": 48599
     }
   },
   "CherryHQ/cherry-studio": {
     "2026-04-14": {
       "stars": 43434
+    },
+    "2026-04-15": {
+      "stars": 43490
     }
   },
   "CopilotKit/CopilotKit": {
     "2026-04-14": {
       "stars": 30189
+    },
+    "2026-04-15": {
+      "stars": 30224
     }
   },
   "openai/openai-agents-python": {
     "2026-04-14": {
       "stars": 20758
+    },
+    "2026-04-15": {
+      "stars": 20781
     }
   },
   "mastra-ai/mastra": {
     "2026-04-14": {
       "stars": 22970
+    },
+    "2026-04-15": {
+      "stars": 23005
     }
   },
   "elizaOS/eliza": {
     "2026-04-14": {
       "stars": 18180
+    },
+    "2026-04-15": {
+      "stars": 18181
     }
   },
   "zai-org/Open-AutoGLM": {
     "2026-04-14": {
       "stars": 24899
+    },
+    "2026-04-15": {
+      "stars": 24917
     }
   },
   "deepset-ai/haystack": {
     "2026-04-14": {
       "stars": 24827
+    },
+    "2026-04-15": {
+      "stars": 24832
     }
   },
   "eosphoros-ai/DB-GPT": {
     "2026-04-14": {
       "stars": 18496
+    },
+    "2026-04-15": {
+      "stars": 18516
     }
   },
   "TransformerOptimus/SuperAGI": {
     "2026-04-14": {
       "stars": 17440
+    },
+    "2026-04-15": {
+      "stars": 17446
     }
   },
   "agent0ai/agent-zero": {
     "2026-04-14": {
       "stars": 16985
+    },
+    "2026-04-15": {
+      "stars": 17010
     }
   },
   "agentscope-ai/HiClaw": {
     "2026-04-14": {
       "stars": 4087
+    },
+    "2026-04-15": {
+      "stars": 4097
     }
   }
 }
