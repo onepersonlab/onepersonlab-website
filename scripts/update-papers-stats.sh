@@ -1,174 +1,233 @@
 #!/bin/bash
 # Papers Stats Updater
-# Updates citation counts and metadata for all papers
-# Usage: ./update-papers-stats.sh
+# Ensure ~/.local/bin is in PATH (for jq etc.)
+export PATH="$HOME/.local/bin:$PATH"
 
-set -e
+# Updates citation counts and metadata from Semantic Scholar / OpenAlex / Crossref
+# Usage: ./scripts/update-papers-stats.sh [--deploy]
 
-DATA_DIR="/root/onepersonlab-website/data"
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+DATA_DIR="$REPO_ROOT/src/data"
+LOG_DIR="$REPO_ROOT/logs"
+mkdir -p "$LOG_DIR"
+
+# Optional Semantic Scholar API key (higher rate limit)
+SEMANTIC_KEY="${SEMANTIC_SCHOLAR_API_KEY:-}"
+if [ -z "$SEMANTIC_KEY" ]; then
+  SEMANTIC_KEY=$(grep "SEMANTIC_SCHOLAR_API_KEY" "$HOME/.openclaw/.env" 2>/dev/null | cut -d'=' -f2 || true)
+fi
+
 NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-LOG_DIR="/root/onepersonlab-website/logs"
+DEPLOY="${1:-}"
 
 echo "=== Papers Stats Updater ==="
 echo "Timestamp: $NOW"
 echo ""
 
-# Ensure log directory exists
-mkdir -p "$LOG_DIR"
-
-# Function to fetch paper details from Semantic Scholar
-fetch_paper_details() {
-  DOI=$1
-  DOI_CLEAN=$(echo "$DOI" | sed 's|https://doi.org/||' | sed 's|doi:||')
-  
-  # Use Semantic Scholar API
-  RESULT=$(curl -s "https://api.semanticscholar.org/graph/v1/paper/DOI:$DOI_CLEAN?fields=title,year,authors,venue,citationCount,abstract,externalIds" \
-    -H "Accept: application/json" 2>/dev/null || echo "{}")
-  
-  echo "$RESULT"
+# ── Retry helper ──
+retry_curl() {
+  local url="$1"
+  local headers="${2:-}"
+  local max_attempts=3
+  local delay=2
+  for attempt in $(seq 1 $max_attempts); do
+    local response
+    if [ -n "$headers" ]; then
+      response=$(curl -s --connect-timeout 10 --max-time 30 $headers "$url" 2>/dev/null) || true
+    else
+      response=$(curl -s --connect-timeout 10 --max-time 30 "$url" 2>/dev/null) || true
+    fi
+    if [ -n "$response" ]; then
+      echo "$response"
+      return 0
+    fi
+    if [ $attempt -lt $max_attempts ]; then
+      sleep "$delay"
+      delay=$((delay * 2))
+    fi
+  done
+  echo "{}"
+  return 1
 }
 
-# Function to update a papers JSON file
-update_papers_file() {
-  INPUT_FILE=$1
-  OUTPUT_FILE=$2
-  FILE_TYPE=$3
-  
-  echo "--- Updating: $FILE_TYPE ---"
-  
-  if [ ! -f "$INPUT_FILE" ]; then
-    echo "⚠️ Input file not found: $INPUT_FILE"
-    return
+# ── Fetch from Semantic Scholar ──
+fetch_semantic() {
+  local doi_clean="$1"
+  local headers=""
+  if [ -n "$SEMANTIC_KEY" ]; then
+    headers="-H x-api-key:$SEMANTIC_KEY"
   fi
-  
-  # Read paper DOIs or titles from input
-  PAPERS=$(jq -c '.papers[]' "$INPUT_FILE")
-  TOTAL=$(echo "$PAPERS" | wc -l)
-  echo "Found $TOTAL papers"
-  
-  UPDATED_PAPERS="[]"
-  COUNT=0
-  
-  while IFS= read -r PAPER; do
+  retry_curl "https://api.semanticscholar.org/graph/v1/paper/DOI:$doi_clean?fields=title,year,authors,venue,citationCount,abstract,externalIds" "$headers"
+}
+
+# ── Fetch from OpenAlex ──
+fetch_openalex() {
+  local doi_clean="$1"
+  retry_curl "https://api.openalex.org/works/doi:$doi_clean"
+}
+
+# ── Fetch from Crossref ──
+fetch_crossref() {
+  local doi_clean="$1"
+  retry_curl "https://api.crossref.org/works/$doi_clean"
+}
+
+# ── Update a papers JSON file ──
+update_papers_file() {
+  local INPUT_FILE="$1"
+  local OUTPUT_FILE="$2"
+  local FILE_TYPE="$3"
+
+  echo "--- $FILE_TYPE ---"
+
+  if [ ! -f "$INPUT_FILE" ]; then
+    echo "  ✗ Input file not found: $INPUT_FILE"
+    return 1
+  fi
+
+  local TOTAL
+  TOTAL=$(jq '.papers | length' "$INPUT_FILE" 2>/dev/null)
+  echo "  Found $TOTAL papers"
+
+  local UPDATED_PAPERS="[]"
+  local COUNT=0
+  local ERRORS=0
+
+  for i in $(seq 0 $((TOTAL - 1))); do
     COUNT=$((COUNT + 1))
-    
+    local PAPER DOI TITLE ORDER
+    PAPER=$(jq -c ".papers[$i]" "$INPUT_FILE")
     DOI=$(echo "$PAPER" | jq -r '.doi // empty')
     TITLE=$(echo "$PAPER" | jq -r '.title // empty')
     ORDER=$(echo "$PAPER" | jq -r '.order // 0')
-    
-    echo "[$COUNT/$TOTAL] Processing: $TITLE"
-    
-    if [ -n "$DOI" ] && [ "$DOI" != "null" ]; then
-      # Fetch from API
-      DETAILS=$(fetch_paper_details "$DOI")
-      
-      NEW_TITLE=$(echo "$DETAILS" | jq -r '.title // ""')
-      NEW_YEAR=$(echo "$DETAILS" | jq -r '.year // 0')
-      NEW_VENUE=$(echo "$DETAILS" | jq -r '.venue // ""')
-      NEW_CITATIONS=$(echo "$DETAILS" | jq -r '.citationCount // 0')
-      NEW_ABSTRACT=$(echo "$DETAILS" | jq -r '.abstract // ""' | head -c 200)
-      NEW_AUTHORS=$(echo "$DETAILS" | jq -r '.authors[].name' | jq -R . | jq -s .)
-      
-      # Use existing title if API returns empty
-      if [ -z "$NEW_TITLE" ] || [ "$NEW_TITLE" = "" ]; then
-        NEW_TITLE="$TITLE"
-      fi
-      
-      # Build paper object
-      PAPER_OBJ=$(jq -n \
-        --arg title "$NEW_TITLE" \
-        --arg doi "$DOI" \
-        --argjson year "$NEW_YEAR" \
-        --arg venue "$NEW_VENUE" \
-        --argjson citations "$NEW_CITATIONS" \
-        --arg abstract "$NEW_ABSTRACT" \
-        --argjson authors "$NEW_AUTHORS" \
-        --arg url "https://doi.org/$DOI" \
-        --argjson order "$ORDER" \
-        '{
-          title: $title,
-          doi: $doi,
-          year: $year,
-          venue: $venue,
-          authors: $authors,
-          citationCount: $citations,
-          abstract: $abstract,
-          url: $url
-        } + (if $order > 0 then {order: $order} else {} end)')
-      )
-      
-      echo "  ✓ Citations: $NEW_CITATIONS"
-    else
-      # Keep existing data, just update timestamp awareness
-      PAPER_OBJ="$PAPER"
-      echo "  ⚠️ No DOI, keeping existing data"
+
+    echo "  [$COUNT/$TOTAL] ${TITLE:0:60}..."
+
+    if [ -z "$DOI" ] || [ "$DOI" = "null" ]; then
+      echo "    ⚠️  No DOI, keeping existing data"
+      UPDATED_PAPERS=$(echo "$UPDATED_PAPERS" | jq --argjson p "$PAPER" '. + [$p]')
+      continue
     fi
-    
+
+    local DOI_CLEAN
+    DOI_CLEAN=$(echo "$DOI" | sed 's|https://doi.org/||' | sed 's|doi:||')
+
+    # Try Semantic Scholar
+    local SS_DATA
+    SS_DATA=$(fetch_semantic "$DOI_CLEAN")
+
+    local NEW_TITLE NEW_YEAR NEW_VENUE NEW_CITATIONS NEW_ABSTRACT NEW_AUTHORS
+
+    if [ -n "$SS_DATA" ] && [ "$SS_DATA" != "{}" ] && ! echo "$SS_DATA" | jq -e '.error' > /dev/null 2>&1; then
+      NEW_TITLE=$(echo "$SS_DATA" | jq -r '.title // empty')
+      NEW_YEAR=$(echo "$SS_DATA" | jq -r '.year // 0')
+      NEW_VENUE=$(echo "$SS_DATA" | jq -r '.venue // empty')
+      NEW_CITATIONS=$(echo "$SS_DATA" | jq -r '.citationCount // 0')
+      NEW_ABSTRACT=$(echo "$SS_DATA" | jq -r '.abstract // empty' | head -c 200)
+      NEW_AUTHORS=$(echo "$SS_DATA" | jq -r '[.authors[].name] | @json' 2>/dev/null || echo "[]")
+    fi
+
+    # Fallback: OpenAlex for missing fields
+    if [ -z "$NEW_TITLE" ] || [ -z "$NEW_ABSTRACT" ] || [ -z "$NEW_VENUE" ]; then
+      local OA_DATA
+      OA_DATA=$(fetch_openalex "$DOI_CLEAN")
+      if [ -n "$OA_DATA" ] && [ "$OA_DATA" != "{}" ]; then
+        [ -z "$NEW_TITLE" ] && NEW_TITLE=$(echo "$OA_DATA" | jq -r '.title // empty')
+        [ -z "$NEW_VENUE" ] && NEW_VENUE=$(echo "$OA_DATA" | jq -r '.primary_location.source.display_name // empty')
+        [ "$NEW_YEAR" = "0" ] && NEW_YEAR=$(echo "$OA_DATA" | jq -r '.publication_year // 0')
+        [ "$NEW_AUTHORS" = "[]" ] && NEW_AUTHORS=$(echo "$OA_DATA" | jq -r '[.authorships[].author.display_name] | @json' 2>/dev/null || echo "[]")
+        echo "    → OpenAlex fallback"
+      fi
+    fi
+
+    # Fallback: Crossref
+    if [ -z "$NEW_TITLE" ] || [ -z "$NEW_VENUE" ] || [ "$NEW_YEAR" = "0" ] || [ "$NEW_AUTHORS" = "[]" ]; then
+      local CR_DATA
+      CR_DATA=$(fetch_crossref "$DOI_CLEAN")
+      if [ -n "$CR_DATA" ] && echo "$CR_DATA" | jq -e '.message' > /dev/null 2>&1; then
+        [ -z "$NEW_TITLE" ] && NEW_TITLE=$(echo "$CR_DATA" | jq -r '.message.title[0] // empty')
+        [ -z "$NEW_VENUE" ] && NEW_VENUE=$(echo "$CR_DATA" | jq -r '.["message"]["container-title"][0] // empty')
+        [ "$NEW_YEAR" = "0" ] && NEW_YEAR=$(echo "$CR_DATA" | jq -r '.["message"]["published"]["date-parts"][0][0] // 0')
+        echo "    → Crossref fallback"
+      fi
+    fi
+
+    # Always prefer the manually-specified title from base JSON
+    [ -n "$TITLE" ] && [ "$TITLE" != "null" ] && NEW_TITLE="$TITLE"
+
+    local PAPER_OBJ
+    PAPER_OBJ=$(jq -n \
+      --arg title "$NEW_TITLE" \
+      --arg doi "$DOI" \
+      --argjson year "${NEW_YEAR:-0}" \
+      --arg venue "${NEW_VENUE:-}" \
+      --argjson citations "${NEW_CITATIONS:-0}" \
+      --arg abstract "${NEW_ABSTRACT:-}" \
+      --argjson authors "${NEW_AUTHORS:-[]}" \
+      --arg url "https://doi.org/$DOI" \
+      --argjson order "${ORDER:-0}" \
+      '{
+        title: $title,
+        doi: $doi,
+        year: $year,
+        venue: $venue,
+        authors: $authors,
+        citationCount: $citations,
+        abstract: $abstract,
+        url: $url
+      } + (if $order > 0 then {order: $order} else {} end)')
+
+    echo "    ✓ Citations: ${NEW_CITATIONS:-0}"
     UPDATED_PAPERS=$(echo "$UPDATED_PAPERS" | jq --argjson p "$PAPER_OBJ" '. + [$p]')
-    
-    # Rate limiting - wait 1 second between API calls
-    sleep 1
-  done <<< "$PAPERS"
-  
-  # Write output file
-  OUTPUT_JSON=$(jq -n \
+
+    sleep 1  # Rate limit
+  done
+
+  # Write output
+  jq -n \
     --arg desc "Papers - Updated Stats" \
-    --arg source "Semantic Scholar API" \
+    --arg source "Semantic Scholar / OpenAlex / Crossref" \
     --arg generated "$NOW" \
     --argjson papers "$UPDATED_PAPERS" \
-    --argjson count "$COUNT" \
     '{
       description: $desc,
       source: $source,
       generated_at: $generated,
-      paper_count: $count,
+      paper_count: ($papers | length),
       papers: $papers
-    }'
-  )
-  
-  echo "$OUTPUT_JSON" > "$OUTPUT_FILE"
-  echo "✓ Updated: $OUTPUT_FILE ($COUNT papers)"
+    }' > "$OUTPUT_FILE"
+
+  echo "  ✓ $OUTPUT_FILE ($COUNT papers)"
 }
 
-# Update all paper lists
-update_papers_file "$DATA_DIR/top-6-papers.json" "$DATA_DIR/top-6-papers-update.json" "Top 6 Papers"
-update_papers_file "$DATA_DIR/all-papers.json" "$DATA_DIR/all-papers-update.json" "All Papers"
-update_papers_file "$DATA_DIR/developer-papers.json" "$DATA_DIR/developer-papers-update.json" "Developer Papers"
+# ── Update all paper lists ──
+update_papers_file "$DATA_DIR/top-6-papers.json"      "$DATA_DIR/top-6-papers-update.json"      "Top 6 Papers"
+update_papers_file "$DATA_DIR/all-papers.json"         "$DATA_DIR/all-papers-update.json"         "All Papers"
+update_papers_file "$DATA_DIR/developer-papers.json"   "$DATA_DIR/developer-papers-update.json"   "Developer Papers"
 
-# Copy to src/data for frontend
-echo ""
-echo "--- Copying to src/data ---"
-cp "$DATA_DIR/top-6-papers-update.json" "/root/onepersonlab-website/src/data/top-6-papers-update.json" 2>/dev/null || true
-cp "$DATA_DIR/all-papers-update.json" "/root/onepersonlab-website/src/data/all-papers-update.json" 2>/dev/null || true
-cp "$DATA_DIR/developer-papers-update.json" "/root/onepersonlab-website/src/data/developer-papers-update.json" 2>/dev/null || true
-echo "✓ Copied to src/data"
+# ── Deploy ──
+if [ "$DEPLOY" = "--deploy" ]; then
+  echo ""
+  echo "--- Deploying ---"
+  cd "$REPO_ROOT"
+  npm run build 2>&1 | tail -5
 
-# Rebuild and deploy site
-echo ""
-echo "--- Rebuilding and deploying site ---"
-cd /root/onepersonlab-website
-
-# Build
-npm run build 2>&1 | tail -5
-
-# Deploy to gh-pages
-rm -rf /tmp/gh-pages-deploy
-mkdir -p /tmp/gh-pages-deploy
-cp -r dist/* /tmp/gh-pages-deploy/
-
-cd /tmp/gh-pages-deploy
-git init
-git config user.email "onepersonlab@github.com"
-git config user.name "OnePersonLab"
-git add -A
-git commit -m "auto-deploy: papers stats update $NOW"
-git remote add origin https://github.com/onepersonlab/onepersonlab-website.git
-git push origin master:gh-pages --force 2>&1 || echo "⚠️ Deploy may have failed"
-
-rm -rf /tmp/gh-pages-deploy
-
-echo "✓ Site deployed to gh-pages"
+  rm -rf /tmp/gh-pages-deploy
+  mkdir -p /tmp/gh-pages-deploy
+  cp -r dist/* /tmp/gh-pages-deploy/
+  cd /tmp/gh-pages-deploy
+  git init -q
+  git config user.email "onepersonlab@github.com"
+  git config user.name "OnePersonLab"
+  git add -A
+  git commit -m "auto-deploy: papers update $NOW" -q
+  git remote add origin "https://github.com/onepersonlab/onepersonlab-website.git"
+  git push origin master:gh-pages --force -q 2>&1 || echo "⚠️ Deploy may have failed"
+  rm -rf /tmp/gh-pages-deploy
+  echo "✓ Deployed"
+fi
 
 echo ""
-echo "=== Papers Update Complete ==="
-echo "Finished at: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+echo "=== Papers Update Complete: $(date -u +%Y-%m-%dT%H:%M:%SZ) ==="

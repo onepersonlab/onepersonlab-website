@@ -1,172 +1,211 @@
 #!/bin/bash
-# AI Agent Repository Stats Updater - Dual List Version with Auto Deploy
-# Updates both Research and General agent lists
-# Automatically rebuilds and deploys to gh-pages
-# Usage: ./update-repo-stats.sh
+# AI Agent Repository Stats Updater
+# Ensure ~/.local/bin is in PATH (for jq etc.)
+export PATH="$HOME/.local/bin:$PATH"
 
-set -e
+# Updates both Research and General agent lists from GitHub API
+# Usage: ./scripts/update-repo-stats.sh [--deploy]
 
-DATA_DIR="/root/onepersonlab-website/data"
-TOKEN=$(grep "GITHUB_TOKEN" ~/.openclaw/.env 2>/dev/null | cut -d'=' -f2)
+set -euo pipefail
+
+# Auto-detect repo root (works from any subdirectory)
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+DATA_DIR="$REPO_ROOT/src/data"
+
+# Secrets: try multiple sources
+TOKEN="${GITHUB_TOKEN:-}"
+if [ -z "$TOKEN" ]; then
+  TOKEN=$(grep "GITHUB_TOKEN" "$HOME/.openclaw/.env" 2>/dev/null | cut -d'=' -f2 || true)
+fi
+if [ -z "$TOKEN" ]; then
+  echo "ERROR: GITHUB_TOKEN not found. Set GITHUB_TOKEN env var or add to ~/.openclaw/.env"
+  exit 1
+fi
+
 NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 TODAY=$(date -u +%Y-%m-%d)
+DEPLOY="${1:-}"
 
-echo "=== AI Agent Repository Stats Updater (Dual List) ==="
+echo "=== AI Agent Repository Stats Updater ==="
+echo "Repo root: $REPO_ROOT"
+echo "Data dir:  $DATA_DIR"
 echo "Timestamp: $NOW"
 echo ""
 
-# Function to update a single list
+# ── Helper: retry curl with backoff ──
+retry_curl() {
+  local url="$1"
+  local max_attempts=3
+  local delay=2
+  for attempt in $(seq 1 $max_attempts); do
+    local response
+    response=$(curl -s -H "Authorization: token $TOKEN" \
+      -H "Accept: application/vnd.github.v3+json" \
+      --connect-timeout 10 --max-time 30 "$url" 2>/dev/null) || true
+    if [ -n "$response" ] && ! echo "$response" | jq -e '.message' > /dev/null 2>&1; then
+      echo "$response"
+      return 0
+    fi
+    if [ $attempt -lt $max_attempts ]; then
+      echo "  ⚠️  Retry $attempt/$max_attempts in ${delay}s..." >&2
+      sleep "$delay"
+      delay=$((delay * 2))
+    fi
+  done
+  return 1
+}
+
+# ── Update a single list ──
 update_list() {
-  LIST_NAME=$1
-  BASE_LIST="$DATA_DIR/${LIST_NAME}-agent-list.json"
-  UPDATE_LIST="$DATA_DIR/${LIST_NAME}-agent-list-update.json"
-  HISTORY_FILE="$DATA_DIR/${LIST_NAME}-stars-history.json"
-  
+  local LIST_NAME="$1"
+  local BASE_LIST="$DATA_DIR/${LIST_NAME}-agent-list.json"
+  local UPDATE_LIST="$DATA_DIR/${LIST_NAME}-agent-list-update.json"
+  local HISTORY_FILE="$DATA_DIR/${LIST_NAME}-stars-history.json"
+
   echo "--- Updating: $LIST_NAME ---"
-  
-  # Read repos from base list
-  REPOS=$(jq -r '.repos[]' "$BASE_LIST")
+
+  if [ ! -f "$BASE_LIST" ]; then
+    echo "  ✗ Base list not found: $BASE_LIST"
+    return 1
+  fi
+
+  local REPOS
+  REPOS=$(jq -r '.repos[]' "$BASE_LIST" 2>/dev/null) || { echo "  ✗ Failed to parse $BASE_LIST"; return 1; }
+  local TOTAL
   TOTAL=$(echo "$REPOS" | wc -l)
-  echo "Found $TOTAL repositories"
-  
-  # Initialize history file if not exists
+  echo "  Found $TOTAL repositories"
+
+  # Init history if needed
   if [ ! -f "$HISTORY_FILE" ]; then
     echo '{}' > "$HISTORY_FILE"
   fi
-  
-  # Build JSON array
-  echo '[' > "$UPDATE_LIST.tmp"
-  FIRST=true
-  COUNT=0
-  
-  for REPO in $REPOS; do
+
+  local TMPFILE="$UPDATE_LIST.tmp"
+  echo '[' > "$TMPFILE"
+  local FIRST=true
+  local COUNT=0
+  local ERRORS=0
+
+  while IFS= read -r REPO; do
+    [ -z "$REPO" ] && continue
     COUNT=$((COUNT + 1))
-    echo "[$COUNT/$TOTAL] Fetching: $REPO"
-    
-    # Call GitHub API
-    RESPONSE=$(curl -s -H "Authorization: token $TOKEN" -H "Accept: application/vnd.github.v3+json" "https://api.github.com/repos/$REPO" 2>/dev/null)
-    
-    if [ -z "$RESPONSE" ] || echo "$RESPONSE" | jq -e '.message' > /dev/null 2>&1; then
-      echo "  ⚠️ Skipped (API error or not found)"
+    echo "  [$COUNT/$TOTAL] $REPO"
+
+    local RESPONSE
+    if ! RESPONSE=$(retry_curl "https://api.github.com/repos/$REPO"); then
+      echo "    ✗ Failed after retries, skipping"
+      ERRORS=$((ERRORS + 1))
       continue
     fi
-    
-    # Parse response using jq to properly escape strings
+
+    # Parse safely
+    local NAME STARS FORKS UPDATED DESCRIPTION LANGUAGE
     NAME=$(echo "$RESPONSE" | jq -r '.name')
-    OWNER=$(echo "$RESPONSE" | jq -r '.owner.login')
+    STARS=$(echo "$RESPONSE" | jq -r '.stargazers_count // 0')
+    FORKS=$(echo "$RESPONSE" | jq -r '.forks_count // 0')
+    UPDATED=$(echo "$RESPONSE" | jq -r '.updated_at // "unknown"')
     DESCRIPTION=$(echo "$RESPONSE" | jq -r '.description // "No description"' | cut -c1-100)
     LANGUAGE=$(echo "$RESPONSE" | jq -r '.language // "Unknown"')
-    STARS=$(echo "$RESPONSE" | jq -r '.stargazers_count')
-    FORKS=$(echo "$RESPONSE" | jq -r '.forks_count')
-    UPDATED=$(echo "$RESPONSE" | jq -r '.updated_at')
-    
-    # Calculate Daily Stars: compare with nearest historical date
-    # History structure: {"repo": {"2026-04-11": {"stars": 70302}, "2026-04-14": {"stars": 71647}}}
-    # Find the most recent historical date (before today)
-    NEAREST_DATE=$(jq -r '.["'$REPO'"] | keys | map(select(. < "'$TODAY'")) | max // empty' "$HISTORY_FILE" 2>/dev/null)
-    
-    if [ -z "$NEAREST_DATE" ] || [ "$NEAREST_DATE" = "null" ]; then
-      # No historical data, first time recording
-      DAILY=0
-      NEAREST_STARS=0
-      DAYS_DIFF=0
-      CHANGE_LABEL="(首次记录)"
-    else
-      # Calculate days difference
-      DAYS_DIFF=$((($(date -d "$TODAY" +%s) - $(date -d "$NEAREST_DATE" +%s)) / 86400))
-      
-      # Get stars from nearest date
-      NEAREST_STARS=$(jq -r '.["'$REPO'"]["'$NEAREST_DATE'"].stars // 0' "$HISTORY_FILE" 2>/dev/null)
-      
-      # Calculate change
+
+    # Calculate daily stars from history
+    local NEAREST_DATE
+    NEAREST_DATE=$(jq -r --arg repo "$REPO" --arg today "$TODAY" \
+      '.[$repo] | keys | map(select(. < $today)) | max // empty' "$HISTORY_FILE" 2>/dev/null)
+
+    local DAILY=0
+    local CHANGE_LABEL="(first record)"
+    if [ -n "$NEAREST_DATE" ] && [ "$NEAREST_DATE" != "null" ]; then
+      local NEAREST_STARS
+      NEAREST_STARS=$(jq -r --arg repo "$REPO" --arg date "$NEAREST_DATE" \
+        '.[$repo][$date].stars // 0' "$HISTORY_FILE" 2>/dev/null)
+      local DAYS_DIFF
+      DAYS_DIFF=$(( ($(date -d "$TODAY" +%s) - $(date -d "$NEAREST_DATE" +%s)) / 86400 ))
       DAILY=$((STARS - NEAREST_STARS))
-      [ $DAILY -lt 0 ] && DAILY=0
-      
-      # Show days label
-      if [ $DAYS_DIFF -eq 1 ]; then
-        CHANGE_LABEL="(1天变化)"
+      [ "$DAILY" -lt 0 ] && DAILY=0
+      if [ "$DAYS_DIFF" -eq 1 ]; then
+        CHANGE_LABEL="(1-day change)"
       else
-        CHANGE_LABEL="($DAYS_DIFF天变化)"
+        CHANGE_LABEL="(${DAYS_DIFF}-day change)"
       fi
     fi
-    
-    # Add to JSON using jq to properly escape special characters
-    [ "$FIRST" = false ] && echo ',' >> "$UPDATE_LIST.tmp"
+
+    # Append to JSON
+    [ "$FIRST" = false ] && echo ',' >> "$TMPFILE"
     FIRST=false
-    
-    # Use jq to safely build the JSON object with proper escaping
-    DAILY_INT=$DAILY
-    DAYS_INT=$DAYS_DIFF
+
     echo "$RESPONSE" | jq -c \
-      --argjson daily "$DAILY_INT" \
-      --argjson days "$DAYS_INT" \
+      --argjson daily "$DAILY" \
       --arg chglbl "$CHANGE_LABEL" \
-      '{full_name: .full_name, name: .name, owner: .owner.login, description: ((.description // "No description") | .[0:100]), language: (.language // "Unknown"), stars: .stargazers_count, forks: .forks_count, weeklyStars: $daily, daysChange: $days, changeLabel: $chglbl, updated: .updated_at, url: ("https://github.com/" + .full_name)}' \
-      >> "$UPDATE_LIST.tmp"
-    
-    # Update history: store by date for daily comparison
-    # Structure: {"repo": {"2026-04-14": {"stars": 71647}}}
+      '{
+        full_name: .full_name,
+        name: .name,
+        owner: .owner.login,
+        description: ((.description // "No description") | .[0:100]),
+        language: (.language // "Unknown"),
+        stars: .stargazers_count,
+        forks: .forks_count,
+        weeklyStars: $daily,
+        changeLabel: $chglbl,
+        updated: .updated_at,
+        url: ("https://github.com/" + .full_name)
+      }' >> "$TMPFILE"
+
+    # Update history
     jq --arg repo "$REPO" --arg date "$TODAY" --argjson stars "$STARS" \
       '.[$repo][$date] = {"stars": $stars}' \
-      "$HISTORY_FILE" > "$HISTORY_FILE.tmp" && mv "$HISTORY_FILE.tmp" "$HISTORY_FILE"
-    
-    echo "  ✓ Stars: $STARS, Baseline: $NEAREST_STARS ($NEAREST_DATE), Change: +$DAILY $CHANGE_LABEL"
-    
+      "$HISTORY_FILE" > "${HISTORY_FILE}.tmp" && mv "${HISTORY_FILE}.tmp" "$HISTORY_FILE"
+
+    echo "    ✓ Stars: $STARS, Daily: +$DAILY $CHANGE_LABEL"
+
+    # Rate limit: 0.3s between calls (GitHub allows ~5000/hr)
     sleep 0.3
-  done
-  
-  echo ']' >> "$UPDATE_LIST.tmp"
-  
-  # Create final JSON with metadata using jq
-  echo "Creating final JSON..."
-  jq -s --arg desc "${LIST_NAME} Agent Repositories - Updated Stats" \
+  done <<< "$REPOS"
+
+  echo ']' >> "$TMPFILE"
+
+  # Create final JSON with metadata
+  jq -s --arg desc "${LIST_NAME} Agent Repositories" \
        --arg source "GitHub API" \
        --arg generated "$NOW" \
-       '.[0] | {description: $desc, source: $source, generated_at: $generated, repo_count: length, repos: .}' \
-       "$UPDATE_LIST.tmp" > "$UPDATE_LIST"
-  
-  rm -f "$UPDATE_LIST.tmp"
-  echo "✓ $LIST_NAME complete: $COUNT repos"
+       '.[0] | {
+         description: $desc,
+         source: $source,
+         generated_at: $generated,
+         repo_count: length,
+         repos: .
+       }' "$TMPFILE" > "$UPDATE_LIST"
+
+  rm -f "$TMPFILE"
+  echo "  ✓ $LIST_NAME: $COUNT repos processed, $ERRORS errors"
   echo ""
 }
 
-# Update both lists
+# ── Update both lists ──
 update_list "Research"
 update_list "General"
 
-# Copy to src/data for frontend
-echo ""
-echo "--- Copying to src/data ---"
-cp "$DATA_DIR/Research-agent-list-update.json" "/root/onepersonlab-website/src/data/Research-agent-list-update.json" 2>/dev/null || true
-cp "$DATA_DIR/General-agent-list-update.json" "/root/onepersonlab-website/src/data/General-agent-list-update.json" 2>/dev/null || true
-echo "✓ Copied to src/data"
+# ── Deploy if requested ──
+if [ "$DEPLOY" = "--deploy" ]; then
+  echo "--- Rebuilding and deploying ---"
+  cd "$REPO_ROOT"
 
-# Rebuild and deploy site
-echo ""
-echo "--- Rebuilding and deploying site ---"
-cd /root/onepersonlab-website
+  npm run build 2>&1 | tail -5
 
-# Build
-npm run build 2>&1 | tail -5
+  rm -rf /tmp/gh-pages-deploy
+  mkdir -p /tmp/gh-pages-deploy
+  cp -r dist/* /tmp/gh-pages-deploy/
 
-# Deploy to gh-pages
-rm -rf /tmp/gh-pages-deploy
-mkdir -p /tmp/gh-pages-deploy
-cp -r dist/* /tmp/gh-pages-deploy/
+  cd /tmp/gh-pages-deploy
+  git init -q
+  git config user.email "onepersonlab@github.com"
+  git config user.name "OnePersonLab"
+  git add -A
+  git commit -m "auto-deploy: repo stats update $NOW" -q
+  git remote add origin "https://${TOKEN}@github.com/onepersonlab/onepersonlab-website.git"
+  git push origin master:gh-pages --force -q 2>&1 || echo "⚠️ Deploy may have failed"
 
-cd /tmp/gh-pages-deploy
-git init
-git config user.email "onepersonlab@github.com"
-git config user.name "OnePersonLab"
-git add -A
-git commit -m "auto-deploy: repo stats update $NOW"
-git remote add origin https://github.com/onepersonlab/onepersonlab-website.git
-git push origin master:gh-pages --force 2>&1 || echo "⚠️ Deploy may have failed"
+  rm -rf /tmp/gh-pages-deploy
+  echo "✓ Site deployed to gh-pages"
+fi
 
-rm -rf /tmp/gh-pages-deploy
-
-echo "✓ Site deployed to gh-pages"
-
-echo ""
-echo "=== All Updates Complete ==="
-echo "Generated at: $NOW"
+echo "=== Update Complete: $NOW ==="

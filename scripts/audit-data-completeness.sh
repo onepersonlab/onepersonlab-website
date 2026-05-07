@@ -1,497 +1,290 @@
 #!/bin/bash
-# OnePersonLab Daily Data Completeness Audit
-# Check and fix missing data in #agents, #papers, #skills sections
-# Usage: ./audit-data-completeness.sh [--agents|--papers|--skills|--all]
+# Data Completeness Audit
+# Ensure ~/.local/bin is in PATH (for jq etc.)
+export PATH="$HOME/.local/bin:$PATH"
 
-set -e
+# Checks and fixes missing fields in all data files
+# Usage: ./scripts/audit-data-completeness.sh [--agents|--papers|--skills|--all] [--deploy]
 
-WEBSITE_DIR="/root/onepersonlab-website"
-DATA_DIR="$WEBSITE_DIR/data"
-LOG_FILE="$WEBSITE_DIR/logs/completeness-$(date +%Y%m%d).log"
-TOKEN=$(grep "GITHUB_TOKEN" ~/.openclaw/.env 2>/dev/null | cut -d'=' -f2)
-SEMANTIC_KEY=$(grep "SEMANTIC_SCHOLAR_API_KEY" ~/.openclaw/.env 2>/dev/null | cut -d'=' -f2)
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+DATA_DIR="$REPO_ROOT/src/data"
+LOG_DIR="$REPO_ROOT/logs"
+mkdir -p "$LOG_DIR"
+
+LOG_FILE="$LOG_DIR/completeness-$(date +%Y%m%d-%H%M%S).log"
+
+# Secrets
+TOKEN="${GITHUB_TOKEN:-}"
+[ -z "$TOKEN" ] && TOKEN=$(grep "GITHUB_TOKEN" "$HOME/.openclaw/.env" 2>/dev/null | cut -d'=' -f2 || true)
+SEMANTIC_KEY="${SEMANTIC_SCHOLAR_API_KEY:-}"
+[ -z "$SEMANTIC_KEY" ] && SEMANTIC_KEY=$(grep "SEMANTIC_SCHOLAR_API_KEY" "$HOME/.openclaw/.env" 2>/dev/null | cut -d'=' -f2 || true)
 
 NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+CHECK_AGENTS=true
+CHECK_PAPERS=true
+CHECK_SKILLS=true
+DEPLOY=false
 
-# Parse arguments
-CHECK_AGENTS=false
-CHECK_PAPERS=false
-CHECK_SKILLS=false
+for arg in "$@"; do
+  case "$arg" in
+    --agents) CHECK_AGENTS=true; CHECK_PAPERS=false; CHECK_SKILLS=false ;;
+    --papers) CHECK_AGENTS=false; CHECK_PAPERS=true; CHECK_SKILLS=false ;;
+    --skills) CHECK_AGENTS=false; CHECK_PAPERS=false; CHECK_SKILLS=true ;;
+    --all)    CHECK_AGENTS=true; CHECK_PAPERS=true; CHECK_SKILLS=true ;;
+    --deploy) DEPLOY=true ;;
+  esac
+done
 
-if [ "$1" = "--agents" ]; then CHECK_AGENTS=true; fi
-if [ "$1" = "--papers" ]; then CHECK_PAPERS=true; fi
-if [ "$1" = "--skills" ]; then CHECK_SKILLS=true; fi
-if [ "$1" = "--all" ] || [ -z "$1" ]; then
-    CHECK_AGENTS=true
-    CHECK_PAPERS=true
-    CHECK_SKILLS=true
-fi
+log() { echo "$@" | tee -a "$LOG_FILE"; }
 
-echo "=== OnePersonLab Data Completeness Audit ===" | tee "$LOG_FILE"
-echo "Started: $(date)" | tee -a "$LOG_FILE"
-echo "Checking: agents=$CHECK_AGENTS, papers=$CHECK_PAPERS, skills=$CHECK_SKILLS" | tee -a "$LOG_FILE"
+log "=== Data Completeness Audit ==="
+log "Started: $(date)"
+log ""
 
-# ============================================
-# 1. AGENTS: Check Stars/Daily/Forks/Updated values
-# ============================================
+# ═══════════════════════════════════════
+# AGENTS: Check stars/forks/updated
+# ═══════════════════════════════════════
 if [ "$CHECK_AGENTS" = true ]; then
-    echo "" | tee -a "$LOG_FILE"
-    echo "--- [AGENTS] Checking data completeness ---" | tee -a "$LOG_FILE"
-    
-    check_agents_file() {
-        local file="$1"
-        local label="$2"
-        
-        if [ ! -f "$file" ]; then
-            echo "File not found: $file" | tee -a "$LOG_FILE"
-            return
+  log "--- [AGENTS] ---"
+
+  check_agents() {
+    file="$1"
+    label="$2"
+    [ ! -f "$file" ] && { log "  ✗ File not found: $file"; return; }
+
+    total=0; issues=0; fixed=0
+    total=$(jq '.repos | length' "$file" 2>/dev/null)
+    log "  $label: $total repos"
+
+    for i in $(seq 0 $((total - 1))); do
+      repo=$(jq -r ".repos[$i].full_name" "$file")
+      stars=$(jq -r ".repos[$i].stars" "$file")
+      weekly=$(jq -r ".repos[$i].weeklyStars // empty" "$file")
+      forks=$(jq -r ".repos[$i].forks" "$file")
+      updated=$(jq -r ".repos[$i].updated // empty" "$file")
+      url=$(jq -r ".repos[$i].url // empty" "$file")
+
+      missing=""
+      [ -z "$stars" ] || [ "$stars" = "null" ] || [ "$stars" = "0" ] && missing="$missing stars"
+      [ -z "$weekly" ] || [ "$weekly" = "null" ] && missing="$missing weeklyStars"
+      [ -z "$forks" ] || [ "$forks" = "null" ] && missing="$missing forks"
+      [ -z "$updated" ] || [ "$updated" = "null" ] && missing="$missing updated"
+      [ -z "$url" ] || [ "$url" = "null" ] && missing="$missing url"
+
+      if [ -n "$missing" ]; then
+        log "  ⚠️  $repo: missing$missing"
+        issues=$((issues + 1))
+
+        if [ -n "$TOKEN" ]; then
+          response=$(curl -s --connect-timeout 10 --max-time 30 \
+            -H "Authorization: token $TOKEN" \
+            "https://api.github.com/repos/$repo" 2>/dev/null || echo "")
+
+          if [ -n "$response" ] && ! echo "$response" | jq -e '.message' > /dev/null 2>&1; then
+            ns=$(echo "$response" | jq -r '.stargazers_count')
+            nf=$(echo "$response" | jq -r '.forks_count')
+            nu=$(echo "$response" | jq -r '.updated_at')
+
+            jq --argjson idx "$i" --argjson s "$ns" '.repos[$idx].stars = $s' "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"
+            jq --argjson idx "$i" --argjson f "$nf" '.repos[$idx].forks = $f' "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"
+            jq --argjson idx "$i" --arg u "$nu" --arg u2 "https://github.com/$repo" \
+              '.repos[$idx].updated = $u | .repos[$idx].url = $u2' "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"
+
+            log "    ✓ Fixed: stars=$ns, forks=$nf"
+            fixed=$((fixed + 1))
+          fi
         fi
-        
-        local issues=0
-        local fixed=0
-        local total=$(jq '.repos | length' "$file")
-        
-        echo "Checking $label: $total repos" | tee -a "$LOG_FILE"
-        
-        # Check each repo for missing values
-        for i in $(seq 0 $((total - 1))); do
-            local repo=$(jq -r ".repos[$i].full_name" "$file")
-            local stars=$(jq -r ".repos[$i].stars" "$file")
-            local weekly=$(jq -r ".repos[$i].weeklyStars // empty" "$file")
-            local forks=$(jq -r ".repos[$i].forks" "$file")
-            local updated=$(jq -r ".repos[$i].updated // empty" "$file")
-            local url=$(jq -r ".repos[$i].url // empty" "$file")
-            
-            local missing_fields=""
-            
-            # Check for null, empty, or 0 values (except weeklyStars which can legitimately be 0)
-            if [ -z "$stars" ] || [ "$stars" = "null" ] || [ "$stars" = "0" ]; then
-                missing_fields="$missing_fields stars"
-            fi
-            if [ -z "$weekly" ] || [ "$weekly" = "null" ]; then
-                missing_fields="$missing_fields weeklyStars"
-            fi
-            if [ -z "$forks" ] || [ "$forks" = "null" ]; then
-                missing_fields="$missing_fields forks"
-            fi
-            if [ -z "$updated" ] || [ "$updated" = "null" ]; then
-                missing_fields="$missing_fields updated"
-            fi
-            if [ -z "$url" ] || [ "$url" = "null" ]; then
-                missing_fields="$missing_fields url"
-            fi
-            
-            if [ -n "$missing_fields" ]; then
-                echo "⚠️  $repo: missing $missing_fields" | tee -a "$LOG_FILE"
-                issues=$((issues + 1))
-                
-                # Fetch fresh data from GitHub API
-                local response=$(curl -s -H "Authorization: token $TOKEN" \
-                    "https://api.github.com/repos/$repo" 2>/dev/null)
-                
-                if [ -n "$response" ] && ! echo "$response" | jq -e '.message' > /dev/null 2>&1; then
-                    local new_stars=$(echo "$response" | jq -r '.stargazers_count')
-                    local new_forks=$(echo "$response" | jq -r '.forks_count')
-                    local new_updated=$(echo "$response" | jq -r '.updated_at')
-                    
-                    # Update the JSON
-                    jq --argjson idx "$i" \
-                       --argjson stars "$new_stars" \
-                       --argjson forks "$new_forks" \
-                       --arg updated "$new_updated" \
-                       --arg url "https://github.com/$repo" \
-                       '.repos[$idx].stars = $stars | .repos[$idx].forks = $forks | .repos[$idx].updated = $updated | .repos[$idx].url = $url' \
-                       "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"
-                    
-                    echo "  ✓ Fixed: stars=$new_stars, forks=$new_forks" | tee -a "$LOG_FILE"
-                    fixed=$((fixed + 1))
-                fi
-                
-                sleep 0.5
-            fi
-        done
-        
-        echo "$label: $issues issues found, $fixed fixed" | tee -a "$LOG_FILE"
-    }
-    
-    check_agents_file "$DATA_DIR/Research-agent-list-update.json" "Research"
-    check_agents_file "$DATA_DIR/General-agent-list-update.json" "General"
+        sleep 0.5
+      fi
+    done
+    log "  $label: $issues issues, $fixed fixed"
+  }
+
+  check_agents "$DATA_DIR/Research-agent-list-update.json" "Research"
+  check_agents "$DATA_DIR/General-agent-list-update.json"  "General"
 fi
 
-# ============================================
-# 2. PAPERS: Check title/abstract/venue/authors, fill from APIs
-# ============================================
+# ═══════════════════════════════════════
+# PAPERS: Check title/abstract/venue/authors
+# ═══════════════════════════════════════
 if [ "$CHECK_PAPERS" = true ]; then
-    echo "" | tee -a "$LOG_FILE"
-    echo "--- [PAPERS] Checking data completeness ---" | tee -a "$LOG_FILE"
-    
-    # API helper functions
-    fetch_from_semantic_scholar() {
-        local doi="$1"
-        local response=$(curl -s "https://api.semanticscholar.org/graph/v1/paper/DOI:$doi?fields=title,abstract,venue,year,authors" \
-            -H "x-api-key: $SEMANTIC_KEY" 2>/dev/null)
-        echo "$response"
-    }
-    
-    fetch_from_openalex() {
-        local doi="$1"
-        local response=$(curl -s "https://api.openalex.org/works/doi:$doi" 2>/dev/null)
-        echo "$response"
-    }
-    
-    fetch_from_crossref() {
-        local doi="$1"
-        local response=$(curl -s "https://api.crossref.org/works/$doi" 2>/dev/null)
-        echo "$response"
-    }
-    
-    fetch_from_arxiv() {
-        local arxiv_id="$1"
-        # arxiv_id format: arXiv:XXXX.XXXXX
-        local id=$(echo "$arxiv_id" | sed 's/arXiv://')
-        local response=$(curl -s "http://export.arxiv.org/api/query?id_list=$id" 2>/dev/null)
-        echo "$response"
-    }
-    
-    check_papers_file() {
-        local file="$1"
-        local label="$2"
-        
-        if [ ! -f "$file" ]; then
-            echo "File not found: $file" | tee -a "$LOG_FILE"
-            return
+  log ""
+  log "--- [PAPERS] ---"
+
+  check_papers() {
+    file="$1"
+    label="$2"
+    [ ! -f "$file" ] && { log "  ✗ File not found: $file"; return; }
+
+    total=0; issues=0; fixed=0
+    total=$(jq '.papers | length' "$file" 2>/dev/null)
+    log "  $label: $total papers"
+
+    for i in $(seq 0 $((total - 1))); do
+      doi=$(jq -r ".papers[$i].doi // empty" "$file")
+      title=$(jq -r ".papers[$i].title // empty" "$file")
+      abstract=$(jq -r ".papers[$i].abstract // empty" "$file")
+      venue=$(jq -r ".papers[$i].venue // empty" "$file")
+      authors=$(jq -r ".papers[$i].authors // empty" "$file")
+      year=$(jq -r ".papers[$i].year // empty" "$file")
+
+      missing=""
+      [ -z "$title" ] || [ "$title" = "null" ] || [ "$title" = "No title" ] && missing="$missing title"
+      [ -z "$abstract" ] || [ "$abstract" = "null" ] && missing="$missing abstract"
+      [ -z "$venue" ] || [ "$venue" = "null" ] && missing="$missing venue"
+      [ -z "$authors" ] || [ "$authors" = "null" ] || [ "$authors" = "[]" ] && missing="$missing authors"
+      [ -z "$year" ] || [ "$year" = "null" ] || [ "$year" = "0" ] && missing="$missing year"
+
+      if [ -n "$missing" ]; then
+        log "  ⚠️  DOI $doi: missing$missing"
+        issues=$((issues + 1))
+
+        if [ -n "$doi" ] && [ "$doi" != "null" ]; then
+          dc=$(echo "$doi" | sed 's|https://doi.org/||' | sed 's|doi:||')
+
+          # Try Semantic Scholar
+          ss_hd=""
+          [ -n "$SEMANTIC_KEY" ] && ss_hd="-H x-api-key:$SEMANTIC_KEY"
+          ss=$(curl -s --connect-timeout 10 --max-time 30 $ss_hd \
+            "https://api.semanticscholar.org/graph/v1/paper/DOI:$dc?fields=title,abstract,venue,year,authors" 2>/dev/null || echo "{}")
+
+          if [ -n "$ss" ] && ! echo "$ss" | jq -e '.error' > /dev/null 2>&1; then
+            nt=$(echo "$ss" | jq -r '.title // empty')
+            na=$(echo "$ss" | jq -r '.abstract // empty' | head -c 200)
+            nv=$(echo "$ss" | jq -r '.venue // empty')
+            ny=$(echo "$ss" | jq -r '.year // 0')
+            nauth=$(echo "$ss" | jq -r '[.authors[].name] | @json' 2>/dev/null || echo "[]")
+
+            [ -n "$nt" ] && [ "$nt" != "null" ] && jq --argjson idx "$i" --arg v "$nt" '.papers[$idx].title = $v' "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"
+            [ -n "$na" ] && [ "$na" != "null" ] && jq --argjson idx "$i" --arg v "$na" '.papers[$idx].abstract = $v' "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"
+            [ -n "$nv" ] && [ "$nv" != "null" ] && jq --argjson idx "$i" --arg v "$nv" '.papers[$idx].venue = $v' "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"
+            [ "$ny" != "0" ] && [ "$ny" != "null" ] && jq --argjson idx "$i" --argjson v "$ny" '.papers[$idx].year = $v' "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"
+            [ "$nauth" != "[]" ] && [ "$nauth" != "null" ] && jq --argjson idx "$i" --argjson v "$nauth" '.papers[$idx].authors = $v' "$file" > "${file}.tmp" && mv "${file}.tmp" "$file"
+
+            log "    ✓ Fixed via Semantic Scholar"
+            fixed=$((fixed + 1))
+          fi
         fi
-        
-        local issues=0
-        local fixed=0
-        local total=$(jq '.papers | length' "$file")
-        
-        echo "Checking $label: $total papers" | tee -a "$LOG_FILE"
-        
-        for i in $(seq 0 $((total - 1))); do
-            local doi=$(jq -r ".papers[$i].doi" "$file")
-            local title=$(jq -r ".papers[$i].title // empty" "$file")
-            local abstract=$(jq -r ".papers[$i].abstract // empty" "$file")
-            local venue=$(jq -r ".papers[$i].venue // empty" "$file")
-            local authors=$(jq -r ".papers[$i].authors // empty" "$file")
-            local year=$(jq -r ".papers[$i].year // empty" "$file")
-            local url=$(jq -r ".papers[$i].url // empty" "$file")
-            
-            local missing_fields=""
-            
-            # Check for missing critical fields
-            if [ -z "$title" ] || [ "$title" = "null" ] || [ "$title" = "No title" ]; then
-                missing_fields="$missing_fields title"
-            fi
-            if [ -z "$abstract" ] || [ "$abstract" = "null" ]; then
-                missing_fields="$missing_fields abstract"
-            fi
-            if [ -z "$venue" ] || [ "$venue" = "null" ]; then
-                missing_fields="$missing_fields venue"
-            fi
-            if [ -z "$authors" ] || [ "$authors" = "null" ] || [ "$authors" = "[]" ]; then
-                missing_fields="$missing_fields authors"
-            fi
-            if [ -z "$year" ] || [ "$year" = "null" ] || [ "$year" = "0" ]; then
-                missing_fields="$missing_fields year"
-            fi
-            
-            if [ -n "$missing_fields" ]; then
-                echo "⚠️  DOI $doi: missing $missing_fields" | tee -a "$LOG_FILE"
-                issues=$((issues + 1))
-                
-                local new_title=""
-                local new_abstract=""
-                local new_venue=""
-                local new_authors=""
-                local new_year=""
-                
-                # Try Semantic Scholar first
-                local ss_data=$(fetch_from_semantic_scholar "$doi")
-                if [ -n "$ss_data" ] && ! echo "$ss_data" | jq -e '.error' > /dev/null 2>&1; then
-                    new_title=$(echo "$ss_data" | jq -r '.title // empty')
-                    new_abstract=$(echo "$ss_data" | jq -r '.abstract // empty')
-                    new_venue=$(echo "$ss_data" | jq -r '.venue // empty')
-                    new_year=$(echo "$ss_data" | jq -r '.year // empty')
-                    new_authors=$(echo "$ss_data" | jq -r '[.authors[].name] | @json' 2>/dev/null || echo "[]")
-                    echo "  → Semantic Scholar: found data" >> "$LOG_FILE"
-                fi
-                
-                # If still missing, try OpenAlex
-                if [ -z "$new_title" ] || [ -z "$new_abstract" ] || [ -z "$new_venue" ]; then
-                    local oa_data=$(fetch_from_openalex "$doi")
-                    if [ -n "$oa_data" ] && ! echo "$oa_data" | jq -e '.error' > /dev/null 2>&1; then
-                        [ -z "$new_title" ] && new_title=$(echo "$oa_data" | jq -r '.title // empty')
-                        [ -z "$new_abstract" ] && new_abstract=$(echo "$oa_data" | jq -r '.abstract_inverted_index // empty')
-                        # Convert inverted index to text if needed
-                        if [ "$new_abstract" != "null" ] && [ "$new_abstract" != "empty" ]; then
-                            new_abstract=$(echo "$oa_data" | jq -r '.abstract_inverted_index | to_entries | sort_by(.value[0]) | map(.key) | join(" ")' 2>/dev/null || echo "$new_abstract")
-                        fi
-                        [ -z "$new_venue" ] && new_venue=$(echo "$oa_data" | jq -r '.primary_location.source.display_name // empty')
-                        [ -z "$new_year" ] && new_year=$(echo "$oa_data" | jq -r '.publication_year // empty')
-                        [ -z "$new_authors" ] && new_authors=$(echo "$oa_data" | jq -r '[.authorships[].author.display_name] | @json' 2>/dev/null || echo "[]")
-                        echo "  → OpenAlex: filled remaining gaps" >> "$LOG_FILE"
-                    fi
-                fi
-                
-                # If still missing, try Crossref
-                if [ -z "$new_title" ] || [ -z "$new_venue" ] || [ -z "$new_year" ] || [ "$new_authors" = "[]" ]; then
-                    local cr_data=$(fetch_from_crossref "$doi")
-                    if [ -n "$cr_data" ] && ! echo "$cr_data" | jq -e '.message' > /dev/null 2>&1; then
-                        [ -z "$new_title" ] && new_title=$(echo "$cr_data" | jq -r '.message.title[0] // empty')
-                        [ -z "$new_venue" ] && new_venue=$(echo "$cr_data" | jq -r '.message."container-title"[0] // empty')
-                        [ -z "$new_year" ] && new_year=$(echo "$cr_data" | jq -r '.message.published."date-parts"[0][0] // empty')
-                        [ "$new_authors" = "[]" ] && new_authors=$(echo "$cr_data" | jq -r '[.message.author[].given + " " + .message.author[].family] | @json' 2>/dev/null || echo "[]")
-                        echo "  → Crossref: filled remaining gaps" >> "$LOG_FILE"
-                    fi
-                fi
-                
-                # Check if it's an arXiv paper and try arXiv API
-                if [[ "$doi" == *"arXiv"* ]] && [ -z "$new_abstract" ]; then
-                    local arxiv_data=$(fetch_from_arxiv "$doi")
-                    if [ -n "$arxiv_data" ]; then
-                        # Parse XML response
-                        [ -z "$new_abstract" ] && new_abstract=$(echo "$arxiv_data" | grep -oP '<summary>\K[^<]+' | head -1)
-                        [ -z "$new_title" ] && new_title=$(echo "$arxiv_data" | grep -oP '<title>\K[^<]+' | head -1)
-                        echo "  → arXiv: filled abstract" >> "$LOG_FILE"
-                    fi
-                fi
-                
-                # Update the JSON if we got any data
-                if [ -n "$new_title" ] || [ -n "$new_abstract" ] || [ -n "$new_venue" ] || [ -n "$new_year" ] || [ "$new_authors" != "[]" ]; then
-                    # Build jq update command
-                    local jq_cmd=".papers[$i]"
-                    [ -n "$new_title" ] && [ "$new_title" != "null" ] && jq_cmd="$jq_cmd | .papers[$i].title = \"$new_title\""
-                    [ -n "$new_abstract" ] && [ "$new_abstract" != "null" ] && jq_cmd="$jq_cmd | .papers[$i].abstract = \"$new_abstract\""
-                    [ -n "$new_venue" ] && [ "$new_venue" != "null" ] && jq_cmd="$jq_cmd | .papers[$i].venue = \"$new_venue\""
-                    [ -n "$new_year" ] && [ "$new_year" != "null" ] && jq_cmd="$jq_cmd | .papers[$i].year = $new_year"
-                    [ "$new_authors" != "[]" ] && [ "$new_authors" != "null" ] && jq_cmd="$jq_cmd | .papers[$i].authors = $new_authors"
-                    
-                    # Actually update using jq
-                    local temp_file="${file}.tmp"
-                    if [ -n "$new_title" ] && [ "$new_title" != "null" ]; then
-                        jq --argjson idx "$i" --arg title "$new_title" '.papers[$idx].title = $title' "$file" > "$temp_file" && mv "$temp_file" "$file"
-                    fi
-                    if [ -n "$new_abstract" ] && [ "$new_abstract" != "null" ]; then
-                        jq --argjson idx "$i" --arg abstract "$new_abstract" '.papers[$idx].abstract = $abstract' "$file" > "$temp_file" && mv "$temp_file" "$file"
-                    fi
-                    if [ -n "$new_venue" ] && [ "$new_venue" != "null" ]; then
-                        jq --argjson idx "$i" --arg venue "$new_venue" '.papers[$idx].venue = $venue' "$file" > "$temp_file" && mv "$temp_file" "$file"
-                    fi
-                    if [ -n "$new_year" ] && [ "$new_year" != "null" ] && [ "$new_year" != "0" ]; then
-                        jq --argjson idx "$i" --argjson year "$new_year" '.papers[$idx].year = $year' "$file" > "$temp_file" && mv "$temp_file" "$file"
-                    fi
-                    if [ "$new_authors" != "[]" ] && [ "$new_authors" != "null" ]; then
-                        jq --argjson idx "$i" --argjson authors "$new_authors" '.papers[$idx].authors = $authors' "$file" > "$temp_file" && mv "$temp_file" "$file"
-                    fi
-                    
-                    echo "  ✓ Fixed paper data" | tee -a "$LOG_FILE"
-                    fixed=$((fixed + 1))
-                fi
-                
-                sleep 1  # Rate limiting
-            fi
-        done
-        
-        echo "$label: $issues issues found, $fixed fixed" | tee -a "$LOG_FILE"
-    }
-    
-    check_papers_file "$DATA_DIR/top-6-papers-update.json" "Top-6 Papers"
-    check_papers_file "$DATA_DIR/all-papers-update.json" "All Papers"
-    check_papers_file "$DATA_DIR/developer-papers-update.json" "Developer Papers"
+        sleep 1
+      fi
+    done
+    log "  $label: $issues issues, $fixed fixed"
+  }
+
+  check_papers "$DATA_DIR/top-6-papers-update.json"    "Top-6"
+  check_papers "$DATA_DIR/all-papers-update.json"       "All"
+  check_papers "$DATA_DIR/developer-papers-update.json" "Developer"
 fi
 
-# ============================================
-# 3. SKILLS: Check GitHub stats and ClawHub data
-# ============================================
+# ═══════════════════════════════════════
+# SKILLS: Check GitHub and ClawHub skills
+# ═══════════════════════════════════════
 if [ "$CHECK_SKILLS" = true ]; then
-    echo "" | tee -a "$LOG_FILE"
-    echo "--- [SKILLS] Checking data completeness ---" | tee -a "$LOG_FILE"
-    
-    # Check GitHub Skills
-    check_github_skills() {
-        local file="$DATA_DIR/github-skills-update.json"
-        
-        if [ ! -f "$file" ]; then
-            echo "File not found: $file" | tee -a "$LOG_FILE"
-            return
+  log ""
+  log "--- [SKILLS] ---"
+
+  # GitHub Skills
+  gs_file="$DATA_DIR/github-skills-update.json"
+  if [ -f "$gs_file" ]; then
+    gs_total=0; issues=0; fixed=0
+    gs_total=$(jq '.skills | length' "$gs_file" 2>/dev/null)
+    log "  GitHub Skills: $gs_total"
+
+    for i in $(seq 0 $((gs_total - 1))); do
+      fn=$(jq -r ".skills[$i].full_name" "$gs_file")
+      stars=$(jq -r ".skills[$i].stars // empty" "$gs_file")
+      forks=$(jq -r ".skills[$i].forks // empty" "$gs_file")
+      author=$(jq -r ".skills[$i].author // empty" "$gs_file")
+
+      missing=""
+      [ -z "$stars" ] || [ "$stars" = "null" ] && missing="$missing stars"
+      [ -z "$forks" ] || [ "$forks" = "null" ] && missing="$missing forks"
+
+      if [ -n "$missing" ]; then
+        log "  ⚠️  $fn: missing$missing"
+        issues=$((issues + 1))
+
+        if [ -n "$TOKEN" ]; then
+          resp=$(curl -s --connect-timeout 10 --max-time 30 \
+            -H "Authorization: token $TOKEN" \
+            "https://api.github.com/repos/$fn" 2>/dev/null || echo "")
+          if [ -n "$resp" ] && ! echo "$resp" | jq -e '.message' > /dev/null 2>&1; then
+            ns=$(echo "$resp" | jq -r '.stargazers_count')
+            nf=$(echo "$resp" | jq -r '.forks_count')
+            jq --argjson idx "$i" --argjson s "$ns" '.skills[$idx].stars = $s' "$gs_file" > "${gs_file}.tmp" && mv "${gs_file}.tmp" "$gs_file"
+            jq --argjson idx "$i" --argjson f "$nf" '.skills[$idx].forks = $f' "$gs_file" > "${gs_file}.tmp" && mv "${gs_file}.tmp" "$gs_file"
+            log "    ✓ Fixed: stars=$ns, forks=$nf"
+            fixed=$((fixed + 1))
+          fi
         fi
-        
-        local issues=0
-        local fixed=0
-        local total=$(jq '.skills | length' "$file")
-        
-        echo "Checking GitHub Skills: $total skills" | tee -a "$LOG_FILE"
-        
-        for i in $(seq 0 $((total - 1))); do
-            local full_name=$(jq -r ".skills[$i].full_name" "$file")
-            local stars=$(jq -r ".skills[$i].stars // empty" "$file")
-            local forks=$(jq -r ".skills[$i].forks // empty" "$file")
-            local author=$(jq -r ".skills[$i].author // empty" "$file")
-            local url=$(jq -r ".skills[$i].url // empty" "$file")
-            
-            local missing_fields=""
-            
-            if [ -z "$stars" ] || [ "$stars" = "null" ]; then missing_fields="$missing_fields stars"; fi
-            if [ -z "$forks" ] || [ "$forks" = "null" ]; then missing_fields="$missing_fields forks"; fi
-            if [ -z "$author" ] || [ "$author" = "null" ] || [ "$author" = "unknown" ] || [ "$author" = "Unknown" ]; then
-                missing_fields="$missing_fields author"
-            fi
-            if [ -z "$url" ] || [ "$url" = "null" ]; then missing_fields="$missing_fields url"; fi
-            
-            if [ -n "$missing_fields" ]; then
-                echo "⚠️  $full_name: missing $missing_fields" | tee -a "$LOG_FILE"
-                issues=$((issues + 1))
-                
-                local response=$(curl -s -H "Authorization: token $TOKEN" \
-                    "https://api.github.com/repos/$full_name" 2>/dev/null)
-                
-                if [ -n "$response" ] && ! echo "$response" | jq -e '.message' > /dev/null 2>&1; then
-                    local new_stars=$(echo "$response" | jq -r '.stargazers_count')
-                    local new_forks=$(echo "$response" | jq -r '.forks_count')
-                    local new_author=$(echo "$response" | jq -r '.owner.login')
-                    local new_url="https://github.com/$full_name"
-                    
-                    # Update JSON
-                    local temp="${file}.tmp"
-                    jq --argjson idx "$i" --argjson stars "$new_stars" '.skills[$idx].stars = $stars' "$file" > "$temp" && mv "$temp" "$file"
-                    jq --argjson idx "$i" --argjson forks "$new_forks" '.skills[$idx].forks = $forks' "$file" > "$temp" && mv "$temp" "$file"
-                    jq --argjson idx "$i" --arg author "$new_author" '.skills[$idx].author = $author' "$file" > "$temp" && mv "$temp" "$file"
-                    jq --argjson idx "$i" --arg url "$new_url" '.skills[$idx].url = $url' "$file" > "$temp" && mv "$temp" "$file"
-                    
-                    echo "  ✓ Fixed: stars=$new_stars, forks=$new_forks, author=$new_author" | tee -a "$LOG_FILE"
-                    fixed=$((fixed + 1))
-                fi
-                
-                sleep 0.5
-            fi
-        done
-        
-        echo "GitHub Skills: $issues issues, $fixed fixed" | tee -a "$LOG_FILE"
-    }
-    
-    # Check ClawHub Skills
-    check_clawhub_skills() {
-        local file="$DATA_DIR/clawhub-skills-update.json"
-        
-        if [ ! -f "$file" ]; then
-            echo "File not found: $file" | tee -a "$LOG_FILE"
-            return
+        sleep 0.5
+      fi
+    done
+    log "  GitHub Skills: $issues issues, $fixed fixed"
+  fi
+
+  # ClawHub Skills
+  cs_file="$DATA_DIR/clawhub-skills-update.json"
+  if [ -f "$cs_file" ]; then
+    cs_total=0; issues=0; fixed=0
+    cs_total=$(jq '.skills | length' "$cs_file" 2>/dev/null)
+    log "  ClawHub Skills: $cs_total"
+
+    for i in $(seq 0 $((cs_total - 1))); do
+      slug=$(jq -r ".skills[$i].slug" "$cs_file")
+      downloads=$(jq -r ".skills[$i].downloads // empty" "$cs_file")
+      stars=$(jq -r ".skills[$i].stars // empty" "$cs_file")
+
+      missing=""
+      [ -z "$downloads" ] || [ "$downloads" = "null" ] && missing="$missing downloads"
+      [ -z "$stars" ] || [ "$stars" = "null" ] && missing="$missing stars"
+
+      if [ -n "$missing" ]; then
+        log "  ⚠️  $slug: missing$missing"
+        issues=$((issues + 1))
+
+        resp=$(curl -s --connect-timeout 10 --max-time 30 \
+          "https://clawhub.ai/api/v1/skills/$slug" 2>/dev/null || echo "{}")
+        if [ -n "$resp" ] && ! echo "$resp" | jq -e '.error' > /dev/null 2>&1; then
+          nd=$(echo "$resp" | jq -r '.skill.stats.downloads // 0')
+          ns=$(echo "$resp" | jq -r '.skill.stats.stars // 0')
+          jq --argjson idx "$i" --argjson d "$nd" '.skills[$idx].downloads = $d' "$cs_file" > "${cs_file}.tmp" && mv "${cs_file}.tmp" "$cs_file"
+          jq --argjson idx "$i" --argjson s "$ns" '.skills[$idx].stars = $s' "$cs_file" > "${cs_file}.tmp" && mv "${cs_file}.tmp" "$cs_file"
+          log "    ✓ Fixed: downloads=$nd, stars=$ns"
+          fixed=$((fixed + 1))
         fi
-        
-        local issues=0
-        local fixed=0
-        local total=$(jq '.skills | length' "$file")
-        
-        echo "Checking ClawHub Skills: $total skills" | tee -a "$LOG_FILE"
-        
-        for i in $(seq 0 $((total - 1))); do
-            local slug=$(jq -r ".skills[$i].slug" "$file")
-            local downloads=$(jq -r ".skills[$i].downloads // empty" "$file")
-            local stars=$(jq -r ".skills[$i].stars // empty" "$file")
-            local author=$(jq -r ".skills[$i].author // empty" "$file")
-            local url=$(jq -r ".skills[$i].url // empty" "$file")
-            
-            local missing_fields=""
-            
-            if [ -z "$downloads" ] || [ "$downloads" = "null" ]; then missing_fields="$missing_fields downloads"; fi
-            if [ -z "$stars" ] || [ "$stars" = "null" ]; then missing_fields="$missing_fields stars"; fi
-            if [ -z "$author" ] || [ "$author" = "null" ] || [ "$author" = "unknown" ] || [ "$author" = "Unknown" ]; then
-                missing_fields="$missing_fields author"
-            fi
-            if [ -z "$url" ] || [ "$url" = "null" ]; then missing_fields="$missing_fields url"; fi
-            
-            if [ -n "$missing_fields" ]; then
-                echo "⚠️  $slug: missing $missing_fields" | tee -a "$LOG_FILE"
-                issues=$((issues + 1))
-                
-                # Fetch from ClawHub API (correct structure: .skill.stats and .owner.handle)
-                local response=$(curl -s "https://clawhub.ai/api/v1/skills/$slug" 2>/dev/null)
-                
-                if [ -n "$response" ] && ! echo "$response" | jq -e '.error' > /dev/null 2>&1; then
-                    local new_downloads=$(echo "$response" | jq -r '.skill.stats.downloads // 0')
-                    local new_stars=$(echo "$response" | jq -r '.skill.stats.stars // 0')
-                    local new_author=$(echo "$response" | jq -r '.owner.handle // "unknown"')
-                    local new_url="https://clawhub.ai/skills/$slug"
-                    
-                    # Update JSON
-                    local temp="${file}.tmp"
-                    jq --argjson idx "$i" --argjson downloads "$new_downloads" '.skills[$idx].downloads = $downloads' "$file" > "$temp" && mv "$temp" "$file"
-                    jq --argjson idx "$i" --argjson stars "$new_stars" '.skills[$idx].stars = $stars' "$file" > "$temp" && mv "$temp" "$file"
-                    jq --argjson idx "$i" --arg author "$new_author" '.skills[$idx].author = $author' "$file" > "$temp" && mv "$temp" "$file"
-                    jq --argjson idx "$i" --arg url "$new_url" '.skills[$idx].url = $url' "$file" > "$temp" && mv "$temp" "$file"
-                    
-                    if [ "$new_author" = "unknown" ]; then
-                        echo "  ⚠️  Author still unknown for $slug" | tee -a "$LOG_FILE"
-                    else
-                        echo "  ✓ Fixed: downloads=$new_downloads, stars=$new_stars, author=$new_author" | tee -a "$LOG_FILE"
-                        fixed=$((fixed + 1))
-                    fi
-                fi
-                
-                sleep 0.5
-            fi
-        done
-        
-        echo "ClawHub Skills: $issues issues, $fixed fixed" | tee -a "$LOG_FILE"
-    }
-    
-    check_github_skills
-    check_clawhub_skills
+        sleep 0.5
+      fi
+    done
+    log "  ClawHub Skills: $issues issues, $fixed fixed"
+  fi
 fi
 
-# ============================================
-# 4. Copy updated files to src/data
-# ============================================
-echo "" | tee -a "$LOG_FILE"
-echo "--- Copying to src/data ---" | tee -a "$LOG_FILE"
+# ═══════════════════════════════════════
+# Deploy if requested
+# ═══════════════════════════════════════
+if [ "$DEPLOY" = true ]; then
+  log ""
+  log "--- Deploying ---"
+  cd "$REPO_ROOT"
+  npm run build 2>&1 | tail -5 | tee -a "$LOG_FILE"
 
-cp "$DATA_DIR/Research-agent-list-update.json" "$WEBSITE_DIR/src/data/" 2>/dev/null || true
-cp "$DATA_DIR/General-agent-list-update.json" "$WEBSITE_DIR/src/data/" 2>/dev/null || true
-cp "$DATA_DIR/top-6-papers-update.json" "$WEBSITE_DIR/src/data/" 2>/dev/null || true
-cp "$DATA_DIR/all-papers-update.json" "$WEBSITE_DIR/src/data/" 2>/dev/null || true
-cp "$DATA_DIR/developer-papers-update.json" "$WEBSITE_DIR/src/data/" 2>/dev/null || true
-cp "$DATA_DIR/github-skills-update.json" "$WEBSITE_DIR/src/data/" 2>/dev/null || true
-cp "$DATA_DIR/clawhub-skills-update.json" "$WEBSITE_DIR/src/data/" 2>/dev/null || true
-
-echo "✓ Copied all files" | tee -a "$LOG_FILE"
-
-# ============================================
-# 5. Rebuild and deploy (optional)
-# ============================================
-if [ "$2" = "--deploy" ]; then
-    echo "" | tee -a "$LOG_FILE"
-    echo "--- Rebuilding and deploying ---" | tee -a "$LOG_FILE"
-    
-    cd "$WEBSITE_DIR"
-    npm run build 2>&1 | tail -5 | tee -a "$LOG_FILE"
-    
-    rm -rf /root/gh-pages-temp
-    mkdir -p /root/gh-pages-temp
-    cp -r "$WEBSITE_DIR/dist/*" /root/gh-pages-temp/ 2>/dev/null || true
-    
-    cd /root/gh-pages-temp
-    git init --quiet
-    git config user.email "onepersonlab@github.com"
-    git config user.name "OnePersonLab"
-    git add -A
-    git commit -m "deploy: completeness audit $(date +%Y%m%d)" --quiet
-    git remote add origin https://github.com/onepersonlab/onepersonlab-website.git
-    git push origin master:gh-pages --force --quiet 2>/dev/null || true
-    
-    rm -rf /root/gh-pages-temp
-    echo "✓ Deployed to gh-pages" | tee -a "$LOG_FILE"
+  rm -rf /tmp/gh-pages-deploy
+  mkdir -p /tmp/gh-pages-deploy
+  cp -r dist/* /tmp/gh-pages-deploy/
+  cd /tmp/gh-pages-deploy
+  git init -q
+  git config user.email "onepersonlab@github.com"
+  git config user.name "OnePersonLab"
+  git add -A
+  git commit -m "deploy: audit $(date +%Y%m%d)" -q
+  git remote add origin "https://github.com/onepersonlab/onepersonlab-website.git"
+  git push origin master:gh-pages --force -q 2>&1 || log "⚠️ Deploy may have failed"
+  rm -rf /tmp/gh-pages-deploy
+  log "✓ Deployed"
 fi
 
-# ============================================
-# Summary
-# ============================================
-echo "" | tee -a "$LOG_FILE"
-echo "=== Audit Complete ===" | tee -a "$LOG_FILE"
-echo "Finished: $(date)" | tee -a "$LOG_FILE"
-
-# Push changes
-cd "$WEBSITE_DIR"
-git add data/*.json src/data/*.json logs/*.log 2>/dev/null || true
-git commit -m "audit: data completeness check $(date +%Y%m%d)" --quiet 2>/dev/null || true
-git push origin master --quiet 2>/dev/null || true
+log ""
+log "=== Audit Complete: $(date) ==="

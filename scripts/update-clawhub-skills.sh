@@ -1,84 +1,83 @@
 #!/bin/bash
 # ClawHub Skills Updater
-# Fetches top skills from ClawHub registry by downloads using API v1
-# Usage: ./update-clawhub-skills.sh
+# Ensure ~/.local/bin is in PATH (for jq etc.)
+export PATH="$HOME/.local/bin:$PATH"
 
-set -e
+# Fetches top skills from ClawHub registry
+# Usage: ./scripts/update-clawhub-skills.sh
 
-DATA_DIR="/root/onepersonlab-website/data"
-NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-LOG_DIR="/root/onepersonlab-website/logs"
+set -euo pipefail
+
+REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+DATA_DIR="$REPO_ROOT/src/data"
 CLAWHUB_API="https://clawhub.ai/api/v1"
+NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 
 echo "=== ClawHub Skills Updater ==="
 echo "Timestamp: $NOW"
 echo ""
 
-# Ensure log directory exists
-mkdir -p "$LOG_DIR"
-
-# Fetch top skills by downloads using search API
-# Since /api/v1/skills?sort=downloads returns empty, we use search with manual ranking
-echo "--- Fetching ClawHub Skills Stats ---"
-
-# List of known popular skills (will be updated dynamically)
+# Popular skills list (update periodically)
 KNOWN_SKILLS="self-improving-agent agent-browser-clawdbot openclaw-tavily-search xiucheng-self-improving-agent literature-review openclaw-cli openclaw-ops-guardrails agent-directory agent-team agent-group openclaw-error-fix openclaw-power-ops"
 
 SKILLS_JSON="[]"
+COUNT=0
+ERRORS=0
 
 for SLUG in $KNOWN_SKILLS; do
-  echo "Fetching: $SLUG"
-  
-  RESULT=$(curl -s "$CLAWHUB_API/skills/$SLUG" 2>/dev/null || echo "{}")
-  
-  SLUG_VAL=$(echo "$RESULT" | jq -r '.skill.slug // empty')
-  DISPLAY=$(echo "$RESULT" | jq -r '.skill.displayName // .skill.slug // empty')
-  SUMMARY=$(echo "$RESULT" | jq -r '.skill.summary // ""' | head -c 80)
-  DOWNLOADS=$(echo "$RESULT" | jq -r '.skill.stats.downloads // 0')
-  STARS=$(echo "$RESULT" | jq -r '.skill.stats.stars // 0')
-  OWNER=$(echo "$RESULT" | jq -r '.owner.handle // "unknown"')
-  
-  if [ -n "$SLUG_VAL" ]; then
-    echo "  ✓ Downloads: $DOWNLOADS, Stars: $STARS"
-    
-    SKILL_OBJ=$(jq -n \
-      --arg slug "$SLUG_VAL" \
-      --arg display "$DISPLAY" \
-      --arg summary "$SUMMARY" \
-      --arg category "General" \
-      --argjson downloads "$DOWNLOADS" \
-      --argjson stars "$STARS" \
-      --arg author "$OWNER" \
-      --arg url "https://clawhub.ai/$OWNER/$SLUG_VAL" \
-      '{
-        slug: $slug,
-        displayName: $display,
-        description: $summary,
-        category: $category,
-        downloads: $downloads,
-        stars: $stars,
-        author: $author,
-        url: $url
-      }'
-    )
-    
-    SKILLS_JSON=$(echo "$SKILLS_JSON" | jq --argjson s "$SKILL_OBJ" '. + [$s]')
+  COUNT=$((COUNT + 1))
+  echo "[$COUNT] $SLUG"
+
+  RESPONSE=$(curl -s --connect-timeout 10 --max-time 30 "$CLAWHUB_API/skills/$SLUG" 2>/dev/null || echo "{}")
+
+  SLUG_VAL=$(echo "$RESPONSE" | jq -r '.skill.slug // empty')
+  if [ -z "$SLUG_VAL" ]; then
+    echo "  ⚠️  Not found, skipping"
+    ERRORS=$((ERRORS + 1))
+    continue
   fi
-  
+
+  DISPLAY=$(echo "$RESPONSE" | jq -r '.skill.displayName // .skill.slug // empty')
+  SUMMARY=$(echo "$RESPONSE" | jq -r '.skill.summary // ""' | head -c 80)
+  DOWNLOADS=$(echo "$RESPONSE" | jq -r '.skill.stats.downloads // 0')
+  STARS=$(echo "$RESPONSE" | jq -r '.skill.stats.stars // 0')
+  OWNER=$(echo "$RESPONSE" | jq -r '.owner.handle // "unknown"')
+
+  echo "  ✓ Downloads: $DOWNLOADS, Stars: $STARS"
+
+  SKILL_OBJ=$(jq -n \
+    --arg slug "$SLUG_VAL" \
+    --arg display "$DISPLAY" \
+    --arg summary "$SUMMARY" \
+    --arg category "General" \
+    --argjson downloads "$DOWNLOADS" \
+    --argjson stars "$STARS" \
+    --arg author "$OWNER" \
+    --arg url "https://clawhub.ai/$OWNER/$SLUG_VAL" \
+    '{
+      slug: $slug,
+      displayName: $display,
+      description: $summary,
+      category: $category,
+      downloads: $downloads,
+      stars: $stars,
+      author: $author,
+      url: $url
+    }')
+
+  SKILLS_JSON=$(echo "$SKILLS_JSON" | jq --argjson s "$SKILL_OBJ" '. + [$s]')
   sleep 1
 done
 
-# Sort by downloads descending
+# Sort by downloads descending, top 12
 SKILLS_JSON=$(echo "$SKILLS_JSON" | jq 'sort_by(-.downloads) | .[:12]')
+FINAL_COUNT=$(echo "$SKILLS_JSON" | jq 'length')
 
-COUNT=$(echo "$SKILLS_JSON" | jq 'length')
-
-# Write output
-OUTPUT_JSON=$(jq -n \
-  --arg desc "ClawHub Skills - Top Downloads (Real Data from API)" \
+jq -n \
+  --arg desc "ClawHub Skills - Top Downloads" \
   --arg source "ClawHub API v1" \
   --arg generated "$NOW" \
-  --argjson count "$COUNT" \
+  --argjson count "$FINAL_COUNT" \
   --argjson skills "$SKILLS_JSON" \
   '{
     description: $desc,
@@ -86,13 +85,8 @@ OUTPUT_JSON=$(jq -n \
     generated_at: $generated,
     skill_count: $count,
     skills: $skills
-  }'
-)
+  }' > "$DATA_DIR/clawhub-skills-update.json"
 
-echo "$OUTPUT_JSON" > "$DATA_DIR/clawhub-skills-update.json"
-cp "$DATA_DIR/clawhub-skills-update.json" "/root/onepersonlab-website/src/data/clawhub-skills-update.json"
-echo "✓ Updated: $DATA_DIR/clawhub-skills-update.json ($COUNT skills)"
-
+echo "✓ Updated: $DATA_DIR/clawhub-skills-update.json ($FINAL_COUNT skills)"
 echo ""
-echo "=== ClawHub Skills Update Complete ==="
-echo "Finished at: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+echo "=== ClawHub Skills Update Complete: $(date -u +%Y-%m-%dT%H:%M:%SZ) ==="
