@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { trackCTAClick } from '../utils/analytics';
 
 interface NavItem {
   id: string;
@@ -44,6 +45,7 @@ export function Navigation() {
   }, []);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string, id: string) => {
+    trackCTAClick(`Nav: ${id}`, href);
     if (href === '#') {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });

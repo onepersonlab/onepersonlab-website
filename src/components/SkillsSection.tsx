@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getGitHubSkills, getClawHubSkills } from '../data/skills';
 import type { GitHubSkill, ClawHubSkill } from '../data/skills';
+import { trackSectionView, trackExternalLink } from '../utils/analytics';
 
 const CATEGORY_COLORS: Record<string, string> = {
   'Official Skills': 'bg-blue-500/20 text-blue-400',
@@ -39,7 +40,7 @@ export function SkillsSection() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true);
+        if (entry.isIntersecting) { setIsVisible(true); trackSectionView('skills'); }
       },
       { threshold: 0.1 }
     );
@@ -75,7 +76,7 @@ export function SkillsSection() {
                   {skill.category}
                 </span>
               </div>
-              <a href={skill.url} target="_blank" rel="noopener noreferrer" className="block">
+              <a href={skill.url} target="_blank" rel="noopener noreferrer" onClick={() => trackExternalLink(skill.name, skill.url)} className="block">
                 <h4 className="text-white font-medium mb-2 group-hover:text-mint-400 transition-colors line-clamp-1" style={{ fontFamily: 'var(--font-display)' }}>
                   {skill.name}
                 </h4>
@@ -132,7 +133,7 @@ export function SkillsSection() {
                   {skill.category}
                 </span>
               </div>
-              <a href={skill.url} target="_blank" rel="noopener noreferrer" className="block">
+              <a href={skill.url} target="_blank" rel="noopener noreferrer" onClick={() => trackExternalLink(skill.displayName, skill.url)} className="block">
                 <h4 className="text-white font-medium mb-2 group-hover:text-mint-400 transition-colors line-clamp-1" style={{ fontFamily: 'var(--font-display)' }}>
                   {skill.displayName}
                 </h4>

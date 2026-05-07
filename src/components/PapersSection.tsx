@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getTopPapers, getAllPapers, getDeveloperPapers } from '../data/papers';
 import type { Paper } from '../data/papers';
+import { trackSectionView, trackSortChange, trackExpand, trackExternalLink } from '../utils/analytics';
 
 type SortMode = 'year' | 'citations';
 
@@ -35,7 +36,7 @@ export function PapersSection() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true);
+        if (entry.isIntersecting) { setIsVisible(true); trackSectionView('papers'); }
       },
       { threshold: 0.1 }
     );
@@ -60,7 +61,7 @@ export function PapersSection() {
       {/* Sort controls */}
       <div className={`max-w-6xl mx-auto mb-8 flex justify-center gap-4 transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <button
-          onClick={() => setSortMode('year')}
+          onClick={() => { setSortMode('year'); trackSortChange('papers', 'year'); }}
           className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
             sortMode === 'year'
               ? 'bg-mint-400 text-navy-900'
@@ -77,7 +78,7 @@ export function PapersSection() {
           </span>
         </button>
         <button
-          onClick={() => setSortMode('citations')}
+          onClick={() => { setSortMode('citations'); trackSortChange('papers', 'citations'); }}
           className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
             sortMode === 'citations'
               ? 'bg-mint-400 text-navy-900'
@@ -111,7 +112,7 @@ export function PapersSection() {
                   )}
                 </div>
               </div>
-              <a href={paper.url} target="_blank" rel="noopener noreferrer" className="block">
+              <a href={paper.url} target="_blank" rel="noopener noreferrer" onClick={() => trackExternalLink(paper.title.slice(0, 40), paper.url)} className="block">
                 <h3 className="text-white font-medium mb-3 group-hover:text-mint-400 transition-colors line-clamp-2" style={{ fontFamily: 'var(--font-display)' }}>
                   {paper.title}
                 </h3>
@@ -137,7 +138,7 @@ export function PapersSection() {
         {/* Expand/Collapse button */}
         <div className="mt-8 text-center">
           <button
-            onClick={() => setExpanded(!expanded)}
+            onClick={() => { setExpanded(!expanded); trackExpand('papers', !expanded, combinedPapers.length); }}
             className="inline-flex items-center gap-2 px-6 py-3 border border-mint-400/50 text-mint-400 hover:bg-mint-400/10 rounded-lg transition-all duration-300"
             style={{ fontFamily: 'var(--font-body)' }}
             aria-expanded={expanded}
@@ -177,7 +178,7 @@ export function PapersSection() {
                   )}
                 </div>
               </div>
-              <a href={paper.url} target="_blank" rel="noopener noreferrer" className="block">
+              <a href={paper.url} target="_blank" rel="noopener noreferrer" onClick={() => trackExternalLink(paper.title.slice(0, 40), paper.url)} className="block">
                 <h3 className="text-white font-medium mb-3 group-hover:text-mint-400 transition-colors line-clamp-2" style={{ fontFamily: 'var(--font-display)' }}>
                   {paper.title}
                 </h3>

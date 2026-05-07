@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getRepos, getMeta } from '../data/repos';
 import type { AgentType, Repo } from '../data/repos';
+import { trackSectionView, trackTabSwitch, trackSortChange, trackExpand, trackExternalLink } from '../utils/analytics';
 
 const LANGUAGE_COLORS: Record<string, string> = {
   TypeScript: '#3178c6',
@@ -41,6 +42,7 @@ export function ReposSection() {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          trackSectionView('agents');
         }
       },
       { threshold: 0.1 }
@@ -102,7 +104,7 @@ export function ReposSection() {
       {/* Type toggle */}
       <div className={`max-w-6xl mx-auto mb-8 flex justify-center gap-4 transition-all duration-1000 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <button
-          onClick={() => setAgentType('research')}
+          onClick={() => { setAgentType('research'); trackTabSwitch('agent_type', 'research'); }}
           className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
             agentType === 'research'
               ? 'bg-mint-400 text-navy-900'
@@ -119,7 +121,7 @@ export function ReposSection() {
           </span>
         </button>
         <button
-          onClick={() => setAgentType('general')}
+          onClick={() => { setAgentType('general'); trackTabSwitch('agent_type', 'general'); }}
           className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
             agentType === 'general'
               ? 'bg-mint-400 text-navy-900'
@@ -140,7 +142,7 @@ export function ReposSection() {
       {/* Sort controls */}
       <div className={`max-w-6xl mx-auto mb-8 flex justify-center gap-4 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <button
-          onClick={() => setSortMode('stars')}
+          onClick={() => { setSortMode('stars'); trackSortChange('agents', 'stars'); }}
           className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
             sortMode === 'stars'
               ? 'bg-mint-400 text-navy-900'
@@ -157,7 +159,7 @@ export function ReposSection() {
           </span>
         </button>
         <button
-          onClick={() => setSortMode('weekly')}
+          onClick={() => { setSortMode('weekly'); trackSortChange('agents', 'trend'); }}
           className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
             sortMode === 'weekly'
               ? 'bg-mint-400 text-navy-900'
@@ -195,7 +197,7 @@ export function ReposSection() {
                 <tr key={repo.full_name} className="border-b border-white/5 hover:bg-white/5 transition-colors last:border-b-0">
                   <td className="px-6 py-4"><span className="text-mint-400 font-bold text-lg" style={{ fontFamily: 'var(--font-mono)' }}>{index + 1}</span></td>
                   <td className="px-6 py-4">
-                    <a href={repo.url} target="_blank" rel="noopener noreferrer" className="group inline-flex flex-col">
+                    <a href={repo.url} target="_blank" rel="noopener noreferrer" onClick={() => trackExternalLink(repo.full_name, repo.url)} className="group inline-flex flex-col">
                       <span className="text-mint-400 font-medium group-hover:text-mint-500 transition-colors" style={{ fontFamily: 'var(--font-mono)' }}>{repo.full_name}</span>
                       <span className="text-sm text-white/50 mt-1 line-clamp-2 max-w-md" style={{ fontFamily: 'var(--font-body)' }}>{repo.description}</span>
                     </a>
@@ -236,7 +238,7 @@ export function ReposSection() {
         
         <div className="mt-8 text-center">
           <button
-            onClick={() => setExpanded(!expanded)}
+            onClick={() => { setExpanded(!expanded); trackExpand('agents', !expanded, repos.length); }}
             className="inline-flex items-center gap-2 px-6 py-3 border border-mint-400/50 text-mint-400 hover:bg-mint-400/10 rounded-lg transition-all duration-300"
             style={{ fontFamily: 'var(--font-body)' }}
             aria-expanded={expanded}
