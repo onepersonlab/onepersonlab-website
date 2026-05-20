@@ -1,7 +1,7 @@
 {
   "description": "Research Agent Repositories",
   "source": "GitHub API",
-  "generated_at": "2026-05-20T08:00:00Z",
+  "generated_at": "2026-05-20T10:10:00Z",
   "repo_count": 38,
   "repos": [
     {
@@ -478,11 +478,11 @@
       "owner": "HKUDS",
       "description": "\"CLI-Anything: Making ALL Software Agent-Native\" — CLI-Hub for agent-driven tool execution and software integration",
       "language": "Python",
-      "stars": 38056,
-      "forks": 3633,
-      "weeklyStars": 7266,
-      "changeLabel": "(7-day change)",
-      "updated": "2026-05-20T08:00:00Z",
+      "stars": 38159,
+      "forks": 3638,
+      "weeklyStars": 1038,
+      "changeLabel": "(today)",
+      "updated": "2026-05-20T10:10:00Z",
       "url": "https://github.com/HKUDS/CLI-Anything"
     },
     {
@@ -491,11 +491,11 @@
       "owner": "HKUDS",
       "description": "\"ViMax: Agentic Video Generation (Director, Screenwriter, Producer, and Video Generator All-in-One)\"",
       "language": "Python",
-      "stars": 5678,
-      "forks": 949,
-      "weeklyStars": 3521,
-      "changeLabel": "(7-day change)",
-      "updated": "2026-05-20T08:00:00Z",
+      "stars": 5739,
+      "forks": 955,
+      "weeklyStars": 503,
+      "changeLabel": "(today)",
+      "updated": "2026-05-20T10:10:00Z",
       "url": "https://github.com/HKUDS/ViMax"
     }
   ]
