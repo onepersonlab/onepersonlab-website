@@ -1,8 +1,8 @@
 {
   "description": "Research Agent Repositories",
   "source": "GitHub API",
-  "generated_at": "2026-05-07T04:35:00Z",
-  "repo_count": 36,
+  "generated_at": "2026-05-20T08:00:00Z",
+  "repo_count": 38,
   "repos": [
     {
       "full_name": "karpathy/autoresearch",
@@ -471,6 +471,32 @@
       "changeLabel": "(22-day change)",
       "updated": "2026-05-06T21:19:27Z",
       "url": "https://github.com/sjtu-sai-agents/MagiClaw"
+    },
+    {
+      "full_name": "HKUDS/CLI-Anything",
+      "name": "CLI-Anything",
+      "owner": "HKUDS",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" — CLI-Hub for agent-driven tool execution and software integration",
+      "language": "Python",
+      "stars": 38056,
+      "forks": 3633,
+      "weeklyStars": 7266,
+      "changeLabel": "(7-day change)",
+      "updated": "2026-05-20T08:00:00Z",
+      "url": "https://github.com/HKUDS/CLI-Anything"
+    },
+    {
+      "full_name": "HKUDS/ViMax",
+      "name": "ViMax",
+      "owner": "HKUDS",
+      "description": "\"ViMax: Agentic Video Generation (Director, Screenwriter, Producer, and Video Generator All-in-One)\"",
+      "language": "Python",
+      "stars": 5678,
+      "forks": 949,
+      "weeklyStars": 3521,
+      "changeLabel": "(7-day change)",
+      "updated": "2026-05-20T08:00:00Z",
+      "url": "https://github.com/HKUDS/ViMax"
     }
   ]
 }

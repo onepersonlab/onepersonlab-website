@@ -20,6 +20,10 @@ const CATEGORY_COLORS: Record<string, string> = {
   'Tools': 'bg-slate-500/20 text-slate-400',
   'Discovery': 'bg-violet-500/20 text-violet-400',
   'Multi-Agent': 'bg-emerald-500/20 text-emerald-400',
+  'Academic Skills': 'bg-teal-500/20 text-teal-400',
+  'Agent Optimization': 'bg-pink-500/20 text-pink-400',
+  'Plugin Registry': 'bg-lime-500/20 text-lime-400',
+  'Agent Infra': 'bg-orange-500/20 text-orange-400',
 };
 
 export function SkillsSection() {

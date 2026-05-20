@@ -1,8 +1,8 @@
 {
   "description": "GitHub Skills Repositories - Detailed Info",
   "source": "GitHub API",
-  "generated_at": "2026-04-12T00:30:00Z",
-  "skill_count": 9,
+  "generated_at": "2026-05-20T08:00:00Z",
+  "skill_count": 16,
   "skills": [
     {
       "full_name": "anthropics/skills",
@@ -129,6 +129,104 @@
       "url": "https://github.com/yunshenwuchuxun/latex-paper-skills",
       "category": "Writing Skills",
       "author": "yunshenwuchuxun"
+    },
+    {
+      "full_name": "Imbad0202/academic-research-skills",
+      "name": "academic-research-skills",
+      "owner": "Imbad0202",
+      "description": "Academic Research Skills for Claude Code: research → write → review → revise → finalize",
+      "language": "Python",
+      "stars": 14710,
+      "forks": 1364,
+      "weeklyStars": 22148,
+      "updated": "today",
+      "url": "https://github.com/Imbad0202/academic-research-skills",
+      "category": "Academic Skills",
+      "author": "Imbad0202"
+    },
+    {
+      "full_name": "multica-ai/andrej-karpathy-skills",
+      "name": "andrej-karpathy-skills",
+      "owner": "multica-ai",
+      "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls",
+      "language": null,
+      "stars": 139185,
+      "forks": 14269,
+      "weeklyStars": 13685,
+      "updated": "today",
+      "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "category": "Agent Optimization",
+      "author": "multica-ai"
+    },
+    {
+      "full_name": "anthropics/claude-plugins-official",
+      "name": "claude-plugins-official",
+      "owner": "anthropics",
+      "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins",
+      "language": "Python",
+      "stars": 20411,
+      "forks": 2521,
+      "weeklyStars": 1197,
+      "updated": "today",
+      "url": "https://github.com/anthropics/claude-plugins-official",
+      "category": "Plugin Registry",
+      "author": "anthropics"
+    },
+    {
+      "full_name": "rohitg00/agentmemory",
+      "name": "agentmemory",
+      "owner": "rohitg00",
+      "description": "#1 Persistent memory for AI coding agents based on real-world benchmarks",
+      "language": "TypeScript",
+      "stars": 14513,
+      "forks": 1206,
+      "weeklyStars": 11263,
+      "updated": "today",
+      "url": "https://github.com/rohitg00/agentmemory",
+      "category": "Agent Infra",
+      "author": "rohitg00"
+    },
+    {
+      "full_name": "colbymchenry/codegraph",
+      "name": "codegraph",
+      "owner": "colbymchenry",
+      "description": "Pre-indexed code knowledge graph for Claude Code, Codex, Cursor, and OpenCode — fewer tokens, fewer tool calls, 100% local",
+      "language": "TypeScript",
+      "stars": 7157,
+      "forks": 466,
+      "weeklyStars": 12950,
+      "updated": "today",
+      "url": "https://github.com/colbymchenry/codegraph",
+      "category": "Agent Infra",
+      "author": "colbymchenry"
+    },
+    {
+      "full_name": "rtk-ai/rtk",
+      "name": "rtk",
+      "owner": "rtk-ai",
+      "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies",
+      "language": "Rust",
+      "stars": 51330,
+      "forks": 3124,
+      "weeklyStars": 4928,
+      "updated": "today",
+      "url": "https://github.com/rtk-ai/rtk",
+      "category": "Agent Infra",
+      "author": "rtk-ai"
+    },
+    {
+      "full_name": "Alishahryar1/free-claude-code",
+      "name": "free-claude-code",
+      "owner": "Alishahryar1",
+      "description": "Use claude-code for free in the terminal, VSCode extension or discord like OpenClaw (voice supported)",
+      "language": "Python",
+      "stars": 26581,
+      "forks": 3955,
+      "weeklyStars": 3941,
+      "updated": "today",
+      "url": "https://github.com/Alishahryar1/free-claude-code",
+      "category": "Agent Infra",
+      "author": "Alishahryar1"
     }
   ]
 }

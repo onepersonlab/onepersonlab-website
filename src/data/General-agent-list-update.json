@@ -1,8 +1,8 @@
 {
   "description": "General Agent Repositories",
   "source": "GitHub API",
-  "generated_at": "2026-05-07T04:35:00Z",
-  "repo_count": 31,
+  "generated_at": "2026-05-20T08:00:00Z",
+  "repo_count": 35,
   "repos": [
     {
       "full_name": "openclaw/openclaw",
@@ -406,6 +406,58 @@
       "changeLabel": "(22-day change)",
       "updated": "2026-05-06T13:08:57Z",
       "url": "https://github.com/aiming-lab/MetaClaw"
+    },
+    {
+      "full_name": "tinyhumansai/openhuman",
+      "name": "openhuman",
+      "owner": "tinyhumansai",
+      "description": "Your Personal AI super intelligence. Private, Simple and extremely powerful. Built in Rust.",
+      "language": "Rust",
+      "stars": 22428,
+      "forks": 1989,
+      "weeklyStars": 27811,
+      "changeLabel": "(7-day change)",
+      "updated": "2026-05-20T08:00:00Z",
+      "url": "https://github.com/tinyhumansai/openhuman"
+    },
+    {
+      "full_name": "obra/superpowers",
+      "name": "superpowers",
+      "owner": "obra",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 199041,
+      "forks": 17747,
+      "weeklyStars": 11361,
+      "changeLabel": "(7-day change)",
+      "updated": "2026-05-20T08:00:00Z",
+      "url": "https://github.com/obra/superpowers"
+    },
+    {
+      "full_name": "humanlayer/12-factor-agents",
+      "name": "12-factor-agents",
+      "owner": "humanlayer",
+      "description": "Principles for building LLM-powered software that is actually good enough for production customers",
+      "language": "TypeScript",
+      "stars": 21325,
+      "forks": 1605,
+      "weeklyStars": 5152,
+      "changeLabel": "(7-day change)",
+      "updated": "2026-05-20T08:00:00Z",
+      "url": "https://github.com/humanlayer/12-factor-agents"
+    },
+    {
+      "full_name": "msitarzewski/agency-agents",
+      "name": "agency-agents",
+      "owner": "msitarzewski",
+      "description": "A complete AI agency — From frontend wizards to Reddit community ninjas. ⭐ Forked by onepersonlab",
+      "language": "Shell",
+      "stars": 102087,
+      "forks": 16857,
+      "weeklyStars": 7840,
+      "changeLabel": "(7-day change)",
+      "updated": "2026-05-20T08:00:00Z",
+      "url": "https://github.com/msitarzewski/agency-agents"
     }
   ]
 }
