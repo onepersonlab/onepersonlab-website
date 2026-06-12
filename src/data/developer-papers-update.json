@@ -1,7 +1,7 @@
 {
   "description": "Papers - Updated Stats",
   "source": "Semantic Scholar / OpenAlex / Crossref",
-  "generated_at": "2026-05-07T04:40:21Z",
+  "generated_at": "2026-06-12T02:02:48Z",
   "paper_count": 2,
   "papers": [
     {
@@ -20,7 +20,7 @@
         "Yaochu Jin"
       ],
       "citationCount": 0,
-      "abstract": "",
+      "abstract": "As artificial intelligence (AI) increasingly integrates into scientific research, explainability has become a cornerstone for ensuring reliability and innovation in discovery processes. This review offers forward-looking integration of explainable AI (XAI)-based research paradigms, encompassing small domain-specific models, large language models (LLMs), agent-based large-small model collaboration. For we introduce knowledge-oriented taxonomy categorizing methods knowledge-agnostic, knowledge-based, knowledge-infused, knowledge-verified approaches, emphasizing the balance between domain knowledge innovative insights. LLMs, examine three strategies integrating knowledge—prompt engineering, retrieval-augmented generation, supervised fine-tuning—along with advances explainability, including local, global, conversation-based explanations. We also envision future collaborations within automated laboratories, stressing need context-aware explanations tailored to goals. Additionally, discuss unique characteristics limitations both LLMs realm discovery. Finally, highlight methodological challenges, potential pitfalls, necessity rigorous validation ensure XAI’s transformative role accelerating reshaping paradigms.",
       "url": "https://doi.org/10.1007/s10462-025-11365-w"
     },
     {
@@ -32,7 +32,7 @@
         "Hengjie Yu",
         "Yaochu Jin"
       ],
-      "citationCount": 3,
+      "citationCount": 1,
       "abstract": "The potential of AI researchers in scientific discovery remains largely untapped. Over the past decade, AI for Science (AI4Science) publications in 145 Nature Index journals have increased fifteen-fol",
       "url": "https://doi.org/10.48550/arxiv.2503.05822"
     }

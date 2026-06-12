@@ -1,8 +1,8 @@
 {
   "description": "Papers - Updated Stats",
   "source": "Semantic Scholar / OpenAlex / Crossref",
-  "generated_at": "2026-05-07T04:40:21Z",
-  "paper_count": 60,
+  "generated_at": "2026-06-12T02:04:55Z",
+  "paper_count": 64,
   "papers": [
     {
       "title": "From AI for Science to Agentic Science: A Survey on Autonomous Scientific Discovery",
@@ -33,7 +33,7 @@
         "Lei Bai",
         "Bowen Zhou"
       ],
-      "citationCount": 49,
+      "citationCount": 2,
       "abstract": "Artificial intelligence (AI) is reshaping scientific discovery, evolving from specialized computational tools into autonomous research partners. We position Agentic Science as a pivotal stage within t",
       "url": "https://doi.org/10.48550/arxiv.2508.14111"
     },
@@ -46,7 +46,7 @@
         "Alireza Ghafarollahi",
         "Markus J. Buehler"
       ],
-      "citationCount": 152,
+      "citationCount": 87,
       "abstract": "A key challenge in artificial intelligence (AI) is the creation of systems capable of autonomously advancing scientific understanding by exploring novel domains, identifying complex patterns, and unco",
       "url": "https://doi.org/10.1002/adma.202413523"
     },
@@ -65,7 +65,7 @@
         "Jeff Clune",
         "David Ha"
       ],
-      "citationCount": 207,
+      "citationCount": 20,
       "abstract": "AI is increasingly playing a pivotal role in transforming how scientific discoveries are made. We introduce The AI Scientist-v2, an end-to-end agentic system capable of producing the first entirely AI",
       "url": "https://doi.org/10.48550/arxiv.2504.08066"
     },
@@ -84,7 +84,7 @@
         "Jeff Clune",
         "David Ha"
       ],
-      "citationCount": 207,
+      "citationCount": 16,
       "abstract": "AI is increasingly playing a pivotal role in transforming how scientific discoveries are made. We introduce The AI Scientist-v2, an end-to-end agentic system capable of producing the first entirely AI",
       "url": "https://doi.org/10.1609/aaai.v39i27.35084"
     },
@@ -108,8 +108,8 @@
         "Zhiyong Lu",
         "Mark Gerstein"
       ],
-      "citationCount": 40,
-      "abstract": "",
+      "citationCount": 13,
+      "abstract": "AI scientists powered by large language models have demonstrated substantial promise in autonomously conducting experiments and facilitating scientific discoveries across various disciplines. While their capabilities are promising, these agents also introduce novel vulnerabilities that require careful consideration for safety. However, there has been limited comprehensive exploration of vulnerabilities. This perspective examines scientists, shedding light on potential risks associated with misuse, emphasizing the need safety measures. We begin providing an overview inherent to taking into account user intent, specific domain, impact external environment. Then, we explore underlying causes provide a scoping review existing works. Based our analysis, propose triadic framework involving human regulation, agent alignment, understanding environmental feedback (agent regulation) mitigate identified risks. Furthermore, highlight limitations challenges safeguarding advocate development improved models, robust benchmarks, regulations.",
       "url": "https://doi.org/10.48550/arxiv.2402.04247"
     },
     {
@@ -122,7 +122,7 @@
         "L. Roch",
         "Alán Aspuru-Guzik"
       ],
-      "citationCount": 286,
+      "citationCount": 380,
       "abstract": "The ever-growing demand for advanced functional materials requires disruption of conventional approaches to experimentation and acceleration of the discovery process. State-of-the-art approaches to sc",
       "url": "https://doi.org/10.1016/j.trechm.2019.02.007"
     },
@@ -143,7 +143,7 @@
         "Carla P. Gomes",
         "R. B. Dover"
       ],
-      "citationCount": 84,
+      "citationCount": 78,
       "abstract": "Artificial intelligence accelerates the search and discovery of new metastable materials for energy applications.",
       "url": "https://doi.org/10.1126/sciadv.abg4930"
     },
@@ -162,7 +162,7 @@
         "Peter J. Leek",
         "Alán Aspuru-Guzik"
       ],
-      "citationCount": 23,
+      "citationCount": 5,
       "abstract": "Summary Fully automated self-driving laboratories promise high-throughput, large-scale scientific discovery by reducing repetitive labor. However, they require deep integration of laboratory knowledge",
       "url": "https://doi.org/10.1016/j.patter.2025.101372"
     },
@@ -181,7 +181,7 @@
         "Peter J. Leek",
         "Alán Aspuru-Guzik"
       ],
-      "citationCount": 23,
+      "citationCount": 169,
       "abstract": "Summary Fully automated self-driving laboratories promise high-throughput, large-scale scientific discovery by reducing repetitive labor. However, they require deep integration of laboratory knowledge",
       "url": "https://doi.org/10.1038/s44286-023-00002-4"
     },
@@ -208,7 +208,7 @@
         "Jun Jiang",
         "Yi Luo"
       ],
-      "citationCount": 108,
+      "citationCount": 119,
       "abstract": "The successful integration of large language models (LLMs) into laboratory workflows has demonstrated robust capabilities in natural language processing, autonomous task execution, and collaborative p",
       "url": "https://doi.org/10.1021/jacs.4c17738"
     },
@@ -221,7 +221,7 @@
         "Alireza Ghafarollahi",
         "Markus J. Buehler"
       ],
-      "citationCount": 56,
+      "citationCount": 42,
       "abstract": "Significance We construct a physics-aware AI model that integrates the advanced reasoning, rational thinking, and strategic planning capabilities of large language models with the ability to write and",
       "url": "https://doi.org/10.1073/pnas.2414074122"
     },
@@ -234,7 +234,7 @@
         "Alireza Ghafarollahi",
         "Markus J. Buehler"
       ],
-      "citationCount": 84,
+      "citationCount": 83,
       "abstract": "Designing de novo proteins beyond those found in nature holds significant promise for advancements in both scientific and engineering applications. Current methodologies for protein design often rely ",
       "url": "https://doi.org/10.1039/d4dd00013g"
     },
@@ -279,7 +279,7 @@
         "J. Leskovec",
         "Aviv Regev"
       ],
-      "citationCount": 38,
+      "citationCount": 40,
       "abstract": "Advances in AI are transforming scientific discovery, yet spatial biology, a field that deciphers the molecular organization within tissues, remains constrained by labor-intensive workflows. Here, we ",
       "url": "https://doi.org/10.1101/2025.04.03.646459"
     },
@@ -294,8 +294,8 @@
         "Weihang Zhang",
         "Lipeng Lai"
       ],
-      "citationCount": 2,
-      "abstract": "",
+      "citationCount": 1,
+      "abstract": "Abstract Drug discovery is protracted, resource-intensive, and afflicted by attrition rates exceeding 90 %, which leaves most diseases, particularly rare or neglected indications, without effective therapies. repurposing offers a cost alternative, yet systematic identification of novel drug indication pairs mechanistic rationales remains hindered the scale heterogeneity biomedical knowledge. We present BioScientist Agent , an end to framework that unifies billion-fact knowledge graph with (i) variational auto-encoder for representation learning link prediction driven repurposing, (ii) reinforcement module traverses recover biologically plausible paths, (iii) A large language model (LLM) multi-agent layer orchestrates these components, enabling inference target pathways disease pair, automatic generation coherent causal reports. In all downstream tasks, surpasses existing state art baseline models across various metrics provides explanations consistent literature. Its open modular design accelerates hypothesis reduces experimental overhead in early stage discovery.",
       "url": "https://doi.org/10.1101/2025.08.08.669291"
     },
     {
@@ -311,8 +311,8 @@
         "Yuyan Chen",
         "Yirui Jiang"
       ],
-      "citationCount": 2,
-      "abstract": "",
+      "citationCount": 9,
+      "abstract": "ABSTRACT The discovery and validation of genetic biomarkers across diverse diseases demand intelligent systems capable integrating complex multi-omics data with clinical relevance. We introduce HEAL-KGGen, an end-to-end framework that enhances Large Language Models (LLMs) through a hierarchical multi-agent architecture automatically constructed medical knowledge graph. system includes General Practitioner (GP) agent for initial biomarker triage specialist agents genomics, transcriptomics, proteomics, interpretation. core innovation HEAL-KGGen lies in its dynamic graph pipeline, which combines entity extraction based on patterns semantics, ontology-aligned normalization (using UMLS, MeSH, SNOMED CT) the construction multi-source relationships from biomedical databases literature. Retrieved subgraphs are transformed into contextual prompts guide LLM reasoning via structured, explainable pathways. Our experiments show significantly improves question-answering accuracy multiple mainstream large language models, highest improvement observed Claude 3.5 Sonnetachieving 43.75% increase accuracy., confirming value domain-specific advancing performance molecular diagnostics.",
       "url": "https://doi.org/10.1101/2025.06.03.657521"
     },
     {
@@ -329,7 +329,7 @@
         "Ling Liu",
         "Chen Lin"
       ],
-      "citationCount": 30,
+      "citationCount": 20,
       "abstract": "Conventional biomedical research is increasingly labor-intensive due to the exponential growth of scientific literature and datasets. Artificial intelligence (AI), particularly large language models (",
       "url": "https://doi.org/10.1007/s11432-024-4485-0"
     },
@@ -345,7 +345,7 @@
         "J. Akroyd",
         "Markus Kraft"
       ],
-      "citationCount": 15,
+      "citationCount": 22,
       "abstract": "Conspectus Passing knowledge from human to human is a natural process that has continued since the beginning of humankind. Over the past few decades, we have witnessed that knowledge is no longer pass",
       "url": "https://doi.org/10.1021/acs.accounts.2c00617"
     },
@@ -369,7 +369,7 @@
         "Dirk Tomandl",
         "S. Kumpatla"
       ],
-      "citationCount": 19,
+      "citationCount": 29,
       "abstract": "The global cost-benefit analysis of pesticide use during the last 30 years has been characterized by a significant increase during the period from 1990 to 2007 followed by a decline. This observation ",
       "url": "https://doi.org/10.3389/fchem.2023.1292027"
     },
@@ -408,7 +408,7 @@
         "A. Bender",
         "C. Graaf"
       ],
-      "citationCount": 43,
+      "citationCount": 47,
       "abstract": "A plethora of AI-based techniques now exists to conduct de novo molecule generation that can devise molecules conditioned towards a particular endpoint in the context of drug design. One popular appro",
       "url": "https://doi.org/10.1186/s13321-022-00646-z"
     },
@@ -425,8 +425,8 @@
         "Abed Zahedi bialvaei",
         "B. Sabet"
       ],
-      "citationCount": 29,
-      "abstract": "",
+      "citationCount": 34,
+      "abstract": "Antimicrobial resistance (AMR) presents a formidable global health challenge, jeopardizing the efficacy of current antibiotics and posing substantial threat to public health.The escalating prevalence AMR demands innovative solutions.However, traditional drug discovery process for combating is marked by significant costs, prolonged timelines, frequent inefficacies, numerous developmental hurdles.This narrative review explores potential role artificial intelligence (AI) in addressing through development.It assesses state AMR, critiques limitations conventional methods, elucidates opportunities advancements afforded AI.The delves into various AI applications, encompassing machine learning, deep language models, identification novel antimicrobial agents, optimization design, prediction mechanisms.Additionally, it examines integration with high-throughput screening, genomics, proteomics expedite development new compounds.The concludes challenges ethical considerations linked implementation research, emphasizing imperative collaborative efforts among scientists, policymakers, healthcare professionals effectively combat AMR.",
       "url": "https://doi.org/10.30699/ijmm.18.3.135"
     },
     {
@@ -438,7 +438,7 @@
         "T. Davenport",
         "R. Kalakota"
       ],
-      "citationCount": 2731,
+      "citationCount": 3612,
       "abstract": "ABSTRACT The complexity and rise of data in healthcare means that artificial intelligence (AI) will increasingly be applied within the field. Several types of AI are already being employed by payers a",
       "url": "https://doi.org/10.7861/futurehosp.6-2-94"
     },
@@ -453,7 +453,7 @@
         "A. Nori",
         "Bryan Williams"
       ],
-      "citationCount": 1219,
+      "citationCount": 1565,
       "abstract": "ABSTRACT Artificial intelligence (AI) is a powerful and disruptive area of computer science, with the potential to fundamentally transform the practice of medicine and the delivery of healthcare. In t",
       "url": "https://doi.org/10.7861/fhj.2021-0095"
     },
@@ -476,7 +476,7 @@
         "Sophia J Wagner",
         "Jakob Nikolas Kather"
       ],
-      "citationCount": 879,
+      "citationCount": 935,
       "abstract": "Large language models (LLMs) are artificial intelligence (AI) tools specifically trained to process and generate text. LLMs attracted substantial public attention after OpenAI’s ChatGPT was made pub",
       "url": "https://doi.org/10.1038/s43856-023-00370-1"
     },
@@ -498,7 +498,7 @@
         "James Maningo",
         "Victor Tseng"
       ],
-      "citationCount": 3299,
+      "citationCount": 3527,
       "abstract": "We evaluated the performance of a large language model called ChatGPT on the United States Medical Licensing Exam (USMLE), which consists of three exams: Step 1, Step 2CK, and Step 3. ChatGPT performe",
       "url": "https://doi.org/10.1371/journal.pdig.0000198"
     },
@@ -516,7 +516,7 @@
         "R. Taylor",
         "David Chartash"
       ],
-      "citationCount": 1618,
+      "citationCount": 2011,
       "abstract": "Background Chat Generative Pre-trained Transformer (ChatGPT) is a 175-billion-parameter natural language processing model that can generate conversation-style responses to user input. Objective This s",
       "url": "https://doi.org/10.2196/45312"
     },
@@ -528,7 +528,7 @@
       "authors": [
         "Malik Sallam"
       ],
-      "citationCount": 2407,
+      "citationCount": 2696,
       "abstract": "ChatGPT is an artificial intelligence (AI)-based conversational large language model (LLM). The potential applications of LLMs in health care education, research, and practice could be promising if th",
       "url": "https://doi.org/10.3390/healthcare11060887"
     },
@@ -543,7 +543,7 @@
         "Zhiyong Lu"
       ],
       "citationCount": 67,
-      "abstract": "",
+      "abstract": "ChatGPT, a general purpose chatbot developed by OpenAI, has been widely reported to have the potential revolutionize how people interact with information online.1 Like other large language models (LLMs), ChatGPT trained on text corpus predict probable words from surrounding context. however, received substantial popular attention for generating human-like conversational responses, and new developments are occurring rapidly. The initial release in November 2022 used model generative pretrained transformers (GPT)-3.5, version based GPT-4.0 was released March 2023. Recent work discussed applications of medical education clinical decision support.2–4 However, health care professionals should be aware drawbacks limitations—and capabilities—of using similar LLMs knowledge. A significant issue is its tendency generate confident-sounding but fabricated commonly known as “hallucination.” Although it can plausible-sounding text, does not consult any source truth.1 Occasional incorrect or biased responses are, therefore, inevitable, cannot faithfully cite sources allow their evidence verified. For example, we prompted GPT-3.5–based list possible mechanisms AKI patients coronavirus disease 2019 (COVID-19), references. produced plausible mechanisms, each which investigated literature (Figure 1A) supported claims titles irrelevant PubMed identifiers. GPT-4 acknowledges that produce references refuses articles answer 1C)—a improvement—but leaves difficult task verification user. Consulting directly carries risk drawing conclusions, particularly patients.Figure 1.: Seeking related COVID-19 ChatGPT. (A) ChatGPT-3.5 fabricates claims. (B) When title abstract relevant articles, summarize aspects requested, including some valid in-line many details inaccurate: Related correctly grouped, contradicting mentioned, citations missing, listed mechanism specific. Note complete response mentioned only three five articles. (C) ChatGPT-4 drawback response, makes more difficult. (D) web browsing plug-in summarizes search engine, finds two fails systematically question. Responses were collected 14, 2023, GPT-4–based May 15, 2023.However, such may better suited summarization than answering questions. Pilot studies shown effective at reasoning, reading comprehension, fluent summaries high fidelity.5–7 Augmenting traditional engine therefore help address hallucination enable system provide user comprehensive high-level summaries. Bing provides ChatGPT-like interactive agents users create queries, identify results, content. In addition, recently introduced allows when (currently limited beta test). Incorporating features into streamline gathering synthesizing literature, improving patient care. Unfortunately, generated current also contain inaccuracies,8 addition practical issues limitations length input text. To illustrate these problems, (model 3.5) COVID-19, manually chosen pathophysiology COVID-19. ChatGPT’s summary 1B) generally reflects lists symptoms misses important repeatedly, hypoxia. Moreover, one less specific source. We 4), plug-in, same question 1D). this case, citations. without evidence, thus systematically. Generally speaking, retrieval-augmented reduces users' control over sources, leading results align user's criteria best (e.g., most up-to-date). Summaries miss ideas assertions unsupported sources. Because imprecise incomplete lead decisions harm, content LLMs, must verified accuracy completeness before use. Further research faithfulness LLM-generated automatic tools warranted realize full synthesis literature. Despite limitations, remarkable progress AI rapid advancements profound implications medicine, assisting education,2 accelerating screening systematic reviews,7,9 supporting physicians various settings generalist AI,4 among possibilities. augmenting retrieval taught use biomedical domain-specific tools, Web APIs specialized databases, improved access information.10 summary, although currently suitable own, envision proposed retrieve, summarize, verify paradigm could greatly benefit seeking. This approach leverages impressive capability while minimizing false combining engines. It note LLM technology progressing rapidly, yet matured enough Therefore, retain responsibility verifying reliability output.",
       "url": "https://doi.org/10.1681/asn.0000000000000166"
     },
     {
@@ -554,7 +554,7 @@
       "authors": [
         "Thomas Hartung"
       ],
-      "citationCount": 11,
+      "citationCount": 12,
       "abstract": "Until recently, the conversation about generative artificial intelligence in science revolved around the textual prowess of large language models such as GPT-3.5 and the promise that they might one da",
       "url": "https://doi.org/10.3389/frai.2025.1649155"
     },
@@ -578,7 +578,7 @@
         "Zhewei Wei",
         "Ji-rong Wen"
       ],
-      "citationCount": 2773,
+      "citationCount": 1117,
       "abstract": "Autonomous agents have long been a research focus in academic and industry communities. Previous research often focuses on training agents with limited knowledge within isolated environments, which di",
       "url": "https://doi.org/10.1007/s11704-024-40231-1"
     },
@@ -614,7 +614,7 @@
         "B. Sumpter",
         "R. Vasudevan"
       ],
-      "citationCount": 116,
+      "citationCount": 134,
       "abstract": "Machine learning and artificial intelligence (ML/AI) are rapidly becoming an indispensable part of physics research, with domain applications ranging from theory and materials prediction to high-throu",
       "url": "https://doi.org/10.1021/acsnano.1c02104"
     },
@@ -628,7 +628,7 @@
         "Lan Zhou",
         "J. Haber"
       ],
-      "citationCount": 81,
+      "citationCount": 100,
       "abstract": "",
       "url": "https://doi.org/10.1038/s44160-023-00251-4"
     },
@@ -645,7 +645,7 @@
         "R. Xu",
         "Ying Sun"
       ],
-      "citationCount": 213,
+      "citationCount": 270,
       "abstract": "Over the past decade, artificial intelligence (AI) has contributed substantially to the resolution of various medical problems, including cancer. Deep learning (DL), a subfield of AI, is characterized",
       "url": "https://doi.org/10.1002/cac2.12215"
     },
@@ -661,7 +661,7 @@
         "K. Zatloukal",
         "Heimo Müller"
       ],
-      "citationCount": 1442,
+      "citationCount": 1726,
       "abstract": "Explainable artificial intelligence (AI) is attracting much interest in medicine. Technically, the problem of explainability is as old as AI itself and classic AI represented comprehensible retraceabl",
       "url": "https://doi.org/10.1002/widm.1312"
     },
@@ -691,7 +691,7 @@
         "Matej Balog",
         "Google DeepMind"
       ],
-      "citationCount": 413,
+      "citationCount": 6,
       "abstract": "In this white paper, we present AlphaEvolve, an evolutionary coding agent that substantially enhances capabilities of state-of-the-art LLMs on highly challenging tasks such as tackling open scientific",
       "url": "https://doi.org/10.48550/arXiv.2506.13131"
     },
@@ -739,7 +739,7 @@
         "Michaela M. Hinks",
         "Andrew D. White"
       ],
-      "citationCount": 39,
+      "citationCount": 7,
       "abstract": "Data-driven scientific discovery requires iterative cycles of literature search, hypothesis generation, and data analysis. Substantial progress has been made towards AI agents that can automate scient",
       "url": "https://doi.org/10.48550/arXiv.2511.02824"
     },
@@ -784,7 +784,7 @@
         "A. Karthikesalingam",
         "Vivek Natarajan"
       ],
-      "citationCount": 263,
+      "citationCount": 42,
       "abstract": "Scientific discovery relies on scientists generating novel hypotheses that undergo rigorous experimental validation. To augment this process, we introduce an AI co-scientist, a multi-agent system buil",
       "url": "https://doi.org/10.48550/arXiv.2502.18864"
     },
@@ -840,7 +840,7 @@
         "Tianfan Fu",
         "Yue Zhao"
       ],
-      "citationCount": 38,
+      "citationCount": 7,
       "abstract": "Recent progress in Large Language Models (LLMs) has drawn attention to their potential for accelerating drug discovery. However, a central problem remains: translating theoretical ideas into robust im",
       "url": "https://doi.org/10.48550/arXiv.2411.15692"
     },
@@ -863,7 +863,7 @@
         "Ben Leedom",
         "David Fuller"
       ],
-      "citationCount": 9,
+      "citationCount": 3,
       "abstract": "The pharmaceutical industry faces unprecedented challenges in drug discovery, with traditional approaches struggling to meet modern therapeutic development demands. This paper introduces a novel AI fr",
       "url": "https://doi.org/10.48550/arXiv.2507.09023"
     },
@@ -890,7 +890,7 @@
         "Martin Seifrid",
         "Alán Aspuru-Guzik"
       ],
-      "citationCount": 402,
+      "citationCount": 461,
       "abstract": "Self-driving laboratories (SDLs) promise an accelerated application of the scientific method. Through the automation of experimental workflows, along with autonomous experimental planning, SDLs hold t",
       "url": "https://doi.org/10.1021/acs.chemrev.4c00055"
     },
@@ -903,7 +903,7 @@
         "A. Tobias",
         "Adam Wahab"
       ],
-      "citationCount": 24,
+      "citationCount": 27,
       "abstract": "This article reviews and provides perspective on the emerging technology of autonomous, ‘self-driving’ laboratories (SDLs) that combine artificial intelligence (AI) and laboratory automation to pe",
       "url": "https://doi.org/10.1098/rsos.250646"
     },
@@ -916,7 +916,7 @@
         "C. Scheurer",
         "K. Reuter"
       ],
-      "citationCount": 27,
+      "citationCount": 34,
       "abstract": "",
       "url": "https://doi.org/10.1038/s41929-024-01275-5"
     },
@@ -930,7 +930,7 @@
         "F. G. L. Parlane",
         "C. Berlinguette"
       ],
-      "citationCount": 9,
+      "citationCount": 14,
       "abstract": "Self-driving laboratories can accelerate materials discovery by achieving scientific objectives hundreds of times faster than automation alone. However, a self-driving laboratory can take years to ada",
       "url": "https://doi.org/10.1557/s43577-023-00476-w"
     },
@@ -949,7 +949,7 @@
         "J. Hanna",
         "Leonard Ng Wei Tat"
       ],
-      "citationCount": 11,
+      "citationCount": 13,
       "abstract": "Laboratory automation through self-driving labs represents a transformative approach to accelerating scientific discovery, particularly in chemical sciences, biological sciences, materials science, an",
       "url": "https://doi.org/10.1039/d4dd00411f"
     },
@@ -964,8 +964,8 @@
         "Benjamin Tenmann",
         "Bo Wang"
       ],
-      "citationCount": 7,
-      "abstract": "",
+      "citationCount": 5,
+      "abstract": "Abstract Large language model (LLM) agents hold promise for accelerating biomedical research and development (R&amp;D). Several have recently been proposed, but their evaluation has largely restricted to question answering (e.g., LAB-Bench) or narrow bioinformatics tasks. Presently, there remains a lack of benchmarks evaluating agent capability in multi-step data analysis workflows solving the machine learning (ML) challenges central AI-driven therapeutics development, such as perturbation response modeling drug toxicity prediction. We introduce BioML-bench , first benchmarking suite AI on end-to-end ML spans four domains (protein engineering, single-cell omics, imaging, discovery) with tasks that require parse task description, build pipeline, implement models, submit predictions graded by established metrics AUROC, Spearman). evaluate open-source agents: two specialists (STELLA, Biomni) generalists (AIDE, MLAgentBench). On average, underperform relative human baselines, specialization does not confer consistent advantage. also found which employed more diverse strategies often tended score highest, suggesting architecture scaffolding may be stronger determinants performance. These findings underscore both potential current limits agentic systems ML, highlight need systematic, reproducible evaluations. is provided at github.com/science-machine/biomlbench .",
       "url": "https://doi.org/10.1101/2025.09.01.673319"
     },
     {
@@ -981,7 +981,7 @@
         "Xiaoqian Jiang",
         "Yejin Kim"
       ],
-      "citationCount": 1,
+      "citationCount": 2,
       "abstract": "Summary Recent advancements in large language models (LLMs) have demonstrated their potential in scientific reasoning, but their ability to open-ended hypotheses in data-scarce domains remains underex",
       "url": "https://doi.org/10.1016/j.isci.2025.113984"
     },
@@ -1037,8 +1037,8 @@
         "Fenghua Ling",
         "Lei Bai"
       ],
-      "citationCount": 3,
-      "abstract": "",
+      "citationCount": 1,
+      "abstract": "Scientific progress in Earth science depends on integrating data across the planet's interconnected spheres. However, accelerating volume and fragmentation of multi-sphere knowledge have surpassed human analytical capacity. This creates a major bottleneck for discovery, especially climate science. To address this challenge, we introduce EarthLink, first self-evolving AI agent system designed as an interactive \"copilot\" scientists. Through natural language interaction, EarthLink automates entire research workflow by planning, code execution, analysis, physical reasoning into unified process that directly addresses limitation. Beyond efficiency, it exhibits human-like cross-disciplinary ability achieves proficiency comparable to junior researcher expert evaluations core large-scale tasks, including model-observation comparison change understanding. When tasked with open scientific problem, specifically discovery precursors Atlantic Niño, autonomously developed strategy, identified sources predictability, verified its hypotheses available data, proposed physically consistent mechanism. These emerging capabilities enable new human-AI paradigm. Scientists can focus value result judgments, while systems handle complex analysis integration. accelerates pace breadth sciences. The is accessible at our website https://earthlink.intern-ai.org.cn.",
       "url": "https://doi.org/10.48550/arXiv.2507.17311"
     },
     {
@@ -1057,7 +1057,7 @@
         "Alán Aspuru-Guzik",
         "Milica Radisic"
       ],
-      "citationCount": 10,
+      "citationCount": 4,
       "abstract": "Automating biological experimentation remains challenging due to the need for millimeter-scale precision, long and multi-step experiments, and the dynamic nature of living systems. Current liquid hand",
       "url": "https://doi.org/10.48550/arXiv.2505.14941"
     },
@@ -1089,7 +1089,7 @@
         "L. Zhang",
         "A. Zhavoronkov"
       ],
-      "citationCount": 12,
+      "citationCount": 11,
       "abstract": "Assessing impact on the hallmarks of aging has emerged as a novel method for prioritizing dual-purpose longevity therapeutic targets and developing drugs simultaneously targeting aging and disease. Ce",
       "url": "https://doi.org/10.14336/AD.2024.1492"
     },
@@ -1105,7 +1105,7 @@
         "Erik J. Berg",
         "Leiting Zhang"
       ],
-      "citationCount": 16,
+      "citationCount": 15,
       "abstract": "SUMMARY The integration of automation and data-driven methodologies offers a promising approach to accelerating materials discovery in energy storage research. Thus far, in battery research, coin-cell",
       "url": "https://doi.org/10.1016/j.xcrp.2025.102548"
     },
@@ -1120,7 +1120,7 @@
         "S. Mirzaee",
         "Ahmed Abdalla"
       ],
-      "citationCount": 36,
+      "citationCount": 49,
       "abstract": "Agriculture, an essential driver of economic expansion, is faced by the issue of sustaining an increasing global population in the context of climatic uncertainty and limited resources. As a result, �",
       "url": "https://doi.org/10.3390/agriengineering7030089"
     },
@@ -1136,7 +1136,7 @@
         "Hans-Peter Kaul",
         "S. Asseng"
       ],
-      "citationCount": 103,
+      "citationCount": 138,
       "abstract": "This paper delineates the contemporary landscape, challenges, and prospective developments in human-centred artificial intelligence (AI) within the ambit of smart farming, a pivotal element of the eme",
       "url": "https://doi.org/10.1109/ACCESS.2024.3395532"
     },
@@ -1153,7 +1153,7 @@
         "Adrianna Łobodzińska",
         "Marek Śnieg"
       ],
-      "citationCount": 116,
+      "citationCount": 147,
       "abstract": "The integration of the Internet of Things (IoT) and artificial intelligence (AI) has reshaped modern agriculture by enabling precision farming, real-time monitoring, and data-driven decision-making. T",
       "url": "https://doi.org/10.3390/s25123583"
     },
@@ -1170,8 +1170,8 @@
         "Tariq Shahzad",
         "Habib Hamam"
       ],
-      "citationCount": 16,
-      "abstract": "",
+      "citationCount": 23,
+      "abstract": "• Edge-first framework unites IoT, dual vision models, and rule-based actions. MiT-B0 at 128 × enables low-power on-device weather crop inference. Achieves 88% 93% accuracy with robust error metrics. Agentic layer closes perception-to-actuation loop for autonomous control. CPU-only Python case studies validate real-time decisions without cloud. Proposed a dual-vision deep learning architecture that performs simultaneous classification using lightweight, edge-optimized models operation. Developed agentic AI decision fuses multimodal predictions to autonomously drive IoT-enabled agricultural interventions. Demonstrated responsiveness through seamless integration field-deployable IoT devices such as irrigation controllers, drones, environmental sensors. Validated the system’s scalability deployment-readiness Agriculture 4.0 rigorous experimentation, applied scenarios, quantitative performance Addressed major limitations in existing smart agriculture frameworks—including lack of context-awareness, server dependency, resource inefficiency—by enabling autonomous, interpretable, low-cost actuation real-world environments. Smart farming connectivity-limited, energy-sensitive environments demands perception decision-making reduce latency cloud dependence. This article proposes an edge-enabled integrates lightweight learning, AI, Internet Things (IoT) real-time, decisions. The system features two vision-based models—one one identification—built on Vision Transformer optimized low-resolution (128 128) image inputs. These run resource-constrained hardware suitable rural deployment support efficient, processing. Weather prediction spans 11 classes (e.g., frost, lightning, rain, sandstorm), while covers 5 crops. achieves crops, high F1-scores low MAE, Kappa, Hamming loss values. Predictions are interpreted by triggers actions across multiple actuators, irrigation, NDVI sensors, frost alarms, pest detectors. engine supports both joint rule logic activating hail protectors when is detected maize fields) fallback single-condition rules. Python-implemented show model–AI–IoT interaction combined separate scenarios. By minimizing reducing communication overhead, operation, proposed addresses critical challenges contexts. It demonstrates potential scalable intelligent farming, aligning goals sustainable 4.0.",
       "url": "https://doi.org/10.1016/j.rineng.2025.107342"
     },
     {
@@ -1187,7 +1187,7 @@
         "G. Tourniaire",
         "K. Mechtler"
       ],
-      "citationCount": 48,
+      "citationCount": 95,
       "abstract": "The analysis of single-cell proteomes has recently become a viable complement to transcriptomics and genomics studies. Proteins are the primary driver of cellular functionality and mRNA levels are oft",
       "url": "https://doi.org/10.1101/2021.04.14.439828"
     },
@@ -1203,9 +1203,102 @@
         "Amjad Rehman",
         "Muhammad Mujahid"
       ],
-      "citationCount": 13,
+      "citationCount": 18,
       "abstract": "Plant diseases pose a significant threat to global food security, with severe implications for agricultural productivity. Early and accurate detection of these diseases is crucial, yet it remains a ch",
       "url": "https://doi.org/10.1038/s41598-025-10537-6"
+    },
+    {
+      "title": "The Virtual Lab of AI agents designs new SARS-CoV-2 nanobodies",
+      "authors": [
+        "Kyle Swanson",
+        "Wesley Wu",
+        "Nash L. Bulaong",
+        "John E. Pak",
+        "James Zou"
+      ],
+      "year": 2025,
+      "venue": "Nature",
+      "doi": "10.1038/s41586-025-09442-9",
+      "url": "https://doi.org/10.1038/s41586-025-09442-9",
+      "abstract": "",
+      "citationCount": 97
+    },
+    {
+      "title": "Biomni: A General-Purpose Biomedical AI Agent",
+      "authors": [
+        "Kexin Huang",
+        "Serena Zhang",
+        "Hanchen Wang",
+        "Yuanhao Qu",
+        "Yingzhou Lu",
+        "Yusuf Roohani",
+        "Ryan J. Li",
+        "Lin Qiu",
+        "G. L. Li",
+        "Junze Zhang",
+        "Di Yin",
+        "Shruti Marwaha",
+        "Jennefer N. Carter",
+        "Xin‐Fu Zhou",
+        "Matthew T. Wheeler",
+        "Jonathan A. Bernstein",
+        "Mengdi Wang",
+        "Peng He",
+        "Jingtian Zhou",
+        "M Snyder",
+        "Le Cong",
+        "Aviv Regev",
+        "Jure Leskovec"
+      ],
+      "year": 2025,
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "doi": "10.1101/2025.05.30.656746",
+      "url": "https://doi.org/10.1101/2025.05.30.656746",
+      "abstract": "Biomedical research underpins progress in our understanding of human health and disease, drug discovery, clinical care. However, with the growth complex lab experiments, large datasets, many analytical tools, expansive literature, biomedical is increasingly constrained by repetitive fragmented workflows that slow discovery limit innovation, underscoring need for a fundamentally new way to scale scientific expertise. Here, we introduce Biomni, general-purpose AI agent designed autonomously execute wide spectrum tasks across diverse subfields. To systematically map action space, Biomni first employs an create unified agentic environment - mining essential databases, protocols from tens thousands publications 25 domains. Built on this foundation, features generalist architecture integrates language model (LLM) reasoning retrieval-augmented planning code-based execution, enabling it dynamically compose carry out entirely without relying predefined templates or rigid task flows. Systematic benchmarking demonstrates achieves strong generalization heterogeneous including causal gene prioritization, repurposing, rare disease diagnosis, microbiome analysis, molecular cloning any task-specific prompt tuning. Real-world case studies further showcase Biomni's ability interpret complex, multi-modal datasets generate experimentally testable protocols. envisions future where virtual biologists operate alongside augment scientists dramatically enhance productivity, insight, healthcare. ready use at https://biomni.stanford.edu, invite explore its capabilities, stress-test limits, co-create next era discoveries.",
+      "citationCount": 82
+    },
+    {
+      "title": "“DIVE” into hydrogen storage materials discovery with AI agents",
+      "authors": [
+        "Di Zhang",
+        "Xue Jia",
+        "Tran Ba Hung",
+        "Seong Hoon Jang",
+        "Linda Zhang",
+        "Ryuhei Sato",
+        "Yusuke Hashimoto",
+        "Toyoto Sato",
+        "Kiyoe Konno",
+        "Shin‐ichi Orimo",
+        "Hao Li"
+      ],
+      "year": 2026,
+      "venue": "Chemical Science",
+      "doi": "10.1039/d5sc09921h",
+      "url": "https://doi.org/10.1039/d5sc09921h",
+      "abstract": "Despite the surge of AI in energy materials research, fully autonomous workflows that connect high-precision experimental knowledge to discovery credible new energy-related remain at an early stage. Here, we develop Descriptive Interpretation Visual Expression (DIVE) multi-agent workflow, which systematically reads and organizes data from graphical elements scientific literature. Applied solid-state hydrogen storage materials-a class central future clean-energy technologies-DIVE markedly improves accuracy coverage extraction compared direct method, with gains 10-15% over commercial models 30% relative open-source models. Building on a curated database 30 000 entries >4000 publications, establish rapid inverse-design workflow capable proposing within minutes. This transferable, end-to-end paradigm illustrates how multimodal agents can convert literature-embedded into actionable innovation, offering scalable pathway for accelerated across chemistry science.",
+      "citationCount": 16
+    },
+    {
+      "title": "Digital materials ecosystem: from databases to AI agents for autonomous discovery",
+      "authors": [
+        "Di Zhang",
+        "Xue Jia",
+        "Yuhang Wang",
+        "Heng Liu",
+        "Qian Wang",
+        "Seong‐Hoon Jang",
+        "Daksh Shah",
+        "Songbo Ye",
+        "Hung Ba Tran",
+        "Hao Li"
+      ],
+      "year": 2026,
+      "venue": "Chemical Science",
+      "doi": "10.1039/d5sc09229a",
+      "url": "https://doi.org/10.1039/d5sc09229a",
+      "abstract": "The concept of a digital materials ecosystem represents new paradigm in research, where data, theory, and automation are integrated into unified iterative framework. By combining reliable databases, physical frameworks, intelligent data analysis, discovery is evolving from empirical exploration toward systematic predictive science. rapid growth artificial intelligence (AI) has enabled the identification complex structure-property relationships, while advances automated synthesis high-throughput characterization closing loop between prediction validation. Looking forward, field must focus on building trustworthy benchmarked datasets, developing interpretable high-precision models, designing AI tools that embody human scientific reasoning. Equally important ensuring standardization consistency inputs experimental responses. Together, these efforts will transform accumulation genuine knowledge generation, paving way for an autonomous self-improving research accelerates both fundamental understanding technological innovation.",
+      "citationCount": 10
     }
   ]
 }

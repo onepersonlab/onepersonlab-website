@@ -1,7 +1,7 @@
 {
   "description": "Papers - Updated Stats",
   "source": "Semantic Scholar / OpenAlex / Crossref",
-  "generated_at": "2026-05-07T04:40:21Z",
+  "generated_at": "2026-06-12T02:02:48Z",
   "paper_count": 6,
   "papers": [
     {
@@ -33,7 +33,7 @@
         "Runsheng Chen",
         "Yi Zhao"
       ],
-      "citationCount": 0,
+      "citationCount": 2,
       "abstract": "",
       "url": "https://doi.org/10.1038/s41551-026-01634-6",
       "order": 1
@@ -69,7 +69,7 @@
         "David Ha",
         "Jeff Clune"
       ],
-      "citationCount": 23,
+      "citationCount": 26,
       "abstract": "The automation of science is a long-standing ambition in artificial intelligence (AI) research1,2. Although the community has made substantial progress in automating individual components of the scien",
       "url": "https://doi.org/10.1038/s41586-026-10265-5",
       "order": 3
@@ -89,7 +89,7 @@
         "David Ha",
         "Jeff Clune"
       ],
-      "citationCount": 23,
+      "citationCount": 5,
       "abstract": "The automation of science is a long-standing ambition in artificial intelligence (AI) research1,2. Although the community has made substantial progress in automating individual components of the scien",
       "url": "https://doi.org/10.1038/s41592-026-03029-6",
       "order": 4
@@ -107,7 +107,7 @@
         "Faisal Mahmood",
         "J. Kather"
       ],
-      "citationCount": 6,
+      "citationCount": 8,
       "abstract": "",
       "url": "https://doi.org/10.1038/s41568-025-00900-0",
       "order": 5
@@ -131,7 +131,7 @@
         "Kun Sun",
         "Weidi Xie"
       ],
-      "citationCount": 37,
+      "citationCount": 16,
       "abstract": "Rare diseases affect more than 300 million people worldwide1–3, yet timely and accurate diagnosis remains an urgent challenge1,3–5. Patients often endure a prolonged ‘diagnostic odyssey’ exc",
       "url": "https://doi.org/10.1038/s41586-025-10097-9",
       "order": 6
