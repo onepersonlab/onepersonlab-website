@@ -24,6 +24,8 @@ const CATEGORY_COLORS: Record<string, string> = {
   'Agent Optimization': 'bg-pink-500/20 text-pink-400',
   'Plugin Registry': 'bg-lime-500/20 text-lime-400',
   'Agent Infra': 'bg-orange-500/20 text-orange-400',
+  'Quality & Testing': 'bg-rose-500/20 text-rose-400',
+  'Productivity': 'bg-emerald-500/20 text-emerald-400',
 };
 
 export function SkillsSection() {
